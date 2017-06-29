@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class ObtenerTiposMesaResponse: Mappable{
-    var listaTiposMesa: [ListaTiposMesa]?
+    public var listaTiposMesa: [ListaTiposMesa]?
     
     required public init?(map: Map){
     }

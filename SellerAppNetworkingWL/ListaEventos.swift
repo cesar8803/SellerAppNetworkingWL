@@ -9,14 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class ListaEventos: Mappable{
-    var numeroEvento: String?
-    var listaFestejados: [String]?
-    var fechaEvento: String?
+public class ListaEventos: Mappable{
+    public var numeroEvento: String?
+    public var listaFestejados: [String]?
+    public var fechaEvento: String?
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         numeroEvento <- map["numeroEvento"]
         listaFestejados <- map["listaFestejados"]
         fechaEvento <- map["fechaEvento"]

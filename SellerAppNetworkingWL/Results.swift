@@ -10,24 +10,24 @@ import Foundation
 import ObjectMapper
 
 public class Results: Mappable{
-    var sku: String?
-    var buscaBarcode: String?
-    var description: String?
-    var type: String?
-    var brand: String?
-    var buscaDescription: String?
-    var totalInTransit: String?
-    var totalBackordered: String?
-    var name: String?
-    var price: String?
-    var thumbnailImages: [String]?
-    var totalInStore: String?
-    var attributes: String?
-    var largeImages: [String]?
-    var availableToShip: Int?
-    var totalInWarehouse: String?
-    var categoryId: String?
-    var categoryName: String?
+    public var sku: String?
+    public var buscaBarcode: String?
+    public var description: String?
+    public var type: String?
+    public var brand: String?
+    public var buscaDescription: String?
+    public var totalInTransit: String?
+    public var totalBackordered: String?
+    public var name: String?
+    public var price: String?
+    public var thumbnailImages: [String]?
+    public var totalInStore: String?
+    public var attributes: String?
+    public var largeImages: [String]?
+    public var availableToShip: Int?
+    public var totalInWarehouse: String?
+    public var categoryId: String?
+    public var categoryName: String?
     
     required public init?(map: Map){
     }

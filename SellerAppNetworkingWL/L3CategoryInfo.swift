@@ -10,18 +10,18 @@ import Foundation
 import ObjectMapper
 
 public class L3CategoryInfo: Mappable{
-    var catst420869: Catst420869?
-    var catst420864: Catst420864?
-    var catst420865: Catst420865?
-    var catst420884: Catst420884?
-    var catst420893: Catst420893?
-    var catst420842: Catst420842?
-    var catst420876: Catst420876?
-    var catst420857: Catst420857?
-    var catst420845: Catst420845?
-    var catst420846: Catst420846?
-    var catst420847: Catst420847?
-    var catst420853: Catst420853?
+    public var catst420869: Catst420869?
+    public var catst420864: Catst420864?
+    public var catst420865: Catst420865?
+    public var catst420884: Catst420884?
+    public var catst420893: Catst420893?
+    public var catst420842: Catst420842?
+    public var catst420876: Catst420876?
+    public var catst420857: Catst420857?
+    public var catst420845: Catst420845?
+    public var catst420846: Catst420846?
+    public var catst420847: Catst420847?
+    public var catst420853: Catst420853?
     
     required public init?(map: Map){
     }

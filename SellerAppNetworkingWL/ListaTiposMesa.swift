@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 
 public class ListaTiposMesa: Mappable{
-    var descripcion: String?
-    var id: Int?
+    public var descripcion: String?
+    public var id: Int?
     
-    required public init?(map: Map){
+    public required init?(map: Map){
     }
     public func mapping(map: Map){
         descripcion <- map["descripcion"]

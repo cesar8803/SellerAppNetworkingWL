@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 public class PriceRange: Mappable{
-    var minimum: Float?
-    var maximum: Float?
+    public var minimum: Float?
+    public var maximum: Float?
     
     required public init?(map: Map){
     }

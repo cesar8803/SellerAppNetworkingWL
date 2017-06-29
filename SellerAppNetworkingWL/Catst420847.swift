@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 
 public class Catst420847: Mappable{
-    var CHILDPRODUCTS_COUNT: String?
-    var NAME: String?
-    var ID: String?
-    var CHILDCATEGORY_COUNT: Float?
+    public var CHILDPRODUCTS_COUNT: String?
+    public var NAME: String?
+    public var ID: String?
+    public var CHILDCATEGORY_COUNT: Float?
     
     required public init?(map: Map){
     }

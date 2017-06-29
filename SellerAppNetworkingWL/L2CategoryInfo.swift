@@ -10,13 +10,13 @@ import Foundation
 import ObjectMapper
 
 public class L2CategoryInfo: Mappable{
-    var catst420840: Catst420840?
-    var catst420841: Catst420841?
-    var catst420968: Catst420968?
-    var catst420839: Catst420839?
-    var catst420838: Catst420838?
-    var catst425036: Catst425036?
-    var catst420837: Catst420837?
+    public var catst420840: Catst420840?
+    public var catst420841: Catst420841?
+    public var catst420968: Catst420968?
+    public var catst420839: Catst420839?
+    public var catst420838: Catst420838?
+    public var catst425036: Catst425036?
+    public var catst420837: Catst420837?
     
     required public init?(map: Map){
     }

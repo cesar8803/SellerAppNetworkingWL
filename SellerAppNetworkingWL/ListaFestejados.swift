@@ -9,13 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class ListaFestejados: Mappable{
-    var nombreCompleto: String?
-    var tipo: Float?
+public class ListaFestejados: Mappable{
+    public var nombreCompleto: String?
+    public var tipo: Float?
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         nombreCompleto <- map["nombreCompleto"]
         tipo <- map["tipo"]
     }

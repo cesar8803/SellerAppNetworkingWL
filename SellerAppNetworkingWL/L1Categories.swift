@@ -10,84 +10,84 @@ import Foundation
 import ObjectMapper
 
 public class L1Categories: Mappable{
-    var cat1350731: Cat1350731?
-    var cat1250621: Cat1250621?
-    var cat5380214: Cat5380214?
-    var catst413095: Catst413095?
-    var catst392789: Catst392789?
-    var cat2119911: Cat2119911?
-    var catst418527: Catst418527?
-    var cat21010034: Cat21010034?
-    var cat21010189: Cat21010189?
-    var cat860739: Cat860739?
-    var cat5510074: Cat5510074?
-    var cat4050000: Cat4050000?
-    var cat610025: Cat610025?
-    var cat4450237: Cat4450237?
-    var cat5300107: Cat5300107?
-    var cat1200686: Cat1200686?
-    var cat1060780: Cat1060780?
-    var cat5010005: Cat5010005?
-    var cat5510011: Cat5510011?
-    var cat4450173: Cat4450173?
-    var cat4980014: Cat4980014?
-    var cat5640000: Cat5640000?
-    var cat5020003: Cat5020003?
-    var cat4470002: Cat4470002?
-    var cat1100732: Cat1100732?
-    var cat170339: Cat170339?
-    var cat4470006: Cat4470006?
-    var cat4120003: Cat4120003?
-    var cat4990127: Cat4990127?
-    var cat1100739: Cat1100739?
-    var cat1080656: Cat1080656?
-    var cat4990218: Cat4990218?
-    var cat4190003: Cat4190003?
-    var cat4990318: Cat4990318?
-    var cat4190005: Cat4190005?
-    var cat4990193: Cat4990193?
-    var cat5690007: Cat5690007?
-    var cat1200751: Cat1200751?
-    var cat1300743: Cat1300743?
-    var cat1330604: Cat1330604?
-    var cat5190016: Cat5190016?
-    var cat5190059: Cat5190059?
-    var cat910629: Cat910629?
-    var catst378819: Catst378819?
-    var cat5380225: Cat5380225?
-    var cat1250612: Cat1250612?
-    var cat5040494: Cat5040494?
-    var cat5630017: Cat5630017?
-    var cat4930074: Cat4930074?
-    var cat610036: Cat610036?
-    var cat850172: Cat850172?
-    var cat4190004: Cat4190004?
-    var cat4260003: Cat4260003?
-    var cat4570008: Cat4570008?
-    var cat5440000: Cat5440000?
-    var cat4490175: Cat4490175?
-    var cat21010228: Cat21010228?
-    var cat1200649: Cat1200649?
-    var cat5280345: Cat5280345?
-    var cat5020010: Cat5020010?
-    var cat5660000: Cat5660000?
-    var cat480186: Cat480186?
-    var cat5020014: Cat5020014?
-    var cat910605: Cat910605?
-    var cat4990262: Cat4990262?
-    var cat910660: Cat910660?
-    var cat910740: Cat910740?
-    var cat480332: Cat480332?
-    var catst394074: Catst394074?
-    var cat4370401: Cat4370401?
-    var cat4920000: Cat4920000?
-    var cat4240006: Cat4240006?
-    var cat670055: Cat670055?
-    var cat4020016: Cat4020016?
-    var cat4990185: Cat4990185?
-    var cat3830001: Cat3830001?
-    var cat4330033: Cat4330033?
-    var catst420836: Catst420836?
+    public var cat1350731: Cat1350731?
+    public var cat1250621: Cat1250621?
+    public var cat5380214: Cat5380214?
+    public var catst413095: Catst413095?
+    public var catst392789: Catst392789?
+    public var cat2119911: Cat2119911?
+    public var catst418527: Catst418527?
+    public var cat21010034: Cat21010034?
+    public var cat21010189: Cat21010189?
+    public var cat860739: Cat860739?
+    public var cat5510074: Cat5510074?
+    public var cat4050000: Cat4050000?
+    public var cat610025: Cat610025?
+    public var cat4450237: Cat4450237?
+    public var cat5300107: Cat5300107?
+    public var cat1200686: Cat1200686?
+    public var cat1060780: Cat1060780?
+    public var cat5010005: Cat5010005?
+    public var cat5510011: Cat5510011?
+    public var cat4450173: Cat4450173?
+    public var cat4980014: Cat4980014?
+    public var cat5640000: Cat5640000?
+    public var cat5020003: Cat5020003?
+    public var cat4470002: Cat4470002?
+    public var cat1100732: Cat1100732?
+    public var cat170339: Cat170339?
+    public var cat4470006: Cat4470006?
+    public var cat4120003: Cat4120003?
+    public var cat4990127: Cat4990127?
+    public var cat1100739: Cat1100739?
+    public var cat1080656: Cat1080656?
+    public var cat4990218: Cat4990218?
+    public var cat4190003: Cat4190003?
+    public var cat4990318: Cat4990318?
+    public var cat4190005: Cat4190005?
+    public var cat4990193: Cat4990193?
+    public var cat5690007: Cat5690007?
+    public var cat1200751: Cat1200751?
+    public var cat1300743: Cat1300743?
+    public var cat1330604: Cat1330604?
+    public var cat5190016: Cat5190016?
+    public var cat5190059: Cat5190059?
+    public var cat910629: Cat910629?
+    public var catst378819: Catst378819?
+    public var cat5380225: Cat5380225?
+    public var cat1250612: Cat1250612?
+    public var cat5040494: Cat5040494?
+    public var cat5630017: Cat5630017?
+    public var cat4930074: Cat4930074?
+    public var cat610036: Cat610036?
+    public var cat850172: Cat850172?
+    public var cat4190004: Cat4190004?
+    public var cat4260003: Cat4260003?
+    public var cat4570008: Cat4570008?
+    public var cat5440000: Cat5440000?
+    public var cat4490175: Cat4490175?
+    public var cat21010228: Cat21010228?
+    public var cat1200649: Cat1200649?
+    public var cat5280345: Cat5280345?
+    public var cat5020010: Cat5020010?
+    public var cat5660000: Cat5660000?
+    public var cat480186: Cat480186?
+    public var cat5020014: Cat5020014?
+    public var cat910605: Cat910605?
+    public var cat4990262: Cat4990262?
+    public var cat910660: Cat910660?
+    public var cat910740: Cat910740?
+    public var cat480332: Cat480332?
+    public var catst394074: Catst394074?
+    public var cat4370401: Cat4370401?
+    public var cat4920000: Cat4920000?
+    public var cat4240006: Cat4240006?
+    public var cat670055: Cat670055?
+    public var cat4020016: Cat4020016?
+    public var cat4990185: Cat4990185?
+    public var cat3830001: Cat3830001?
+    public var cat4330033: Cat4330033?
+    public var catst420836: Catst420836?
     
     required public init?(map: Map){
     }

@@ -18,9 +18,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Production, QA, Development, Deloitte, Custom, UAT
     }
     
-    public var environment: Environment = .Production
-    public var customHostname: String = ""
-    public var hostname: String {
+    var environment: Environment = .Production
+    var customHostname: String = ""
+    var hostname: String {
         switch self.environment
         {
         case .Production:       return "http://172.16.204.118:9195"

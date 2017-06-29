@@ -9,19 +9,19 @@
 import Foundation
 import ObjectMapper
 
-class ListaEventoResponse: Mappable{
-    var tienda: String?
-    var listaDirecciones: [ListaDirecciones]?
-    var fechaEvento: String?
-    var listaFestejados: [ListaFestejados]?
-    var listaArticulos: [ListaArticulos]?
-    var tipoMesa: Float?
-    var comentarios: String?
-    var numEvento: String?
+public class ListaEventoResponse: Mappable{
+    public var tienda: String?
+    public var listaDirecciones: [ListaDirecciones]?
+    public var fechaEvento: String?
+    public var listaFestejados: [ListaFestejados]?
+    public var listaArticulos: [ListaArticulos]?
+    public var tipoMesa: Float?
+    public var comentarios: String?
+    public var numEvento: String?
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         tienda <- map["tienda"]
         listaDirecciones <- map["listaDirecciones"]
         fechaEvento <- map["fechaEvento"]

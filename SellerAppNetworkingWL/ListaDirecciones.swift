@@ -9,23 +9,23 @@
 import Foundation
 import ObjectMapper
 
-class ListaDirecciones: Mappable{
-    var poblacion: String?
-    var telefono1: String?
-    var telefono2: String?
-    var tipoFestejado: Float?
-    var numExt: String?
-    var calle: String?
-    var colonia: String?
-    var edificio: String?
-    var codPos: String?
-    var pais: String?
-    var estado: String?
-    var municipio: String?
+public class ListaDirecciones: Mappable{
+    public var poblacion: String?
+    public var telefono1: String?
+    public var telefono2: String?
+    public var tipoFestejado: Float?
+    public var numExt: String?
+    public var calle: String?
+    public var colonia: String?
+    public var edificio: String?
+    public var codPos: String?
+    public var pais: String?
+    public var estado: String?
+    public var municipio: String?
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         poblacion <- map["poblacion"]
         telefono1 <- map["telefono1"]
         telefono2 <- map["telefono2"]

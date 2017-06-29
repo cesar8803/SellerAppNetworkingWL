@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class ConsultarParametroResponse: Mappable{
-    var valor: String?
+public class ConsultarParametroResponse: Mappable{
+    public var valor: String?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         valor <- map["valor"]
     }
 }

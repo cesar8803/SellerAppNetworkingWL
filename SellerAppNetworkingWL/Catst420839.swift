@@ -10,12 +10,12 @@ import Foundation
 import ObjectMapper
 
 public class Catst420839: Mappable{
-    var NAME: String?
-    var ID: String?
-    var CHILDPRODUCTS_COUNT: String?
-    var FIRST_CHILDPRODUCT_IMG: FirstChildProductImg?
-    var L3CategoryInfo: L3CategoryInfo?
-    var CHILDCATEGORY_COUNT: Float?
+    public var NAME: String?
+    public var ID: String?
+    public var CHILDPRODUCTS_COUNT: String?
+    public var FIRST_CHILDPRODUCT_IMG: FirstChildProductImg?
+    public var L3CategoryInfo: L3CategoryInfo?
+    public var CHILDCATEGORY_COUNT: Float?
     
     required public init?(map: Map){
     }

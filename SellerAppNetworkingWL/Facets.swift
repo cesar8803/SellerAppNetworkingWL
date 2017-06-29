@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 public class Facets: Mappable{
-    var id: String?
-    var label: String?
+    public var id: String?
+    public var label: String?
     
     required public init?(map: Map){
     }

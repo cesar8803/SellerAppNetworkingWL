@@ -10,9 +10,9 @@ import Foundation
 import ObjectMapper
 
 public class FirstChildProductImg: Mappable{
-    var largeImage: String?
-    var smallImage: String?
-    var thumbnailImage: String?
+    public var largeImage: String?
+    public var smallImage: String?
+    public var thumbnailImage: String?
     
     required public init?(map: Map){
     }

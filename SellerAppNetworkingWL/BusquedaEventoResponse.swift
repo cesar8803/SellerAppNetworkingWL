@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class BusquedaEventoResponse: Mappable{
-    var listaEventos: [ListaEventos]?
+public class BusquedaEventoResponse: Mappable{
+    public var listaEventos: [ListaEventos]?
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         listaEventos <- map["listaEventos"]
     }
 }

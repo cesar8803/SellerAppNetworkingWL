@@ -9,16 +9,16 @@
 import Foundation
 import ObjectMapper
 
-class ListaArticulos: Mappable{
-    var SKU: String?
-    var nombre: String?
-    var url: String?
-    var cantidad: Float?
-    var clasificacion: String?
+public class ListaArticulos: Mappable{
+    public var SKU: String?
+    public var nombre: String?
+    public var url: String?
+    public var cantidad: Float?
+    public var clasificacion: String?
     
-    required init?(map: Map){
+    public required init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         SKU <- map["SKU"]
         nombre <- map["nombre"]
         url <- map["url"]

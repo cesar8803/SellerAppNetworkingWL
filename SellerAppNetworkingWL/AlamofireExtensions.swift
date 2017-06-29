@@ -30,7 +30,7 @@ extension DataRequest
             }
             
             do {
-                var rawString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
+                public var rawString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
                 if rawString.hasPrefix("/*-secure-") {
                     rawString = rawString.replacingCharacters(in: NSMakeRange(0, 10), with: "") as NSString
                 }
@@ -54,8 +54,8 @@ extension DataRequest
                 return (nil, nil)
             }
             
-            var serializationError: NSError?
-            var rawString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
+            public var serializationError: NSError?
+            public var rawString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
             if rawString.hasPrefix("/*-secure-") {
                 rawString = rawString.stringByReplacingCharactersInRange(NSMakeRange(0, 10), withString: "")
             }
@@ -87,7 +87,7 @@ extension DataRequest
             }
         
             /*
-            var newResponse = response
+            public var newResponse = response
             if let theError = response.result.error{
                 if (theError as NSError).code == 3840 {
                     let error:NSError = NSError(domain: NSCocoaErrorDomain, code: 3840, userInfo:[NSLocalizedDescriptionKey:"Servicio no disponible."])

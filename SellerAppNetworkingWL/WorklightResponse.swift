@@ -10,15 +10,15 @@ import Foundation
 import ObjectMapper
 
 public class WorklightResponse: Mappable{
-    var L1Categories: L1Categories?
-    var isSuccessful: Int?
-    var facets: [Facets]?
-    var priceRange: PriceRange?
-    var results: [Results]?
-    var obtenerTiposMesaResponse: ObtenerTiposMesaResponse?
-    var consultarParametroResponse: ConsultarParametroResponse?
-    var busquedaEventoResponse: BusquedaEventoResponse?
-    var listaEventoResponse: ListaEventoResponse?
+    public var L1Categories: L1Categories?
+    public var isSuccessful: Int?
+    public var facets: [Facets]?
+    public var priceRange: PriceRange?
+    public var results: [Results]?
+    public var obtenerTiposMesaResponse: ObtenerTiposMesaResponse?
+    public var consultarParametroResponse: ConsultarParametroResponse?
+    public var busquedaEventoResponse: BusquedaEventoResponse?
+    public var listaEventoResponse: ListaEventoResponse?
     
     public required init?(map: Map){
     }
