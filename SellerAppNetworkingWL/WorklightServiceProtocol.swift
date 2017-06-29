@@ -97,9 +97,9 @@ public protocol WorklightServiceProtocol
     
     // MARK: - GiftRegistry
     func retrieveGiftRegistryTypes(completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
-    func retrieveGiftRegistry(eventID: String)
-    func retrieveGiftRegistryWithApplicationType(eventID: String, appType : Bool)
-    func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!)
+    func retrieveGiftRegistry(eventID: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+    func retrieveGiftRegistryWithApplicationType(eventID: String, appType : Bool, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+    func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
     
     // MARK: - Shipment

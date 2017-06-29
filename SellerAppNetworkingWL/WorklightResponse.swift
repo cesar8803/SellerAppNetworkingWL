@@ -16,6 +16,9 @@ public class WorklightResponse: Mappable{
     var priceRange: PriceRange?
     var results: [Results]?
     var obtenerTiposMesaResponse: ObtenerTiposMesaResponse?
+    var consultarParametroResponse: ConsultarParametroResponse?
+    var busquedaEventoResponse: BusquedaEventoResponse?
+    var listaEventoResponse: ListaEventoResponse?
     
     public required init?(map: Map){
     }
@@ -26,5 +29,8 @@ public class WorklightResponse: Mappable{
         priceRange <- map["priceRange"]
         results <- map["results"]
         obtenerTiposMesaResponse <- map["obtenerTiposMesaResponse"]
+        consultarParametroResponse <- map["consultarParametroResponse"]
+        busquedaEventoResponse <- map["busquedaEventoResponse"]
+        listaEventoResponse <- map["listaEventoResponse"]
     }
 }

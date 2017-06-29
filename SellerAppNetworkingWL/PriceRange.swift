@@ -9,13 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class PriceRange: Mappable{
+public class PriceRange: Mappable{
     var minimum: Float?
     var maximum: Float?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         minimum <- map["minimum"]
         maximum <- map["maximum"]
     }

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Results: Mappable{
+public class Results: Mappable{
     var sku: String?
     var buscaBarcode: String?
     var description: String?
@@ -29,9 +29,9 @@ class Results: Mappable{
     var categoryId: String?
     var categoryName: String?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         sku <- map["sku"]
         buscaBarcode <- map["buscaBarcode"]
         description <- map["description"]

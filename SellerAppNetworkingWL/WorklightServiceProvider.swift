@@ -574,7 +574,26 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func resetWLStatus() {
         
     }
-    public func retrieveGiftRegistry(eventID: String) {
+    public func retrieveGiftRegistry(eventID: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        let params = [
+            "TSCMES11": [
+                "evento": eventID,
+                "tipo": ""
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistryList, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            print("response \(response) in \(Thread.current)")
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
         
     }
     public func retrieveGiftRegistryTypes(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
@@ -597,7 +616,27 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
     }
     
-    public func retrieveGiftRegistryWithApplicationType(eventID: String, appType: Bool) {
+    public func retrieveGiftRegistryWithApplicationType(eventID: String, appType: Bool, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "TSCMES11": [
+                "evento": eventID,
+                "tipo": ""
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistryList, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            print("response \(response) in \(Thread.current)")
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
         
     }
     public func retrieveRestrictedSKUsForShipping() {
@@ -612,7 +651,32 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func searchCCStores(state: String) {
         
     }
-    public func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!) {
+    public func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "TSCMES12": [
+                "nombre": name ?? "",
+                "paterno": lastName ?? "",
+                "materno": secondLastName ?? "",
+                "fechaDe": date ?? "",
+                "tipo": type ?? 0,
+                "sexo": gender ?? ""
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistrySearch, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            print("response \(response) in \(Thread.current)")
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+        
         
     }
     public func searchShoppingClient(clientId: String, storeNumber: String) {
@@ -698,6 +762,29 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
 
+    }
+    
+    // MARK: - Remote Configuration Parameters
+    
+    public func getConfigurationParameter(name: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    {
+        let params = [
+            "consultarParametroRequest" : [
+                "nombre": name
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .GetParameter, parameters: params as AnyObject)
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            print("response \(response) in \(Thread.current)")
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
     }
     
 }

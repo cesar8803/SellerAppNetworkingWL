@@ -9,13 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class Facets: Mappable{
+public class Facets: Mappable{
     var id: String?
     var label: String?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         id <- map["id"]
         label <- map["label"]
     }

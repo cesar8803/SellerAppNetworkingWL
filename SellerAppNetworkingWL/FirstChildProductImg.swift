@@ -9,14 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class FirstChildProductImg: Mappable{
+public class FirstChildProductImg: Mappable{
     var largeImage: String?
     var smallImage: String?
     var thumbnailImage: String?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         largeImage <- map["largeImage"]
         smallImage <- map["smallImage"]
         thumbnailImage <- map["thumbnailImage"]

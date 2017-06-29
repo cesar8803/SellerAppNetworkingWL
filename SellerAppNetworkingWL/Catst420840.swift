@@ -9,16 +9,16 @@
 import Foundation
 import ObjectMapper
 
-class Catst420840: Mappable{
+public class Catst420840: Mappable{
     var CHILDPRODUCTS_COUNT: String?
     var L3CategoryInfo: L3CategoryInfo?
     var ID: String?
     var CHILDCATEGORY_COUNT: Float?
     var NAME: String?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         CHILDPRODUCTS_COUNT <- map["CHILDPRODUCTS_COUNT"]
         L3CategoryInfo <- map["L3CategoryInfo"]
         ID <- map["ID"]

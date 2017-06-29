@@ -9,13 +9,13 @@
 import Foundation
 import ObjectMapper
 
-class ListaTiposMesa: Mappable{
+public class ListaTiposMesa: Mappable{
     var descripcion: String?
     var id: Int?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         descripcion <- map["descripcion"]
         id <- map["id"]
     }

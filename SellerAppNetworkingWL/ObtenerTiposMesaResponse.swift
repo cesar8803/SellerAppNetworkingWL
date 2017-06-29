@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class ObtenerTiposMesaResponse: Mappable{
+public class ObtenerTiposMesaResponse: Mappable{
     var listaTiposMesa: [ListaTiposMesa]?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         listaTiposMesa <- map["listaTiposMesa"]
     }
 }

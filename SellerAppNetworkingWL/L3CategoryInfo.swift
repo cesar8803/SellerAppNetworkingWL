@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class L3CategoryInfo: Mappable{
+public class L3CategoryInfo: Mappable{
     var catst420869: Catst420869?
     var catst420864: Catst420864?
     var catst420865: Catst420865?
@@ -23,9 +23,9 @@ class L3CategoryInfo: Mappable{
     var catst420847: Catst420847?
     var catst420853: Catst420853?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         catst420869 <- map["catst420869"]
         catst420864 <- map["catst420864"]
         catst420865 <- map["catst420865"]
