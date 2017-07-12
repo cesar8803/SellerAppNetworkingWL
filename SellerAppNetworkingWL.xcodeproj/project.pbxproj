@@ -8,12 +8,262 @@
 
 /* Begin PBXBuildFile section */
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		716379281F1680D4001486F3 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */; };
+		716379291F1680D4001486F3 /* BusquedaEventoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */; };
+		7163792A1F1680D4001486F3 /* Cat170339.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B11F1680D4001486F3 /* Cat170339.swift */; };
+		7163792B1F1680D4001486F3 /* Cat480186.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B21F1680D4001486F3 /* Cat480186.swift */; };
+		7163792C1F1680D4001486F3 /* Cat480332.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B31F1680D4001486F3 /* Cat480332.swift */; };
+		7163792D1F1680D4001486F3 /* Cat610025.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B41F1680D4001486F3 /* Cat610025.swift */; };
+		7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B51F1680D4001486F3 /* Cat610036.swift */; };
+		7163792F1F1680D4001486F3 /* Cat670055.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B61F1680D4001486F3 /* Cat670055.swift */; };
+		716379301F1680D4001486F3 /* Cat850172.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B71F1680D4001486F3 /* Cat850172.swift */; };
+		716379311F1680D4001486F3 /* Cat860739.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B81F1680D4001486F3 /* Cat860739.swift */; };
+		716379321F1680D4001486F3 /* Cat910605.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B91F1680D4001486F3 /* Cat910605.swift */; };
+		716379331F1680D4001486F3 /* Cat910629.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378BA1F1680D4001486F3 /* Cat910629.swift */; };
+		716379341F1680D4001486F3 /* Cat910660.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378BB1F1680D4001486F3 /* Cat910660.swift */; };
+		716379351F1680D4001486F3 /* Cat910740.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378BC1F1680D4001486F3 /* Cat910740.swift */; };
+		716379361F1680D4001486F3 /* Cat1060780.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378BD1F1680D4001486F3 /* Cat1060780.swift */; };
+		716379371F1680D4001486F3 /* Cat1080656.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378BE1F1680D4001486F3 /* Cat1080656.swift */; };
+		716379381F1680D4001486F3 /* Cat1100732.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378BF1F1680D4001486F3 /* Cat1100732.swift */; };
+		716379391F1680D4001486F3 /* Cat1100739.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C01F1680D4001486F3 /* Cat1100739.swift */; };
+		7163793A1F1680D4001486F3 /* Cat1200649.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C11F1680D4001486F3 /* Cat1200649.swift */; };
+		7163793B1F1680D4001486F3 /* Cat1200686.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C21F1680D4001486F3 /* Cat1200686.swift */; };
+		7163793C1F1680D4001486F3 /* Cat1200751.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C31F1680D4001486F3 /* Cat1200751.swift */; };
+		7163793D1F1680D4001486F3 /* Cat1250612.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C41F1680D4001486F3 /* Cat1250612.swift */; };
+		7163793E1F1680D4001486F3 /* Cat1250621.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C51F1680D4001486F3 /* Cat1250621.swift */; };
+		7163793F1F1680D4001486F3 /* Cat1300743.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C61F1680D4001486F3 /* Cat1300743.swift */; };
+		716379401F1680D4001486F3 /* Cat1330604.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C71F1680D4001486F3 /* Cat1330604.swift */; };
+		716379411F1680D4001486F3 /* Cat1350731.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C81F1680D4001486F3 /* Cat1350731.swift */; };
+		716379421F1680D4001486F3 /* Cat2119911.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378C91F1680D4001486F3 /* Cat2119911.swift */; };
+		716379431F1680D4001486F3 /* Cat3830001.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378CA1F1680D4001486F3 /* Cat3830001.swift */; };
+		716379441F1680D4001486F3 /* Cat4020016.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378CB1F1680D4001486F3 /* Cat4020016.swift */; };
+		716379451F1680D4001486F3 /* Cat4050000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378CC1F1680D4001486F3 /* Cat4050000.swift */; };
+		716379461F1680D4001486F3 /* Cat4120003.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378CD1F1680D4001486F3 /* Cat4120003.swift */; };
+		716379471F1680D4001486F3 /* Cat4190003.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378CE1F1680D4001486F3 /* Cat4190003.swift */; };
+		716379481F1680D4001486F3 /* Cat4190004.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378CF1F1680D4001486F3 /* Cat4190004.swift */; };
+		716379491F1680D4001486F3 /* Cat4190005.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D01F1680D4001486F3 /* Cat4190005.swift */; };
+		7163794A1F1680D4001486F3 /* Cat4240006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D11F1680D4001486F3 /* Cat4240006.swift */; };
+		7163794B1F1680D4001486F3 /* Cat4260003.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D21F1680D4001486F3 /* Cat4260003.swift */; };
+		7163794C1F1680D4001486F3 /* Cat4330033.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D31F1680D4001486F3 /* Cat4330033.swift */; };
+		7163794D1F1680D4001486F3 /* Cat4370401.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D41F1680D4001486F3 /* Cat4370401.swift */; };
+		7163794E1F1680D4001486F3 /* Cat4450173.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D51F1680D4001486F3 /* Cat4450173.swift */; };
+		7163794F1F1680D4001486F3 /* Cat4450237.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D61F1680D4001486F3 /* Cat4450237.swift */; };
+		716379501F1680D4001486F3 /* Cat4470002.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D71F1680D4001486F3 /* Cat4470002.swift */; };
+		716379511F1680D4001486F3 /* Cat4470006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D81F1680D4001486F3 /* Cat4470006.swift */; };
+		716379521F1680D4001486F3 /* Cat4490175.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378D91F1680D4001486F3 /* Cat4490175.swift */; };
+		716379531F1680D4001486F3 /* Cat4570008.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378DA1F1680D4001486F3 /* Cat4570008.swift */; };
+		716379541F1680D4001486F3 /* Cat4920000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378DB1F1680D4001486F3 /* Cat4920000.swift */; };
+		716379551F1680D4001486F3 /* Cat4930074.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378DC1F1680D4001486F3 /* Cat4930074.swift */; };
+		716379561F1680D4001486F3 /* Cat4980014.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378DD1F1680D4001486F3 /* Cat4980014.swift */; };
+		716379571F1680D4001486F3 /* Cat4990127.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378DE1F1680D4001486F3 /* Cat4990127.swift */; };
+		716379581F1680D4001486F3 /* Cat4990185.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378DF1F1680D4001486F3 /* Cat4990185.swift */; };
+		716379591F1680D4001486F3 /* Cat4990193.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E01F1680D4001486F3 /* Cat4990193.swift */; };
+		7163795A1F1680D4001486F3 /* Cat4990218.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E11F1680D4001486F3 /* Cat4990218.swift */; };
+		7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E21F1680D4001486F3 /* Cat4990262.swift */; };
+		7163795C1F1680D4001486F3 /* Cat4990318.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E31F1680D4001486F3 /* Cat4990318.swift */; };
+		7163795D1F1680D4001486F3 /* Cat5010005.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E41F1680D4001486F3 /* Cat5010005.swift */; };
+		7163795E1F1680D4001486F3 /* Cat5020003.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E51F1680D4001486F3 /* Cat5020003.swift */; };
+		7163795F1F1680D4001486F3 /* Cat5020010.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E61F1680D4001486F3 /* Cat5020010.swift */; };
+		716379601F1680D4001486F3 /* Cat5020014.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E71F1680D4001486F3 /* Cat5020014.swift */; };
+		716379611F1680D4001486F3 /* Cat5040494.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E81F1680D4001486F3 /* Cat5040494.swift */; };
+		716379621F1680D4001486F3 /* Cat5190016.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378E91F1680D4001486F3 /* Cat5190016.swift */; };
+		716379631F1680D4001486F3 /* Cat5190059.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378EA1F1680D4001486F3 /* Cat5190059.swift */; };
+		716379641F1680D4001486F3 /* Cat5280345.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378EB1F1680D4001486F3 /* Cat5280345.swift */; };
+		716379651F1680D4001486F3 /* Cat5300107.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378EC1F1680D4001486F3 /* Cat5300107.swift */; };
+		716379661F1680D4001486F3 /* Cat5380214.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378ED1F1680D4001486F3 /* Cat5380214.swift */; };
+		716379671F1680D4001486F3 /* Cat5380225.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378EE1F1680D4001486F3 /* Cat5380225.swift */; };
+		716379681F1680D4001486F3 /* Cat5440000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378EF1F1680D4001486F3 /* Cat5440000.swift */; };
+		716379691F1680D4001486F3 /* Cat5510011.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F01F1680D4001486F3 /* Cat5510011.swift */; };
+		7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F11F1680D4001486F3 /* Cat5510074.swift */; };
+		7163796B1F1680D4001486F3 /* Cat5630017.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F21F1680D4001486F3 /* Cat5630017.swift */; };
+		7163796C1F1680D4001486F3 /* Cat5640000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F31F1680D4001486F3 /* Cat5640000.swift */; };
+		7163796D1F1680D4001486F3 /* Cat5660000.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F41F1680D4001486F3 /* Cat5660000.swift */; };
+		7163796E1F1680D4001486F3 /* Cat5690007.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F51F1680D4001486F3 /* Cat5690007.swift */; };
+		7163796F1F1680D4001486F3 /* Cat21010034.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F61F1680D4001486F3 /* Cat21010034.swift */; };
+		716379701F1680D4001486F3 /* Cat21010189.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F71F1680D4001486F3 /* Cat21010189.swift */; };
+		716379711F1680D4001486F3 /* Cat21010228.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F81F1680D4001486F3 /* Cat21010228.swift */; };
+		716379721F1680D4001486F3 /* Catst378819.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378F91F1680D4001486F3 /* Catst378819.swift */; };
+		716379731F1680D4001486F3 /* Catst392789.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378FA1F1680D4001486F3 /* Catst392789.swift */; };
+		716379741F1680D4001486F3 /* Catst394074.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378FB1F1680D4001486F3 /* Catst394074.swift */; };
+		716379751F1680D4001486F3 /* Catst413095.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378FC1F1680D4001486F3 /* Catst413095.swift */; };
+		716379761F1680D4001486F3 /* Catst418527.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378FD1F1680D4001486F3 /* Catst418527.swift */; };
+		716379771F1680D4001486F3 /* Catst420836.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378FE1F1680D4001486F3 /* Catst420836.swift */; };
+		716379781F1680D4001486F3 /* Catst420837.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378FF1F1680D4001486F3 /* Catst420837.swift */; };
+		716379791F1680D4001486F3 /* Catst420838.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379001F1680D4001486F3 /* Catst420838.swift */; };
+		7163797A1F1680D4001486F3 /* Catst420839.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379011F1680D4001486F3 /* Catst420839.swift */; };
+		7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379021F1680D4001486F3 /* Catst420840.swift */; };
+		7163797C1F1680D4001486F3 /* Catst420841.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379031F1680D4001486F3 /* Catst420841.swift */; };
+		7163797D1F1680D4001486F3 /* Catst420842.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379041F1680D4001486F3 /* Catst420842.swift */; };
+		7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379051F1680D4001486F3 /* Catst420845.swift */; };
+		7163797F1F1680D4001486F3 /* Catst420846.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379061F1680D4001486F3 /* Catst420846.swift */; };
+		716379801F1680D4001486F3 /* Catst420847.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379071F1680D4001486F3 /* Catst420847.swift */; };
+		716379811F1680D4001486F3 /* Catst420853.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379081F1680D4001486F3 /* Catst420853.swift */; };
+		716379821F1680D4001486F3 /* Catst420857.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379091F1680D4001486F3 /* Catst420857.swift */; };
+		716379831F1680D4001486F3 /* Catst420864.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163790A1F1680D4001486F3 /* Catst420864.swift */; };
+		716379841F1680D4001486F3 /* Catst420865.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163790B1F1680D4001486F3 /* Catst420865.swift */; };
+		716379851F1680D4001486F3 /* Catst420869.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163790C1F1680D4001486F3 /* Catst420869.swift */; };
+		716379861F1680D4001486F3 /* Catst420876.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163790D1F1680D4001486F3 /* Catst420876.swift */; };
+		716379871F1680D4001486F3 /* Catst420884.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163790E1F1680D4001486F3 /* Catst420884.swift */; };
+		716379881F1680D4001486F3 /* Catst420893.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163790F1F1680D4001486F3 /* Catst420893.swift */; };
+		716379891F1680D4001486F3 /* Catst420968.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379101F1680D4001486F3 /* Catst420968.swift */; };
+		7163798A1F1680D4001486F3 /* Catst425036.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379111F1680D4001486F3 /* Catst425036.swift */; };
+		7163798B1F1680D4001486F3 /* ConsultarParametroResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379121F1680D4001486F3 /* ConsultarParametroResponse.swift */; };
+		7163798C1F1680D4001486F3 /* Dictionary+Union.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379131F1680D4001486F3 /* Dictionary+Union.swift */; };
+		7163798D1F1680D4001486F3 /* Facets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379141F1680D4001486F3 /* Facets.swift */; };
+		7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379151F1680D4001486F3 /* FirstChildProductImg.swift */; };
+		7163798F1F1680D4001486F3 /* L1Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379161F1680D4001486F3 /* L1Categories.swift */; };
+		716379901F1680D4001486F3 /* L2CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379171F1680D4001486F3 /* L2CategoryInfo.swift */; };
+		716379911F1680D4001486F3 /* L3CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379181F1680D4001486F3 /* L3CategoryInfo.swift */; };
+		716379921F1680D4001486F3 /* ListaArticulos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379191F1680D4001486F3 /* ListaArticulos.swift */; };
+		716379931F1680D4001486F3 /* ListaDirecciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163791A1F1680D4001486F3 /* ListaDirecciones.swift */; };
+		716379941F1680D4001486F3 /* ListaEventoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163791B1F1680D4001486F3 /* ListaEventoResponse.swift */; };
+		716379951F1680D4001486F3 /* ListaEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163791C1F1680D4001486F3 /* ListaEventos.swift */; };
+		716379961F1680D4001486F3 /* ListaFestejados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163791D1F1680D4001486F3 /* ListaFestejados.swift */; };
+		716379971F1680D4001486F3 /* ListaTiposMesa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163791E1F1680D4001486F3 /* ListaTiposMesa.swift */; };
+		716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163791F1F1680D4001486F3 /* ObtenerTiposMesaResponse.swift */; };
+		716379991F1680D4001486F3 /* PriceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379201F1680D4001486F3 /* PriceRange.swift */; };
+		7163799A1F1680D4001486F3 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379211F1680D4001486F3 /* Results.swift */; };
+		7163799B1F1680D4001486F3 /* WorklightResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379221F1680D4001486F3 /* WorklightResponse.swift */; };
+		7163799C1F1680D4001486F3 /* WorklightServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379231F1680D4001486F3 /* WorklightServiceProtocol.swift */; };
+		7163799D1F1680D4001486F3 /* WorklightServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379241F1680D4001486F3 /* WorklightServiceProvider.swift */; };
+		7163799E1F1680D4001486F3 /* WorklightShippingAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379251F1680D4001486F3 /* WorklightShippingAddress.swift */; };
+		7163799F1F1680D4001486F3 /* WorklightShippingProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379261F1680D4001486F3 /* WorklightShippingProduct.swift */; };
+		716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */; };
+		716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */; };
+		716379C01F168B38001486F3 /* DireccionDestinatario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379BF1F168B38001486F3 /* DireccionDestinatario.swift */; };
+		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43AECCBF1EFB1B7A00D1B243 /* SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingWL.h; sourceTree = "<group>"; };
 		43AECCC31EFB1B7A00D1B243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
+		716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireExtensions.swift; path = SellerAppNetworkingWL/AlamofireExtensions.swift; sourceTree = "<group>"; };
+		716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusquedaEventoResponse.swift; path = SellerAppNetworkingWL/BusquedaEventoResponse.swift; sourceTree = "<group>"; };
+		716378B11F1680D4001486F3 /* Cat170339.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat170339.swift; path = SellerAppNetworkingWL/Cat170339.swift; sourceTree = "<group>"; };
+		716378B21F1680D4001486F3 /* Cat480186.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat480186.swift; path = SellerAppNetworkingWL/Cat480186.swift; sourceTree = "<group>"; };
+		716378B31F1680D4001486F3 /* Cat480332.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat480332.swift; path = SellerAppNetworkingWL/Cat480332.swift; sourceTree = "<group>"; };
+		716378B41F1680D4001486F3 /* Cat610025.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat610025.swift; path = SellerAppNetworkingWL/Cat610025.swift; sourceTree = "<group>"; };
+		716378B51F1680D4001486F3 /* Cat610036.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat610036.swift; path = SellerAppNetworkingWL/Cat610036.swift; sourceTree = "<group>"; };
+		716378B61F1680D4001486F3 /* Cat670055.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat670055.swift; path = SellerAppNetworkingWL/Cat670055.swift; sourceTree = "<group>"; };
+		716378B71F1680D4001486F3 /* Cat850172.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat850172.swift; path = SellerAppNetworkingWL/Cat850172.swift; sourceTree = "<group>"; };
+		716378B81F1680D4001486F3 /* Cat860739.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat860739.swift; path = SellerAppNetworkingWL/Cat860739.swift; sourceTree = "<group>"; };
+		716378B91F1680D4001486F3 /* Cat910605.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat910605.swift; path = SellerAppNetworkingWL/Cat910605.swift; sourceTree = "<group>"; };
+		716378BA1F1680D4001486F3 /* Cat910629.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat910629.swift; path = SellerAppNetworkingWL/Cat910629.swift; sourceTree = "<group>"; };
+		716378BB1F1680D4001486F3 /* Cat910660.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat910660.swift; path = SellerAppNetworkingWL/Cat910660.swift; sourceTree = "<group>"; };
+		716378BC1F1680D4001486F3 /* Cat910740.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat910740.swift; path = SellerAppNetworkingWL/Cat910740.swift; sourceTree = "<group>"; };
+		716378BD1F1680D4001486F3 /* Cat1060780.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1060780.swift; path = SellerAppNetworkingWL/Cat1060780.swift; sourceTree = "<group>"; };
+		716378BE1F1680D4001486F3 /* Cat1080656.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1080656.swift; path = SellerAppNetworkingWL/Cat1080656.swift; sourceTree = "<group>"; };
+		716378BF1F1680D4001486F3 /* Cat1100732.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1100732.swift; path = SellerAppNetworkingWL/Cat1100732.swift; sourceTree = "<group>"; };
+		716378C01F1680D4001486F3 /* Cat1100739.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1100739.swift; path = SellerAppNetworkingWL/Cat1100739.swift; sourceTree = "<group>"; };
+		716378C11F1680D4001486F3 /* Cat1200649.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1200649.swift; path = SellerAppNetworkingWL/Cat1200649.swift; sourceTree = "<group>"; };
+		716378C21F1680D4001486F3 /* Cat1200686.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1200686.swift; path = SellerAppNetworkingWL/Cat1200686.swift; sourceTree = "<group>"; };
+		716378C31F1680D4001486F3 /* Cat1200751.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1200751.swift; path = SellerAppNetworkingWL/Cat1200751.swift; sourceTree = "<group>"; };
+		716378C41F1680D4001486F3 /* Cat1250612.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1250612.swift; path = SellerAppNetworkingWL/Cat1250612.swift; sourceTree = "<group>"; };
+		716378C51F1680D4001486F3 /* Cat1250621.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1250621.swift; path = SellerAppNetworkingWL/Cat1250621.swift; sourceTree = "<group>"; };
+		716378C61F1680D4001486F3 /* Cat1300743.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1300743.swift; path = SellerAppNetworkingWL/Cat1300743.swift; sourceTree = "<group>"; };
+		716378C71F1680D4001486F3 /* Cat1330604.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1330604.swift; path = SellerAppNetworkingWL/Cat1330604.swift; sourceTree = "<group>"; };
+		716378C81F1680D4001486F3 /* Cat1350731.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat1350731.swift; path = SellerAppNetworkingWL/Cat1350731.swift; sourceTree = "<group>"; };
+		716378C91F1680D4001486F3 /* Cat2119911.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat2119911.swift; path = SellerAppNetworkingWL/Cat2119911.swift; sourceTree = "<group>"; };
+		716378CA1F1680D4001486F3 /* Cat3830001.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat3830001.swift; path = SellerAppNetworkingWL/Cat3830001.swift; sourceTree = "<group>"; };
+		716378CB1F1680D4001486F3 /* Cat4020016.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4020016.swift; path = SellerAppNetworkingWL/Cat4020016.swift; sourceTree = "<group>"; };
+		716378CC1F1680D4001486F3 /* Cat4050000.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4050000.swift; path = SellerAppNetworkingWL/Cat4050000.swift; sourceTree = "<group>"; };
+		716378CD1F1680D4001486F3 /* Cat4120003.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4120003.swift; path = SellerAppNetworkingWL/Cat4120003.swift; sourceTree = "<group>"; };
+		716378CE1F1680D4001486F3 /* Cat4190003.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4190003.swift; path = SellerAppNetworkingWL/Cat4190003.swift; sourceTree = "<group>"; };
+		716378CF1F1680D4001486F3 /* Cat4190004.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4190004.swift; path = SellerAppNetworkingWL/Cat4190004.swift; sourceTree = "<group>"; };
+		716378D01F1680D4001486F3 /* Cat4190005.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4190005.swift; path = SellerAppNetworkingWL/Cat4190005.swift; sourceTree = "<group>"; };
+		716378D11F1680D4001486F3 /* Cat4240006.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4240006.swift; path = SellerAppNetworkingWL/Cat4240006.swift; sourceTree = "<group>"; };
+		716378D21F1680D4001486F3 /* Cat4260003.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4260003.swift; path = SellerAppNetworkingWL/Cat4260003.swift; sourceTree = "<group>"; };
+		716378D31F1680D4001486F3 /* Cat4330033.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4330033.swift; path = SellerAppNetworkingWL/Cat4330033.swift; sourceTree = "<group>"; };
+		716378D41F1680D4001486F3 /* Cat4370401.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4370401.swift; path = SellerAppNetworkingWL/Cat4370401.swift; sourceTree = "<group>"; };
+		716378D51F1680D4001486F3 /* Cat4450173.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4450173.swift; path = SellerAppNetworkingWL/Cat4450173.swift; sourceTree = "<group>"; };
+		716378D61F1680D4001486F3 /* Cat4450237.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4450237.swift; path = SellerAppNetworkingWL/Cat4450237.swift; sourceTree = "<group>"; };
+		716378D71F1680D4001486F3 /* Cat4470002.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4470002.swift; path = SellerAppNetworkingWL/Cat4470002.swift; sourceTree = "<group>"; };
+		716378D81F1680D4001486F3 /* Cat4470006.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4470006.swift; path = SellerAppNetworkingWL/Cat4470006.swift; sourceTree = "<group>"; };
+		716378D91F1680D4001486F3 /* Cat4490175.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4490175.swift; path = SellerAppNetworkingWL/Cat4490175.swift; sourceTree = "<group>"; };
+		716378DA1F1680D4001486F3 /* Cat4570008.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4570008.swift; path = SellerAppNetworkingWL/Cat4570008.swift; sourceTree = "<group>"; };
+		716378DB1F1680D4001486F3 /* Cat4920000.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4920000.swift; path = SellerAppNetworkingWL/Cat4920000.swift; sourceTree = "<group>"; };
+		716378DC1F1680D4001486F3 /* Cat4930074.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4930074.swift; path = SellerAppNetworkingWL/Cat4930074.swift; sourceTree = "<group>"; };
+		716378DD1F1680D4001486F3 /* Cat4980014.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4980014.swift; path = SellerAppNetworkingWL/Cat4980014.swift; sourceTree = "<group>"; };
+		716378DE1F1680D4001486F3 /* Cat4990127.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4990127.swift; path = SellerAppNetworkingWL/Cat4990127.swift; sourceTree = "<group>"; };
+		716378DF1F1680D4001486F3 /* Cat4990185.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4990185.swift; path = SellerAppNetworkingWL/Cat4990185.swift; sourceTree = "<group>"; };
+		716378E01F1680D4001486F3 /* Cat4990193.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4990193.swift; path = SellerAppNetworkingWL/Cat4990193.swift; sourceTree = "<group>"; };
+		716378E11F1680D4001486F3 /* Cat4990218.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4990218.swift; path = SellerAppNetworkingWL/Cat4990218.swift; sourceTree = "<group>"; };
+		716378E21F1680D4001486F3 /* Cat4990262.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4990262.swift; path = SellerAppNetworkingWL/Cat4990262.swift; sourceTree = "<group>"; };
+		716378E31F1680D4001486F3 /* Cat4990318.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat4990318.swift; path = SellerAppNetworkingWL/Cat4990318.swift; sourceTree = "<group>"; };
+		716378E41F1680D4001486F3 /* Cat5010005.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5010005.swift; path = SellerAppNetworkingWL/Cat5010005.swift; sourceTree = "<group>"; };
+		716378E51F1680D4001486F3 /* Cat5020003.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5020003.swift; path = SellerAppNetworkingWL/Cat5020003.swift; sourceTree = "<group>"; };
+		716378E61F1680D4001486F3 /* Cat5020010.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5020010.swift; path = SellerAppNetworkingWL/Cat5020010.swift; sourceTree = "<group>"; };
+		716378E71F1680D4001486F3 /* Cat5020014.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5020014.swift; path = SellerAppNetworkingWL/Cat5020014.swift; sourceTree = "<group>"; };
+		716378E81F1680D4001486F3 /* Cat5040494.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5040494.swift; path = SellerAppNetworkingWL/Cat5040494.swift; sourceTree = "<group>"; };
+		716378E91F1680D4001486F3 /* Cat5190016.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5190016.swift; path = SellerAppNetworkingWL/Cat5190016.swift; sourceTree = "<group>"; };
+		716378EA1F1680D4001486F3 /* Cat5190059.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5190059.swift; path = SellerAppNetworkingWL/Cat5190059.swift; sourceTree = "<group>"; };
+		716378EB1F1680D4001486F3 /* Cat5280345.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5280345.swift; path = SellerAppNetworkingWL/Cat5280345.swift; sourceTree = "<group>"; };
+		716378EC1F1680D4001486F3 /* Cat5300107.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5300107.swift; path = SellerAppNetworkingWL/Cat5300107.swift; sourceTree = "<group>"; };
+		716378ED1F1680D4001486F3 /* Cat5380214.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5380214.swift; path = SellerAppNetworkingWL/Cat5380214.swift; sourceTree = "<group>"; };
+		716378EE1F1680D4001486F3 /* Cat5380225.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5380225.swift; path = SellerAppNetworkingWL/Cat5380225.swift; sourceTree = "<group>"; };
+		716378EF1F1680D4001486F3 /* Cat5440000.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5440000.swift; path = SellerAppNetworkingWL/Cat5440000.swift; sourceTree = "<group>"; };
+		716378F01F1680D4001486F3 /* Cat5510011.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5510011.swift; path = SellerAppNetworkingWL/Cat5510011.swift; sourceTree = "<group>"; };
+		716378F11F1680D4001486F3 /* Cat5510074.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5510074.swift; path = SellerAppNetworkingWL/Cat5510074.swift; sourceTree = "<group>"; };
+		716378F21F1680D4001486F3 /* Cat5630017.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5630017.swift; path = SellerAppNetworkingWL/Cat5630017.swift; sourceTree = "<group>"; };
+		716378F31F1680D4001486F3 /* Cat5640000.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5640000.swift; path = SellerAppNetworkingWL/Cat5640000.swift; sourceTree = "<group>"; };
+		716378F41F1680D4001486F3 /* Cat5660000.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5660000.swift; path = SellerAppNetworkingWL/Cat5660000.swift; sourceTree = "<group>"; };
+		716378F51F1680D4001486F3 /* Cat5690007.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat5690007.swift; path = SellerAppNetworkingWL/Cat5690007.swift; sourceTree = "<group>"; };
+		716378F61F1680D4001486F3 /* Cat21010034.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat21010034.swift; path = SellerAppNetworkingWL/Cat21010034.swift; sourceTree = "<group>"; };
+		716378F71F1680D4001486F3 /* Cat21010189.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat21010189.swift; path = SellerAppNetworkingWL/Cat21010189.swift; sourceTree = "<group>"; };
+		716378F81F1680D4001486F3 /* Cat21010228.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cat21010228.swift; path = SellerAppNetworkingWL/Cat21010228.swift; sourceTree = "<group>"; };
+		716378F91F1680D4001486F3 /* Catst378819.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst378819.swift; path = SellerAppNetworkingWL/Catst378819.swift; sourceTree = "<group>"; };
+		716378FA1F1680D4001486F3 /* Catst392789.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst392789.swift; path = SellerAppNetworkingWL/Catst392789.swift; sourceTree = "<group>"; };
+		716378FB1F1680D4001486F3 /* Catst394074.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst394074.swift; path = SellerAppNetworkingWL/Catst394074.swift; sourceTree = "<group>"; };
+		716378FC1F1680D4001486F3 /* Catst413095.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst413095.swift; path = SellerAppNetworkingWL/Catst413095.swift; sourceTree = "<group>"; };
+		716378FD1F1680D4001486F3 /* Catst418527.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst418527.swift; path = SellerAppNetworkingWL/Catst418527.swift; sourceTree = "<group>"; };
+		716378FE1F1680D4001486F3 /* Catst420836.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420836.swift; path = SellerAppNetworkingWL/Catst420836.swift; sourceTree = "<group>"; };
+		716378FF1F1680D4001486F3 /* Catst420837.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420837.swift; path = SellerAppNetworkingWL/Catst420837.swift; sourceTree = "<group>"; };
+		716379001F1680D4001486F3 /* Catst420838.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420838.swift; path = SellerAppNetworkingWL/Catst420838.swift; sourceTree = "<group>"; };
+		716379011F1680D4001486F3 /* Catst420839.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420839.swift; path = SellerAppNetworkingWL/Catst420839.swift; sourceTree = "<group>"; };
+		716379021F1680D4001486F3 /* Catst420840.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420840.swift; path = SellerAppNetworkingWL/Catst420840.swift; sourceTree = "<group>"; };
+		716379031F1680D4001486F3 /* Catst420841.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420841.swift; path = SellerAppNetworkingWL/Catst420841.swift; sourceTree = "<group>"; };
+		716379041F1680D4001486F3 /* Catst420842.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420842.swift; path = SellerAppNetworkingWL/Catst420842.swift; sourceTree = "<group>"; };
+		716379051F1680D4001486F3 /* Catst420845.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420845.swift; path = SellerAppNetworkingWL/Catst420845.swift; sourceTree = "<group>"; };
+		716379061F1680D4001486F3 /* Catst420846.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420846.swift; path = SellerAppNetworkingWL/Catst420846.swift; sourceTree = "<group>"; };
+		716379071F1680D4001486F3 /* Catst420847.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420847.swift; path = SellerAppNetworkingWL/Catst420847.swift; sourceTree = "<group>"; };
+		716379081F1680D4001486F3 /* Catst420853.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420853.swift; path = SellerAppNetworkingWL/Catst420853.swift; sourceTree = "<group>"; };
+		716379091F1680D4001486F3 /* Catst420857.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420857.swift; path = SellerAppNetworkingWL/Catst420857.swift; sourceTree = "<group>"; };
+		7163790A1F1680D4001486F3 /* Catst420864.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420864.swift; path = SellerAppNetworkingWL/Catst420864.swift; sourceTree = "<group>"; };
+		7163790B1F1680D4001486F3 /* Catst420865.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420865.swift; path = SellerAppNetworkingWL/Catst420865.swift; sourceTree = "<group>"; };
+		7163790C1F1680D4001486F3 /* Catst420869.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420869.swift; path = SellerAppNetworkingWL/Catst420869.swift; sourceTree = "<group>"; };
+		7163790D1F1680D4001486F3 /* Catst420876.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420876.swift; path = SellerAppNetworkingWL/Catst420876.swift; sourceTree = "<group>"; };
+		7163790E1F1680D4001486F3 /* Catst420884.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420884.swift; path = SellerAppNetworkingWL/Catst420884.swift; sourceTree = "<group>"; };
+		7163790F1F1680D4001486F3 /* Catst420893.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420893.swift; path = SellerAppNetworkingWL/Catst420893.swift; sourceTree = "<group>"; };
+		716379101F1680D4001486F3 /* Catst420968.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst420968.swift; path = SellerAppNetworkingWL/Catst420968.swift; sourceTree = "<group>"; };
+		716379111F1680D4001486F3 /* Catst425036.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Catst425036.swift; path = SellerAppNetworkingWL/Catst425036.swift; sourceTree = "<group>"; };
+		716379121F1680D4001486F3 /* ConsultarParametroResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultarParametroResponse.swift; path = SellerAppNetworkingWL/ConsultarParametroResponse.swift; sourceTree = "<group>"; };
+		716379131F1680D4001486F3 /* Dictionary+Union.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+Union.swift"; path = "SellerAppNetworkingWL/Dictionary+Union.swift"; sourceTree = "<group>"; };
+		716379141F1680D4001486F3 /* Facets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Facets.swift; path = SellerAppNetworkingWL/Facets.swift; sourceTree = "<group>"; };
+		716379151F1680D4001486F3 /* FirstChildProductImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstChildProductImg.swift; path = SellerAppNetworkingWL/FirstChildProductImg.swift; sourceTree = "<group>"; };
+		716379161F1680D4001486F3 /* L1Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L1Categories.swift; path = SellerAppNetworkingWL/L1Categories.swift; sourceTree = "<group>"; };
+		716379171F1680D4001486F3 /* L2CategoryInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L2CategoryInfo.swift; path = SellerAppNetworkingWL/L2CategoryInfo.swift; sourceTree = "<group>"; };
+		716379181F1680D4001486F3 /* L3CategoryInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L3CategoryInfo.swift; path = SellerAppNetworkingWL/L3CategoryInfo.swift; sourceTree = "<group>"; };
+		716379191F1680D4001486F3 /* ListaArticulos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaArticulos.swift; path = SellerAppNetworkingWL/ListaArticulos.swift; sourceTree = "<group>"; };
+		7163791A1F1680D4001486F3 /* ListaDirecciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaDirecciones.swift; path = SellerAppNetworkingWL/ListaDirecciones.swift; sourceTree = "<group>"; };
+		7163791B1F1680D4001486F3 /* ListaEventoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaEventoResponse.swift; path = SellerAppNetworkingWL/ListaEventoResponse.swift; sourceTree = "<group>"; };
+		7163791C1F1680D4001486F3 /* ListaEventos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaEventos.swift; path = SellerAppNetworkingWL/ListaEventos.swift; sourceTree = "<group>"; };
+		7163791D1F1680D4001486F3 /* ListaFestejados.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaFestejados.swift; path = SellerAppNetworkingWL/ListaFestejados.swift; sourceTree = "<group>"; };
+		7163791E1F1680D4001486F3 /* ListaTiposMesa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaTiposMesa.swift; path = SellerAppNetworkingWL/ListaTiposMesa.swift; sourceTree = "<group>"; };
+		7163791F1F1680D4001486F3 /* ObtenerTiposMesaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObtenerTiposMesaResponse.swift; path = SellerAppNetworkingWL/ObtenerTiposMesaResponse.swift; sourceTree = "<group>"; };
+		716379201F1680D4001486F3 /* PriceRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceRange.swift; path = SellerAppNetworkingWL/PriceRange.swift; sourceTree = "<group>"; };
+		716379211F1680D4001486F3 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Results.swift; path = SellerAppNetworkingWL/Results.swift; sourceTree = "<group>"; };
+		716379221F1680D4001486F3 /* WorklightResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightResponse.swift; path = SellerAppNetworkingWL/WorklightResponse.swift; sourceTree = "<group>"; };
+		716379231F1680D4001486F3 /* WorklightServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightServiceProtocol.swift; path = SellerAppNetworkingWL/WorklightServiceProtocol.swift; sourceTree = "<group>"; };
+		716379241F1680D4001486F3 /* WorklightServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightServiceProvider.swift; path = SellerAppNetworkingWL/WorklightServiceProvider.swift; sourceTree = "<group>"; };
+		716379251F1680D4001486F3 /* WorklightShippingAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightShippingAddress.swift; path = SellerAppNetworkingWL/WorklightShippingAddress.swift; sourceTree = "<group>"; };
+		716379261F1680D4001486F3 /* WorklightShippingProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightShippingProduct.swift; path = SellerAppNetworkingWL/WorklightShippingProduct.swift; sourceTree = "<group>"; };
+		716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightSOMSProduct.swift; path = SellerAppNetworkingWL/WorklightSOMSProduct.swift; sourceTree = "<group>"; };
+		716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemisionesConsultaOrdenResponse.swift; path = SellerAppNetworkingWL/RemisionesConsultaOrdenResponse.swift; sourceTree = "<group>"; };
+		716379BF1F168B38001486F3 /* DireccionDestinatario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DireccionDestinatario.swift; sourceTree = "<group>"; };
+		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,8 +281,11 @@
 		43AECCB51EFB1B7A00D1B243 = {
 			isa = PBXGroup;
 			children = (
+				716378AE1F1680C2001486F3 /* ObjectMapper */,
 				43AECCC11EFB1B7A00D1B243 /* SellerAppNetworkingWL */,
 				43AECCC01EFB1B7A00D1B243 /* Products */,
+				8DBFEEF476D3BA1C7A9A8843 /* Pods */,
+				BA3992094B35ADC99747D760 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +306,153 @@
 			path = SellerAppNetworkingWL;
 			sourceTree = "<group>";
 		};
+		716378AE1F1680C2001486F3 /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */,
+				716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */,
+				716378B11F1680D4001486F3 /* Cat170339.swift */,
+				716378B21F1680D4001486F3 /* Cat480186.swift */,
+				716378B31F1680D4001486F3 /* Cat480332.swift */,
+				716378B41F1680D4001486F3 /* Cat610025.swift */,
+				716378B51F1680D4001486F3 /* Cat610036.swift */,
+				716378B61F1680D4001486F3 /* Cat670055.swift */,
+				716378B71F1680D4001486F3 /* Cat850172.swift */,
+				716378B81F1680D4001486F3 /* Cat860739.swift */,
+				716378B91F1680D4001486F3 /* Cat910605.swift */,
+				716378BA1F1680D4001486F3 /* Cat910629.swift */,
+				716378BB1F1680D4001486F3 /* Cat910660.swift */,
+				716378BC1F1680D4001486F3 /* Cat910740.swift */,
+				716378BD1F1680D4001486F3 /* Cat1060780.swift */,
+				716378BE1F1680D4001486F3 /* Cat1080656.swift */,
+				716378BF1F1680D4001486F3 /* Cat1100732.swift */,
+				716378C01F1680D4001486F3 /* Cat1100739.swift */,
+				716378C11F1680D4001486F3 /* Cat1200649.swift */,
+				716378C21F1680D4001486F3 /* Cat1200686.swift */,
+				716378C31F1680D4001486F3 /* Cat1200751.swift */,
+				716378C41F1680D4001486F3 /* Cat1250612.swift */,
+				716378C51F1680D4001486F3 /* Cat1250621.swift */,
+				716378C61F1680D4001486F3 /* Cat1300743.swift */,
+				716378C71F1680D4001486F3 /* Cat1330604.swift */,
+				716378C81F1680D4001486F3 /* Cat1350731.swift */,
+				716378C91F1680D4001486F3 /* Cat2119911.swift */,
+				716378CA1F1680D4001486F3 /* Cat3830001.swift */,
+				716378CB1F1680D4001486F3 /* Cat4020016.swift */,
+				716378CC1F1680D4001486F3 /* Cat4050000.swift */,
+				716378CD1F1680D4001486F3 /* Cat4120003.swift */,
+				716378CE1F1680D4001486F3 /* Cat4190003.swift */,
+				716378CF1F1680D4001486F3 /* Cat4190004.swift */,
+				716378D01F1680D4001486F3 /* Cat4190005.swift */,
+				716378D11F1680D4001486F3 /* Cat4240006.swift */,
+				716378D21F1680D4001486F3 /* Cat4260003.swift */,
+				716378D31F1680D4001486F3 /* Cat4330033.swift */,
+				716378D41F1680D4001486F3 /* Cat4370401.swift */,
+				716378D51F1680D4001486F3 /* Cat4450173.swift */,
+				716378D61F1680D4001486F3 /* Cat4450237.swift */,
+				716378D71F1680D4001486F3 /* Cat4470002.swift */,
+				716378D81F1680D4001486F3 /* Cat4470006.swift */,
+				716378D91F1680D4001486F3 /* Cat4490175.swift */,
+				716378DA1F1680D4001486F3 /* Cat4570008.swift */,
+				716378DB1F1680D4001486F3 /* Cat4920000.swift */,
+				716378DC1F1680D4001486F3 /* Cat4930074.swift */,
+				716378DD1F1680D4001486F3 /* Cat4980014.swift */,
+				716378DE1F1680D4001486F3 /* Cat4990127.swift */,
+				716378DF1F1680D4001486F3 /* Cat4990185.swift */,
+				716378E01F1680D4001486F3 /* Cat4990193.swift */,
+				716378E11F1680D4001486F3 /* Cat4990218.swift */,
+				716378E21F1680D4001486F3 /* Cat4990262.swift */,
+				716378E31F1680D4001486F3 /* Cat4990318.swift */,
+				716378E41F1680D4001486F3 /* Cat5010005.swift */,
+				716378E51F1680D4001486F3 /* Cat5020003.swift */,
+				716378E61F1680D4001486F3 /* Cat5020010.swift */,
+				716378E71F1680D4001486F3 /* Cat5020014.swift */,
+				716378E81F1680D4001486F3 /* Cat5040494.swift */,
+				716378E91F1680D4001486F3 /* Cat5190016.swift */,
+				716378EA1F1680D4001486F3 /* Cat5190059.swift */,
+				716378EB1F1680D4001486F3 /* Cat5280345.swift */,
+				716378EC1F1680D4001486F3 /* Cat5300107.swift */,
+				716378ED1F1680D4001486F3 /* Cat5380214.swift */,
+				716378EE1F1680D4001486F3 /* Cat5380225.swift */,
+				716378EF1F1680D4001486F3 /* Cat5440000.swift */,
+				716378F01F1680D4001486F3 /* Cat5510011.swift */,
+				716378F11F1680D4001486F3 /* Cat5510074.swift */,
+				716378F21F1680D4001486F3 /* Cat5630017.swift */,
+				716378F31F1680D4001486F3 /* Cat5640000.swift */,
+				716378F41F1680D4001486F3 /* Cat5660000.swift */,
+				716378F51F1680D4001486F3 /* Cat5690007.swift */,
+				716378F61F1680D4001486F3 /* Cat21010034.swift */,
+				716378F71F1680D4001486F3 /* Cat21010189.swift */,
+				716378F81F1680D4001486F3 /* Cat21010228.swift */,
+				716378F91F1680D4001486F3 /* Catst378819.swift */,
+				716378FA1F1680D4001486F3 /* Catst392789.swift */,
+				716378FB1F1680D4001486F3 /* Catst394074.swift */,
+				716378FC1F1680D4001486F3 /* Catst413095.swift */,
+				716378FD1F1680D4001486F3 /* Catst418527.swift */,
+				716378FE1F1680D4001486F3 /* Catst420836.swift */,
+				716378FF1F1680D4001486F3 /* Catst420837.swift */,
+				716379001F1680D4001486F3 /* Catst420838.swift */,
+				716379011F1680D4001486F3 /* Catst420839.swift */,
+				716379021F1680D4001486F3 /* Catst420840.swift */,
+				716379031F1680D4001486F3 /* Catst420841.swift */,
+				716379041F1680D4001486F3 /* Catst420842.swift */,
+				716379051F1680D4001486F3 /* Catst420845.swift */,
+				716379061F1680D4001486F3 /* Catst420846.swift */,
+				716379071F1680D4001486F3 /* Catst420847.swift */,
+				716379081F1680D4001486F3 /* Catst420853.swift */,
+				716379091F1680D4001486F3 /* Catst420857.swift */,
+				7163790A1F1680D4001486F3 /* Catst420864.swift */,
+				7163790B1F1680D4001486F3 /* Catst420865.swift */,
+				7163790C1F1680D4001486F3 /* Catst420869.swift */,
+				7163790D1F1680D4001486F3 /* Catst420876.swift */,
+				7163790E1F1680D4001486F3 /* Catst420884.swift */,
+				7163790F1F1680D4001486F3 /* Catst420893.swift */,
+				716379101F1680D4001486F3 /* Catst420968.swift */,
+				716379111F1680D4001486F3 /* Catst425036.swift */,
+				716379121F1680D4001486F3 /* ConsultarParametroResponse.swift */,
+				716379131F1680D4001486F3 /* Dictionary+Union.swift */,
+				716379141F1680D4001486F3 /* Facets.swift */,
+				716379151F1680D4001486F3 /* FirstChildProductImg.swift */,
+				716379161F1680D4001486F3 /* L1Categories.swift */,
+				716379171F1680D4001486F3 /* L2CategoryInfo.swift */,
+				716379181F1680D4001486F3 /* L3CategoryInfo.swift */,
+				716379191F1680D4001486F3 /* ListaArticulos.swift */,
+				7163791A1F1680D4001486F3 /* ListaDirecciones.swift */,
+				7163791B1F1680D4001486F3 /* ListaEventoResponse.swift */,
+				7163791C1F1680D4001486F3 /* ListaEventos.swift */,
+				7163791D1F1680D4001486F3 /* ListaFestejados.swift */,
+				7163791E1F1680D4001486F3 /* ListaTiposMesa.swift */,
+				7163791F1F1680D4001486F3 /* ObtenerTiposMesaResponse.swift */,
+				716379201F1680D4001486F3 /* PriceRange.swift */,
+				716379211F1680D4001486F3 /* Results.swift */,
+				716379221F1680D4001486F3 /* WorklightResponse.swift */,
+				716379231F1680D4001486F3 /* WorklightServiceProtocol.swift */,
+				716379241F1680D4001486F3 /* WorklightServiceProvider.swift */,
+				716379251F1680D4001486F3 /* WorklightShippingAddress.swift */,
+				716379261F1680D4001486F3 /* WorklightShippingProduct.swift */,
+				716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */,
+				716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */,
+				716379BF1F168B38001486F3 /* DireccionDestinatario.swift */,
+			);
+			name = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		8DBFEEF476D3BA1C7A9A8843 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */,
+				A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA3992094B35ADC99747D760 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -70,10 +471,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43AECCC71EFB1B7A00D1B243 /* Build configuration list for PBXNativeTarget "SellerAppNetworkingWL" */;
 			buildPhases = (
+				4D10429DC22F9C17F945BA30 /* [CP] Check Pods Manifest.lock */,
 				43AECCBA1EFB1B7A00D1B243 /* Sources */,
 				43AECCBB1EFB1B7A00D1B243 /* Frameworks */,
 				43AECCBC1EFB1B7A00D1B243 /* Headers */,
 				43AECCBD1EFB1B7A00D1B243 /* Resources */,
+				AA9A7B18B80D0F89AE07B45E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +499,7 @@
 					43AECCBE1EFB1B7A00D1B243 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7683R2HRBA;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,11 +531,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D10429DC22F9C17F945BA30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA9A7B18B80D0F89AE07B45E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43AECCBA1EFB1B7A00D1B243 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7163798F1F1680D4001486F3 /* L1Categories.swift in Sources */,
+				716379961F1680D4001486F3 /* ListaFestejados.swift in Sources */,
+				716379921F1680D4001486F3 /* ListaArticulos.swift in Sources */,
+				716379591F1680D4001486F3 /* Cat4990193.swift in Sources */,
+				7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */,
+				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
+				716379881F1680D4001486F3 /* Catst420893.swift in Sources */,
+				7163794A1F1680D4001486F3 /* Cat4240006.swift in Sources */,
+				716379851F1680D4001486F3 /* Catst420869.swift in Sources */,
+				716379941F1680D4001486F3 /* ListaEventoResponse.swift in Sources */,
+				716379871F1680D4001486F3 /* Catst420884.swift in Sources */,
+				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
+				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
+				716379991F1680D4001486F3 /* PriceRange.swift in Sources */,
+				7163794C1F1680D4001486F3 /* Cat4330033.swift in Sources */,
+				7163799F1F1680D4001486F3 /* WorklightShippingProduct.swift in Sources */,
+				716379791F1680D4001486F3 /* Catst420838.swift in Sources */,
+				716379711F1680D4001486F3 /* Cat21010228.swift in Sources */,
+				716379571F1680D4001486F3 /* Cat4990127.swift in Sources */,
+				7163796B1F1680D4001486F3 /* Cat5630017.swift in Sources */,
+				716379501F1680D4001486F3 /* Cat4470002.swift in Sources */,
+				7163792F1F1680D4001486F3 /* Cat670055.swift in Sources */,
+				7163798A1F1680D4001486F3 /* Catst425036.swift in Sources */,
+				7163795C1F1680D4001486F3 /* Cat4990318.swift in Sources */,
+				7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */,
+				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
+				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
+				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
+				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
+				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
+				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
+				716379891F1680D4001486F3 /* Catst420968.swift in Sources */,
+				7163798B1F1680D4001486F3 /* ConsultarParametroResponse.swift in Sources */,
+				7163793E1F1680D4001486F3 /* Cat1250621.swift in Sources */,
+				716379721F1680D4001486F3 /* Catst378819.swift in Sources */,
+				7163799A1F1680D4001486F3 /* Results.swift in Sources */,
+				7163796D1F1680D4001486F3 /* Cat5660000.swift in Sources */,
+				716379471F1680D4001486F3 /* Cat4190003.swift in Sources */,
+				716379831F1680D4001486F3 /* Catst420864.swift in Sources */,
+				7163795D1F1680D4001486F3 /* Cat5010005.swift in Sources */,
+				716379391F1680D4001486F3 /* Cat1100739.swift in Sources */,
+				716379581F1680D4001486F3 /* Cat4990185.swift in Sources */,
+				716379601F1680D4001486F3 /* Cat5020014.swift in Sources */,
+				7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */,
+				7163797F1F1680D4001486F3 /* Catst420846.swift in Sources */,
+				7163799B1F1680D4001486F3 /* WorklightResponse.swift in Sources */,
+				7163796C1F1680D4001486F3 /* Cat5640000.swift in Sources */,
+				7163799E1F1680D4001486F3 /* WorklightShippingAddress.swift in Sources */,
+				7163798D1F1680D4001486F3 /* Facets.swift in Sources */,
+				7163797A1F1680D4001486F3 /* Catst420839.swift in Sources */,
+				7163799D1F1680D4001486F3 /* WorklightServiceProvider.swift in Sources */,
+				7163794E1F1680D4001486F3 /* Cat4450173.swift in Sources */,
+				7163794D1F1680D4001486F3 /* Cat4370401.swift in Sources */,
+				716379761F1680D4001486F3 /* Catst418527.swift in Sources */,
+				716379C01F168B38001486F3 /* DireccionDestinatario.swift in Sources */,
+				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
+				716379441F1680D4001486F3 /* Cat4020016.swift in Sources */,
+				716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */,
+				716379951F1680D4001486F3 /* ListaEventos.swift in Sources */,
+				7163793F1F1680D4001486F3 /* Cat1300743.swift in Sources */,
+				716379551F1680D4001486F3 /* Cat4930074.swift in Sources */,
+				716379311F1680D4001486F3 /* Cat860739.swift in Sources */,
+				716379841F1680D4001486F3 /* Catst420865.swift in Sources */,
+				7163792A1F1680D4001486F3 /* Cat170339.swift in Sources */,
+				716379331F1680D4001486F3 /* Cat910629.swift in Sources */,
+				716379751F1680D4001486F3 /* Catst413095.swift in Sources */,
+				716379861F1680D4001486F3 /* Catst420876.swift in Sources */,
+				7163797D1F1680D4001486F3 /* Catst420842.swift in Sources */,
+				7163795A1F1680D4001486F3 /* Cat4990218.swift in Sources */,
+				7163796F1F1680D4001486F3 /* Cat21010034.swift in Sources */,
+				716379411F1680D4001486F3 /* Cat1350731.swift in Sources */,
+				716379481F1680D4001486F3 /* Cat4190004.swift in Sources */,
+				7163795F1F1680D4001486F3 /* Cat5020010.swift in Sources */,
+				7163792B1F1680D4001486F3 /* Cat480186.swift in Sources */,
+				716379801F1680D4001486F3 /* Catst420847.swift in Sources */,
+				716379421F1680D4001486F3 /* Cat2119911.swift in Sources */,
+				7163794F1F1680D4001486F3 /* Cat4450237.swift in Sources */,
+				716379811F1680D4001486F3 /* Catst420853.swift in Sources */,
+				7163793D1F1680D4001486F3 /* Cat1250612.swift in Sources */,
+				716379701F1680D4001486F3 /* Cat21010189.swift in Sources */,
+				716379681F1680D4001486F3 /* Cat5440000.swift in Sources */,
+				716379351F1680D4001486F3 /* Cat910740.swift in Sources */,
+				716379511F1680D4001486F3 /* Cat4470006.swift in Sources */,
+				716379611F1680D4001486F3 /* Cat5040494.swift in Sources */,
+				716379461F1680D4001486F3 /* Cat4120003.swift in Sources */,
+				7163797C1F1680D4001486F3 /* Catst420841.swift in Sources */,
+				716379541F1680D4001486F3 /* Cat4920000.swift in Sources */,
+				7163796E1F1680D4001486F3 /* Cat5690007.swift in Sources */,
+				7163798C1F1680D4001486F3 /* Dictionary+Union.swift in Sources */,
+				716379691F1680D4001486F3 /* Cat5510011.swift in Sources */,
+				716379971F1680D4001486F3 /* ListaTiposMesa.swift in Sources */,
+				716379931F1680D4001486F3 /* ListaDirecciones.swift in Sources */,
+				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
+				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
+				7163793B1F1680D4001486F3 /* Cat1200686.swift in Sources */,
+				716379621F1680D4001486F3 /* Cat5190016.swift in Sources */,
+				7163795E1F1680D4001486F3 /* Cat5020003.swift in Sources */,
+				716379671F1680D4001486F3 /* Cat5380225.swift in Sources */,
+				716379381F1680D4001486F3 /* Cat1100732.swift in Sources */,
+				716379731F1680D4001486F3 /* Catst392789.swift in Sources */,
+				7163799C1F1680D4001486F3 /* WorklightServiceProtocol.swift in Sources */,
+				716379321F1680D4001486F3 /* Cat910605.swift in Sources */,
+				716379531F1680D4001486F3 /* Cat4570008.swift in Sources */,
+				716379401F1680D4001486F3 /* Cat1330604.swift in Sources */,
+				7163792D1F1680D4001486F3 /* Cat610025.swift in Sources */,
+				716379631F1680D4001486F3 /* Cat5190059.swift in Sources */,
+				7163793C1F1680D4001486F3 /* Cat1200751.swift in Sources */,
+				716379281F1680D4001486F3 /* AlamofireExtensions.swift in Sources */,
+				7163792C1F1680D4001486F3 /* Cat480332.swift in Sources */,
+				716379651F1680D4001486F3 /* Cat5300107.swift in Sources */,
+				716379371F1680D4001486F3 /* Cat1080656.swift in Sources */,
+				716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */,
+				716379491F1680D4001486F3 /* Cat4190005.swift in Sources */,
+				716379781F1680D4001486F3 /* Catst420837.swift in Sources */,
+				7163793A1F1680D4001486F3 /* Cat1200649.swift in Sources */,
+				716379911F1680D4001486F3 /* L3CategoryInfo.swift in Sources */,
+				716379561F1680D4001486F3 /* Cat4980014.swift in Sources */,
+				716379291F1680D4001486F3 /* BusquedaEventoResponse.swift in Sources */,
+				716379521F1680D4001486F3 /* Cat4490175.swift in Sources */,
+				716379661F1680D4001486F3 /* Cat5380214.swift in Sources */,
+				716379901F1680D4001486F3 /* L2CategoryInfo.swift in Sources */,
+				7163794B1F1680D4001486F3 /* Cat4260003.swift in Sources */,
+				716379341F1680D4001486F3 /* Cat910660.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +799,9 @@
 		};
 		43AECCC81EFB1B7A00D1B243 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7683R2HRBA;
@@ -252,13 +814,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deloitte.SellerAppNetworkingWL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		43AECCC91EFB1B7A00D1B243 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7683R2HRBA;
@@ -294,6 +859,7 @@
 				43AECCC91EFB1B7A00D1B243 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,7 +19,8 @@ public class WorklightResponse: Mappable{
     public var consultarParametroResponse: ConsultarParametroResponse?
     public var busquedaEventoResponse: BusquedaEventoResponse?
     public var listaEventoResponse: ListaEventoResponse?
-    
+    public var remisionesConsultaOrdenResponse: RemisionesConsultaOrdenResponse?
+
     public required init?(map: Map){
     }
     public func mapping(map: Map){
@@ -32,5 +33,6 @@ public class WorklightResponse: Mappable{
         consultarParametroResponse <- map["consultarParametroResponse"]
         busquedaEventoResponse <- map["busquedaEventoResponse"]
         listaEventoResponse <- map["listaEventoResponse"]
+        remisionesConsultaOrdenResponse <- map["Remisiones_consulta_ordenResponse"]
     }
 }

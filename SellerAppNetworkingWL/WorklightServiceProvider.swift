@@ -507,10 +507,52 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func municiplesInEstadoWithId(estadoId: String) {
         
     }
-    public func orderFollowUpGetOrderDetail(orderNumber: String) {
+    public func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
+        
+        let params = [
+            "consulta_ordenRequest" : [
+                "IndicadorConsulta" : (orderNumber.hasPrefix("90") ? "OV" : "RM"),
+                "OrdenEntrega_Remision" : orderNumber
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .GetOrderDetail, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
         
     }
-    public func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token: String, userId: String) {
+    public func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token: String, userId: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
+        
+        
+        let params = [
+            "ActualizarOBS_FechaEntregaBTRequest" : [
+                "FechaPropuesta"    : date ?? "",
+                "IndicadorServicio" : (comments == nil ? "FEC" : "OBS"),
+                "IndicadorTipo"     : (orderNumber.hasPrefix("90") ? "OV" : "RM"),
+                "Observaciones"     : comments ?? "",
+                "OrdenEntrega"      : orderNumber,
+                "SKU"               : sku ?? "",
+                "Usuario"           : "",
+                "inCadenaValidacion": token,
+                "inUser"            : userId
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .UpdateDateCommentOrder, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
         
     }
     public func productsForCategoryId(categoryId: String, page: String?, facets: [String]?, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {

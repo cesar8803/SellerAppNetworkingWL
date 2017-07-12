@@ -113,8 +113,8 @@ public protocol WorklightServiceProtocol
     func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool)
     
     //MARK: - Order follow-up
-    func orderFollowUpGetOrderDetail(orderNumber: String)
-    func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token : String, userId : String)
+    func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+    func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token : String, userId : String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
     //MARK: - Persistent Shopping List
 
