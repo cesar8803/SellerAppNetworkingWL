@@ -130,7 +130,7 @@
 		7163799F1F1680D4001486F3 /* WorklightShippingProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379261F1680D4001486F3 /* WorklightShippingProduct.swift */; };
 		716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */; };
 		716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */; };
-		716379C01F168B38001486F3 /* DireccionDestinatario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379BF1F168B38001486F3 /* DireccionDestinatario.swift */; };
+		716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379CD1F16903C001486F3 /* DireccionDestinatario.swift */; };
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
 /* End PBXBuildFile section */
 
@@ -261,7 +261,7 @@
 		716379261F1680D4001486F3 /* WorklightShippingProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightShippingProduct.swift; path = SellerAppNetworkingWL/WorklightShippingProduct.swift; sourceTree = "<group>"; };
 		716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightSOMSProduct.swift; path = SellerAppNetworkingWL/WorklightSOMSProduct.swift; sourceTree = "<group>"; };
 		716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemisionesConsultaOrdenResponse.swift; path = SellerAppNetworkingWL/RemisionesConsultaOrdenResponse.swift; sourceTree = "<group>"; };
-		716379BF1F168B38001486F3 /* DireccionDestinatario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DireccionDestinatario.swift; sourceTree = "<group>"; };
+		716379CD1F16903C001486F3 /* DireccionDestinatario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DireccionDestinatario.swift; path = SellerAppNetworkingWL/DireccionDestinatario.swift; sourceTree = "<group>"; };
 		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +309,7 @@
 		716378AE1F1680C2001486F3 /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
+				716379CD1F16903C001486F3 /* DireccionDestinatario.swift */,
 				716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */,
 				716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */,
 				716378B11F1680D4001486F3 /* Cat170339.swift */,
@@ -431,7 +432,6 @@
 				716379261F1680D4001486F3 /* WorklightShippingProduct.swift */,
 				716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */,
 				716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */,
-				716379BF1F168B38001486F3 /* DireccionDestinatario.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -623,7 +623,7 @@
 				7163794E1F1680D4001486F3 /* Cat4450173.swift in Sources */,
 				7163794D1F1680D4001486F3 /* Cat4370401.swift in Sources */,
 				716379761F1680D4001486F3 /* Catst418527.swift in Sources */,
-				716379C01F168B38001486F3 /* DireccionDestinatario.swift in Sources */,
+				716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */,
 				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
 				716379441F1680D4001486F3 /* Cat4020016.swift in Sources */,
 				716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */,
