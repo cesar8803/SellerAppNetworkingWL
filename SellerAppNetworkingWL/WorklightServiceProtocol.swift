@@ -64,7 +64,7 @@ public protocol WorklightServiceProtocol
     func productsForKeyword(keyword: String, page: String?, facets: [String]?, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func lookAheadSuggestionsForKeyword(keyword: String)
     
-    func skuInventarioWithSku(sku: String)
+    func skuInventarioWithSku(sku: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     // MARK: - Catalog Info
     func getAllCategoryInfo(completion: @escaping (WorklightResponse?, NSError?) -> Void)

@@ -225,7 +225,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             var disposition: URLSession.AuthChallengeDisposition = .performDefaultHandling
             var credential: URLCredential?
             
-            print("received challenge")
             
             if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
                 disposition = URLSession.AuthChallengeDisposition.useCredential
@@ -412,11 +411,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         let requestParameters = ["ProductDetail" : ["sku" : sku, "almacenId" : storeNumber, "buscaProducto": buscaProducto]]
         let url = getRequestUrlForAdapter(adapter: .Details, procedure: .ProductDetails, parameters: requestParameters as AnyObject)
-        debugPrint("Making worklight request: \(url)")
-        
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
@@ -434,7 +430,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let url = self.getRequestUrlForAdapter(adapter: .Endeca, procedure: .AllCategoryInfo, parameters: Dictionary<String, Any>() as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
@@ -567,7 +562,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let requestParameters = ["CatalogSearch" : childParameters]
         
         let url = getRequestUrlForAdapter(adapter: .Browse, procedure: .CatalogBrowse, parameters: requestParameters as AnyObject)
-        debugPrint("Making worklight request: \(url)")
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
@@ -592,7 +586,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         let requestParameters = ["CatalogSearch" : childParameters]
         let url = getRequestUrlForAdapter(adapter: .Browse, procedure: .CatalogBrowse, parameters: requestParameters as AnyObject)
-        debugPrint("Making worklight request: \(url)")
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
@@ -627,7 +620,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistryList, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             
@@ -645,7 +637,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .GiftRegistryTypes, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             
@@ -670,7 +661,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistryList, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             
@@ -709,7 +699,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistrySearch, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             
@@ -736,8 +725,19 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func skuGenericosForSku(sku: String) {
         
     }
-    public func skuInventarioWithSku(sku: String) {
+    public func skuInventarioWithSku(sku: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
+        let parameters = ["ConsultaSku_InventarioRequest" : ["Articulo" : sku]]
+        let url = getRequestUrlForAdapter(adapter: .Inventario, procedure: .SkuInventario, parameters: parameters as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
     }
     public func ssoTokenIsValid(token: String, systemID: String, userId: String) {
         
@@ -782,7 +782,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     func parseWorklightResponse(_ response: DataResponse<Data>)->(WorklightResponse?, NSError?){
     
-        print("response \(response) in \(Thread.current)")
         if response.error != nil {
         
             return (nil, response.error! as NSError)
@@ -818,7 +817,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .GetParameter, parameters: params as AnyObject)
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            print("response \(response) in \(Thread.current)")
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             
