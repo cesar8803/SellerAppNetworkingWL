@@ -11,7 +11,7 @@ s.requires_arc = true
 
 # 2 Version
 
-s.version = "1.0.4"
+s.version = "1.0.5"
 
 
 # 3 License
