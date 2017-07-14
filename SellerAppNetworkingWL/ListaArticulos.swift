@@ -15,6 +15,10 @@ public class ListaArticulos: Mappable{
     public var url: String?
     public var cantidad: Float?
     public var clasificacion: String?
+    public var fecEntrega: String?
+    public var descEstado: String?
+    public var descripcion: String?
+    public var estado: String?
     
     public required init?(map: Map){
     }
@@ -24,5 +28,9 @@ public class ListaArticulos: Mappable{
         url <- map["url"]
         cantidad <- map["cantidad"]
         clasificacion <- map["clasificacion"]
+        fecEntrega <- map["fecEntrega"]
+        descEstado <- map["descEstado"]
+        descripcion <- map["descripcion"]
+        estado <- map["estado"]
     }
 }
