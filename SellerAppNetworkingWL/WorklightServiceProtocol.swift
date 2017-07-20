@@ -53,7 +53,7 @@ public protocol WorklightServiceProtocol
     func addSKUAndQuantityToSOMSOrder(userId: String, token: String, sku: String, quantity: String, orderNumber: String,noSpotSku: String?, noSpotQuantity: String?)
     func changeDeliveryDateOfSKUOnSOMSOrder(userId: String, token: String, orderNumber: String, sku: String, date: String, originalDateString: String)
     func changeSKUToClienteAvisaOnSOMSOrder(userId: String, token: String, orderNumber: String, sku: String)
-    func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String,zip: String)
+    func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String,zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String)
     func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String)
   func updateCustomerAddressSOMS(orderNumber : String, lada: String, telephone : String, inFldTelephone : String, clientRecord : String, inEvent : String, inEventCard : String, inCard : String, selectRecordAsen : String, eventLada : String, inTelephoneEvent : String, isMoreDir : String , inPassword : String, inUser : String, token: String)

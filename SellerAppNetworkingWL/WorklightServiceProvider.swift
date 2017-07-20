@@ -466,7 +466,30 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func getSurveyId(paymentTypes: [Int]) {
         
     }
-    public func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String, zip: String) {
+    public func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String, zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["getConsultaSKUPool" : [
+            "ModelVariables" : [
+                "inPassword" : "",
+                "inUser" : userId,
+                "inCadenaValidacion" : token
+            ],
+            "getConsultaSKUPoolFilters" : [
+                "inCP" : zip,
+                "inSKU": sku]
+            ]
+        ]
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPool, procedure: .SOMSDetails, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func isValidToSaleByExtendedCatalog(sku: [String]) {

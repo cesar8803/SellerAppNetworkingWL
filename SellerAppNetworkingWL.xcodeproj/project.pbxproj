@@ -134,6 +134,9 @@
 		71C31D771F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */; };
 		71C31D7B1F192858003E7449 /* SapInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7A1F192858003E7449 /* SapInventario.swift */; };
 		71C31D7D1F19289A003E7449 /* SapSkuInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7C1F19289A003E7449 /* SapSkuInventario.swift */; };
+		71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */; };
+		71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */; };
+		71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */; };
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
 /* End PBXBuildFile section */
 
@@ -268,6 +271,9 @@
 		71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaSkuInventarioResponse.swift; path = SellerAppNetworkingWL/ConsultaSkuInventarioResponse.swift; sourceTree = "<group>"; };
 		71C31D7A1F192858003E7449 /* SapInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SapInventario.swift; path = SellerAppNetworkingWL/SapInventario.swift; sourceTree = "<group>"; };
 		71C31D7C1F19289A003E7449 /* SapSkuInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SapSkuInventario.swift; path = SellerAppNetworkingWL/SapSkuInventario.swift; sourceTree = "<group>"; };
+		71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolResponse.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolResponse.swift; sourceTree = "<group>"; };
+		71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolRecord.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolRecord.swift; sourceTree = "<group>"; };
+		71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolHeader.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolHeader.swift; sourceTree = "<group>"; };
 		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -441,6 +447,9 @@
 				71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */,
 				71C31D7A1F192858003E7449 /* SapInventario.swift */,
 				71C31D7C1F19289A003E7449 /* SapSkuInventario.swift */,
+				71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */,
+				71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */,
+				71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 				716379941F1680D4001486F3 /* ListaEventoResponse.swift in Sources */,
 				716379871F1680D4001486F3 /* Catst420884.swift in Sources */,
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
+				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
 				716379991F1680D4001486F3 /* PriceRange.swift in Sources */,
 				7163794C1F1680D4001486F3 /* Cat4330033.swift in Sources */,
@@ -605,6 +615,7 @@
 				7163798A1F1680D4001486F3 /* Catst425036.swift in Sources */,
 				7163795C1F1680D4001486F3 /* Cat4990318.swift in Sources */,
 				7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */,
+				71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */,
 				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
 				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
@@ -612,6 +623,7 @@
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
 				716379891F1680D4001486F3 /* Catst420968.swift in Sources */,
+				71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */,
 				7163798B1F1680D4001486F3 /* ConsultarParametroResponse.swift in Sources */,
 				7163793E1F1680D4001486F3 /* Cat1250621.swift in Sources */,
 				716379721F1680D4001486F3 /* Catst378819.swift in Sources */,
