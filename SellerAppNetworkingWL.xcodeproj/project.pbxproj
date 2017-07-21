@@ -133,7 +133,7 @@
 		716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379CD1F16903C001486F3 /* DireccionDestinatario.swift */; };
 		71C31D771F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */; };
 		71C31D7B1F192858003E7449 /* SapInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7A1F192858003E7449 /* SapInventario.swift */; };
-		71C31D7D1F19289A003E7449 /* SapSkuInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7C1F19289A003E7449 /* SapSkuInventario.swift */; };
+		71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */; };
 		71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */; };
 		71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */; };
 		71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */; };
@@ -270,7 +270,7 @@
 		716379CD1F16903C001486F3 /* DireccionDestinatario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DireccionDestinatario.swift; path = SellerAppNetworkingWL/DireccionDestinatario.swift; sourceTree = "<group>"; };
 		71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaSkuInventarioResponse.swift; path = SellerAppNetworkingWL/ConsultaSkuInventarioResponse.swift; sourceTree = "<group>"; };
 		71C31D7A1F192858003E7449 /* SapInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SapInventario.swift; path = SellerAppNetworkingWL/SapInventario.swift; sourceTree = "<group>"; };
-		71C31D7C1F19289A003E7449 /* SapSkuInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SapSkuInventario.swift; path = SellerAppNetworkingWL/SapSkuInventario.swift; sourceTree = "<group>"; };
+		71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLSapSkuInventario.swift; path = SellerAppNetworkingWL/WLSapSkuInventario.swift; sourceTree = "<group>"; };
 		71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolResponse.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolResponse.swift; sourceTree = "<group>"; };
 		71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolRecord.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolRecord.swift; sourceTree = "<group>"; };
 		71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolHeader.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolHeader.swift; sourceTree = "<group>"; };
@@ -446,7 +446,7 @@
 				716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */,
 				71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */,
 				71C31D7A1F192858003E7449 /* SapInventario.swift */,
-				71C31D7C1F19289A003E7449 /* SapSkuInventario.swift */,
+				71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */,
 				71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */,
 				71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */,
 				71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */,
@@ -592,7 +592,7 @@
 				716379961F1680D4001486F3 /* ListaFestejados.swift in Sources */,
 				716379921F1680D4001486F3 /* ListaArticulos.swift in Sources */,
 				716379591F1680D4001486F3 /* Cat4990193.swift in Sources */,
-				71C31D7D1F19289A003E7449 /* SapSkuInventario.swift in Sources */,
+				71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */,
 				7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */,
 				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
 				716379881F1680D4001486F3 /* Catst420893.swift in Sources */,

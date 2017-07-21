@@ -1,5 +1,5 @@
 //
-//  SapSkuInventario.swift
+//  WLSapSkuInventario.swift
 //  SellerAppNetworkingWL
 //
 //  Created by Luis Guillermo Cuevas García on 14/07/17.
