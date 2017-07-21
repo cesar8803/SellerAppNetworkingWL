@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class SapInventario: Mappable{
-    public var sap_sku_inventario: [SapSkuInventario]?
+    public var sap_sku_inventario: [WLSapSkuInventario]?
     
     public required init?(map: Map){
     }

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class SapSkuInventario: Mappable{
+public class WLSapSkuInventario: Mappable{
     public var disp: String?
     public var sku: String?
     public var piso: String?
