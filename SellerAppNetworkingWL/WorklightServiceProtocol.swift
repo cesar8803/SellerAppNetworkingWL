@@ -115,6 +115,8 @@ public protocol WorklightServiceProtocol
     //MARK: - Order follow-up
     func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token : String, userId : String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+    func orderFollowUpScool(orderNumber: String, idRegional: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+
     
     //MARK: - Persistent Shopping List
 

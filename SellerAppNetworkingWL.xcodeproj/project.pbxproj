@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
+		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
 		716379281F1680D4001486F3 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */; };
 		716379291F1680D4001486F3 /* BusquedaEventoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */; };
 		7163792A1F1680D4001486F3 /* Cat170339.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B11F1680D4001486F3 /* Cat170339.swift */; };
@@ -144,6 +146,8 @@
 		43AECCBF1EFB1B7A00D1B243 /* SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingWL.h; sourceTree = "<group>"; };
 		43AECCC31EFB1B7A00D1B243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaOrdenVentaResponse.swift; path = SellerAppNetworkingWL/ConsultaOrdenVentaResponse.swift; sourceTree = "<group>"; };
+		5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineaRemisionSCOL.swift; path = SellerAppNetworkingWL/LineaRemisionSCOL.swift; sourceTree = "<group>"; };
 		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
 		716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireExtensions.swift; path = SellerAppNetworkingWL/AlamofireExtensions.swift; sourceTree = "<group>"; };
 		716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusquedaEventoResponse.swift; path = SellerAppNetworkingWL/BusquedaEventoResponse.swift; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 				71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */,
 				71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */,
 				71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */,
+				5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */,
+				5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
 				716379891F1680D4001486F3 /* Catst420968.swift in Sources */,
+				5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */,
 				71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */,
 				7163798B1F1680D4001486F3 /* ConsultarParametroResponse.swift in Sources */,
 				7163793E1F1680D4001486F3 /* Cat1250621.swift in Sources */,
@@ -693,6 +700,7 @@
 				716379671F1680D4001486F3 /* Cat5380225.swift in Sources */,
 				716379381F1680D4001486F3 /* Cat1100732.swift in Sources */,
 				716379731F1680D4001486F3 /* Catst392789.swift in Sources */,
+				5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */,
 				7163799C1F1680D4001486F3 /* WorklightServiceProtocol.swift in Sources */,
 				716379321F1680D4001486F3 /* Cat910605.swift in Sources */,
 				716379531F1680D4001486F3 /* Cat4570008.swift in Sources */,
