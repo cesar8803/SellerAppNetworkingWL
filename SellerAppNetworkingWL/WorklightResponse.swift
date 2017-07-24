@@ -22,6 +22,7 @@ public class WorklightResponse: Mappable{
     public var remisionesConsultaOrdenResponse: RemisionesConsultaOrdenResponse?
     public var consultaSku_InventarioResponse: ConsultaSkuInventarioResponse?
     public var getConsultaSKUPoolResponse: GetConsultaSkuPoolResponse?
+    public var ConsultaOrdenVentaResponse: ConsultaOrdenVentaResponse?
 
     public required init?(map: Map){
     }
@@ -38,5 +39,6 @@ public class WorklightResponse: Mappable{
         remisionesConsultaOrdenResponse <- map["Remisiones_consulta_ordenResponse"]
         consultaSku_InventarioResponse <- map["ConsultaSku_InventarioResponse"]
         getConsultaSKUPoolResponse <- map["getConsultaSKUPoolResponse"]
+        ConsultaOrdenVentaResponse <- map["ConsultaOrdenVentaResponse"]
     }
 }

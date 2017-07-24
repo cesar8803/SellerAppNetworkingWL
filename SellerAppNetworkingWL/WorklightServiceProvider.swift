@@ -64,6 +64,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Configuration = "Configuraciones"
         case NoSpot = "Catalogos"
         case Shipment = "Remisiones"
+        case Scool = "SCOL"
         case CustomerInfo = "ConsultaDatosCliente"
         case MDMWebService = "MDMWebService"
         case ArchivosWS = "ArchivosWebService"
@@ -175,7 +176,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         // Order Follow Up
         case GetOrderDetail             = "Remisiones_wbi_consulta_orden"
         case UpdateDateCommentOrder     = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
-        
+        case GetScoolDetail             = "ConsultaOrdenVentaRespService_ConsultaOrdenVenta"
         
         // Shopping list
         case SearchAddressCustomer      = "DatosCliente_BuscarDireccionCliente"
@@ -545,6 +546,31 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
+    
+    public func orderFollowUpScool(orderNumber: String, idRegional: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
+        
+        let params = [
+            "ConsultaOrdenVentaReq" : [
+                "ConsultaOrdenVentaRequest": [
+                    "numOrden" : orderNumber,
+                    "idCentroRegional" : idRegional
+                ]
+                
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .Scool, procedure: .GetScoolDetail, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
+    }
+    
     public func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token: String, userId: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
         
         
