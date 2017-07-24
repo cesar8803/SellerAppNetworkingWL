@@ -1,5 +1,5 @@
 //
-//  SapSkuInventario.swift
+//  WLSapSkuInventario.swift
 //  SellerAppNetworkingWL
 //
 //  Created by Luis Guillermo Cuevas García on 14/07/17.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class SapSkuInventario: Mappable{
+public class WLSapSkuInventario: Mappable{
     public var disp: String?
     public var sku: String?
     public var piso: String?
@@ -22,6 +22,7 @@ public class SapSkuInventario: Mappable{
     public var intransit: String?
     public var bode: String?
     public var apar: String?
+    public var storeName: String?
     
     public required init?(map: Map){
     }
