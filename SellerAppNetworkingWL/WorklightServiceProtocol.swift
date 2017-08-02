@@ -90,7 +90,7 @@ public protocol WorklightServiceProtocol
     func getShoesOrders(terminalId: Int, isWarehouse: Bool)
     
     // MARK: - Email
-    func sendEmailTo(to: String, withTitle title: String, message: String, storeType: String, attachment: (fileName: String, mimeType: String, data: NSData)?)
+    func sendEmailTo(to: String, to2: String, cc: String, withTitle title: String, message: String, storeType: String, attachment: (fileName: String, mimeType: String, data: NSData)?, withInfo info: [String : Any], completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
     // MARK: - SSO
     func ssoTokenIsValid(token: String, systemID: String, userId: String)
@@ -137,6 +137,10 @@ public protocol WorklightServiceProtocol
   
     //MARK: - Extended Catalog 
     func isValidToSaleByExtendedCatalog(sku : [String])
+    
+    //MARK: - Budget
+    
+    func saveBudget(withInfo info: [String : Any], completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
     func searchCCStores(state:String)
     func searchCCStates()
