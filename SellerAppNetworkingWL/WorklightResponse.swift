@@ -12,6 +12,7 @@ import ObjectMapper
 public class WorklightResponse: Mappable{
     public var L1Categories: L1Categories?
     public var isSuccessful: Int?
+    public var sendEmail: String?
     public var facets: [Facets]?
     public var priceRange: PriceRange?
     public var results: [Results]?
@@ -23,6 +24,9 @@ public class WorklightResponse: Mappable{
     public var consultaSku_InventarioResponse: ConsultaSkuInventarioResponse?
     public var getConsultaSKUPoolResponse: GetConsultaSkuPoolResponse?
     public var ConsultaOrdenVentaResponse: ConsultaOrdenVentaResponse?
+    public var exitoso: Int?
+    public var resultado: String?
+    public var errors: [Errors]?
 
     public required init?(map: Map){
     }
@@ -40,5 +44,9 @@ public class WorklightResponse: Mappable{
         consultaSku_InventarioResponse <- map["ConsultaSku_InventarioResponse"]
         getConsultaSKUPoolResponse <- map["getConsultaSKUPoolResponse"]
         ConsultaOrdenVentaResponse <- map["ConsultaOrdenVentaResponse"]
+        sendEmail <- map["sendEmail"]
+        exitoso <- map["exitoso"]
+        resultado <- map["resultado"]
+        errors <- map["errors"]
     }
 }

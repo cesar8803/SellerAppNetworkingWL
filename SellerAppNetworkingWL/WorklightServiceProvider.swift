@@ -69,7 +69,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case MDMWebService = "MDMWebService"
         case ArchivosWS = "ArchivosWebService"
         case ReporteVentas = "ReporteVentas"
-        
+        case Presupuesto = "Presupuesto"
     }
     
     private enum Procedure: String {
@@ -192,6 +192,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Check if product is "saleable"
         case ValidSaleExtendedCatalog = "isValidToSaleByExtendedCatalog"
+        
+        //Budget
+        case SaveBudget = "Alta_Presupuesto"
         
     }
     
@@ -768,7 +771,118 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func segmentedCreditBalanceForAccount(accountNumber: String, pin: String) {
         
     }
-    public func sendEmailTo(to: String, withTitle title: String, message: String, storeType: String, attachment: (fileName: String, mimeType: String, data: NSData)?) {
+    public func sendEmailTo(to: String, to2: String, cc: String, withTitle title: String, message: String, storeType: String, attachment: (fileName: String, mimeType: String, data: NSData)?, withInfo info: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        var parameters: [String : Any] = [
+            "storeType": storeType,
+            "to": to,
+            "to2": to2,
+            "cc": cc,
+            "subject": title,
+            "message": message
+        ]
+        
+        for (key, value) in info{
+        
+            parameters[key] = value
+        }
+        
+        if let attachment = attachment {
+            parameters["fileName"] = attachment.fileName
+            parameters["attachmentData"] = attachment.data.base64EncodedString(options: .lineLength64Characters)
+        }
+        
+        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: [:] as AnyObject)
+        
+        var authHeader  = [
+            "user-em": "appVendedor",
+            "password":  "smtpAdmin"
+        ]
+        
+        let httpHeaderDic = self.defaultHeaders()
+        
+        for (key, value) in httpHeaderDic {
+            authHeader[key] = value as? String
+        }
+        
+        // Serialize parameters into a JSON string
+        var jsonParametersString: String!
+        
+        do {
+
+            
+            jsonParametersString = try String(data: JSONSerialization.data(withJSONObject: parameters, options: .init(rawValue: 0)), encoding: .utf8)
+        }
+        catch {
+            
+        }
+        
+        let requestParameters: [String : Any]  = [
+            "json": jsonParametersString,
+        ]
+
+        _ = self.manager.request(requestURL, method: .post, parameters: requestParameters, encoding: JSONEncoding.default, headers: authHeader).responseWorklight{ [weak self](response) in
+                guard let weakSelf = self else{ return }
+                let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+                DispatchQueue.main.async {
+                    completion(result, error)
+            }
+        }
+        /*
+        
+        var parameters = [
+            "storeType": storeType,
+            "to": to,
+            "subject": title,
+            "message": message
+        ]
+        
+        if let attachment = attachment {
+            parameters["fileName"] = attachment.fileName
+            parameters["attachmentData"] = attachment.data.base64EncodedString(options: .Encoding64CharacterLineLength)
+        }
+        
+        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: [:])
+        
+        var authHeader  = [
+            "user-em": "appVendedor",
+            "password":  "smtpAdmin"
+        ]
+        
+        let httpHeaderDic = self.defaultHeaders()
+        
+        for (key, value) in httpHeaderDic {
+            authHeader[key] = value as! String
+        }
+        
+        // Serialize parameters into a JSON string
+        var jsonParametersString: String!
+        
+        do {
+            jsonParametersString = try NSString(data: JSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
+        }
+        catch {
+            
+        }
+        
+        let requestParameters = [
+            "json": jsonParametersString
+        ]
+        
+        
+        
+        _ = self.manager.request(requestURL, method: .post, parameters: requestParameters, encoding: .URL, headers: authHeader)*/
+        /*
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }*/
         
     }
     public func skuGenericosForSku(sku: String) {
@@ -802,6 +916,33 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     }
     public func updateShoesOrder(requestId: Int, terminalId: Int, state: Int) {
         
+    }
+    
+    public func saveBudget(withInfo info: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+    
+        /*
+        let params = [
+            "TSCMES12": [
+                "nombre": name ?? "",
+                "paterno": lastName ?? "",
+                "materno": secondLastName ?? "",
+                "fechaDe": date ?? "",
+                "tipo": type ?? 0,
+                "sexo": gender ?? ""
+            ]
+        ]*/
+        
+        let url = getRequestUrlForAdapter(adapter: .Presupuesto, procedure: .SaveBudget, parameters: info as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
     }
     
     /*
