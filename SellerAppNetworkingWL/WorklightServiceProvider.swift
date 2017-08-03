@@ -782,11 +782,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             "message": message
         ]
         
-        var params: [String : Any] = [:]
         for (key, value) in info{
         
             parameters[key] = value
-            params[key] = value
         }
         
         if let attachment = attachment {
@@ -794,7 +792,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             parameters["attachmentData"] = attachment.data.base64EncodedString(options: .lineLength64Characters)
         }
         
-        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: params as AnyObject)
+        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: [:] as AnyObject)
         
         var authHeader  = [
             "user-em": "appVendedor",
@@ -823,7 +821,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             "json": jsonParametersString,
         ]
 
-        _ = self.manager.request(requestURL, method: .post, parameters: requestParameters, encoding: JSONEncoding.default, headers: authHeader).responseWorklight{ [weak self](response) in
+
+        _ = self.manager.request(requestURL, method: .post, parameters: requestParameters, encoding: URLEncoding.default, headers: authHeader).responseWorklight{ [weak self](response) in
                 guard let weakSelf = self else{ return }
                 let (result, error) = weakSelf.parseWorklightResponse(response)
             
@@ -831,60 +830,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     completion(result, error)
             }
         }
-        /*
-        
-        var parameters = [
-            "storeType": storeType,
-            "to": to,
-            "subject": title,
-            "message": message
-        ]
-        
-        if let attachment = attachment {
-            parameters["fileName"] = attachment.fileName
-            parameters["attachmentData"] = attachment.data.base64EncodedString(options: .Encoding64CharacterLineLength)
-        }
-        
-        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: [:])
-        
-        var authHeader  = [
-            "user-em": "appVendedor",
-            "password":  "smtpAdmin"
-        ]
-        
-        let httpHeaderDic = self.defaultHeaders()
-        
-        for (key, value) in httpHeaderDic {
-            authHeader[key] = value as! String
-        }
-        
-        // Serialize parameters into a JSON string
-        var jsonParametersString: String!
-        
-        do {
-            jsonParametersString = try NSString(data: JSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
-        }
-        catch {
-            
-        }
-        
-        let requestParameters = [
-            "json": jsonParametersString
-        ]
-        
-        
-        
-        _ = self.manager.request(requestURL, method: .post, parameters: requestParameters, encoding: .URL, headers: authHeader)*/
-        /*
-        
-        _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            guard let weakSelf = self else{ return }
-            let (result, error) = weakSelf.parseWorklightResponse(response)
-            
-            DispatchQueue.main.async {
-                completion(result, error)
-            }
-        }*/
         
     }
     public func skuGenericosForSku(sku: String) {
@@ -921,18 +866,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     }
     
     public func saveBudget(withInfo info: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
-    
-        /*
-        let params = [
-            "TSCMES12": [
-                "nombre": name ?? "",
-                "paterno": lastName ?? "",
-                "materno": secondLastName ?? "",
-                "fechaDe": date ?? "",
-                "tipo": type ?? 0,
-                "sexo": gender ?? ""
-            ]
-        ]*/
         
         let url = getRequestUrlForAdapter(adapter: .Presupuesto, procedure: .SaveBudget, parameters: info as AnyObject)
         
