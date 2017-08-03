@@ -782,9 +782,11 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             "message": message
         ]
         
+        var params: [String : Any] = [:]
         for (key, value) in info{
         
             parameters[key] = value
+            params[key] = value
         }
         
         if let attachment = attachment {
@@ -792,7 +794,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             parameters["attachmentData"] = attachment.data.base64EncodedString(options: .lineLength64Characters)
         }
         
-        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: [:] as AnyObject)
+        let requestURL = self.getRequestUrlForAdapter(adapter: .Email, procedure: .SendEmail, parameters: params as AnyObject)
         
         var authHeader  = [
             "user-em": "appVendedor",
