@@ -315,22 +315,71 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func addSKUAndQuantityToSOMSOrder(userId: String, token: String, sku: String, quantity: String, orderNumber: String, noSpotSku: String?, noSpotQuantity: String?) {
         
     }
-    public func allEstados() {
+    public func allStatesInRepublic(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["ConsultaEdoRequest" : []]
+        let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaEdo, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func applyForCard(inApMaterno: String, inApPaterno: String, inClavePromotoria: String, inColorTarjeta: String, inEdad: Int, inEmpleadoPromotor: String, inFechaNacimiento: String, inFuenteCaptacion: String, inNombre: String, inNumFolio: String, inSexo: String, inTiendaAdmon: String, inTiendaCaptura: String, inAntiguadadDom: String, inCalleyNum: String, inCiudadMun: String, inColonia: String, inCP: String, inEdo: String, inEdoCivil: String, inEmpresaNegocio: String, inLadaDom: String, inNumDependientes: String, inPuestoDepto: String, inTelCel: String, inTelDom: String, inTipoVivienda: String, inAntiguedadEmp: String, inEmbosado: String, inIngresosTot: String, inLadaOfi: String, inTelOfi: String, inOrganization: String, inType: String, inPassword: String, inUser: String, vAmbiente: String) {
         
     }
-    public func asensInEstadoWithId(estadoId: String, municipleId: String) {
+    public func asensInStateWithId(estadoId: String, municipleId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["ConsultaAsentRequest" : ["id_edo" : estadoId, "id_mun" : municipleId]]
+        let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaAsent, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String) {
         
     }
-    public func callesCP(zip: String) {
+    public func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["ConsultaCalleCPRequest" : ["cp" : zip]]
+        let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaCalle, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
-    public func callesInAsen(asen: String) {
+    public func streetsInAsen(asen: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["ConsultaCalleARequest" : ["in_asen" : asen]]
+        let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaCalle, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+
         
     }
     public func cancelSurveyInProgress(surveyId: String, storeId: String, sectionId: String, employeeId: String, employeeName: String, ticketNumber: String, storeZone: String, storeAbbreviation: String) {
@@ -357,8 +406,18 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func changeSKUToClienteAvisaOnSOMSOrder(userId: String, token: String, orderNumber: String, sku: String) {
         
     }
-    public func coloniasInZip(zip: String) {
+    public func neighborhoodInZip(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
+        let requestParameters = ["ConsultaEMARequest" : ["cp" : zip]]
+        let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaEMA, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
     }
     public func createAddress(userId: String, token: String, isNewStreet: Bool, zip: String, calle: String, numeroExterior: String, selectRecordAsen: String, selectRecordCliente: String, tipoAsen: String, lada: String, telefono: String, betweenStreet: String?, andStreet: String?, interiorNumber: String?, edificio: String?) {
         
@@ -387,7 +446,26 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createSOMSOrderLight(userId: String, token: String, lada: String, telefono: String, fldTelefono: String, selectRecordCliente: String, selectRecordAsentamiento: String, orderComment: String?, singleAddressCustomer: Bool, eventID: String?, products: [WorklightSOMSProduct]!) {
         
     }
-    public func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String) {
+    public func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let parameters = ["CrearOrdenDevBTRequest" : ["OrdenEntrega" : deliveryOrder,
+                                                      "Comentarios" : comments,
+                                                      "Productos" : products,
+                                                      "Usuario" : "",
+                                                      "inUser" : username,
+                                                      "inCadenaValidacion" : validationString]]
+        
+        let url = getRequestUrlForAdapter(adapter: .SOMSRefund, procedure: .CreateRefundOrder, parameters: parameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
         
     }
     public func createUpdateSOMSShipmentOrder(shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, token: String, userId: String) {
@@ -526,7 +604,18 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func monederoBalanceForAccount(accountNumber: String) {
         
     }
-    public func municiplesInEstadoWithId(estadoId: String) {
+    public func districtsInStateWithId(estadoId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["ConsultaMunRequest" : ["id_edo" : estadoId]]
+        let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaMun, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
         
     }
     public func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {

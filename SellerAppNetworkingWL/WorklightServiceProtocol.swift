@@ -34,12 +34,13 @@ public protocol WorklightServiceProtocol
     func monederoBalanceForAccount(accountNumber: String)
     
     //MARK: SOMS
-    func coloniasInZip(zip: String)
-    func allEstados()
-    func municiplesInEstadoWithId(estadoId: String)
-    func asensInEstadoWithId(estadoId: String, municipleId: String)
-    func callesInAsen(asen: String)
-    func callesCP(zip: String)
+    func neighborhoodInZip(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func allStatesInRepublic(completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func districtsInStateWithId(estadoId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func asensInStateWithId(estadoId: String, municipleId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func streetsInAsen(asen: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    
     func getLoginPool(username: String, password: String,userId: String, token: String)
     func customersWithEvent(eventID: String, userId: String, token: String)
     func customersWithLada(lada: String, telefono: String, userId: String, token: String)
@@ -55,7 +56,7 @@ public protocol WorklightServiceProtocol
     func changeSKUToClienteAvisaOnSOMSOrder(userId: String, token: String, orderNumber: String, sku: String)
     func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String,zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String)
-    func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String)
+    func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
   func updateCustomerAddressSOMS(orderNumber : String, lada: String, telephone : String, inFldTelephone : String, clientRecord : String, inEvent : String, inEventCard : String, inCard : String, selectRecordAsen : String, eventLada : String, inTelephoneEvent : String, isMoreDir : String , inPassword : String, inUser : String, token: String)
   
     //Endeca
