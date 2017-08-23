@@ -10,6 +10,9 @@
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
+		71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */; };
+		71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */; };
+		71047FC71F4E21140071D381 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC61F4E21140071D381 /* Estado.swift */; };
 		71419A571F326901005F70E3 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71419A561F326901005F70E3 /* Errors.swift */; };
 		716379281F1680D4001486F3 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */; };
 		716379291F1680D4001486F3 /* BusquedaEventoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */; };
@@ -150,6 +153,9 @@
 		5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaOrdenVentaResponse.swift; path = SellerAppNetworkingWL/ConsultaOrdenVentaResponse.swift; sourceTree = "<group>"; };
 		5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineaRemisionSCOL.swift; path = SellerAppNetworkingWL/LineaRemisionSCOL.swift; sourceTree = "<group>"; };
 		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
+		71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrearOrdenDevBTResponse.swift; path = SellerAppNetworkingWL/CrearOrdenDevBTResponse.swift; sourceTree = "<group>"; };
+		71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaEdoResponse.swift; path = SellerAppNetworkingWL/ConsultaEdoResponse.swift; sourceTree = "<group>"; };
+		71047FC61F4E21140071D381 /* Estado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Estado.swift; path = SellerAppNetworkingWL/Estado.swift; sourceTree = "<group>"; };
 		71419A561F326901005F70E3 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = SellerAppNetworkingWL/Errors.swift; sourceTree = "<group>"; };
 		716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireExtensions.swift; path = SellerAppNetworkingWL/AlamofireExtensions.swift; sourceTree = "<group>"; };
 		716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusquedaEventoResponse.swift; path = SellerAppNetworkingWL/BusquedaEventoResponse.swift; sourceTree = "<group>"; };
@@ -459,6 +465,9 @@
 				5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */,
 				5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */,
 				71419A561F326901005F70E3 /* Errors.swift */,
+				71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */,
+				71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */,
+				71047FC61F4E21140071D381 /* Estado.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -627,6 +636,7 @@
 				71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */,
 				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
 				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
+				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
@@ -645,6 +655,7 @@
 				7163795D1F1680D4001486F3 /* Cat5010005.swift in Sources */,
 				716379391F1680D4001486F3 /* Cat1100739.swift in Sources */,
 				716379581F1680D4001486F3 /* Cat4990185.swift in Sources */,
+				71047FC71F4E21140071D381 /* Estado.swift in Sources */,
 				716379601F1680D4001486F3 /* Cat5020014.swift in Sources */,
 				7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */,
 				7163797F1F1680D4001486F3 /* Catst420846.swift in Sources */,
@@ -695,6 +706,7 @@
 				7163798C1F1680D4001486F3 /* Dictionary+Union.swift in Sources */,
 				716379691F1680D4001486F3 /* Cat5510011.swift in Sources */,
 				716379971F1680D4001486F3 /* ListaTiposMesa.swift in Sources */,
+				71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */,
 				716379931F1680D4001486F3 /* ListaDirecciones.swift in Sources */,
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
