@@ -29,6 +29,9 @@ public class WorklightResponse: Mappable{
     public var errors: [Errors]?
     public var crearOrdenDevBTResponse: CrearOrdenDevBTResponse?
     public var consultaEdoResponse: ConsultaEdoResponse?
+    public var consultaMunResponse: ConsultaMunResponse?
+    public var consultaAsentResponse: ConsultaAsentResponse?
+    public var consultaCalleCPResponse: ConsultaCalleCPResponse?
 
     public required init?(map: Map){
     }
@@ -52,5 +55,8 @@ public class WorklightResponse: Mappable{
         errors <- map["errors"]
         crearOrdenDevBTResponse <- map["CrearOrdenDevBTResponse"]
         consultaEdoResponse <- map["ConsultaEdoResponse"]
+        consultaMunResponse <- map["ConsultaMunResponse"]
+        consultaAsentResponse <- map["ConsultaAsentResponse"]
+        consultaCalleCPResponse <- map["ConsultaCalleCPResponse"]
     }
 }
