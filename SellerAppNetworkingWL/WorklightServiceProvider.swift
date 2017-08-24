@@ -366,9 +366,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
-    public func streetsInAsen(asen: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func streetsInAsen(asen: String, withCP cp: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        let requestParameters = ["ConsultaCalleARequest" : ["in_asen" : asen]]
+        let requestParameters = ["ConsultaCalleCPRequest" : ["cp" : cp, "in_asen" : asen]]
         let url = getRequestUrlForAdapter(adapter: .DEM, procedure: .ConsultaCalle, parameters: requestParameters as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in

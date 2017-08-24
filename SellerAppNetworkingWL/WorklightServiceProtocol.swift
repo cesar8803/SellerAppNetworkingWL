@@ -38,7 +38,7 @@ public protocol WorklightServiceProtocol
     func allStatesInRepublic(completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func districtsInStateWithId(estadoId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func asensInStateWithId(estadoId: String, municipleId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
-    func streetsInAsen(asen: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func streetsInAsen(asen: String, withCP cp: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     func getLoginPool(username: String, password: String,userId: String, token: String)
