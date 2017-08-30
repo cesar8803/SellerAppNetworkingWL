@@ -32,6 +32,14 @@ public class WorklightResponse: Mappable{
     public var consultaMunResponse: ConsultaMunResponse?
     public var consultaAsentResponse: ConsultaAsentResponse?
     public var consultaCalleCPResponse: ConsultaCalleCPResponse?
+    public var busquedaClienteResponse: BusquedaClienteResponse?
+    public var buscarDireccionClienteResponse: BuscarDireccionClienteResponse?
+    public var respuesta: Respuesta?
+    public var altaClienteDireccionResponse: AltaClienteDireccionResponse?
+    public var clientes: [Clientes]?
+    public var elementosPorPagina: String?
+    public var idShoppingCliente: Int?
+    public var outStatus: String?
 
     public required init?(map: Map){
     }
@@ -58,5 +66,13 @@ public class WorklightResponse: Mappable{
         consultaMunResponse <- map["ConsultaMunResponse"]
         consultaAsentResponse <- map["ConsultaAsentResponse"]
         consultaCalleCPResponse <- map["ConsultaCalleCPResponse"]
+        busquedaClienteResponse <- map["BusquedaClienteResponse"]
+        buscarDireccionClienteResponse <- map["BuscarDireccionClienteResponse"]
+        respuesta <- map["Respuesta"]
+        altaClienteDireccionResponse <- map["AltaClienteDireccionResponse"]
+        clientes <- map["clientes"]
+        elementosPorPagina <- map["elementosPorPagina"]
+        idShoppingCliente <- map["idShoppingCliente"]
+        outStatus <- map["outStatus"]
     }
 }

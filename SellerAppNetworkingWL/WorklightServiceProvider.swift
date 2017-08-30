@@ -70,6 +70,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ArchivosWS = "ArchivosWebService"
         case ReporteVentas = "ReporteVentas"
         case Presupuesto = "Presupuesto"
+        case BrokerSoms = "BrokerSOMSActualizacion"
     }
     
     private enum Procedure: String {
@@ -109,6 +110,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case AvailableToShip = "productAvailableToShip"
         case CreateRefundOrder = "NotificacionDevoluciones_CrearOrdenDevBT"
         case ModifyOrderAddress = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
+        case AltaClienteDireccion = "AltaClienteDireccion"
         
         // Endeca
         case ProductDetails = "getProductDetail"
@@ -425,7 +427,126 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool, isBigTicketOrder: Bool, email: String?) {
         
     }
-    public func createCustomer(userId: String, token: String, isNewStreet: Bool, lada: String, telefono: String, paterno: String, firstName: String, zip: String, exteriorNumber: String, calle: String, selectRecordAsen: String, tipoAsen: String, materno: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, edificio: String?) {
+    public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        /*
+        {
+            "AltaClienteDireccionRequest": {
+                "setAltaClienteFilters": {
+                    "idUsuario": "1",
+                    "idCliente": "1",
+                    "inLada": "055",
+                    "inTelefono": "52259000",
+                    "inApMaterno": "123",
+                    "inApPaterno": "123",
+                    "inEmail": "123",
+                    "inNombre1": "123",
+                    "inNombre2": "123",
+                    "inRFC": "123",
+                    "inCP": "123",
+                    "inComentario": "123",
+                    "inEdif": "123",
+                    "inEntreCalle": "123",
+                    "inNumeroExt": "123",
+                    "inNumeroInt": "123",
+                    "inYCalle": "123",
+                    "inCalle": "123",
+                    "inAsentamiento": "123",
+                    "inDelegacionMunicipio": "123",
+                    "inEstado": "123",
+                    "idLadaDireccion": "123",
+                    "idTelefonoDireccion": "123"
+                }
+            }
+        }
+        Response.
+            {
+                "AltaClienteDireccionResponse": {
+                    "setAltaClienteRecord": {
+                        "outCteTelefono": "52259000",
+                        "outErrorCode": "0",
+                        "outErrorMessage": "",
+                        "outIdCliente": "1",
+                        "outIdDireccion": "1"
+                    }
+                },
+                "isSuccessful": true
+        }
+        */
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let requestParameters = [
+            "AltaClienteDireccionRequest" : [
+                "setAltaClienteFilters" : [
+                    "idUsuario" : userId,
+                    "idCliente" : clientId,
+                    "inLada" : paddedLada,
+                    "inTelefono" : phone,
+                    "inApMaterno" : secondLastName!,
+                    "inApPaterno" : lastName,
+                    "inEmail" : email!,
+                    "inNombre1" : firstName,
+                    "inRFC" : rfc!,
+                    "inCP" : zip,
+                    "inComentario" : comment!,
+                    "inAsentamiento" : neighborhood,
+                    "inDelegacionMunicipio" : district,
+                    "inEstado" : state,
+                    "idLadaDireccion" : idLada,
+                    "idTelefonoDireccion" : idPhone,
+                    "inCalle" : street,
+                    "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
+                    "inYCalle" : andStreet!,
+                    "inEdif" : building!,
+                    "inNumeroInt" : interiorNumber!,
+                    "inNumeroExt" : exteriorNumber
+                ]
+            
+            ]
+        
+        ]
+        
+        /*
+        let isNewStreetString = isNewStreet == true ? "True" : ""
+        let requestParameters = [
+            "setAltaCliente" : [
+                "ModelVariables" : [
+                    "inPassword" : "",
+                    "inUser" : userId,
+                    "inCadenaValidacion" : token,
+                    "isNewStreet" : isNewStreetString
+                ],
+                "setAltaClienteFilters" : [
+                    "inApMaterno" : materno!,
+                    "inApPaterno" : paterno,
+                    "inCP" : zip,
+                    "inEmail" : email!,
+                    "inNombre1" : firstName,
+                    "inNumeroExt" : exteriorNumber,
+                    "inRFC" : rfc!,
+                    "inSelectRecordAsentamiento" : selectRecordAsen,
+                    "inSelectRecordTipoAsentamiento" : tipoAsen,
+                    "inTelefono" : telefono,
+                    "inCalle" : calle,
+                    "inLada" : lada,
+                    "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
+                    "inYCalle" : andStreet!,
+                    "inEdif" : edificio!,
+                    "inNumeroInt" : interiorNumber!,
+                    "inComentario" : comment!
+                ]
+            ]
+        ]*/
+        let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaClienteDireccion, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
         
     }
     public func createShipmentOrder(orderID: String, storeNumber: String, customerFirstName: String, customerLastName: String, products: [WorklightShippingProduct]?, shippingAdress: WorklightShippingAddress) {
@@ -434,7 +555,33 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createShoesOrder(terminalId: Int, products: [Dictionary<String, AnyObject>]) {
         
     }
-    public func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?) {
+    public func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        var clientParams: [String : Any] = ["tienda" : store, "nombre_cliente" : name, "idVendedor" : idVendedor, "fechaRegistro" : fechaRegistro]
+        
+        if let email = email {
+            if !email.isEmpty {
+                clientParams["email"] = email
+            }
+        }
+        
+        if skuList.count > 0 {
+            clientParams["listaSKU"] = skuList
+        }
+        
+        let params: [String : Any] = ["cliente" : clientParams]
+        
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .InsertClient, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
         
     }
     public func createSOMSOrder(userId: String, token: String, firstProductSku: String, firstProductQuantity: String, firstProductNoSpotSku: String?, firstProductNoSpotQuantity: String?, lada: String?, telefono: String?, fldTelefono: String?, selectRecordCliente: String?, selectRecordSku: String, selectRecordAsentamiento: String?, orderComment: String?, singleAddressCustomer: Bool, eventID: String?) {
@@ -477,10 +624,57 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func creditBalanceForAccount(accountNumber: String, pin: String) {
         
     }
-    public func customerAddressByID(customerID: String, neighborhood: String, street: String) {
+    public func customerAddressByID(customerID: String, neighborhood: String, street: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "BuscarDireccionClienteRequest" : [
+                "Calle": street,
+                "Colonia": neighborhood,
+                "Cp": "",
+                "Estado": "",
+                "IdCliente": customerID
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CustomerInfo, procedure: .SearchAddressCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
         
     }
-    public func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool) {
+    public func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let params = [
+            "BusquedaClienteRequest": [
+                "Calle": "",
+                "Colonia": "",
+                "Cp": "",
+                "Estado": "",
+                "Lada": paddedLada,
+                "Nombre": name,
+                "Telefono": phone,
+                "MesaRegalos": isGiftRegistry
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CustomerInfo, procedure: .SearchCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func customersWithEvent(eventID: String, userId: String, token: String) {
@@ -854,7 +1048,29 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func searchShoppingClient(clientId: String, storeNumber: String) {
         
     }
-    public func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?) {
+    public func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        var innerParams: [String : String] = ["nombre" : clientName, "tienda" : storeNumber, "idVendedor" : idVendedor, "fechaInicio" : fechaInicio, "fechaFin" : fechaFin, "email" : email]
+        if let page = page {
+            innerParams["pagina"] = page
+        }
+        if let elementsPerPage = elementsPerPage {
+            innerParams["elementosPorPagina"] = elementsPerPage
+        }
+        let params = ["buscarClientes" : innerParams]
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .SearchClients, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+        
         
     }
     public func segmentedCreditBalanceForAccount(accountNumber: String, pin: String) {

@@ -47,7 +47,7 @@ public protocol WorklightServiceProtocol
     func addressesForCustomerWithLada(userId: String, token: String, lada: String, telefono: String, cteTelefono: String, selectRecord: String,trySingleAddress: Bool)
     func getCustomerEmail(userId: String, token: String, lada: String, telefono: String, cteTelefono: String, selectRecord: String,trySingleAddress: Bool)
     func createAddress(userId: String, token: String, isNewStreet: Bool, zip: String, calle: String, numeroExterior: String, selectRecordAsen: String, selectRecordCliente: String, tipoAsen: String, lada: String, telefono: String,betweenStreet: String?,andStreet:String?, interiorNumber: String?, edificio: String?)
-    func createCustomer(userId: String, token: String, isNewStreet: Bool, lada: String, telefono: String, paterno: String, firstName: String, zip: String, exteriorNumber: String, calle: String, selectRecordAsen: String,tipoAsen: String, materno: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String? , andStreet: String?, interiorNumber: String?, edificio: String?)
+    func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func createSOMSOrderLight(userId: String, token: String, lada: String, telefono: String, fldTelefono: String, selectRecordCliente: String, selectRecordAsentamiento:String, orderComment: String?, singleAddressCustomer: Bool, eventID: String?, products: [WorklightSOMSProduct]!)
     func createSOMSOrder(userId: String, token: String, lada: String, telefono: String, fldTelefono: String, selectRecordCliente: String?, selectRecordAsentamiento:String?, orderComment: String?, singleAddressCustomer: Bool, eventID: String?, products: [WorklightSOMSProduct]!)
     func createSOMSOrder(userId: String, token: String, firstProductSku: String, firstProductQuantity: String, firstProductNoSpotSku: String?, firstProductNoSpotQuantity: String?, lada: String?, telefono: String?, fldTelefono: String?, selectRecordCliente: String?, selectRecordSku: String, selectRecordAsentamiento: String?, orderComment: String?,singleAddressCustomer: Bool, eventID: String?)
@@ -110,8 +110,8 @@ public protocol WorklightServiceProtocol
     func retrieveRestrictedSKUsForShipping()
     
     // MARK: - CustomerInfo
-    func customerAddressByID(customerID: String, neighborhood: String, street: String)
-    func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool)
+    func customerAddressByID(customerID: String, neighborhood: String, street: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+    func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
     //MARK: - Order follow-up
     func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
@@ -121,9 +121,9 @@ public protocol WorklightServiceProtocol
     
     //MARK: - Persistent Shopping List
 
-    func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?)
+    func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func eraseShoppingClient(clientId: String, storeNumber: String)
-    func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?)
+    func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func searchShoppingClient(clientId: String, storeNumber: String)
     func addShoppingSku(sku: String, storeNumber store: String, clientName: String, id: String, idTipoSku: String, createdAt: String)
     func removeShoppingSku(sku: String, id: String)

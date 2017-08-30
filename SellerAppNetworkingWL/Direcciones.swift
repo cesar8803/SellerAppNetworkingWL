@@ -1,21 +1,20 @@
 //
-//  ConsultaCalleCPResponse.swift
+//  Direcciones.swift
 //  SellerAppNetworkingWL
 //
-//  Created by Luis Guillermo Cuevas García on 23/08/17.
+//  Created by Luis Guillermo Cuevas García on 28/08/17.
 //  Copyright © 2017 Deloitte. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-public class ConsultaCalleCPResponse: Mappable{
-    public var calle: [[Calle]]?
+public class Direcciones: Mappable{
+    public var direccion: [Direccion]?
     
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-
-        calle <- map["Calle"]
+        direccion <- map["Direccion"]
     }
 }
