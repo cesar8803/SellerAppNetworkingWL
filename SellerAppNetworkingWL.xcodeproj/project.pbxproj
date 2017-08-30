@@ -10,6 +10,15 @@
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
+		71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */; };
+		71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */; };
+		71047FC71F4E21140071D381 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC61F4E21140071D381 /* Estado.swift */; };
+		71047FC91F4E228D0071D381 /* ConsultaMunResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC81F4E228D0071D381 /* ConsultaMunResponse.swift */; };
+		71047FCB1F4E22CB0071D381 /* Municipio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FCA1F4E22CB0071D381 /* Municipio.swift */; };
+		71047FCD1F4E24320071D381 /* ConsultaAsentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FCC1F4E24320071D381 /* ConsultaAsentResponse.swift */; };
+		71047FCF1F4E26380071D381 /* Asentamiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FCE1F4E26380071D381 /* Asentamiento.swift */; };
+		71047FD11F4E27910071D381 /* ConsultaCalleCPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FD01F4E27910071D381 /* ConsultaCalleCPResponse.swift */; };
+		71047FD31F4E288C0071D381 /* Calle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FD21F4E288C0071D381 /* Calle.swift */; };
 		71419A571F326901005F70E3 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71419A561F326901005F70E3 /* Errors.swift */; };
 		716379281F1680D4001486F3 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */; };
 		716379291F1680D4001486F3 /* BusquedaEventoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */; };
@@ -150,6 +159,15 @@
 		5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaOrdenVentaResponse.swift; path = SellerAppNetworkingWL/ConsultaOrdenVentaResponse.swift; sourceTree = "<group>"; };
 		5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineaRemisionSCOL.swift; path = SellerAppNetworkingWL/LineaRemisionSCOL.swift; sourceTree = "<group>"; };
 		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
+		71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrearOrdenDevBTResponse.swift; path = SellerAppNetworkingWL/CrearOrdenDevBTResponse.swift; sourceTree = "<group>"; };
+		71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaEdoResponse.swift; path = SellerAppNetworkingWL/ConsultaEdoResponse.swift; sourceTree = "<group>"; };
+		71047FC61F4E21140071D381 /* Estado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Estado.swift; path = SellerAppNetworkingWL/Estado.swift; sourceTree = "<group>"; };
+		71047FC81F4E228D0071D381 /* ConsultaMunResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaMunResponse.swift; path = SellerAppNetworkingWL/ConsultaMunResponse.swift; sourceTree = "<group>"; };
+		71047FCA1F4E22CB0071D381 /* Municipio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Municipio.swift; path = SellerAppNetworkingWL/Municipio.swift; sourceTree = "<group>"; };
+		71047FCC1F4E24320071D381 /* ConsultaAsentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaAsentResponse.swift; path = SellerAppNetworkingWL/ConsultaAsentResponse.swift; sourceTree = "<group>"; };
+		71047FCE1F4E26380071D381 /* Asentamiento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asentamiento.swift; path = SellerAppNetworkingWL/Asentamiento.swift; sourceTree = "<group>"; };
+		71047FD01F4E27910071D381 /* ConsultaCalleCPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaCalleCPResponse.swift; path = SellerAppNetworkingWL/ConsultaCalleCPResponse.swift; sourceTree = "<group>"; };
+		71047FD21F4E288C0071D381 /* Calle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Calle.swift; path = SellerAppNetworkingWL/Calle.swift; sourceTree = "<group>"; };
 		71419A561F326901005F70E3 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = SellerAppNetworkingWL/Errors.swift; sourceTree = "<group>"; };
 		716378AF1F1680D4001486F3 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireExtensions.swift; path = SellerAppNetworkingWL/AlamofireExtensions.swift; sourceTree = "<group>"; };
 		716378B01F1680D4001486F3 /* BusquedaEventoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusquedaEventoResponse.swift; path = SellerAppNetworkingWL/BusquedaEventoResponse.swift; sourceTree = "<group>"; };
@@ -459,6 +477,15 @@
 				5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */,
 				5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */,
 				71419A561F326901005F70E3 /* Errors.swift */,
+				71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */,
+				71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */,
+				71047FC61F4E21140071D381 /* Estado.swift */,
+				71047FC81F4E228D0071D381 /* ConsultaMunResponse.swift */,
+				71047FCA1F4E22CB0071D381 /* Municipio.swift */,
+				71047FCC1F4E24320071D381 /* ConsultaAsentResponse.swift */,
+				71047FCE1F4E26380071D381 /* Asentamiento.swift */,
+				71047FD01F4E27910071D381 /* ConsultaCalleCPResponse.swift */,
+				71047FD21F4E288C0071D381 /* Calle.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -623,14 +650,18 @@
 				7163792F1F1680D4001486F3 /* Cat670055.swift in Sources */,
 				7163798A1F1680D4001486F3 /* Catst425036.swift in Sources */,
 				7163795C1F1680D4001486F3 /* Cat4990318.swift in Sources */,
+				71047FD31F4E288C0071D381 /* Calle.swift in Sources */,
 				7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */,
 				71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */,
 				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
 				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
+				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
+				71047FC91F4E228D0071D381 /* ConsultaMunResponse.swift in Sources */,
+				71047FCB1F4E22CB0071D381 /* Municipio.swift in Sources */,
 				716379891F1680D4001486F3 /* Catst420968.swift in Sources */,
 				5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */,
 				71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */,
@@ -645,18 +676,22 @@
 				7163795D1F1680D4001486F3 /* Cat5010005.swift in Sources */,
 				716379391F1680D4001486F3 /* Cat1100739.swift in Sources */,
 				716379581F1680D4001486F3 /* Cat4990185.swift in Sources */,
+				71047FC71F4E21140071D381 /* Estado.swift in Sources */,
 				716379601F1680D4001486F3 /* Cat5020014.swift in Sources */,
 				7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */,
 				7163797F1F1680D4001486F3 /* Catst420846.swift in Sources */,
 				7163799B1F1680D4001486F3 /* WorklightResponse.swift in Sources */,
 				7163796C1F1680D4001486F3 /* Cat5640000.swift in Sources */,
 				7163799E1F1680D4001486F3 /* WorklightShippingAddress.swift in Sources */,
+				71047FCF1F4E26380071D381 /* Asentamiento.swift in Sources */,
 				7163798D1F1680D4001486F3 /* Facets.swift in Sources */,
 				7163797A1F1680D4001486F3 /* Catst420839.swift in Sources */,
 				7163799D1F1680D4001486F3 /* WorklightServiceProvider.swift in Sources */,
 				7163794E1F1680D4001486F3 /* Cat4450173.swift in Sources */,
 				7163794D1F1680D4001486F3 /* Cat4370401.swift in Sources */,
+				71047FD11F4E27910071D381 /* ConsultaCalleCPResponse.swift in Sources */,
 				716379761F1680D4001486F3 /* Catst418527.swift in Sources */,
+				71047FCD1F4E24320071D381 /* ConsultaAsentResponse.swift in Sources */,
 				716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */,
 				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
 				716379441F1680D4001486F3 /* Cat4020016.swift in Sources */,
@@ -695,6 +730,7 @@
 				7163798C1F1680D4001486F3 /* Dictionary+Union.swift in Sources */,
 				716379691F1680D4001486F3 /* Cat5510011.swift in Sources */,
 				716379971F1680D4001486F3 /* ListaTiposMesa.swift in Sources */,
+				71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */,
 				716379931F1680D4001486F3 /* ListaDirecciones.swift in Sources */,
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
