@@ -18,6 +18,7 @@ public class Clientes: Mappable{
     public var id: String?
     public var email: String?
     public var fecha: String?
+    public var cantidadArticulos: String?
     
     public required init?(map: Map){
     }
@@ -29,5 +30,6 @@ public class Clientes: Mappable{
         id <- map["id"]
         email <- map["email"]
         fecha <- map["fecha"]
+        cantidadArticulos <- map["cantidadArticulos"]
     }
 }
