@@ -424,7 +424,87 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createAddress(userId: String, token: String, isNewStreet: Bool, zip: String, calle: String, numeroExterior: String, selectRecordAsen: String, selectRecordCliente: String, tipoAsen: String, lada: String, telefono: String, betweenStreet: String?, andStreet: String?, interiorNumber: String?, edificio: String?) {
         
     }
-    public func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool, isBigTicketOrder: Bool, email: String?) {
+    public func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool, isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let charset = NSCharacterSet(charactersIn: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted//NSCharacterSet(charactersInString: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted
+        
+        if let orderLines = (products?.map {
+            [
+                "OrderedQty" : "\($0.quantity)",
+                "Item" : [
+                    "itemID" : $0.itemSKU,
+                    "itemDesc" : $0.itemDescription.addingPercentEncoding(withAllowedCharacters: charset) ?? "" //.stringByAddingPercentEncodingWithAllowedCharacters(charset) ?? ""
+                ],
+                "LinePriceInfo" : [
+                    "unitPrice" : $0.price
+                ]
+            ]
+            }) {
+            
+            let order = [
+                "OrderName" : storeNumber,
+                "OrderType" : "Personal",
+                "OrderNo" : orderNumber
+            ]
+            
+            var setOrdenSterlingDictionary:  [String : Any] = [:]
+            
+            if !isBigTicketOrder {
+                setOrdenSterlingDictionary = [
+                    "Order" : order,
+                    "OrderLines" : orderLines,
+                ]
+            }
+            
+            let params = [
+                [
+                    "BusquedaClienteRequest":
+                        [
+                            "Calle": "",
+                            "Colonia": "",
+                            "Cp": "",
+                            "Estado": "",
+                            "Lada": paddedLada,
+                            "Nombre": name,
+                            "Telefono": phone
+                    ]
+                ],
+                [
+                    "inPassword" : "",
+                    "inUser" : userId,
+                    "inCadenaValidacion" : token,
+                    "isNewStreet" : "False"
+                ],
+                [
+                    "CreaActualizaOVREMRequest": [
+                        "Evento": "",
+                        "IdDestinatatio": "",
+                        "IdDireccionDestino": (isNewCustomer ? "001" : ""),
+                        "IdDireccionRemitente": "",
+                        "IdRemision": orderNumber,
+                        "IdRemitente": "",
+                        "TipoEvento": "",
+                        "Bandera_APV": "T",
+                        "inUser" : userId,
+                        "inCadenaValidacion" : token,
+                        "Usuario": ""
+                    ],
+                    "setOrdenSterling": setOrdenSterlingDictionary
+                ],
+                storeNumberToSend
+            ] as [Any]
+            
+            let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .CreateUpdateCC, parameters: params as AnyObject, isArray: true)
+            
+            _ = manager.request(url).responseWorklight { [weak self](response) in
+                guard let weakSelf = self else { return }
+                let (result, error) = weakSelf.parseWorklightResponse(response)
+                DispatchQueue.main.async {
+                    completion(result, error)
+                }
+            }
+        }
         
     }
     public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
@@ -736,7 +816,23 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func getShoesOrders(terminalId: Int, isWarehouse: Bool) {
         
     }
-    public func getStoreDetail(store: String) {
+    public func getStoreDetail(store: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "requestObtenerDatosTienda" : [
+                "numeroTienda" : store
+            ]
+        ]
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .ObtenerDatosTienda, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func getSurveyId(paymentTypes: [Int]) {
@@ -1012,10 +1108,41 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func salesReport(items: AnyObject) {
         
     }
-    public func searchCCStates() {
+    public func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .ConsultarEstadosTiendasCC, parameters: [:] as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+
         
     }
-    public func searchCCStores(state: String) {
+    public func searchCCStores(state: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "obtenerTiendasCCPorEstadoRequest" : [
+                "idEstado" : state
+            ]
+        ]
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .SearchStoresCC, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+        
         
     }
     public func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!, completion: @escaping (WorklightResponse?, NSError?) -> Void) {

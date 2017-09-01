@@ -143,10 +143,10 @@ public protocol WorklightServiceProtocol
     
     func saveBudget(withInfo info: [String : Any], completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
-    func searchCCStores(state:String)
-    func searchCCStates()
-    func getStoreDetail(store:String)
-    func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber:String, storeNumberToSend:String, orderNumber:String, isNewCustomer:Bool, isBigTicketOrder:Bool, email: String?)
+    func searchCCStores(state:String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func getStoreDetail(store:String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber:String, storeNumberToSend:String, orderNumber:String, isNewCustomer:Bool, isBigTicketOrder:Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
 
 
