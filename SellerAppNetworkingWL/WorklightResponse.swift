@@ -40,6 +40,7 @@ public class WorklightResponse: Mappable{
     public var elementosPorPagina: String?
     public var idShoppingCliente: Int?
     public var outStatus: String?
+    public var consultarEstadosTiendasCCResponse: ConsultarEstadosTiendasCCResponse?
 
     public required init?(map: Map){
     }
@@ -74,5 +75,6 @@ public class WorklightResponse: Mappable{
         elementosPorPagina <- map["elementosPorPagina"]
         idShoppingCliente <- map["idShoppingCliente"]
         outStatus <- map["outStatus"]
+        consultarEstadosTiendasCCResponse <- map["consultarEstadosTiendasCCResponse"]
     }
 }

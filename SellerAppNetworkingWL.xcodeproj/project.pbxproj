@@ -145,6 +145,9 @@
 		716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379CD1F16903C001486F3 /* DireccionDestinatario.swift */; };
 		71992E011F55F45500EE35A2 /* AltaClienteDireccionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71992E001F55F45500EE35A2 /* AltaClienteDireccionResponse.swift */; };
 		71992E031F55F49F00EE35A2 /* SetAltaClienteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71992E021F55F49F00EE35A2 /* SetAltaClienteRecord.swift */; };
+		71B66EAA1F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B66EA91F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift */; };
+		71B66EAC1F59F7DB00AAD3AD /* ListaEstados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B66EAB1F59F7DB00AAD3AD /* ListaEstados.swift */; };
+		71B66EAE1F5A030D00AAD3AD /* ListaTiendas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B66EAD1F5A030D00AAD3AD /* ListaTiendas.swift */; };
 		71B7F25D1F548DAB00D9F947 /* BusquedaClienteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F25C1F548DAB00D9F947 /* BusquedaClienteResponse.swift */; };
 		71B7F25F1F548DE500D9F947 /* Clientes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F25E1F548DE500D9F947 /* Clientes.swift */; };
 		71B7F2611F548E2900D9F947 /* DatosSoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F2601F548E2900D9F947 /* DatosSoms.swift */; };
@@ -303,6 +306,9 @@
 		716379CD1F16903C001486F3 /* DireccionDestinatario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DireccionDestinatario.swift; path = SellerAppNetworkingWL/DireccionDestinatario.swift; sourceTree = "<group>"; };
 		71992E001F55F45500EE35A2 /* AltaClienteDireccionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaClienteDireccionResponse.swift; path = SellerAppNetworkingWL/AltaClienteDireccionResponse.swift; sourceTree = "<group>"; };
 		71992E021F55F49F00EE35A2 /* SetAltaClienteRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaClienteRecord.swift; path = SellerAppNetworkingWL/SetAltaClienteRecord.swift; sourceTree = "<group>"; };
+		71B66EA91F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultarEstadosTiendasCCResponse.swift; path = SellerAppNetworkingWL/ConsultarEstadosTiendasCCResponse.swift; sourceTree = "<group>"; };
+		71B66EAB1F59F7DB00AAD3AD /* ListaEstados.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaEstados.swift; path = SellerAppNetworkingWL/ListaEstados.swift; sourceTree = "<group>"; };
+		71B66EAD1F5A030D00AAD3AD /* ListaTiendas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaTiendas.swift; path = SellerAppNetworkingWL/ListaTiendas.swift; sourceTree = "<group>"; };
 		71B7F25C1F548DAB00D9F947 /* BusquedaClienteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusquedaClienteResponse.swift; path = SellerAppNetworkingWL/BusquedaClienteResponse.swift; sourceTree = "<group>"; };
 		71B7F25E1F548DE500D9F947 /* Clientes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Clientes.swift; path = SellerAppNetworkingWL/Clientes.swift; sourceTree = "<group>"; };
 		71B7F2601F548E2900D9F947 /* DatosSoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatosSoms.swift; path = SellerAppNetworkingWL/DatosSoms.swift; sourceTree = "<group>"; };
@@ -513,6 +519,9 @@
 				71B7F2681F5490BA00D9F947 /* Respuesta.swift */,
 				71992E001F55F45500EE35A2 /* AltaClienteDireccionResponse.swift */,
 				71992E021F55F49F00EE35A2 /* SetAltaClienteRecord.swift */,
+				71B66EA91F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift */,
+				71B66EAB1F59F7DB00AAD3AD /* ListaEstados.swift */,
+				71B66EAD1F5A030D00AAD3AD /* ListaTiendas.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -719,6 +728,7 @@
 				7163794D1F1680D4001486F3 /* Cat4370401.swift in Sources */,
 				71047FD11F4E27910071D381 /* ConsultaCalleCPResponse.swift in Sources */,
 				716379761F1680D4001486F3 /* Catst418527.swift in Sources */,
+				71B66EAA1F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift in Sources */,
 				71047FCD1F4E24320071D381 /* ConsultaAsentResponse.swift in Sources */,
 				716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */,
 				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
@@ -729,6 +739,7 @@
 				7163793F1F1680D4001486F3 /* Cat1300743.swift in Sources */,
 				716379551F1680D4001486F3 /* Cat4930074.swift in Sources */,
 				716379311F1680D4001486F3 /* Cat860739.swift in Sources */,
+				71B66EAE1F5A030D00AAD3AD /* ListaTiendas.swift in Sources */,
 				71992E011F55F45500EE35A2 /* AltaClienteDireccionResponse.swift in Sources */,
 				716379841F1680D4001486F3 /* Catst420865.swift in Sources */,
 				7163792A1F1680D4001486F3 /* Cat170339.swift in Sources */,
@@ -742,6 +753,7 @@
 				7163795A1F1680D4001486F3 /* Cat4990218.swift in Sources */,
 				7163796F1F1680D4001486F3 /* Cat21010034.swift in Sources */,
 				716379411F1680D4001486F3 /* Cat1350731.swift in Sources */,
+				71B66EAC1F59F7DB00AAD3AD /* ListaEstados.swift in Sources */,
 				716379481F1680D4001486F3 /* Cat4190004.swift in Sources */,
 				7163795F1F1680D4001486F3 /* Cat5020010.swift in Sources */,
 				7163792B1F1680D4001486F3 /* Cat480186.swift in Sources */,
