@@ -807,7 +807,18 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func getQuestionsForSurveyId(id: String) {
         
     }
-    public func getSectionsEligibleForNoSpot() {
+    public func getSectionsEligibleForNoSpot(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let url = self.getRequestUrlForAdapter(adapter: .NoSpot, procedure: .NoSpotSections, parameters: Dictionary<String, AnyObject>() as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func getSectionsOfValidNoSpotSkus() {

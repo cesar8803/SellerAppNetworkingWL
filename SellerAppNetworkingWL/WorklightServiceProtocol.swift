@@ -72,7 +72,7 @@ public protocol WorklightServiceProtocol
     func getChildCategories(categoryId: String)
     
     // MARK: - No Spot
-    func getSectionsEligibleForNoSpot()
+    func getSectionsEligibleForNoSpot(completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func getSectionsOfValidNoSpotSkus()
     
     // MARK: - SKU Genericos
