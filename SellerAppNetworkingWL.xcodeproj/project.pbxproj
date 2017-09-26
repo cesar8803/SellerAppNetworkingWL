@@ -155,6 +155,8 @@
 		71B7F2651F548F2D00D9F947 /* Direcciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F2641F548F2D00D9F947 /* Direcciones.swift */; };
 		71B7F2671F548F6300D9F947 /* Direccion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F2661F548F6300D9F947 /* Direccion.swift */; };
 		71B7F2691F5490BA00D9F947 /* Respuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F2681F5490BA00D9F947 /* Respuesta.swift */; };
+		71BEBADF1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBADE1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift */; };
+		71BEBAE11F7B10D7000AA1F8 /* Ema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBAE01F7B10D7000AA1F8 /* Ema.swift */; };
 		71C31D771F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */; };
 		71C31D7B1F192858003E7449 /* SapInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7A1F192858003E7449 /* SapInventario.swift */; };
 		71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */; };
@@ -316,6 +318,8 @@
 		71B7F2641F548F2D00D9F947 /* Direcciones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Direcciones.swift; path = SellerAppNetworkingWL/Direcciones.swift; sourceTree = "<group>"; };
 		71B7F2661F548F6300D9F947 /* Direccion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Direccion.swift; path = SellerAppNetworkingWL/Direccion.swift; sourceTree = "<group>"; };
 		71B7F2681F5490BA00D9F947 /* Respuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Respuesta.swift; path = SellerAppNetworkingWL/Respuesta.swift; sourceTree = "<group>"; };
+		71BEBADE1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaEMAResponse.swift; path = SellerAppNetworkingWL/ConsultaEMAResponse.swift; sourceTree = "<group>"; };
+		71BEBAE01F7B10D7000AA1F8 /* Ema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ema.swift; path = SellerAppNetworkingWL/Ema.swift; sourceTree = "<group>"; };
 		71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaSkuInventarioResponse.swift; path = SellerAppNetworkingWL/ConsultaSkuInventarioResponse.swift; sourceTree = "<group>"; };
 		71C31D7A1F192858003E7449 /* SapInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SapInventario.swift; path = SellerAppNetworkingWL/SapInventario.swift; sourceTree = "<group>"; };
 		71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLSapSkuInventario.swift; path = SellerAppNetworkingWL/WLSapSkuInventario.swift; sourceTree = "<group>"; };
@@ -522,6 +526,8 @@
 				71B66EA91F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift */,
 				71B66EAB1F59F7DB00AAD3AD /* ListaEstados.swift */,
 				71B66EAD1F5A030D00AAD3AD /* ListaTiendas.swift */,
+				71BEBADE1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift */,
+				71BEBAE01F7B10D7000AA1F8 /* Ema.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -698,6 +704,7 @@
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
 				71047FC91F4E228D0071D381 /* ConsultaMunResponse.swift in Sources */,
 				71047FCB1F4E22CB0071D381 /* Municipio.swift in Sources */,
+				71BEBADF1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift in Sources */,
 				716379891F1680D4001486F3 /* Catst420968.swift in Sources */,
 				71992E031F55F49F00EE35A2 /* SetAltaClienteRecord.swift in Sources */,
 				5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */,
@@ -763,6 +770,7 @@
 				716379811F1680D4001486F3 /* Catst420853.swift in Sources */,
 				7163793D1F1680D4001486F3 /* Cat1250612.swift in Sources */,
 				716379701F1680D4001486F3 /* Cat21010189.swift in Sources */,
+				71BEBAE11F7B10D7000AA1F8 /* Ema.swift in Sources */,
 				716379681F1680D4001486F3 /* Cat5440000.swift in Sources */,
 				716379351F1680D4001486F3 /* Cat910740.swift in Sources */,
 				716379511F1680D4001486F3 /* Cat4470006.swift in Sources */,

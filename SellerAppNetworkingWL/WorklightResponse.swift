@@ -42,6 +42,7 @@ public class WorklightResponse: Mappable{
     public var outStatus: String?
     public var consultarEstadosTiendasCCResponse: ConsultarEstadosTiendasCCResponse?
     public var validNoSpotSections: [String]?
+    public var consultaEMAResponse: ConsultaEMAResponse?
 
     public required init?(map: Map){
     }
@@ -78,5 +79,6 @@ public class WorklightResponse: Mappable{
         outStatus <- map["outStatus"]
         consultarEstadosTiendasCCResponse <- map["consultarEstadosTiendasCCResponse"]
         validNoSpotSections <- map["validNoSpotSections"]
+        consultaEMAResponse <- map["ConsultaEMAResponse"]
     }
 }
