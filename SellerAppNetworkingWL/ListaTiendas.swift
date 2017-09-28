@@ -17,7 +17,7 @@ public class ListaTiendas: Mappable{
     public var idAsentamiento: String?
     public var idDelegacionMunicipio: String?
     public var idCalle: String?
-    
+    public var cp: String?
     
     public required init?(map: Map){
     }
@@ -29,5 +29,6 @@ public class ListaTiendas: Mappable{
         idAsentamiento <- map["idAsentamiento"]
         idDelegacionMunicipio <- map["idDelegacionMunicipio"]
         idCalle <- map["idCalle"]
+        cp <- map["CP"]
     }
 }
