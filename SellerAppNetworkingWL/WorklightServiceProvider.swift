@@ -48,6 +48,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         //*** This should be temporary until SOMSConsultaA Adapter is merged with SOMSConsultaNA. For more information see LSAA-1413 or ask Carazo.
         case ConsultaPool = "SOMSConsultaN"
         //***
+        case ConsultaPoolBroker = "BrokerSOMSConsulta"
         case SOMSRefund  = "SOMSDevoluciones"
         case ActualizacionPool = "SOMSActualizacionN"
         case BridgeCore = "LiverpoolWebService"
@@ -107,6 +108,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ModifyOrder = "SOMSActualizacionPoolService_setModificaOrden"
         case AppendSku = "SOMSActualizacionPoolService_setAgregaSKU"
         case SOMSDetails = "SOMSConsultaPoolService_getConsultaSKUPool"
+        case DetailSOMS = "ConsultaSKUPool"
         case AvailableToShip = "productAvailableToShip"
         case CreateRefundOrder = "NotificacionDevoluciones_CrearOrdenDevBT"
         case ModifyOrderAddress = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
@@ -807,18 +809,14 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     }
     public func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String, zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        let requestParameters = ["getConsultaSKUPool" : [
-            "ModelVariables" : [
-                "inPassword" : "",
-                "inUser" : userId,
-                "inCadenaValidacion" : token
-            ],
+        let requestParameters = ["ConsultaSKUPoolRequest" : [
             "getConsultaSKUPoolFilters" : [
+                "IdUsuario": userId,
                 "inCP" : zip,
                 "inSKU": sku]
             ]
         ]
-        let url = getRequestUrlForAdapter(adapter: .ConsultaPool, procedure: .SOMSDetails, parameters: requestParameters as AnyObject)
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .DetailSOMS, parameters: requestParameters as AnyObject)
         
         _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
             
