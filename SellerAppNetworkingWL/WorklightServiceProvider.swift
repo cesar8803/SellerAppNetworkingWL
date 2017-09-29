@@ -507,57 +507,13 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
-    public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        
-        /*
-        {
-            "AltaClienteDireccionRequest": {
-                "setAltaClienteFilters": {
-                    "idUsuario": "1",
-                    "idCliente": "1",
-                    "inLada": "055",
-                    "inTelefono": "52259000",
-                    "inApMaterno": "123",
-                    "inApPaterno": "123",
-                    "inEmail": "123",
-                    "inNombre1": "123",
-                    "inNombre2": "123",
-                    "inRFC": "123",
-                    "inCP": "123",
-                    "inComentario": "123",
-                    "inEdif": "123",
-                    "inEntreCalle": "123",
-                    "inNumeroExt": "123",
-                    "inNumeroInt": "123",
-                    "inYCalle": "123",
-                    "inCalle": "123",
-                    "inAsentamiento": "123",
-                    "inDelegacionMunicipio": "123",
-                    "inEstado": "123",
-                    "idLadaDireccion": "123",
-                    "idTelefonoDireccion": "123"
-                }
-            }
-        }
-        Response.
-            {
-                "AltaClienteDireccionResponse": {
-                    "setAltaClienteRecord": {
-                        "outCteTelefono": "52259000",
-                        "outErrorCode": "0",
-                        "outErrorMessage": "",
-                        "outIdCliente": "1",
-                        "outIdDireccion": "1"
-                    }
-                },
-                "isSuccessful": true
-        }
-        */
         let paddedLada = String(format: "%03d", Int(lada) ?? 0)
         let requestParameters = [
             "AltaClienteDireccionRequest" : [
                 "setAltaClienteFilters" : [
+                    "crearCalle" : createStreet ?? false,
                     "idUsuario" : userId,
                     "idCliente" : clientId,
                     "inLada" : paddedLada,
