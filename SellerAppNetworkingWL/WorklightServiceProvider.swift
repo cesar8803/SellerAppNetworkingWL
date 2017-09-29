@@ -807,7 +807,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func getSurveyId(paymentTypes: [Int]) {
         
     }
-    public func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String, zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func inventoryDetailsForSOMSItemWithSku(userId: String, sku: String, zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         let requestParameters = ["ConsultaSKUPoolRequest" : [
             "getConsultaSKUPoolFilters" : [
