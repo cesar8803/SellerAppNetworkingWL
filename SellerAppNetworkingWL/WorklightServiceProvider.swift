@@ -175,7 +175,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case CreateUpdateSOMSShipment           = "Remisiones_wbi_CreaActualizaOVREM"
         case CreateShipment                     = "Remisiones_wbi_CrearOrden"
         case UpdateShipment                     = "Remisiones_wbi_ActualizaRemision"
-        case CreateUpdateCC                     = "Remisiones_wbi_CrearActualizarOVREMCC"
+        case CreateUpdateCC                     = "Remisiones_wbi_CrearActualizarOVREMCCBRK"
         
         // Order Follow Up
         case GetOrderDetail             = "Remisiones_wbi_consulta_orden"
