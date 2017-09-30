@@ -469,7 +469,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "Estado": "",
                             "Lada": paddedLada,
                             "Nombre": name,
-                            "Telefono": phone
+                            "Telefono": phone,
+                            "IdUsuario":userId,
                     ]
                 ],
                 /*[
