@@ -525,6 +525,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "inApPaterno" : lastName,
                     "inEmail" : email!,
                     "inNombre1" : firstName,
+                    "inNombre2" : "",
                     "inRFC" : rfc!,
                     "inCP" : zip,
                     "inComentario" : comment!,
