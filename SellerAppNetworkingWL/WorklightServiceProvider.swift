@@ -472,12 +472,12 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "Telefono": phone
                     ]
                 ],
-                [
+                /*[
                     "inPassword" : "",
                     "inUser" : userId,
                     "inCadenaValidacion" : token,
                     "isNewStreet" : "False"
-                ],
+                ],*/
                 [
                     "CreaActualizaOVREMRequest": [
                         "Evento": "",
