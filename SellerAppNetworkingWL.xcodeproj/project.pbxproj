@@ -157,6 +157,10 @@
 		71B7F2691F5490BA00D9F947 /* Respuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7F2681F5490BA00D9F947 /* Respuesta.swift */; };
 		71BEBADF1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBADE1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift */; };
 		71BEBAE11F7B10D7000AA1F8 /* Ema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBAE01F7B10D7000AA1F8 /* Ema.swift */; };
+		71BEBAF11F80265B000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBAF01F80265A000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift */; };
+		71BEBAF31F8026B1000AA1F8 /* ResponseCrearOrden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBAF21F8026B1000AA1F8 /* ResponseCrearOrden.swift */; };
+		71BEBAF51F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBAF41F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift */; };
+		71BEBAF71F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEBAF61F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift */; };
 		71C31D771F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */; };
 		71C31D7B1F192858003E7449 /* SapInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7A1F192858003E7449 /* SapInventario.swift */; };
 		71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */; };
@@ -320,6 +324,10 @@
 		71B7F2681F5490BA00D9F947 /* Respuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Respuesta.swift; path = SellerAppNetworkingWL/Respuesta.swift; sourceTree = "<group>"; };
 		71BEBADE1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaEMAResponse.swift; path = SellerAppNetworkingWL/ConsultaEMAResponse.swift; sourceTree = "<group>"; };
 		71BEBAE01F7B10D7000AA1F8 /* Ema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ema.swift; path = SellerAppNetworkingWL/Ema.swift; sourceTree = "<group>"; };
+		71BEBAF01F80265A000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseCreaActualizaOVREMSterling.swift; path = SellerAppNetworkingWL/ResponseCreaActualizaOVREMSterling.swift; sourceTree = "<group>"; };
+		71BEBAF21F8026B1000AA1F8 /* ResponseCrearOrden.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseCrearOrden.swift; path = SellerAppNetworkingWL/ResponseCrearOrden.swift; sourceTree = "<group>"; };
+		71BEBAF41F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseCreaActualizaOVREM.swift; path = SellerAppNetworkingWL/ResponseCreaActualizaOVREM.swift; sourceTree = "<group>"; };
+		71BEBAF61F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreaActualizaOVREMResponse.swift; path = SellerAppNetworkingWL/CreaActualizaOVREMResponse.swift; sourceTree = "<group>"; };
 		71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaSkuInventarioResponse.swift; path = SellerAppNetworkingWL/ConsultaSkuInventarioResponse.swift; sourceTree = "<group>"; };
 		71C31D7A1F192858003E7449 /* SapInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SapInventario.swift; path = SellerAppNetworkingWL/SapInventario.swift; sourceTree = "<group>"; };
 		71C31D7C1F19289A003E7449 /* WLSapSkuInventario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLSapSkuInventario.swift; path = SellerAppNetworkingWL/WLSapSkuInventario.swift; sourceTree = "<group>"; };
@@ -528,6 +536,10 @@
 				71B66EAD1F5A030D00AAD3AD /* ListaTiendas.swift */,
 				71BEBADE1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift */,
 				71BEBAE01F7B10D7000AA1F8 /* Ema.swift */,
+				71BEBAF01F80265A000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift */,
+				71BEBAF21F8026B1000AA1F8 /* ResponseCrearOrden.swift */,
+				71BEBAF41F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift */,
+				71BEBAF61F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -681,6 +693,7 @@
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
 				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
+				71BEBAF11F80265B000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift in Sources */,
 				716379991F1680D4001486F3 /* PriceRange.swift in Sources */,
 				7163794C1F1680D4001486F3 /* Cat4330033.swift in Sources */,
 				7163799F1F1680D4001486F3 /* WorklightShippingProduct.swift in Sources */,
@@ -698,8 +711,10 @@
 				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
 				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
 				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
+				71BEBAF71F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
+				71BEBAF51F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
 				71047FC91F4E228D0071D381 /* ConsultaMunResponse.swift in Sources */,
@@ -720,6 +735,7 @@
 				7163795D1F1680D4001486F3 /* Cat5010005.swift in Sources */,
 				716379391F1680D4001486F3 /* Cat1100739.swift in Sources */,
 				716379581F1680D4001486F3 /* Cat4990185.swift in Sources */,
+				71BEBAF31F8026B1000AA1F8 /* ResponseCrearOrden.swift in Sources */,
 				71047FC71F4E21140071D381 /* Estado.swift in Sources */,
 				716379601F1680D4001486F3 /* Cat5020014.swift in Sources */,
 				7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */,

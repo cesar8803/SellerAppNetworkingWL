@@ -175,7 +175,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case CreateUpdateSOMSShipment           = "Remisiones_wbi_CreaActualizaOVREM"
         case CreateShipment                     = "Remisiones_wbi_CrearOrden"
         case UpdateShipment                     = "Remisiones_wbi_ActualizaRemision"
-        case CreateUpdateCC                     = "Remisiones_wbi_CrearActualizarOVREMCC"
+        case CreateUpdateCC                     = "Remisiones_wbi_CrearActualizarOVREMCCBRK"
         
         // Order Follow Up
         case GetOrderDetail             = "Remisiones_wbi_consulta_orden"
@@ -469,15 +469,16 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "Estado": "",
                             "Lada": paddedLada,
                             "Nombre": name,
-                            "Telefono": phone
+                            "Telefono": phone,
+                            "IdUsuario":userId,
                     ]
                 ],
-                [
+                /*[
                     "inPassword" : "",
                     "inUser" : userId,
                     "inCadenaValidacion" : token,
                     "isNewStreet" : "False"
-                ],
+                ],*/
                 [
                     "CreaActualizaOVREMRequest": [
                         "Evento": "",
@@ -520,13 +521,14 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "idCliente" : clientId,
                     "inLada" : paddedLada,
                     "inTelefono" : phone,
-                    "inApMaterno" : secondLastName!,
+                    "inApMaterno" : secondLastName ?? "",
                     "inApPaterno" : lastName,
                     "inEmail" : email!,
                     "inNombre1" : firstName,
+                    "inNombre2" : "",
                     "inRFC" : rfc!,
                     "inCP" : zip,
-                    "inComentario" : comment!,
+                    "inComentario" : comment ?? "",
                     "inAsentamiento" : neighborhood,
                     "inDelegacionMunicipio" : district,
                     "inEstado" : state,
@@ -536,7 +538,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
                     "inYCalle" : andStreet!,
                     "inEdif" : building!,
-                    "inNumeroInt" : interiorNumber!,
+                    "inNumeroInt" : interiorNumber ?? "",
                     "inNumeroExt" : exteriorNumber
                 ]
             
