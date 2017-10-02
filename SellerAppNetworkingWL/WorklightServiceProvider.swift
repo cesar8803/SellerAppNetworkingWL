@@ -676,7 +676,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
-                print(result)
                 completion(result, error)
             }
         }
