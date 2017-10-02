@@ -113,6 +113,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case CreateRefundOrder = "NotificacionDevoluciones_CrearOrdenDevBT"
         case ModifyOrderAddress = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
         case AltaClienteDireccion = "AltaClienteDireccion"
+        case AltaOrdenR2 = "AltaOrden"
         
         // Endeca
         case ProductDetails = "getProductDetail"
@@ -624,6 +625,66 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         
     }
+    
+    public func createSOMSOrderR2(parameters: Any, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+      /*
+        let parameters = [
+            
+            "AltaOrdenRequest" : [
+                
+                "setAltaOrdenFilters" : [
+                    "IdUsuario": "ADMSOMS1",
+                    "IdClienteRemitente": "",
+                    "IdDireccionRemitente": "",
+                    "idCliente": "0000052120",
+                    "idDireccion": "001",
+                    "idEventoTarjeta": "",
+                    "idTipoFestejado": "",
+                    "idLadaOrden": "",
+                    "idTelefonoOrden": "",
+                    "inObservaciones": ""
+                    
+                ],
+                
+                "setAgregaSKUFilters" : [
+                    
+                    "setAgregaSKURecord" : [
+                        [
+                            "inSelectRecordSKU": "0000056111",
+                            "inSelectRecordSKUCantidad": "1",
+                            "inSelectRecordSKUNoSpot": "",
+                            "inSelectRecordSKUNoSpotCantidad": ""
+                        ],
+                        [
+                            "inSelectRecordSKU": "0000056120",
+                            "inSelectRecordSKUCantidad": "1",
+                            "inSelectRecordSKUNoSpot": "",
+                            "inSelectRecordSKUNoSpotCantidad": ""
+                        ]
+                        
+                    ]
+                    
+                ]
+                
+            ]
+            
+        ]
+        */
+        let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaOrdenR2, parameters: parameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
+    }
+    
+    
+    
+    
     public func createSOMSOrder(userId: String, token: String, firstProductSku: String, firstProductQuantity: String, firstProductNoSpotSku: String?, firstProductNoSpotQuantity: String?, lada: String?, telefono: String?, fldTelefono: String?, selectRecordCliente: String?, selectRecordSku: String, selectRecordAsentamiento: String?, orderComment: String?, singleAddressCustomer: Bool, eventID: String?) {
         
     }
