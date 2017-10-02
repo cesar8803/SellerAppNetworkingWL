@@ -27,7 +27,6 @@ public class DatosSoms: Mappable{
     public var Email: String?
     public var Municipio: String?
     public var EntreCalle: String?
-    public var direccionCompleta: String?
     
     public required init?(map: Map){
     }
