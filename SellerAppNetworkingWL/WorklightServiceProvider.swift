@@ -658,7 +658,104 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createUpdateSOMSShipmentOrder(shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, token: String, userId: String) {
         
     }
-    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAdress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, token: String, userId: String) {
+    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAdress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, token: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        //assert(products?.count > 0, "We MUST have at least one product!")
+        
+        let charset = NSCharacterSet(charactersIn: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted
+        
+        if let orderLines = (products?.map {
+            [
+                "OrderedQty" : "\($0.quantity)",
+                "Item" : [
+                    "itemID" : $0.itemSKU,
+                    "itemDesc" : $0.itemDescription.addingPercentEncoding(withAllowedCharacters: charset) ?? ""
+                ],
+                "LinePriceInfo" : [
+                    "unitPrice" : $0.price
+                ]
+            ]
+            }) {
+            
+            let order = [
+                "OrderName" : storeNumber,
+                "OrderType" : "Personal",
+                "OrderNo" : orderID
+            ]
+            
+            let params: [String : Any] = [
+                "CreaActualizaOVREMRequest": [
+                    "Evento": eventID ?? "",
+                    "IdDestinatatio": customerID,
+                    "IdDireccionDestino": addressID,
+                    "IdDireccionRemitente": senderID ?? "",
+                    "IdRemision": shipmentID,
+                    "IdRemitente": senderAddressID ?? "",
+                    "TipoEvento": celebratedType ?? "",
+                    "Bandera_APV": currentStoreInventory ? "F" : "T",
+                    "inUser" : userId,
+                    "inCadenaValidacion" : token,
+                    "Usuario": ""
+                ],
+                "setOrdenSterling": [
+                    "Order" : order,
+                    "OrderLines" : orderLines,
+                    "PersonInfoBillTo" : [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAdress.street,
+                        "addressLine2" : shippingAdress.number,
+                        "addressLine3" : shippingAdress.interiorNumber,
+                        "addressLine4" : shippingAdress.settlement,
+                        "addressLine5" : shippingAdress.township,
+                        "city"         : shippingAdress.city,
+                        "state"        : shippingAdress.state,
+                        "zipCode"      : shippingAdress.zipCode,
+                        "dayPhone"     : shippingAdress.homePhone,
+                        "mobilePhone"  : shippingAdress.mobilePhone
+                    ],
+                    "PersonInfoContact": [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAdress.street,
+                        "addressLine2" : shippingAdress.number,
+                        "addressLine3" : shippingAdress.interiorNumber,
+                        "addressLine4" : shippingAdress.settlement,
+                        "addressLine5" : shippingAdress.township,
+                        "city"         : shippingAdress.city,
+                        "state"        : shippingAdress.state,
+                        "zipCode"      : shippingAdress.zipCode,
+                        "dayPhone"     : shippingAdress.homePhone,
+                        "mobilePhone"  : shippingAdress.mobilePhone
+                    ],
+                    "PersonInfoShipTo": [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAdress.street,
+                        "addressLine2" : shippingAdress.number,
+                        "addressLine3" : shippingAdress.interiorNumber,
+                        "addressLine4" : shippingAdress.settlement,
+                        "addressLine5" : shippingAdress.township,
+                        "city"         : shippingAdress.city,
+                        "state"        : shippingAdress.state,
+                        "zipCode"      : shippingAdress.zipCode,
+                        "dayPhone"     : shippingAdress.homePhone,
+                        "mobilePhone"  : shippingAdress.mobilePhone
+                    ]
+                ]
+            ]
+            
+            let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .CreateUpdateSOMSShipmentSterling, parameters: params as AnyObject)
+            
+            _ = manager.request(url).responseWorklight { [weak self](response) in
+                guard let weakSelf = self else { return }
+                let (result, error) = weakSelf.parseWorklightResponse(response)
+                DispatchQueue.main.async {
+                    
+                    completion(result, error)
+                }
+            }
+        }
         
     }
     public func creditBalanceForAccount(accountNumber: String, pin: String) {
