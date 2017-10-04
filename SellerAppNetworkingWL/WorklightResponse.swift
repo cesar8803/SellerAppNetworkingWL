@@ -43,6 +43,7 @@ public class WorklightResponse: Mappable{
     public var consultarEstadosTiendasCCResponse: ConsultarEstadosTiendasCCResponse?
     public var validNoSpotSections: [String]?
     public var consultaEMAResponse: ConsultaEMAResponse?
+    public var altaOrdenResponse: AltaOrdenResponse?
     public var responseCreaActualizaOVREMSterling: ResponseCreaActualizaOVREMSterling?
 
 
@@ -82,6 +83,7 @@ public class WorklightResponse: Mappable{
         consultarEstadosTiendasCCResponse <- map["consultarEstadosTiendasCCResponse"]
         validNoSpotSections <- map["validNoSpotSections"]
         consultaEMAResponse <- map["ConsultaEMAResponse"]
+        altaOrdenResponse <- map["AltaOrdenResponse"]
         responseCreaActualizaOVREMSterling <- map["responseCreaActualizaOVREMSterling"]
     }
 }

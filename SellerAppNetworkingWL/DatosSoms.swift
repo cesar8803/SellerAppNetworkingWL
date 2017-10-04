@@ -27,7 +27,9 @@ public class DatosSoms: Mappable{
     public var Email: String?
     public var Municipio: String?
     public var EntreCalle: String?
-    
+    public var Colonia: String?
+    public var direccionCompleta: String?
+
     public required init?(map: Map){
     }
     public func mapping(map: Map){
@@ -48,5 +50,30 @@ public class DatosSoms: Mappable{
         Email <- map["Email"]
         Municipio <- map["Municipio"]
         EntreCalle <- map["EntreCalle"]
+        
+        var address: [String] = []
+        
+        if let calle: String = Calle, !calle.isEmpty {
+            address.append(calle)
+        }
+        
+        if let colonia: String = Colonia, !colonia.isEmpty {
+            address.append("Colonia \(colonia)")
+        }
+
+        if let delegacion: String = Delegacion, !delegacion.isEmpty {
+            address.append("Delegación \(delegacion)")
+        }
+        
+        if let edo: String = Estado, !edo.isEmpty {
+            address.append("Estado \(edo)")
+        }
+
+        if let zip: String = Cp, !zip.isEmpty {
+            address.append("CP \(zip)")
+        }
+
+        direccionCompleta = address.joined(separator: ", ")
+        
     }
 }

@@ -168,6 +168,8 @@
 		71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */; };
 		71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */; };
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
+		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
+		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -336,6 +338,8 @@
 		71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolHeader.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolHeader.swift; sourceTree = "<group>"; };
 		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
+		A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaOrdenResponse.swift; path = SellerAppNetworkingWL/AltaOrdenResponse.swift; sourceTree = "<group>"; };
+		A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaOrdenRecord.swift; path = SellerAppNetworkingWL/SetAltaOrdenRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +544,8 @@
 				71BEBAF21F8026B1000AA1F8 /* ResponseCrearOrden.swift */,
 				71BEBAF41F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift */,
 				71BEBAF61F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift */,
+				A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */,
+				A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -768,6 +774,7 @@
 				7163792A1F1680D4001486F3 /* Cat170339.swift in Sources */,
 				71C31D7B1F192858003E7449 /* SapInventario.swift in Sources */,
 				716379331F1680D4001486F3 /* Cat910629.swift in Sources */,
+				A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */,
 				71B7F2691F5490BA00D9F947 /* Respuesta.swift in Sources */,
 				71B7F25D1F548DAB00D9F947 /* BusquedaClienteResponse.swift in Sources */,
 				716379751F1680D4001486F3 /* Catst413095.swift in Sources */,
@@ -806,6 +813,7 @@
 				716379621F1680D4001486F3 /* Cat5190016.swift in Sources */,
 				7163795E1F1680D4001486F3 /* Cat5020003.swift in Sources */,
 				716379671F1680D4001486F3 /* Cat5380225.swift in Sources */,
+				A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */,
 				716379381F1680D4001486F3 /* Cat1100732.swift in Sources */,
 				716379731F1680D4001486F3 /* Catst392789.swift in Sources */,
 				5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */,
