@@ -12,7 +12,7 @@ public class WorklightShippingAddress: NSObject {
     public var street           : String = ""
     public var number           : String = ""
     public var interiorNumber   : String = ""
-    public var additionalInfo   : String! = ""
+    public var additionalInfo   : String = ""
     public var settlement       : String = ""
     public var township         : String = ""
     public var city             : String = ""
