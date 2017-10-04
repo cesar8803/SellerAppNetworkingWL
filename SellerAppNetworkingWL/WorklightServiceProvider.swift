@@ -72,6 +72,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ReporteVentas = "ReporteVentas"
         case Presupuesto = "Presupuesto"
         case BrokerSoms = "BrokerSOMSActualizacion"
+        case APVServicios = "APVServiciosATG"
     }
     
     private enum Procedure: String {
@@ -353,9 +354,36 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
-    public func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String) {
+    public func bigTicketAvailableToShipWithSku(userId: String, productsArray: [[String:String]], zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
+        let requestParameters = ["ProductAvailableToShip":["IdUsuario": userId, "inCP": zip, "skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .AvailableToShip, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
     }
+    
+    public func softLineAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let requestParameters = ["ProductAvailableToShip":["skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ValidSaleExtendedCatalog, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+    
     public func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         let requestParameters = ["ConsultaCalleCPRequest" : ["cp" : zip]]
