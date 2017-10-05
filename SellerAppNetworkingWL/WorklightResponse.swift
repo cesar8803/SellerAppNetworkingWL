@@ -45,8 +45,8 @@ public class WorklightResponse: Mappable{
     public var consultaEMAResponse: ConsultaEMAResponse?
     public var altaOrdenResponse: AltaOrdenResponse?
     public var responseCreaActualizaOVREMSterling: ResponseCreaActualizaOVREMSterling?
-    public var productAvailableToShipBtResponse: ProductAvailableToShipBtResponse?
-    public var productAvailableToShipSlResponse: ProductAvailableToShipSlResponse?
+    public var productAvailableToShipBtResponse: ProductAvailableToShipResponse?
+    public var productAvailableToShipSlResponse: IsValidToSaleByExtendedCatalogResponse?
 
 
     public required init?(map: Map){
@@ -60,6 +60,7 @@ public class WorklightResponse: Mappable{
         obtenerTiposMesaResponse <- map["obtenerTiposMesaResponse"]
         consultarParametroResponse <- map["consultarParametroResponse"]
         productAvailableToShipBtResponse <- map["ProductAvailableToShipResponse"]
+        productAvailableToShipSlResponse <- map["isValidToSaleByExtendedCatalogResponse"]
         busquedaEventoResponse <- map["busquedaEventoResponse"]
         listaEventoResponse <- map["listaEventoResponse"]
         remisionesConsultaOrdenResponse <- map["Remisiones_consulta_ordenResponse"]
