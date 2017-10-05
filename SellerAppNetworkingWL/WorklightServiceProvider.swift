@@ -80,6 +80,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Login = "CapturaClientesCreditoService_Login"
         case SetSolicitudCredito = "CapturaClientesCreditoService_setSolicitudCredito"
         case subirArchivo = "CapturaClientesCreditoService_subirArchivo"
+        case subirFirma = "CapturaClientesCreditoService_subirArchivoFirma"
         
         //CatalogosCredito
         case CatAntigDom = "catAntigDom"
@@ -747,7 +748,103 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createUpdateSOMSShipmentOrder(shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, token: String, userId: String) {
         
     }
-    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAdress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, token: String, userId: String) {
+    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAddress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        //assert(products?.count > 0, "We MUST have at least one product!")
+        
+        let charset = NSCharacterSet(charactersIn: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted
+        
+        if let orderLines = (products?.map {
+            [
+                "OrderedQty" : "\($0.quantity)",
+                "Item" : [
+                    "itemID" : $0.itemSKU,
+                    "itemDesc" : $0.itemDescription.addingPercentEncoding(withAllowedCharacters: charset) ?? ""
+                ],
+                "LinePriceInfo" : [
+                    "unitPrice" : $0.price
+                ]
+            ]
+            }) {
+            
+            let order = [
+                "OrderName" : storeNumber,
+                "OrderType" : "Personal",
+                "OrderNo" : orderID
+            ]
+            
+            let params: [String : Any] = [
+                "CreaActualizaOVREMRequest": [
+                    "Evento": eventID ?? "",
+                    "IdDestinatatio": customerID,
+                    "IdDireccionDestino": addressID,
+                    "IdDireccionRemitente": senderID ?? "",
+                    "IdRemision": shipmentID,
+                    "IdRemitente": senderAddressID ?? "",
+                    "TipoEvento": celebratedType ?? "",
+                    "Bandera_APV": currentStoreInventory ? "F" : "T",
+                    "inUser" : userId,
+                    "Usuario": ""
+                ],
+                "setOrdenSterling": [
+                    "Order" : order,
+                    "OrderLines" : orderLines,
+                    "PersonInfoBillTo" : [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAddress.street,
+                        "addressLine2" : shippingAddress.number,
+                        "addressLine3" : shippingAddress.interiorNumber,
+                        "addressLine4" : shippingAddress.settlement,
+                        "addressLine5" : shippingAddress.township,
+                        "city"         : shippingAddress.city,
+                        "state"        : shippingAddress.state,
+                        "zipCode"      : shippingAddress.zipCode,
+                        "dayPhone"     : shippingAddress.homePhone,
+                        "mobilePhone"  : shippingAddress.mobilePhone
+                    ],
+                    "PersonInfoContact": [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAddress.street,
+                        "addressLine2" : shippingAddress.number,
+                        "addressLine3" : shippingAddress.interiorNumber,
+                        "addressLine4" : shippingAddress.settlement,
+                        "addressLine5" : shippingAddress.township,
+                        "city"         : shippingAddress.city,
+                        "state"        : shippingAddress.state,
+                        "zipCode"      : shippingAddress.zipCode,
+                        "dayPhone"     : shippingAddress.homePhone,
+                        "mobilePhone"  : shippingAddress.mobilePhone
+                    ],
+                    "PersonInfoShipTo": [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAddress.street,
+                        "addressLine2" : shippingAddress.number,
+                        "addressLine3" : shippingAddress.interiorNumber,
+                        "addressLine4" : shippingAddress.settlement,
+                        "addressLine5" : shippingAddress.township,
+                        "city"         : shippingAddress.city,
+                        "state"        : shippingAddress.state,
+                        "zipCode"      : shippingAddress.zipCode,
+                        "dayPhone"     : shippingAddress.homePhone,
+                        "mobilePhone"  : shippingAddress.mobilePhone
+                    ]
+                ]
+            ]
+            
+            let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .CreateUpdateSOMSShipmentSterling, parameters: params as AnyObject)
+            
+            _ = manager.request(url).responseWorklight { [weak self](response) in
+                guard let weakSelf = self else { return }
+                let (result, error) = weakSelf.parseWorklightResponse(response)
+                DispatchQueue.main.async {
+                    
+                    completion(result, error)
+                }
+            }
+        }
         
     }
     public func creditBalanceForAccount(accountNumber: String, pin: String) {
@@ -1438,6 +1535,86 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
             
         }
+    }
+    
+    public func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let parameters = ["subirArchivoFirmaRequest" : ["terminal" : terminal, "tienda" : store, "documento" : document, "vendedor" : userId, "voucherNumero" : voucherNumber, "voucherFecha" : voucherDate, "voucherHora" : voucherTime, "numAutorizacion" : authorization ] ]
+        
+        let url = self.getRequestUrlForAdapter(adapter: .CapturaClientesCredito, procedure: .subirFirma, parameters: parameters as AnyObject)
+        
+        /*
+        var serializedJSONParameters:String!
+        
+        do {
+            serializedJSONParameters = try NSString(data: NSJSONSerialization.dataWithJSONObject(["stringFile" : file], options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
+        }
+        catch {
+            completion(false, "", nil)
+            return
+        }*/
+        
+        var jsonParametersString: String!
+        
+        do {
+            
+            jsonParametersString = try String(data: JSONSerialization.data(withJSONObject: ["stringFile" : file], options: .init(rawValue: 0)), encoding: .utf8)
+        }
+        catch {
+            
+        }
+        
+        let stringDataParameters: [String : Any] = ["json": jsonParametersString]
+        
+        _ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: nil).responseWorklight { [weak self] (response) in
+            
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        /*_ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: self.defaultHeaders()).responseWorklight{ [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }*/
+        
+        
+        /*
+        self.manager.request(.POST, url, parameters: stringDataParameters, encoding: .URL).responseWorklight { response -> Void in
+            
+            self.checkIfServiceDown(response.result.error)
+            
+            if (response.result.error != nil) {
+                completion(false, response.result.error!.localizedDescription, response.result.error)
+            }
+            else {
+                let jsonValue = JSON(response.result.value!)
+                
+                if (jsonValue["isSuccessful"].bool == true) {
+                    if let outMessage = jsonValue["outMessage"].string {
+                        completion(true, outMessage, nil)
+                    }
+                    else {
+                        completion(true, "", nil)
+                    }
+                }
+                else {
+                    if let errors = jsonValue["errors"].array {
+                        completion(false, "", self.errorWithErrorsArray(errors))
+                    }
+                    else {
+                        completion(false, "", response.result.error)
+                    }
+                    
+                }
+            }
+        }*/
     }
     
 }

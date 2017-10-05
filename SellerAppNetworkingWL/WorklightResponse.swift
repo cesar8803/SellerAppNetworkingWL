@@ -45,9 +45,11 @@ public class WorklightResponse: Mappable{
     public var consultaEMAResponse: ConsultaEMAResponse?
     public var altaOrdenResponse: AltaOrdenResponse?
     public var responseCreaActualizaOVREMSterling: ResponseCreaActualizaOVREMSterling?
+    public var responseCrearOrden: ResponseCrearOrden?
+    public var responseCreaActualizaOVREM: ResponseCreaActualizaOVREM?
+    public var outMessage: String?
     public var productAvailableToShipBtResponse: ProductAvailableToShipResponse?
     public var productAvailableToShipSlResponse: IsValidToSaleByExtendedCatalogResponse?
-
 
     public required init?(map: Map){
     }
@@ -89,5 +91,8 @@ public class WorklightResponse: Mappable{
         consultaEMAResponse <- map["ConsultaEMAResponse"]
         altaOrdenResponse <- map["AltaOrdenResponse"]
         responseCreaActualizaOVREMSterling <- map["responseCreaActualizaOVREMSterling"]
+        responseCrearOrden <- map["responseCrearOrden"]
+        responseCreaActualizaOVREM <- map["responseCreaActualizaOVREM"]
+        outMessage <- map["outMessage"]
     }
 }
