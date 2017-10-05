@@ -79,6 +79,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Login = "CapturaClientesCreditoService_Login"
         case SetSolicitudCredito = "CapturaClientesCreditoService_setSolicitudCredito"
         case subirArchivo = "CapturaClientesCreditoService_subirArchivo"
+        case subirFirma = "CapturaClientesCreditoService_subirArchivoFirma"
         
         //CatalogosCredito
         case CatAntigDom = "catAntigDom"
@@ -1506,6 +1507,86 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
             
         }
+    }
+    
+    public func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let parameters = ["subirArchivoFirmaRequest" : ["terminal" : terminal, "tienda" : store, "documento" : document, "vendedor" : userId, "voucherNumero" : voucherNumber, "voucherFecha" : voucherDate, "voucherHora" : voucherTime, "numAutorizacion" : authorization ] ]
+        
+        let url = self.getRequestUrlForAdapter(adapter: .CapturaClientesCredito, procedure: .subirFirma, parameters: parameters as AnyObject)
+        
+        /*
+        var serializedJSONParameters:String!
+        
+        do {
+            serializedJSONParameters = try NSString(data: NSJSONSerialization.dataWithJSONObject(["stringFile" : file], options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
+        }
+        catch {
+            completion(false, "", nil)
+            return
+        }*/
+        
+        var jsonParametersString: String!
+        
+        do {
+            
+            jsonParametersString = try String(data: JSONSerialization.data(withJSONObject: ["stringFile" : file], options: .init(rawValue: 0)), encoding: .utf8)
+        }
+        catch {
+            
+        }
+        
+        let stringDataParameters: [String : Any] = ["json": jsonParametersString]
+        
+        _ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: nil).responseWorklight { [weak self] (response) in
+            
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        /*_ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: self.defaultHeaders()).responseWorklight{ [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }*/
+        
+        
+        /*
+        self.manager.request(.POST, url, parameters: stringDataParameters, encoding: .URL).responseWorklight { response -> Void in
+            
+            self.checkIfServiceDown(response.result.error)
+            
+            if (response.result.error != nil) {
+                completion(false, response.result.error!.localizedDescription, response.result.error)
+            }
+            else {
+                let jsonValue = JSON(response.result.value!)
+                
+                if (jsonValue["isSuccessful"].bool == true) {
+                    if let outMessage = jsonValue["outMessage"].string {
+                        completion(true, outMessage, nil)
+                    }
+                    else {
+                        completion(true, "", nil)
+                    }
+                }
+                else {
+                    if let errors = jsonValue["errors"].array {
+                        completion(false, "", self.errorWithErrorsArray(errors))
+                    }
+                    else {
+                        completion(false, "", response.result.error)
+                    }
+                    
+                }
+            }
+        }*/
     }
     
 }

@@ -149,6 +149,10 @@ public protocol WorklightServiceProtocol
     func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func getStoreDetail(store:String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber:String, storeNumberToSend:String, orderNumber:String, isNewCustomer:Bool, isBigTicketOrder:Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    
+    //MARK: - Signature
+    
+    func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
 
 
