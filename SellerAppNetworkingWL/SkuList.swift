@@ -12,7 +12,7 @@ import ObjectMapper
 public class SkuList: Mappable{
     public var sku: String?
     public var articulosDisponibles: String?
-    public var isAvailableToShip: Int?
+    public var isAvailableToShip: Bool?
     public var display: Bool?
     
     public required init?(map: Map){
