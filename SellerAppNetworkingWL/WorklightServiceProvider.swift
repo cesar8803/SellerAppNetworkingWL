@@ -372,7 +372,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     public func softLineAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
-        let requestParameters = ["ProductAvailableToShip":["skuList": productsArray]]
+        let requestParameters = ["isValidToDisplayRequest":["skuList": productsArray]]
         let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ValidSaleExtendedCatalog, parameters: requestParameters as AnyObject)
         
         _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
