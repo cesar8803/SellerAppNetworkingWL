@@ -1617,5 +1617,25 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }*/
     }
     
+    
+    //MARK: - Card's Balance
+    
+    public func cardBalance(numeroCuenta: String, noValidaPin:String="1", completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["TSCCRE03":["numeroCuenta": numeroCuenta, "noValidaPin": noValidaPin]]
+        
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .CardBalance, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+
+    
 }
 
