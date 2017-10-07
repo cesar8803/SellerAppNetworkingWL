@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class SaldosResponse{
+public class SaldosResponse:Mappable{
     public var svc:String?
     public var suc:String?
     public var pm_sinrefin:String?

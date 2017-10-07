@@ -50,7 +50,7 @@ public class WorklightResponse: Mappable{
     public var outMessage: String?
     public var productAvailableToShipBtResponse: ProductAvailableToShipResponse?
     public var productAvailableToShipSlResponse: IsValidToSaleByExtendedCatalogResponse?
-    public var saldos:SaldosResponse?
+    public var saldos: SaldosResponse?
 
     public required init?(map: Map){
     }

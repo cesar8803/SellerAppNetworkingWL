@@ -1493,20 +1493,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     func parseWorklightResponse(_ response: DataResponse<Data>)->(WorklightResponse?, NSError?){
     
         if response.error != nil {
-        
             return (nil, response.error! as NSError)
         }else{
-        
             if let json = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String : Any]{
-                
                 if let wlResponse = WorklightResponse(JSON: json!){
                     return (wlResponse, nil)
                 }else{
                     return (nil, NSError(domain: "worklight.object", code: WorklightErrorCodes.WLResponseParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "No se pudo crear el objeto Worklight Response"]))
                 }
-                
             }else{
-            
                 return (nil, NSError(domain: "json.parser", code: WorklightErrorCodes.JSONParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "La respuesta no viene en el formato correcto"]))
             }
             
