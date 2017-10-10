@@ -72,6 +72,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ReporteVentas = "ReporteVentas"
         case Presupuesto = "Presupuesto"
         case BrokerSoms = "BrokerSOMSActualizacion"
+        case APVServiciosATG = "APVServiciosATG"
     }
     
     private enum Procedure: String {
@@ -201,7 +202,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         //Budget
         case SaveBudget = "Alta_Presupuesto"
-        
+        case EstimatedDeliveryDate = "consultarFechaEstimadaEntrega"
     }
     
     //1 - WL up
@@ -1589,5 +1590,47 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }*/
     }
     
+    public func searchCCStores(state: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "obtenerTiendasCCPorEstadoRequest" : [
+                "idEstado" : state
+            ]
+        ]
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .SearchStoresCC, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+        
+        
+    }
+    
+    public func calculateEDD(productSOMS : [ProductSOMS], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let params = [
+            "obtenerTiendasCCPorEstadoRequest" : [
+                "idEstado" : "prueba"
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .EstimatedDeliveryDate, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+    }
 }
 

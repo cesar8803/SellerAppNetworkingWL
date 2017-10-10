@@ -153,6 +153,9 @@ public protocol WorklightServiceProtocol
     //MARK: - Signature
     
     func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    
+    //MARK: - Estimated Delivery Date
+    func func calculateEDD(productSOMS : [ProductSOMS], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
 
 

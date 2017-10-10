@@ -167,6 +167,7 @@
 		71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */; };
 		71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */; };
 		71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */; };
+		752A43DF1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */; };
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
@@ -336,6 +337,7 @@
 		71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolResponse.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolResponse.swift; sourceTree = "<group>"; };
 		71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolRecord.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolRecord.swift; sourceTree = "<group>"; };
 		71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolHeader.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolHeader.swift; sourceTree = "<group>"; };
+		752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedDeliveryDateResponse.swift; sourceTree = "<group>"; };
 		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 		A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaOrdenResponse.swift; path = SellerAppNetworkingWL/AltaOrdenResponse.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 				71BEBAF61F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift */,
 				A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */,
 				A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */,
+				752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
 				7163793B1F1680D4001486F3 /* Cat1200686.swift in Sources */,
+				752A43DF1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift in Sources */,
 				716379621F1680D4001486F3 /* Cat5190016.swift in Sources */,
 				7163795E1F1680D4001486F3 /* Cat5020003.swift in Sources */,
 				716379671F1680D4001486F3 /* Cat5380225.swift in Sources */,

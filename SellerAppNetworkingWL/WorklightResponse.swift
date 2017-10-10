@@ -48,6 +48,7 @@ public class WorklightResponse: Mappable{
     public var responseCrearOrden: ResponseCrearOrden?
     public var responseCreaActualizaOVREM: ResponseCreaActualizaOVREM?
     public var outMessage: String?
+    public var estimatedDeliveryDate : EstimatedDeliveryDateResponse?
 
     public required init?(map: Map){
     }
@@ -90,5 +91,6 @@ public class WorklightResponse: Mappable{
         responseCrearOrden <- map["responseCrearOrden"]
         responseCreaActualizaOVREM <- map["responseCreaActualizaOVREM"]
         outMessage <- map["outMessage"]
+        estimatedDeliveryDate <- map["consultarFechaEstimadaEntregaResponse"]
     }
 }
