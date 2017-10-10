@@ -153,6 +153,8 @@ public protocol WorklightServiceProtocol
     //MARK: - Signature
     
     func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    
+    //MARK: - Update
+    
+    func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
-
-
