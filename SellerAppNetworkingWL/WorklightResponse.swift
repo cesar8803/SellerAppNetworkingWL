@@ -53,6 +53,7 @@ public class WorklightResponse: Mappable{
     public var actualizarOBS_FechaEntregaBTResponse: ActualizarOBS_FechaEntregaBTResponse?
     public var cardBalance: BalanceResponseWL?
     public var walletBalance: WalletBalanceResponseWL?
+    public var skuStatusChangeList: SkuStatusChangeList?
 
     public required init?(map: Map){
     }
@@ -100,5 +101,6 @@ public class WorklightResponse: Mappable{
         actualizarOBS_FechaEntregaBTResponse <- map["actualizarOBS_FechaEntregaBTResponse"]
         cardBalance <- map["Saldos"]
         walletBalance <- map["SaldoMonedero"]
+        skuStatusChangeList <- map["skuStatusChangeList"]
     }
 }
