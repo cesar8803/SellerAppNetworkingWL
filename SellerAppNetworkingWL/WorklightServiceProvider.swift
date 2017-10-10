@@ -1630,7 +1630,20 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
     }
-
+   
     
+    public func walletBalanceForAccount(accountNumber: String, completion:@escaping (WorklightResponse?, NSError?) -> Void) {
+        let requestParameters = ["TSCCTE09":["numeroCuenta": accountNumber]]
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .MonederoBalance, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
 }
 
