@@ -50,7 +50,8 @@ public class WorklightResponse: Mappable{
     public var outMessage: String?
     public var productAvailableToShipBtResponse: ProductAvailableToShipResponse?
     public var productAvailableToShipSlResponse: IsValidToSaleByExtendedCatalogResponse?
-    public var saldos: BalanceResponse?
+    public var saldos: BalanceResponseWL?
+    public var walletBalance: WalletBalanceResponseWL?
 
     public required init?(map: Map){
     }
@@ -96,5 +97,6 @@ public class WorklightResponse: Mappable{
         responseCreaActualizaOVREM <- map["responseCreaActualizaOVREM"]
         outMessage <- map["outMessage"]
         saldos <- map["Saldos"]
+        walletBalance <- map["SaldoMonedero"]
     }
 }

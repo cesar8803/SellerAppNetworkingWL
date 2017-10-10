@@ -173,8 +173,8 @@
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
-		F774F8041F8C432300A00F40 /* WalletBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F8031F8C432300A00F40 /* WalletBalanceResponse.swift */; };
-		F77B9C821F8733020077373D /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B9C811F8733020077373D /* BalanceResponse.swift */; };
+		F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */; };
+		F77B9C821F8733020077373D /* BalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B9C811F8733020077373D /* BalanceResponseWL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -348,8 +348,8 @@
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 		A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaOrdenResponse.swift; path = SellerAppNetworkingWL/AltaOrdenResponse.swift; sourceTree = "<group>"; };
 		A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaOrdenRecord.swift; path = SellerAppNetworkingWL/SetAltaOrdenRecord.swift; sourceTree = "<group>"; };
-		F774F8031F8C432300A00F40 /* WalletBalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletBalanceResponse.swift; path = SellerAppNetworkingWL/WalletBalanceResponse.swift; sourceTree = "<group>"; };
-		F77B9C811F8733020077373D /* BalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceResponse.swift; path = SellerAppNetworkingWL/BalanceResponse.swift; sourceTree = "<group>"; };
+		F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletBalanceResponseWL.swift; path = SellerAppNetworkingWL/WalletBalanceResponseWL.swift; sourceTree = "<group>"; };
+		F77B9C811F8733020077373D /* BalanceResponseWL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceResponseWL.swift; path = SellerAppNetworkingWL/BalanceResponseWL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,8 +559,8 @@
 				83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */,
 				83F569DD1F8582520057A62A /* SkuList.swift */,
 				8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */,
-				F77B9C811F8733020077373D /* BalanceResponse.swift */,
-				F774F8031F8C432300A00F40 /* WalletBalanceResponse.swift */,
+				F77B9C811F8733020077373D /* BalanceResponseWL.swift */,
+				F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -706,7 +706,7 @@
 				716379961F1680D4001486F3 /* ListaFestejados.swift in Sources */,
 				716379921F1680D4001486F3 /* ListaArticulos.swift in Sources */,
 				716379591F1680D4001486F3 /* Cat4990193.swift in Sources */,
-				F77B9C821F8733020077373D /* BalanceResponse.swift in Sources */,
+				F77B9C821F8733020077373D /* BalanceResponseWL.swift in Sources */,
 				71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */,
 				7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */,
 				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
@@ -715,7 +715,7 @@
 				716379851F1680D4001486F3 /* Catst420869.swift in Sources */,
 				716379941F1680D4001486F3 /* ListaEventoResponse.swift in Sources */,
 				716379871F1680D4001486F3 /* Catst420884.swift in Sources */,
-				F774F8041F8C432300A00F40 /* WalletBalanceResponse.swift in Sources */,
+				F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */,
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
 				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,

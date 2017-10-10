@@ -14,6 +14,9 @@ enum WorklightErrorCodes: Int{
     case WLResponseParser = -102
 }
 
+public typealias CompletionResponseWL =  (_ wlResponse: WorklightResponse?, _ error:NSError?) -> Void
+
+
 public protocol WorklightServiceProtocol
 {
     // CapturaClientesCredito
@@ -31,7 +34,8 @@ public protocol WorklightServiceProtocol
     // CICS
     func segmentedCreditBalanceForAccount(accountNumber: String, pin: String)
     func creditBalanceForAccount(accountNumber:String, pin: String)
-    func monederoBalanceForAccount(accountNumber: String)
+    //func monederoBalanceForAccount(accountNumber: String)
+    func walletBalanceForAccount(accountNumber:String, completion:@escaping CompletionResponseWL)
     
     //MARK: SOMS
     func neighborhoodInZip(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)

@@ -10,6 +10,15 @@ import Foundation
 import ObjectMapper
 
 public class WalletBalanceResponseWL:Mappable{
-    public nc:String?
-    public sa:String
+    public var nc:String?
+    public var sa:String?
+    
+    public required init?(map: Map){
+    }
+    
+    public func mapping(map: Map){
+        nc <- map["nc"]
+        sa <- map["sa"]
+    }
+        
 }
