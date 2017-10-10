@@ -50,6 +50,7 @@ public class WorklightResponse: Mappable{
     public var outMessage: String?
     public var productAvailableToShipBtResponse: ProductAvailableToShipResponse?
     public var productAvailableToShipSlResponse: IsValidToSaleByExtendedCatalogResponse?
+    public var actualizarOBS_FechaEntregaBTResponse: ActualizarOBS_FechaEntregaBTResponse?
     public var cardBalance: BalanceResponseWL?
     public var walletBalance: WalletBalanceResponseWL?
 
@@ -96,6 +97,7 @@ public class WorklightResponse: Mappable{
         responseCrearOrden <- map["responseCrearOrden"]
         responseCreaActualizaOVREM <- map["responseCreaActualizaOVREM"]
         outMessage <- map["outMessage"]
+        actualizarOBS_FechaEntregaBTResponse <- map["actualizarOBS_FechaEntregaBTResponse"]
         cardBalance <- map["Saldos"]
         walletBalance <- map["SaldoMonedero"]
     }
