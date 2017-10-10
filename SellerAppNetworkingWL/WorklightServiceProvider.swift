@@ -1470,18 +1470,21 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         
         var params: [String : Any] = [:]
-        var skus: [[String : Any]] = []
+        var skus: [Any] = []
+        var sku: [String : Any] = [:]
         
         for product in products{
         
-            let sku = ["skuId": product.itemSKU, "quantity" : product.quantity]
+            sku["skuId"] = product.itemSKU
+            sku["quantity"] = product.quantity
+            
             skus.append(sku)
         }
         
         params["skuInventory"] = skus
         params["operation"] = procedure
         
-        let url = getRequestUrlForAdapter(adapter: .ATGServices, procedure: .UpdateInventary, parameters: params)
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
