@@ -48,6 +48,10 @@ public class WorklightResponse: Mappable{
     public var responseCrearOrden: ResponseCrearOrden?
     public var responseCreaActualizaOVREM: ResponseCreaActualizaOVREM?
     public var outMessage: String?
+    public var productAvailableToShipBtResponse: ProductAvailableToShipResponse?
+    public var productAvailableToShipSlResponse: IsValidToSaleByExtendedCatalogResponse?
+    public var cardBalance: BalanceResponseWL?
+    public var walletBalance: WalletBalanceResponseWL?
 
     public required init?(map: Map){
     }
@@ -59,6 +63,8 @@ public class WorklightResponse: Mappable{
         results <- map["results"]
         obtenerTiposMesaResponse <- map["obtenerTiposMesaResponse"]
         consultarParametroResponse <- map["consultarParametroResponse"]
+        productAvailableToShipBtResponse <- map["ProductAvailableToShipResponse"]
+        productAvailableToShipSlResponse <- map["isValidToSaleByExtendedCatalogResponse"]
         busquedaEventoResponse <- map["busquedaEventoResponse"]
         listaEventoResponse <- map["listaEventoResponse"]
         remisionesConsultaOrdenResponse <- map["Remisiones_consulta_ordenResponse"]
@@ -90,5 +96,7 @@ public class WorklightResponse: Mappable{
         responseCrearOrden <- map["responseCrearOrden"]
         responseCreaActualizaOVREM <- map["responseCreaActualizaOVREM"]
         outMessage <- map["outMessage"]
+        cardBalance <- map["Saldos"]
+        walletBalance <- map["SaldoMonedero"]
     }
 }
