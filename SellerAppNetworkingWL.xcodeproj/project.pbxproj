@@ -143,6 +143,7 @@
 		716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */; };
 		716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */; };
 		716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716379CD1F16903C001486F3 /* DireccionDestinatario.swift */; };
+		7196133D1F8D7A7C0080B407 /* SkuStatusChangeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */; };
 		71992E011F55F45500EE35A2 /* AltaClienteDireccionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71992E001F55F45500EE35A2 /* AltaClienteDireccionResponse.swift */; };
 		71992E031F55F49F00EE35A2 /* SetAltaClienteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71992E021F55F49F00EE35A2 /* SetAltaClienteRecord.swift */; };
 		71B66EAA1F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B66EA91F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift */; };
@@ -317,6 +318,7 @@
 		716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorklightSOMSProduct.swift; path = SellerAppNetworkingWL/WorklightSOMSProduct.swift; sourceTree = "<group>"; };
 		716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemisionesConsultaOrdenResponse.swift; path = SellerAppNetworkingWL/RemisionesConsultaOrdenResponse.swift; sourceTree = "<group>"; };
 		716379CD1F16903C001486F3 /* DireccionDestinatario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DireccionDestinatario.swift; path = SellerAppNetworkingWL/DireccionDestinatario.swift; sourceTree = "<group>"; };
+		7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkuStatusChangeList.swift; path = SellerAppNetworkingWL/SkuStatusChangeList.swift; sourceTree = "<group>"; };
 		71992E001F55F45500EE35A2 /* AltaClienteDireccionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaClienteDireccionResponse.swift; path = SellerAppNetworkingWL/AltaClienteDireccionResponse.swift; sourceTree = "<group>"; };
 		71992E021F55F49F00EE35A2 /* SetAltaClienteRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaClienteRecord.swift; path = SellerAppNetworkingWL/SetAltaClienteRecord.swift; sourceTree = "<group>"; };
 		71B66EA91F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultarEstadosTiendasCCResponse.swift; path = SellerAppNetworkingWL/ConsultarEstadosTiendasCCResponse.swift; sourceTree = "<group>"; };
@@ -561,6 +563,7 @@
 				8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */,
 				F77B9C811F8733020077373D /* BalanceResponseWL.swift */,
 				F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */,
+				7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				716379941F1680D4001486F3 /* ListaEventoResponse.swift in Sources */,
 				716379871F1680D4001486F3 /* Catst420884.swift in Sources */,
 				F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */,
+				7196133D1F8D7A7C0080B407 /* SkuStatusChangeList.swift in Sources */,
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
 				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
