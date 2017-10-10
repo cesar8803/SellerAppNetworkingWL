@@ -64,7 +64,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ShoppingList = "ShoppingListPag"
         case Configuration = "Configuraciones"
         case NoSpot = "Catalogos"
-        case Shipment = "RemisionesR1"
+        case Shipment = "Remisiones"
         case Scool = "SCOL"
         case CustomerInfo = "ConsultaDatosCliente"
         case MDMWebService = "MDMWebService"
@@ -73,7 +73,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Presupuesto = "Presupuesto"
         case BrokerSoms = "BrokerSOMSActualizacion"
         case APVServicios = "APVServiciosATG"
-        case shipping = "Remisiones"
 
     }
     
@@ -130,6 +129,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Inventario
         case SkuInventario = "SKUINVENTARIO_ConsultaSku_Inventario"
+        case UpdateInventary = "CambiarInventarioATG"
         
         // Genericos
         case SkuGenericos = "SKUGENERICOS_ConsultaSku_Genericos"
@@ -1169,7 +1169,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             ]
         ]
     
-        let url = getRequestUrlForAdapter(adapter: .shipping, procedure: .updateOrderDeliveryDate, parameters: params as AnyObject)
+        let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .updateOrderDeliveryDate, parameters: params as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
@@ -1512,6 +1512,37 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
+    public func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        var params: [String : Any] = [:]
+        var skus: [Any] = []
+        var sku: [String : Any] = [:]
+        
+        for product in products{
+        
+            sku["skuId"] = product.itemSKU
+            sku["quantity"] = product.quantity
+            
+            skus.append(sku)
+        }
+        
+        params["skuInventory"] = skus
+        params["operation"] = procedure
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+    }
+    
     /*
     func checkIfServiceDown(serviceError:NSError?)
     {
@@ -1677,7 +1708,20 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
     }
-
+   
     
+    public func walletBalanceForAccount(accountNumber: String, completion:@escaping (WorklightResponse?, NSError?) -> Void) {
+        let requestParameters = ["TSCCTE09":["numeroCuenta": accountNumber]]
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .MonederoBalance, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
 }
 
