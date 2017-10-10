@@ -126,6 +126,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Inventario
         case SkuInventario = "SKUINVENTARIO_ConsultaSku_Inventario"
+        case UpdateInventary = "CambiarInventarioATG"
         
         // Genericos
         case SkuGenericos = "SKUGENERICOS_ConsultaSku_Genericos"
@@ -1453,6 +1454,37 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func saveBudget(withInfo info: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
         let url = getRequestUrlForAdapter(adapter: .Presupuesto, procedure: .SaveBudget, parameters: info as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+    }
+    
+    public func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        var params: [String : Any] = [:]
+        var skus: [Any] = []
+        var sku: [String : Any] = [:]
+        
+        for product in products{
+        
+            sku["skuId"] = product.itemSKU
+            sku["quantity"] = product.quantity
+            
+            skus.append(sku)
+        }
+        
+        params["skuInventory"] = skus
+        params["operation"] = procedure
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
