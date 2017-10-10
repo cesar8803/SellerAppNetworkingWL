@@ -172,6 +172,7 @@
 		83F569DC1F8581AD0057A62A /* ProductAvailableToShipResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */; };
 		83F569DE1F8582520057A62A /* SkuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F569DD1F8582520057A62A /* SkuList.swift */; };
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
+		A94317191F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94317181F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift */; };
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
 		F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */; };
@@ -347,6 +348,7 @@
 		8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IsValidToSaleByExtendedCatalogResponse.swift; path = SellerAppNetworkingWL/IsValidToSaleByExtendedCatalogResponse.swift; sourceTree = "<group>"; };
 		83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductAvailableToShipResponse.swift; path = SellerAppNetworkingWL/ProductAvailableToShipResponse.swift; sourceTree = "<group>"; };
 		83F569DD1F8582520057A62A /* SkuList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkuList.swift; path = SellerAppNetworkingWL/SkuList.swift; sourceTree = "<group>"; };
+		A94317181F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActualizarOBS_FechaEntregaBTResponse.swift; path = SellerAppNetworkingWL/ActualizarOBS_FechaEntregaBTResponse.swift; sourceTree = "<group>"; };
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 		A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaOrdenResponse.swift; path = SellerAppNetworkingWL/AltaOrdenResponse.swift; sourceTree = "<group>"; };
 		A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaOrdenRecord.swift; path = SellerAppNetworkingWL/SetAltaOrdenRecord.swift; sourceTree = "<group>"; };
@@ -561,6 +563,8 @@
 				83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */,
 				83F569DD1F8582520057A62A /* SkuList.swift */,
 				8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */,
+				F77B9C811F8733020077373D /* SaldosResponse.swift */,
+				A94317181F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift */,
 				F77B9C811F8733020077373D /* BalanceResponseWL.swift */,
 				F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */,
 				7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */,
@@ -859,6 +863,7 @@
 				716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */,
 				716379491F1680D4001486F3 /* Cat4190005.swift in Sources */,
 				716379781F1680D4001486F3 /* Catst420837.swift in Sources */,
+				A94317191F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift in Sources */,
 				7163793A1F1680D4001486F3 /* Cat1200649.swift in Sources */,
 				716379911F1680D4001486F3 /* L3CategoryInfo.swift in Sources */,
 				716379561F1680D4001486F3 /* Cat4980014.swift in Sources */,

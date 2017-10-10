@@ -73,6 +73,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Presupuesto = "Presupuesto"
         case BrokerSoms = "BrokerSOMSActualizacion"
         case APVServicios = "APVServiciosATG"
+
     }
     
     private enum Procedure: String {
@@ -95,27 +96,29 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case MonederoBalance = "CicsRequestService_saldoMonedero"
         
         // SOMS
-        case ConsultaEMA = "DEMograficos_ConsultaEMA"
-        case ConsultaCalle = "DEMograficos_ConsultaCalleCP"
-        case ConsultaEdo = "DEMograficos_ConsultaEdo"
-        case ConsultaMun = "DEMograficos_ConsultaMun"
-        case ConsultaAsent = "DEMograficos_ConsultaAsent"
-        case SOMSLogin = "SOMSActualizacionPoolService_getLoginPool"
-        case GetCustomers = "SOMSConsultaPoolService_getConsultaClientesListaPool"
-        case GetAddresses = "SOMSConsultaPoolService_getConsultaClientesDireccionesListaPool"
-        case CreateAddress = "SOMSActualizacionPoolService_setAltaDireccion"
-        case CreateCustomer = "SOMSActualizacionPoolService_setAltaCliente"
-        case CreateOrder = "SOMSActualizacionPoolService_setAltaOrden"
-        case CreateOrderWithSKUs = "SOMSActualizacionPoolService_setAltaOrdenListaSkus"
-        case ModifyOrder = "SOMSActualizacionPoolService_setModificaOrden"
-        case AppendSku = "SOMSActualizacionPoolService_setAgregaSKU"
-        case SOMSDetails = "SOMSConsultaPoolService_getConsultaSKUPool"
-        case DetailSOMS = "ConsultaSKUPool"
-        case AvailableToShip = "productAvailableToShip"
-        case CreateRefundOrder = "NotificacionDevoluciones_CrearOrdenDevBT"
-        case ModifyOrderAddress = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
-        case AltaClienteDireccion = "AltaClienteDireccion"
-        case AltaOrdenR2 = "AltaOrden"
+        case ConsultaEMA                = "DEMograficos_ConsultaEMA"
+        case ConsultaCalle              = "DEMograficos_ConsultaCalleCP"
+        case ConsultaEdo                = "DEMograficos_ConsultaEdo"
+        case ConsultaMun                = "DEMograficos_ConsultaMun"
+        case ConsultaAsent              = "DEMograficos_ConsultaAsent"
+        case SOMSLogin                  = "SOMSActualizacionPoolService_getLoginPool"
+        case GetCustomers               = "SOMSConsultaPoolService_getConsultaClientesListaPool"
+        case GetAddresses               = "SOMSConsultaPoolService_getConsultaClientesDireccionesListaPool"
+        case CreateAddress              = "SOMSActualizacionPoolService_setAltaDireccion"
+        case CreateCustomer             = "SOMSActualizacionPoolService_setAltaCliente"
+        case CreateOrder                = "SOMSActualizacionPoolService_setAltaOrden"
+        case CreateOrderWithSKUs        = "SOMSActualizacionPoolService_setAltaOrdenListaSkus"
+        case ModifyOrder                = "SOMSActualizacionPoolService_setModificaOrden"
+        case AppendSku                  = "SOMSActualizacionPoolService_setAgregaSKU"
+        case SOMSDetails                = "SOMSConsultaPoolService_getConsultaSKUPool"
+        case DetailSOMS                 = "ConsultaSKUPool"
+        case AvailableToShip            = "productAvailableToShip"
+        case CreateRefundOrder          = "NotificacionDevoluciones_CrearOrdenDevBT"
+        case ModifyOrderAddress         = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
+        case AltaClienteDireccion       = "AltaClienteDireccion"
+        case AltaOrdenR2                = "AltaOrden"
+        case updateOrderDeliveryDate    = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
+
         
         // Endeca
         case ProductDetails = "getProductDetail"
@@ -183,7 +186,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Order Follow Up
         case GetOrderDetail             = "Remisiones_wbi_consulta_orden"
-        case UpdateDateCommentOrder     = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
+        case UpdateDateCommentOrder     = "Remisiones_wbi_ActualizarOBS_FechaEntregaBTR1"
         case GetScoolDetail             = "ConsultaOrdenVentaRespService_ConsultaOrdenVenta"
         
         // Shopping list
@@ -1135,6 +1138,49 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
+    
+    public func updateOrderDeliveryDate(order: String, sku: String, date: String, comments: String?, user_id: String, completion:  @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
+        
+        /*
+        {
+            "ActualizarOBS_FechaEntregaBTRequest": {
+                "FechaPropuesta": "2016-06-06",
+                "inUser": "123",
+                "IndicadorTipo": "OV",
+                "IndicadorServicio": "FEC",
+                "Observaciones": "",
+                "SKU": "1018866800",
+                "OrdenEntrega": "9009227548",
+                "Usuario": "123"
+            }
+        }
+        */
+        
+        let params = [
+            "ActualizarOBS_FechaEntregaBTRequest" : [
+                "FechaPropuesta" : date,
+                "inUser": user_id,
+                "IndicadorTipo": order.hasPrefix("90") ? "OV" : "RM",
+                "IndicadorServicio": comments == nil ? "FEC" : "OBS",
+                "Observaciones": comments ?? "",
+                "SKU": sku,
+                "OrdenEntrega": order,
+                "Usuario": user_id
+            ]
+        ]
+    
+        let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .updateOrderDeliveryDate, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    
+    }
+    
     public func productsForCategoryId(categoryId: String, page: String?, facets: [String]?, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         var childParameters:[String:Any] = ["almacenId" : storeNumber, "categoryId" : categoryId]
