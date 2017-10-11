@@ -18,6 +18,7 @@ public class RemisionesConsultaOrdenResponse: Mappable{
     public var direccionDestinatario: DireccionDestinatario?
     public var listaArticulos: [ListaArticulos]?
     public var diasEntrega: String?
+    public var observaciones: String?
     
     public required init?(map: Map){
     }
@@ -30,5 +31,6 @@ public class RemisionesConsultaOrdenResponse: Mappable{
         direccionDestinatario <- map["direccionDestinatario"]
         listaArticulos <- map["listaArticulos"]
         diasEntrega <- map["diasEntrega"]
+        observaciones <- map["observaciones"]
     }
 }
