@@ -168,6 +168,8 @@
 		71C31D991F21139D003E7449 /* GetConsultaSkuPoolResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */; };
 		71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */; };
 		71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */; };
+		75171F0A1F8DAD5B00E58E81 /* BalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B9C811F8733020077373D /* BalanceResponseWL.swift */; };
+		752A43DF1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */; };
 		8392FA1C1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */; };
 		83F569DC1F8581AD0057A62A /* ProductAvailableToShipResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */; };
 		83F569DE1F8582520057A62A /* SkuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F569DD1F8582520057A62A /* SkuList.swift */; };
@@ -176,7 +178,6 @@
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
 		F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */; };
-		F77B9C821F8733020077373D /* BalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B9C811F8733020077373D /* BalanceResponseWL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -344,6 +345,7 @@
 		71C31D981F21139D003E7449 /* GetConsultaSkuPoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolResponse.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolResponse.swift; sourceTree = "<group>"; };
 		71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolRecord.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolRecord.swift; sourceTree = "<group>"; };
 		71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolHeader.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolHeader.swift; sourceTree = "<group>"; };
+		752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedDeliveryDateResponse.swift; sourceTree = "<group>"; };
 		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IsValidToSaleByExtendedCatalogResponse.swift; path = SellerAppNetworkingWL/IsValidToSaleByExtendedCatalogResponse.swift; sourceTree = "<group>"; };
 		83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductAvailableToShipResponse.swift; path = SellerAppNetworkingWL/ProductAvailableToShipResponse.swift; sourceTree = "<group>"; };
@@ -563,7 +565,7 @@
 				83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */,
 				83F569DD1F8582520057A62A /* SkuList.swift */,
 				8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */,
-				F77B9C811F8733020077373D /* SaldosResponse.swift */,
+				752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */,
 				A94317181F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift */,
 				F77B9C811F8733020077373D /* BalanceResponseWL.swift */,
 				F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */,
@@ -634,7 +636,7 @@
 				TargetAttributes = {
 					43AECCBE1EFB1B7A00D1B243 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7683R2HRBA;
+						DevelopmentTeam = 95GB72XJX7;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -683,7 +685,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AA9A7B18B80D0F89AE07B45E /* [CP] Copy Pods Resources */ = {
@@ -708,12 +710,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75171F0A1F8DAD5B00E58E81 /* BalanceResponseWL.swift in Sources */,
 				71C31D771F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift in Sources */,
 				7163798F1F1680D4001486F3 /* L1Categories.swift in Sources */,
 				716379961F1680D4001486F3 /* ListaFestejados.swift in Sources */,
 				716379921F1680D4001486F3 /* ListaArticulos.swift in Sources */,
 				716379591F1680D4001486F3 /* Cat4990193.swift in Sources */,
-				F77B9C821F8733020077373D /* BalanceResponseWL.swift in Sources */,
 				71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */,
 				7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */,
 				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
@@ -841,6 +843,7 @@
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
 				7163793B1F1680D4001486F3 /* Cat1200686.swift in Sources */,
+				752A43DF1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift in Sources */,
 				716379621F1680D4001486F3 /* Cat5190016.swift in Sources */,
 				7163795E1F1680D4001486F3 /* Cat5020003.swift in Sources */,
 				716379671F1680D4001486F3 /* Cat5380225.swift in Sources */,
@@ -988,7 +991,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7683R2HRBA;
+				DEVELOPMENT_TEAM = 95GB72XJX7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1010,7 +1013,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7683R2HRBA;
+				DEVELOPMENT_TEAM = 95GB72XJX7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

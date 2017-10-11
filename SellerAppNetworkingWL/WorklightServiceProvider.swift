@@ -206,7 +206,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         //Budget
         case SaveBudget = "Alta_Presupuesto"
-        
+        case EstimatedDeliveryDate = "consultarFechaEstimadaEntrega"
     }
     
     //1 - WL up
@@ -1721,6 +1721,30 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             DispatchQueue.main.async {
                 completion(result, error)
             }
+        }
+    }
+    
+    
+    //MARK: - Estimated Delivery Date
+    
+    public func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let params = [
+            "obtenerTiendasCCPorEstadoRequest" : [
+                "idEstado" : "prueba"
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
         }
     }
 }

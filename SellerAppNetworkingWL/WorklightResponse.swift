@@ -54,6 +54,7 @@ public class WorklightResponse: Mappable{
     public var cardBalance: BalanceResponseWL?
     public var walletBalance: WalletBalanceResponseWL?
     public var skuStatusChangeList: [SkuStatusChangeList]?
+    public var estimatedDeliveryDateResponse : EstimatedDeliveryDateResponse?
 
     public required init?(map: Map){
     }
@@ -102,5 +103,6 @@ public class WorklightResponse: Mappable{
         cardBalance <- map["Saldos"]
         walletBalance <- map["SaldoMonedero"]
         skuStatusChangeList <- map["skuStatusChangeList"]
+        estimatedDeliveryDateResponse <- map["consultarFechaEstimadaEntregaResponse"]
     }
 }
