@@ -72,7 +72,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ReporteVentas = "ReporteVentas"
         case Presupuesto = "Presupuesto"
         case BrokerSoms = "BrokerSOMSActualizacion"
-        case APVServiciosATG = "APVServiciosATG"
+        case APVServicios = "APVServiciosATG"
     }
     
     private enum Procedure: String {
@@ -355,9 +355,36 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
-    public func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String) {
+    public func bigTicketAvailableToShipWithSku(userId: String, productsArray: [[String:String]], zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
+        let requestParameters = ["ProductAvailableToShip":["IdUsuario": userId, "inCP": zip, "skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .AvailableToShip, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
     }
+    
+    public func softLineAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let requestParameters = ["isValidToDisplayRequest":["skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ValidSaleExtendedCatalog, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+    
     public func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         let requestParameters = ["ConsultaCalleCPRequest" : ["cp" : zip]]
@@ -1466,20 +1493,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     func parseWorklightResponse(_ response: DataResponse<Data>)->(WorklightResponse?, NSError?){
     
         if response.error != nil {
-        
             return (nil, response.error! as NSError)
         }else{
-        
             if let json = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String : Any]{
-                
                 if let wlResponse = WorklightResponse(JSON: json!){
                     return (wlResponse, nil)
                 }else{
                     return (nil, NSError(domain: "worklight.object", code: WorklightErrorCodes.WLResponseParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "No se pudo crear el objeto Worklight Response"]))
                 }
-                
             }else{
-            
                 return (nil, NSError(domain: "json.parser", code: WorklightErrorCodes.JSONParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "La respuesta no viene en el formato correcto"]))
             }
             
@@ -1590,29 +1612,28 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }*/
     }
     
-    public func searchCCStores(state: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    
+    //MARK: - Card's Balance
+    
+    public func cardBalance(numeroCuenta: String, noValidaPin:String="1", completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        let params = [
-            "obtenerTiendasCCPorEstadoRequest" : [
-                "idEstado" : state
-            ]
-        ]
-        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .SearchStoresCC, parameters: params as AnyObject)
+        let requestParameters = ["TSCCRE03":["numeroCuenta": numeroCuenta, "noValidaPin": noValidaPin]]
         
-        _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            guard let weakSelf = self else{ return }
-            let (result, error) = weakSelf.parseWorklightResponse(response)
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .CardBalance, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
             
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
                 completion(result, error)
             }
-            
         }
-        
-        
     }
+
+    //MARK: - Estimated Delivery Date
     
-    public func calculateEDD(productSOMS : [ProductSOMS], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+    public func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
         let params = [
             "obtenerTiendasCCPorEstadoRequest" : [
@@ -1620,7 +1641,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             ]
         ]
         
-        let url = getRequestUrlForAdapter(adapter: .EstimatedDeliveryDate, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
@@ -1632,5 +1653,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
         }
     }
+
 }
 

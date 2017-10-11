@@ -55,7 +55,8 @@ public protocol WorklightServiceProtocol
     func changeDeliveryDateOfSKUOnSOMSOrder(userId: String, token: String, orderNumber: String, sku: String, date: String, originalDateString: String)
     func changeSKUToClienteAvisaOnSOMSOrder(userId: String, token: String, orderNumber: String, sku: String)
     func inventoryDetailsForSOMSItemWithSku(userId: String, sku: String,zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
-    func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String)
+    func bigTicketAvailableToShipWithSku(userId: String, productsArray: [[String:String]], zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func softLineAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
   func updateCustomerAddressSOMS(orderNumber : String, lada: String, telephone : String, inFldTelephone : String, clientRecord : String, inEvent : String, inEventCard : String, inCard : String, selectRecordAsen : String, eventLada : String, inTelephoneEvent : String, isMoreDir : String , inPassword : String, inUser : String, token: String)
   
@@ -155,7 +156,7 @@ public protocol WorklightServiceProtocol
     func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     //MARK: - Estimated Delivery Date
-    func func calculateEDD(productSOMS : [ProductSOMS], completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
 
 

@@ -1,5 +1,3 @@
-EstimatedDeliveryDateResponse
-
 //
 //  EstimatedDeliveryDateResponse.swift
 //  SellerAppNetworkingWL
@@ -11,37 +9,37 @@ EstimatedDeliveryDateResponse
 import Foundation
 import ObjectMapper
 
-class EstimatedDeliveryDateResponse: Mappable {
+public class EstimatedDeliveryDateResponse: Mappable {
     
-    var consultarFechaEstimadaEntregaResponse: ConsultarFechaEstimadaEntregaRequest?
-    var isSuccessful: Int?
+    public var consultarFechaEstimadaEntregaResponse: ConsultarFechaEstimadaEntregaResponse?
+    public var isSuccessful: Int?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
-        consultarFechaEstimadaEntregaRequest <- map["consultarFechaEstimadaEntregaRequest"]
+    public func mapping(map: Map){
+        consultarFechaEstimadaEntregaResponse <- map["consultarFechaEstimadaEntregaRequest"]
         isSuccessful <- map["isSuccessful"]
     }
 }
 
 
-class ConsultarFechaEstimadaEntregaRequest: Mappable{
-    var listaFechaEstimadaEntrega: [ListaFechaEstimadaEntrega]?
+public class ConsultarFechaEstimadaEntregaResponse: Mappable{
+    public var listaFechaEstimadaEntrega: [ListaFechaEstimadaEntrega]?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         listaFechaEstimadaEntrega <- map["listaFechaEstimadaEntrega"]
     }
 }
 
-class ListaFechaEstimadaEntrega: Mappable{
-    var sku: String?
-    var fechaEstimadaEntrega: String?
+public class ListaFechaEstimadaEntrega: Mappable{
+    public var sku: String?
+    public var fechaEstimadaEntrega: String?
     
-    required init?(map: Map){
+    required public init?(map: Map){
     }
-    func mapping(map: Map){
+    public func mapping(map: Map){
         sku <- map["sku"]
         fechaEstimadaEntrega <- map["fechaEstimadaEntrega"]
     }

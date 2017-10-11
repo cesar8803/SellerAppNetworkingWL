@@ -168,9 +168,13 @@
 		71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9A1F211407003E7449 /* GetConsultaSkuPoolRecord.swift */; };
 		71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */; };
 		752A43DF1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */; };
+		8392FA1C1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */; };
+		83F569DC1F8581AD0057A62A /* ProductAvailableToShipResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */; };
+		83F569DE1F8582520057A62A /* SkuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F569DD1F8582520057A62A /* SkuList.swift */; };
 		8A24C19372DC697DA09DB79F /* Pods_SellerAppNetworkingWL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */; };
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
+		F77B9C821F8733020077373D /* SaldosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77B9C811F8733020077373D /* SaldosResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -339,9 +343,13 @@
 		71C31D9C1F211448003E7449 /* GetConsultaSkuPoolHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConsultaSkuPoolHeader.swift; path = SellerAppNetworkingWL/GetConsultaSkuPoolHeader.swift; sourceTree = "<group>"; };
 		752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatedDeliveryDateResponse.swift; sourceTree = "<group>"; };
 		79E5661C8C96320E4CE6CF09 /* Pods_SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IsValidToSaleByExtendedCatalogResponse.swift; path = SellerAppNetworkingWL/IsValidToSaleByExtendedCatalogResponse.swift; sourceTree = "<group>"; };
+		83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductAvailableToShipResponse.swift; path = SellerAppNetworkingWL/ProductAvailableToShipResponse.swift; sourceTree = "<group>"; };
+		83F569DD1F8582520057A62A /* SkuList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkuList.swift; path = SellerAppNetworkingWL/SkuList.swift; sourceTree = "<group>"; };
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 		A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaOrdenResponse.swift; path = SellerAppNetworkingWL/AltaOrdenResponse.swift; sourceTree = "<group>"; };
 		A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaOrdenRecord.swift; path = SellerAppNetworkingWL/SetAltaOrdenRecord.swift; sourceTree = "<group>"; };
+		F77B9C811F8733020077373D /* SaldosResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaldosResponse.swift; path = SellerAppNetworkingWL/SaldosResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -548,6 +556,10 @@
 				71BEBAF61F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift */,
 				A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */,
 				A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */,
+				83F569DB1F8581AD0057A62A /* ProductAvailableToShipResponse.swift */,
+				83F569DD1F8582520057A62A /* SkuList.swift */,
+				8392FA1B1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift */,
+				F77B9C811F8733020077373D /* SaldosResponse.swift */,
 				752A43DE1F86E33E00E55453 /* EstimatedDeliveryDateResponse.swift */,
 			);
 			name = ObjectMapper;
@@ -615,7 +627,7 @@
 				TargetAttributes = {
 					43AECCBE1EFB1B7A00D1B243 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7683R2HRBA;
+						DevelopmentTeam = 95GB72XJX7;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -655,9 +667,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SellerAppNetworkingWL-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -691,6 +706,7 @@
 				716379961F1680D4001486F3 /* ListaFestejados.swift in Sources */,
 				716379921F1680D4001486F3 /* ListaArticulos.swift in Sources */,
 				716379591F1680D4001486F3 /* Cat4990193.swift in Sources */,
+				F77B9C821F8733020077373D /* SaldosResponse.swift in Sources */,
 				71C31D7D1F19289A003E7449 /* WLSapSkuInventario.swift in Sources */,
 				7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */,
 				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
@@ -713,6 +729,7 @@
 				716379501F1680D4001486F3 /* Cat4470002.swift in Sources */,
 				7163792F1F1680D4001486F3 /* Cat670055.swift in Sources */,
 				7163798A1F1680D4001486F3 /* Catst425036.swift in Sources */,
+				83F569DE1F8582520057A62A /* SkuList.swift in Sources */,
 				7163795C1F1680D4001486F3 /* Cat4990318.swift in Sources */,
 				71047FD31F4E288C0071D381 /* Calle.swift in Sources */,
 				7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */,
@@ -748,6 +765,7 @@
 				71047FC71F4E21140071D381 /* Estado.swift in Sources */,
 				716379601F1680D4001486F3 /* Cat5020014.swift in Sources */,
 				7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */,
+				8392FA1C1F8593740067B107 /* IsValidToSaleByExtendedCatalogResponse.swift in Sources */,
 				7163797F1F1680D4001486F3 /* Catst420846.swift in Sources */,
 				7163799B1F1680D4001486F3 /* WorklightResponse.swift in Sources */,
 				7163796C1F1680D4001486F3 /* Cat5640000.swift in Sources */,
@@ -761,6 +779,7 @@
 				71047FD11F4E27910071D381 /* ConsultaCalleCPResponse.swift in Sources */,
 				716379761F1680D4001486F3 /* Catst418527.swift in Sources */,
 				71B66EAA1F59F77200AAD3AD /* ConsultarEstadosTiendasCCResponse.swift in Sources */,
+				83F569DC1F8581AD0057A62A /* ProductAvailableToShipResponse.swift in Sources */,
 				71047FCD1F4E24320071D381 /* ConsultaAsentResponse.swift in Sources */,
 				716379CE1F16903C001486F3 /* DireccionDestinatario.swift in Sources */,
 				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
@@ -960,7 +979,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7683R2HRBA;
+				DEVELOPMENT_TEAM = 95GB72XJX7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -982,7 +1001,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7683R2HRBA;
+				DEVELOPMENT_TEAM = 95GB72XJX7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
