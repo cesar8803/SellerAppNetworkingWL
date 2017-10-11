@@ -97,7 +97,7 @@ public class WorklightResponse: Mappable{
         responseCrearOrden <- map["responseCrearOrden"]
         responseCreaActualizaOVREM <- map["responseCreaActualizaOVREM"]
         outMessage <- map["outMessage"]
-        actualizarOBS_FechaEntregaBTResponse <- map["actualizarOBS_FechaEntregaBTResponse"]
+        actualizarOBS_FechaEntregaBTResponse <- map["ActualizarOBS_FechaEntregaBTResponse"]
         cardBalance <- map["Saldos"]
         walletBalance <- map["SaldoMonedero"]
     }
