@@ -14,6 +14,9 @@ enum WorklightErrorCodes: Int{
     case WLResponseParser = -102
 }
 
+public typealias CompletionResponseWL =  (_ wlResponse: WorklightResponse?, _ error:NSError?) -> Void
+
+
 public protocol WorklightServiceProtocol
 {
     // CapturaClientesCredito
@@ -31,7 +34,8 @@ public protocol WorklightServiceProtocol
     // CICS
     func segmentedCreditBalanceForAccount(accountNumber: String, pin: String)
     func creditBalanceForAccount(accountNumber:String, pin: String)
-    func monederoBalanceForAccount(accountNumber: String)
+    //func monederoBalanceForAccount(accountNumber: String)
+    func walletBalanceForAccount(accountNumber:String, completion:@escaping CompletionResponseWL)
     
     //MARK: SOMS
     func neighborhoodInZip(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
@@ -47,6 +51,9 @@ public protocol WorklightServiceProtocol
     func addressesForCustomerWithLada(userId: String, token: String, lada: String, telefono: String, cteTelefono: String, selectRecord: String,trySingleAddress: Bool)
     func getCustomerEmail(userId: String, token: String, lada: String, telefono: String, cteTelefono: String, selectRecord: String,trySingleAddress: Bool)
     func createAddress(userId: String, token: String, isNewStreet: Bool, zip: String, calle: String, numeroExterior: String, selectRecordAsen: String, selectRecordCliente: String, tipoAsen: String, lada: String, telefono: String,betweenStreet: String?,andStreet:String?, interiorNumber: String?, edificio: String?)
+    
+    func updateOrderDeliveryDate(order: String, sku: String, date: String, comments: String?, user_id: String, completion:  @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
+    
     func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func createSOMSOrderLight(userId: String, token: String, lada: String, telefono: String, fldTelefono: String, selectRecordCliente: String, selectRecordAsentamiento:String, orderComment: String?, singleAddressCustomer: Bool, eventID: String?, products: [WorklightSOMSProduct]!)
     func createSOMSOrder(userId: String, token: String, lada: String, telefono: String, fldTelefono: String, selectRecordCliente: String?, selectRecordAsentamiento:String?, orderComment: String?, singleAddressCustomer: Bool, eventID: String?, products: [WorklightSOMSProduct]!)
@@ -155,8 +162,9 @@ public protocol WorklightServiceProtocol
     
     func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
+    //MARK: - Update
+    func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    
     //MARK: - Estimated Delivery Date
     func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
-
-

@@ -14,7 +14,7 @@ public class EstimatedDeliveryDateResponse: Mappable {
     public var consultarFechaEstimadaEntregaResponse: ConsultarFechaEstimadaEntregaResponse?
     public var isSuccessful: Int?
     
-    required public init?(map: Map){
+    public required init?(map: Map){
     }
     public func mapping(map: Map){
         consultarFechaEstimadaEntregaResponse <- map["consultarFechaEstimadaEntregaRequest"]
@@ -22,11 +22,10 @@ public class EstimatedDeliveryDateResponse: Mappable {
     }
 }
 
-
 public class ConsultarFechaEstimadaEntregaResponse: Mappable{
     public var listaFechaEstimadaEntrega: [ListaFechaEstimadaEntrega]?
     
-    required public init?(map: Map){
+    public required init?(map: Map){
     }
     public func mapping(map: Map){
         listaFechaEstimadaEntrega <- map["listaFechaEstimadaEntrega"]
@@ -37,7 +36,7 @@ public class ListaFechaEstimadaEntrega: Mappable{
     public var sku: String?
     public var fechaEstimadaEntrega: String?
     
-    required public init?(map: Map){
+    public required init?(map: Map){
     }
     public func mapping(map: Map){
         sku <- map["sku"]
