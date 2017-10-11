@@ -53,7 +53,7 @@ public class WorklightResponse: Mappable{
     public var actualizarOBS_FechaEntregaBTResponse: ActualizarOBS_FechaEntregaBTResponse?
     public var cardBalance: BalanceResponseWL?
     public var walletBalance: WalletBalanceResponseWL?
-    public var skuStatusChangeList: SkuStatusChangeList?
+    public var skuStatusChangeList: [SkuStatusChangeList]?
 
     public required init?(map: Map){
     }
