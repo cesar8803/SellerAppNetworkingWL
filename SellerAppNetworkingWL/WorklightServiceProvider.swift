@@ -1449,6 +1449,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
         }
         
+        jsonParametersString = replaceSpecialCharacters(jsonParametersString)
+        
         let requestParameters: [String : Any]  = [
             "json": jsonParametersString,
         ]
@@ -1462,6 +1464,49 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     completion(result, error)
             }
         }
+        
+    }
+    
+    private func replaceSpecialCharacters(_ characters: String) -> String{
+    
+        /*
+         á    %C3%A1
+         é    %C3%A9
+         í    %C3%AD
+         ó    %C3%B3
+         ú    %C3%BA
+         Á    %C3%81
+         É    %C3%89
+         Í    %C3%8D
+         Ó    %C3%93
+         Ú    %C3%9A
+         Ñ    %C3%91
+         ñ    %C3%B1
+         ¿    %C2%BF
+         ?    %3F
+         ¡    %C2%A1
+         */
+        
+        var newString = characters
+        
+        newString = newString.replacingOccurrences(of: "á", with: "%C3%A1")
+        newString = newString.replacingOccurrences(of: "é", with: "%C3%A9")
+        newString = newString.replacingOccurrences(of: "í", with: "%C3%AD")
+        newString = newString.replacingOccurrences(of: "ó", with: "%C3%B3")
+        newString = newString.replacingOccurrences(of: "ú", with: "%C3%BA")
+        newString = newString.replacingOccurrences(of: "Á", with: "%C3%81")
+        newString = newString.replacingOccurrences(of: "É", with: "%C3%89")
+        newString = newString.replacingOccurrences(of: "Í", with: "%C3%8D")
+        newString = newString.replacingOccurrences(of: "Ó", with: "%C3%93")
+        newString = newString.replacingOccurrences(of: "Ú", with: "%C3%9A")
+        newString = newString.replacingOccurrences(of: "Ñ", with: "%C3%91")
+        newString = newString.replacingOccurrences(of: "ñ", with: "%C3%B1")
+        newString = newString.replacingOccurrences(of: "¿", with: "%C3%BF")
+        newString = newString.replacingOccurrences(of: "?", with: "%3F")
+        newString = newString.replacingOccurrences(of: "¡", with: "%C2%A1")
+        
+        
+        return newString
         
     }
     public func skuGenericosForSku(sku: String) {
