@@ -48,6 +48,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         //*** This should be temporary until SOMSConsultaA Adapter is merged with SOMSConsultaNA. For more information see LSAA-1413 or ask Carazo.
         case ConsultaPool = "SOMSConsultaN"
         //***
+        case ConsultaPoolBroker = "BrokerSOMSConsulta"
         case SOMSRefund  = "SOMSDevoluciones"
         case ActualizacionPool = "SOMSActualizacionN"
         case BridgeCore = "LiverpoolWebService"
@@ -70,6 +71,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ArchivosWS = "ArchivosWebService"
         case ReporteVentas = "ReporteVentas"
         case Presupuesto = "Presupuesto"
+        case BrokerSoms = "BrokerSOMSActualizacion"
+        case APVServicios = "APVServiciosATG"
+
     }
     
     private enum Procedure: String {
@@ -77,6 +81,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Login = "CapturaClientesCreditoService_Login"
         case SetSolicitudCredito = "CapturaClientesCreditoService_setSolicitudCredito"
         case subirArchivo = "CapturaClientesCreditoService_subirArchivo"
+        case subirFirma = "CapturaClientesCreditoService_subirArchivoFirma"
         
         //CatalogosCredito
         case CatAntigDom = "catAntigDom"
@@ -91,24 +96,29 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case MonederoBalance = "CicsRequestService_saldoMonedero"
         
         // SOMS
-        case ConsultaEMA = "DEMograficos_ConsultaEMA"
-        case ConsultaCalle = "DEMograficos_ConsultaCalleCP"
-        case ConsultaEdo = "DEMograficos_ConsultaEdo"
-        case ConsultaMun = "DEMograficos_ConsultaMun"
-        case ConsultaAsent = "DEMograficos_ConsultaAsent"
-        case SOMSLogin = "SOMSActualizacionPoolService_getLoginPool"
-        case GetCustomers = "SOMSConsultaPoolService_getConsultaClientesListaPool"
-        case GetAddresses = "SOMSConsultaPoolService_getConsultaClientesDireccionesListaPool"
-        case CreateAddress = "SOMSActualizacionPoolService_setAltaDireccion"
-        case CreateCustomer = "SOMSActualizacionPoolService_setAltaCliente"
-        case CreateOrder = "SOMSActualizacionPoolService_setAltaOrden"
-        case CreateOrderWithSKUs = "SOMSActualizacionPoolService_setAltaOrdenListaSkus"
-        case ModifyOrder = "SOMSActualizacionPoolService_setModificaOrden"
-        case AppendSku = "SOMSActualizacionPoolService_setAgregaSKU"
-        case SOMSDetails = "SOMSConsultaPoolService_getConsultaSKUPool"
-        case AvailableToShip = "productAvailableToShip"
-        case CreateRefundOrder = "NotificacionDevoluciones_CrearOrdenDevBT"
-        case ModifyOrderAddress = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
+        case ConsultaEMA                = "DEMograficos_ConsultaEMA"
+        case ConsultaCalle              = "DEMograficos_ConsultaCalleCP"
+        case ConsultaEdo                = "DEMograficos_ConsultaEdo"
+        case ConsultaMun                = "DEMograficos_ConsultaMun"
+        case ConsultaAsent              = "DEMograficos_ConsultaAsent"
+        case SOMSLogin                  = "SOMSActualizacionPoolService_getLoginPool"
+        case GetCustomers               = "SOMSConsultaPoolService_getConsultaClientesListaPool"
+        case GetAddresses               = "SOMSConsultaPoolService_getConsultaClientesDireccionesListaPool"
+        case CreateAddress              = "SOMSActualizacionPoolService_setAltaDireccion"
+        case CreateCustomer             = "SOMSActualizacionPoolService_setAltaCliente"
+        case CreateOrder                = "SOMSActualizacionPoolService_setAltaOrden"
+        case CreateOrderWithSKUs        = "SOMSActualizacionPoolService_setAltaOrdenListaSkus"
+        case ModifyOrder                = "SOMSActualizacionPoolService_setModificaOrden"
+        case AppendSku                  = "SOMSActualizacionPoolService_setAgregaSKU"
+        case SOMSDetails                = "SOMSConsultaPoolService_getConsultaSKUPool"
+        case DetailSOMS                 = "ConsultaSKUPool"
+        case AvailableToShip            = "productAvailableToShip"
+        case CreateRefundOrder          = "NotificacionDevoluciones_CrearOrdenDevBT"
+        case ModifyOrderAddress         = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
+        case AltaClienteDireccion       = "AltaClienteDireccion"
+        case AltaOrdenR2                = "AltaOrden"
+        case updateOrderDeliveryDate    = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
+
         
         // Endeca
         case ProductDetails = "getProductDetail"
@@ -119,6 +129,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Inventario
         case SkuInventario = "SKUINVENTARIO_ConsultaSku_Inventario"
+        case UpdateInventary = "CambiarInventarioATG"
         
         // Genericos
         case SkuGenericos = "SKUGENERICOS_ConsultaSku_Genericos"
@@ -171,11 +182,11 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case CreateUpdateSOMSShipment           = "Remisiones_wbi_CreaActualizaOVREM"
         case CreateShipment                     = "Remisiones_wbi_CrearOrden"
         case UpdateShipment                     = "Remisiones_wbi_ActualizaRemision"
-        case CreateUpdateCC                     = "Remisiones_wbi_CrearActualizarOVREMCC"
+        case CreateUpdateCC                     = "Remisiones_wbi_CrearActualizarOVREMCCBRK"
         
         // Order Follow Up
         case GetOrderDetail             = "Remisiones_wbi_consulta_orden"
-        case UpdateDateCommentOrder     = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
+        case UpdateDateCommentOrder     = "Remisiones_wbi_ActualizarOBS_FechaEntregaBTR1"
         case GetScoolDetail             = "ConsultaOrdenVentaRespService_ConsultaOrdenVenta"
         
         // Shopping list
@@ -195,7 +206,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         //Budget
         case SaveBudget = "Alta_Presupuesto"
-        
+        case EstimatedDeliveryDate = "consultarFechaEstimadaEntrega"
     }
     
     //1 - WL up
@@ -348,9 +359,36 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
-    public func bigTicketAvailableToShipWithSku(userId: String, token: String, sku: String, zip: String) {
+    public func bigTicketAvailableToShipWithSku(userId: String, productsArray: [[String:String]], zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
+        let requestParameters = ["ProductAvailableToShip":["IdUsuario": userId, "inCP": zip, "skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .AvailableToShip, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
     }
+    
+    public func softLineAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let requestParameters = ["isValidToDisplayRequest":["skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ValidSaleExtendedCatalog, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+    
     public func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         let requestParameters = ["ConsultaCalleCPRequest" : ["cp" : zip]]
@@ -422,10 +460,167 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createAddress(userId: String, token: String, isNewStreet: Bool, zip: String, calle: String, numeroExterior: String, selectRecordAsen: String, selectRecordCliente: String, tipoAsen: String, lada: String, telefono: String, betweenStreet: String?, andStreet: String?, interiorNumber: String?, edificio: String?) {
         
     }
-    public func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool, isBigTicketOrder: Bool, email: String?) {
+    public func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool, isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let charset = NSCharacterSet(charactersIn: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted//NSCharacterSet(charactersInString: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted
+        
+        if let orderLines = (products?.map {
+            [
+                "OrderedQty" : "\($0.quantity)",
+                "Item" : [
+                    "itemID" : $0.itemSKU,
+                    "itemDesc" : $0.itemDescription.addingPercentEncoding(withAllowedCharacters: charset) ?? "" //.stringByAddingPercentEncodingWithAllowedCharacters(charset) ?? ""
+                ],
+                "LinePriceInfo" : [
+                    "unitPrice" : $0.price
+                ]
+            ]
+            }) {
+            
+            let order = [
+                "OrderName" : storeNumber,
+                "OrderType" : "Personal",
+                "OrderNo" : orderNumber
+            ]
+            
+            var setOrdenSterlingDictionary:  [String : Any] = [:]
+            
+            if !isBigTicketOrder {
+                setOrdenSterlingDictionary = [
+                    "Order" : order,
+                    "OrderLines" : orderLines,
+                ]
+            }
+            
+            let params = [
+                [
+                    "BusquedaClienteRequest":
+                        [
+                            "Calle": "",
+                            "Colonia": "",
+                            "Cp": "",
+                            "Estado": "",
+                            "Lada": paddedLada,
+                            "Nombre": name,
+                            "Telefono": phone,
+                            "IdUsuario":userId,
+                    ]
+                ],
+                /*[
+                    "inPassword" : "",
+                    "inUser" : userId,
+                    "inCadenaValidacion" : token,
+                    "isNewStreet" : "False"
+                ],*/
+                [
+                    "CreaActualizaOVREMRequest": [
+                        "Evento": "",
+                        "IdDestinatatio": "",
+                        "IdDireccionDestino": (isNewCustomer ? "001" : ""),
+                        "IdDireccionRemitente": "",
+                        "IdRemision": orderNumber,
+                        "IdRemitente": "",
+                        "TipoEvento": "",
+                        "Bandera_APV": "T",
+                        "inUser" : userId,
+                        "inCadenaValidacion" : token,
+                        "Usuario": ""
+                    ],
+                    "setOrdenSterling": setOrdenSterlingDictionary
+                ],
+                storeNumberToSend
+            ] as [Any]
+            
+            let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .CreateUpdateCC, parameters: params as AnyObject, isArray: true)
+            
+            _ = manager.request(url).responseWorklight { [weak self](response) in
+                guard let weakSelf = self else { return }
+                let (result, error) = weakSelf.parseWorklightResponse(response)
+                DispatchQueue.main.async {
+                    completion(result, error)
+                }
+            }
+        }
         
     }
-    public func createCustomer(userId: String, token: String, isNewStreet: Bool, lada: String, telefono: String, paterno: String, firstName: String, zip: String, exteriorNumber: String, calle: String, selectRecordAsen: String, tipoAsen: String, materno: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, edificio: String?) {
+    public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let requestParameters = [
+            "AltaClienteDireccionRequest" : [
+                "setAltaClienteFilters" : [
+                    "crearCalle" : createStreet ?? false,
+                    "idUsuario" : userId,
+                    "idCliente" : clientId,
+                    "inLada" : paddedLada,
+                    "inTelefono" : phone,
+                    "inApMaterno" : secondLastName ?? "",
+                    "inApPaterno" : lastName,
+                    "inEmail" : email!,
+                    "inNombre1" : firstName,
+                    "inNombre2" : "",
+                    "inRFC" : rfc!,
+                    "inCP" : zip,
+                    "inComentario" : comment ?? "",
+                    "inAsentamiento" : neighborhood,
+                    "inDelegacionMunicipio" : district,
+                    "inEstado" : state,
+                    "idLadaDireccion" : idLada,
+                    "idTelefonoDireccion" : idPhone,
+                    "inCalle" : street,
+                    "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
+                    "inYCalle" : andStreet!,
+                    "inEdif" : building!,
+                    "inNumeroInt" : interiorNumber ?? "",
+                    "inNumeroExt" : exteriorNumber
+                ]
+            
+            ]
+        
+        ]
+        
+        /*
+        let isNewStreetString = isNewStreet == true ? "True" : ""
+        let requestParameters = [
+            "setAltaCliente" : [
+                "ModelVariables" : [
+                    "inPassword" : "",
+                    "inUser" : userId,
+                    "inCadenaValidacion" : token,
+                    "isNewStreet" : isNewStreetString
+                ],
+                "setAltaClienteFilters" : [
+                    "inApMaterno" : materno!,
+                    "inApPaterno" : paterno,
+                    "inCP" : zip,
+                    "inEmail" : email!,
+                    "inNombre1" : firstName,
+                    "inNumeroExt" : exteriorNumber,
+                    "inRFC" : rfc!,
+                    "inSelectRecordAsentamiento" : selectRecordAsen,
+                    "inSelectRecordTipoAsentamiento" : tipoAsen,
+                    "inTelefono" : telefono,
+                    "inCalle" : calle,
+                    "inLada" : lada,
+                    "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
+                    "inYCalle" : andStreet!,
+                    "inEdif" : edificio!,
+                    "inNumeroInt" : interiorNumber!,
+                    "inComentario" : comment!
+                ]
+            ]
+        ]*/
+        let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaClienteDireccion, parameters: requestParameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
         
     }
     public func createShipmentOrder(orderID: String, storeNumber: String, customerFirstName: String, customerLastName: String, products: [WorklightShippingProduct]?, shippingAdress: WorklightShippingAddress) {
@@ -434,9 +629,95 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createShoesOrder(terminalId: Int, products: [Dictionary<String, AnyObject>]) {
         
     }
-    public func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?) {
+    public func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        var clientParams: [String : Any] = ["tienda" : store, "nombre_cliente" : name, "idVendedor" : idVendedor, "fechaRegistro" : fechaRegistro]
+        
+        if let email = email {
+            if !email.isEmpty {
+                clientParams["email"] = email
+            }
+        }
+        
+        if skuList.count > 0 {
+            clientParams["listaSKU"] = skuList
+        }
+        
+        let params: [String : Any] = ["cliente" : clientParams]
+        
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .InsertClient, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
         
     }
+    
+    public func createSOMSOrderR2(parameters: Any, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+      /*
+        let parameters = [
+            
+            "AltaOrdenRequest" : [
+                
+                "setAltaOrdenFilters" : [
+                    "IdUsuario": "ADMSOMS1",
+                    "IdClienteRemitente": "",
+                    "IdDireccionRemitente": "",
+                    "idCliente": "0000052120",
+                    "idDireccion": "001",
+                    "idEventoTarjeta": "",
+                    "idTipoFestejado": "",
+                    "idLadaOrden": "",
+                    "idTelefonoOrden": "",
+                    "inObservaciones": ""
+                    
+                ],
+                
+                "setAgregaSKUFilters" : [
+                    
+                    "setAgregaSKURecord" : [
+                        [
+                            "inSelectRecordSKU": "0000056111",
+                            "inSelectRecordSKUCantidad": "1",
+                            "inSelectRecordSKUNoSpot": "",
+                            "inSelectRecordSKUNoSpotCantidad": ""
+                        ],
+                        [
+                            "inSelectRecordSKU": "0000056120",
+                            "inSelectRecordSKUCantidad": "1",
+                            "inSelectRecordSKUNoSpot": "",
+                            "inSelectRecordSKUNoSpotCantidad": ""
+                        ]
+                        
+                    ]
+                    
+                ]
+                
+            ]
+            
+        ]
+        */
+        let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaOrdenR2, parameters: parameters as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
+    }
+    
+    
+    
+    
     public func createSOMSOrder(userId: String, token: String, firstProductSku: String, firstProductQuantity: String, firstProductNoSpotSku: String?, firstProductNoSpotQuantity: String?, lada: String?, telefono: String?, fldTelefono: String?, selectRecordCliente: String?, selectRecordSku: String, selectRecordAsentamiento: String?, orderComment: String?, singleAddressCustomer: Bool, eventID: String?) {
         
     }
@@ -471,18 +752,243 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createUpdateSOMSShipmentOrder(shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, token: String, userId: String) {
         
     }
-    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAdress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, token: String, userId: String) {
+    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAddress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        //assert(products?.count > 0, "We MUST have at least one product!")
+        
+        let charset = NSCharacterSet(charactersIn: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted
+        
+        if let orderLines = (products?.map {
+            [
+                "OrderedQty" : "\($0.quantity)",
+                "Item" : [
+                    "itemID" : $0.itemSKU,
+                    "itemDesc" : $0.itemDescription.addingPercentEncoding(withAllowedCharacters: charset) ?? ""
+                ],
+                "LinePriceInfo" : [
+                    "unitPrice" : $0.price
+                ]
+            ]
+            }) {
+            
+            let order = [
+                "OrderName" : storeNumber,
+                "OrderType" : "Personal",
+                "OrderNo" : orderID
+            ]
+            
+            let params: [String : Any] = [
+                "CreaActualizaOVREMRequest": [
+                    "Evento": eventID ?? "",
+                    "IdDestinatatio": customerID,
+                    "IdDireccionDestino": addressID,
+                    "IdDireccionRemitente": senderID ?? "",
+                    "IdRemision": shipmentID,
+                    "IdRemitente": senderAddressID ?? "",
+                    "TipoEvento": celebratedType ?? "",
+                    "Bandera_APV": currentStoreInventory ? "F" : "T",
+                    "inUser" : userId,
+                    "Usuario": ""
+                ],
+                "setOrdenSterling": [
+                    "Order" : order,
+                    "OrderLines" : orderLines,
+                    "PersonInfoBillTo" : [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAddress.street,
+                        "addressLine2" : shippingAddress.number,
+                        "addressLine3" : shippingAddress.interiorNumber,
+                        "addressLine4" : shippingAddress.settlement,
+                        "addressLine5" : shippingAddress.township,
+                        "city"         : shippingAddress.city,
+                        "state"        : shippingAddress.state,
+                        "zipCode"      : shippingAddress.zipCode,
+                        "dayPhone"     : shippingAddress.homePhone,
+                        "mobilePhone"  : shippingAddress.mobilePhone
+                    ],
+                    "PersonInfoContact": [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAddress.street,
+                        "addressLine2" : shippingAddress.number,
+                        "addressLine3" : shippingAddress.interiorNumber,
+                        "addressLine4" : shippingAddress.settlement,
+                        "addressLine5" : shippingAddress.township,
+                        "city"         : shippingAddress.city,
+                        "state"        : shippingAddress.state,
+                        "zipCode"      : shippingAddress.zipCode,
+                        "dayPhone"     : shippingAddress.homePhone,
+                        "mobilePhone"  : shippingAddress.mobilePhone
+                    ],
+                    "PersonInfoShipTo": [
+                        "firstName"    : customerFirstName,
+                        "lastName"     : customerLastName,
+                        "addressLine1" : shippingAddress.street,
+                        "addressLine2" : shippingAddress.number,
+                        "addressLine3" : shippingAddress.interiorNumber,
+                        "addressLine4" : shippingAddress.settlement,
+                        "addressLine5" : shippingAddress.township,
+                        "city"         : shippingAddress.city,
+                        "state"        : shippingAddress.state,
+                        "zipCode"      : shippingAddress.zipCode,
+                        "dayPhone"     : shippingAddress.homePhone,
+                        "mobilePhone"  : shippingAddress.mobilePhone
+                    ]
+                ]
+            ]
+            
+            let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .CreateUpdateSOMSShipmentSterling, parameters: params as AnyObject)
+            
+            _ = manager.request(url).responseWorklight { [weak self](response) in
+                guard let weakSelf = self else { return }
+                let (result, error) = weakSelf.parseWorklightResponse(response)
+                DispatchQueue.main.async {
+                    
+                    completion(result, error)
+                }
+            }
+        }
         
     }
     public func creditBalanceForAccount(accountNumber: String, pin: String) {
         
     }
-    public func customerAddressByID(customerID: String, neighborhood: String, street: String) {
+    public func customerAddressByID(customerID: String, neighborhood: String, street: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "BuscarDireccionClienteRequest" : [
+                "Calle": street,
+                "Colonia": neighborhood,
+                "Cp": "",
+                "Estado": "",
+                "IdCliente": customerID
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CustomerInfo, procedure: .SearchAddressCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
-    public func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool) {
+    public func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let params = [
+            "BusquedaClienteRequest": [
+                "Calle": "",
+                "Colonia": "",
+                "Cp": "",
+                "Estado": "",
+                "Lada": paddedLada,
+                "Nombre": name,
+                "Telefono": phone,
+                "MesaRegalos": isGiftRegistry
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .CustomerInfo, procedure: .SearchCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
+    
+    /*******************/
+    
+    public func customerAddressByIDBroker(customerID: String, neighborhood: String, street: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        /*
+         {
+         "BuscarDireccionClienteRequest": {
+         "IdUsuario":"pbamobi2",
+         "Calle": "",
+         "Colonia": "",
+         "Cp": "",
+         "Estado": "",
+         "IdCliente": "0001922528"
+         }
+         }
+         */
+        
+        let params = [
+            "BuscarDireccionClienteRequest" : [
+                "IdUsuario" : userId,
+                "Calle": street,
+                "Colonia": neighborhood,
+                "Cp": "",
+                "Estado": "",
+                "IdCliente": customerID
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .SearchAddressCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
+    }
+    public func customerInfoByLadaBroker(lada: String, phone: String, name: String, userId: String, eventId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        /*
+         "IdUsuario":"9669",
+         "Calle": "",
+         "Colonia": "",
+         "Cp": "",
+         "Estado": "",
+         "Lada": "55",
+         "Nombre": "",
+         "Telefono": "53259000",
+         "Evento": ""
+         */
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let params = [
+            "BusquedaClienteRequest": [
+                "IdUsuario" : userId,
+                "Calle": "",
+                "Colonia": "",
+                "Cp": "",
+                "Estado": "",
+                "Lada": paddedLada,
+                "Nombre": name,
+                "Telefono": phone,
+                "Evento": eventId
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .SearchCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
+    }
+    /******************/
     public func customersWithEvent(eventID: String, userId: String, token: String) {
         
     }
@@ -533,7 +1039,18 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func getQuestionsForSurveyId(id: String) {
         
     }
-    public func getSectionsEligibleForNoSpot() {
+    public func getSectionsEligibleForNoSpot(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let url = self.getRequestUrlForAdapter(adapter: .NoSpot, procedure: .NoSpotSections, parameters: Dictionary<String, AnyObject>() as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func getSectionsOfValidNoSpotSkus() {
@@ -542,26 +1059,38 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func getShoesOrders(terminalId: Int, isWarehouse: Bool) {
         
     }
-    public func getStoreDetail(store: String) {
+    public func getStoreDetail(store: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "requestObtenerDatosTienda" : [
+                "numeroTienda" : store
+            ]
+        ]
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .ObtenerDatosTienda, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func getSurveyId(paymentTypes: [Int]) {
         
     }
-    public func inventoryDetailsForSOMSItemWithSku(userId: String, token: String, sku: String, zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func inventoryDetailsForSOMSItemWithSku(userId: String, sku: String, zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        let requestParameters = ["getConsultaSKUPool" : [
-            "ModelVariables" : [
-                "inPassword" : "",
-                "inUser" : userId,
-                "inCadenaValidacion" : token
-            ],
+        let requestParameters = ["ConsultaSKUPoolRequest" : [
             "getConsultaSKUPoolFilters" : [
+                "IdUsuario": userId,
                 "inCP" : zip,
                 "inSKU": sku]
             ]
         ]
-        let url = getRequestUrlForAdapter(adapter: .ConsultaPool, procedure: .SOMSDetails, parameters: requestParameters as AnyObject)
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .DetailSOMS, parameters: requestParameters as AnyObject)
         
         _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
             
@@ -691,6 +1220,49 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
+    
+    public func updateOrderDeliveryDate(order: String, sku: String, date: String, comments: String?, user_id: String, completion:  @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
+        
+        /*
+        {
+            "ActualizarOBS_FechaEntregaBTRequest": {
+                "FechaPropuesta": "2016-06-06",
+                "inUser": "123",
+                "IndicadorTipo": "OV",
+                "IndicadorServicio": "FEC",
+                "Observaciones": "",
+                "SKU": "1018866800",
+                "OrdenEntrega": "9009227548",
+                "Usuario": "123"
+            }
+        }
+        */
+        
+        let params = [
+            "ActualizarOBS_FechaEntregaBTRequest" : [
+                "FechaPropuesta" : date,
+                "inUser": user_id,
+                "IndicadorTipo": order.hasPrefix("90") ? "OV" : "RM",
+                "IndicadorServicio": comments == nil ? "FEC" : "OBS",
+                "Observaciones": comments ?? "",
+                "SKU": sku,
+                "OrdenEntrega": order,
+                "Usuario": user_id
+            ]
+        ]
+    
+        let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .updateOrderDeliveryDate, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    
+    }
+    
     public func productsForCategoryId(categoryId: String, page: String?, facets: [String]?, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         var childParameters:[String:Any] = ["almacenId" : storeNumber, "categoryId" : categoryId]
@@ -818,10 +1390,41 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func salesReport(items: AnyObject) {
         
     }
-    public func searchCCStates() {
+    public func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .ConsultarEstadosTiendasCC, parameters: [:] as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+
         
     }
-    public func searchCCStores(state: String) {
+    public func searchCCStores(state: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = [
+            "obtenerTiendasCCPorEstadoRequest" : [
+                "idEstado" : state
+            ]
+        ]
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .SearchStoresCC, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+        
         
     }
     public func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
@@ -854,7 +1457,29 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func searchShoppingClient(clientId: String, storeNumber: String) {
         
     }
-    public func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?) {
+    public func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        var innerParams: [String : String] = ["nombre" : clientName, "tienda" : storeNumber, "idVendedor" : idVendedor, "fechaInicio" : fechaInicio, "fechaFin" : fechaFin, "email" : email]
+        if let page = page {
+            innerParams["pagina"] = page
+        }
+        if let elementsPerPage = elementsPerPage {
+            innerParams["elementosPorPagina"] = elementsPerPage
+        }
+        let params = ["buscarClientes" : innerParams]
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .SearchClients, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+        
         
     }
     public func segmentedCreditBalanceForAccount(accountNumber: String, pin: String) {
@@ -906,6 +1531,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
         }
         
+        jsonParametersString = replaceSpecialCharacters(jsonParametersString)
+        
         let requestParameters: [String : Any]  = [
             "json": jsonParametersString,
         ]
@@ -919,6 +1546,49 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     completion(result, error)
             }
         }
+        
+    }
+    
+    private func replaceSpecialCharacters(_ characters: String) -> String{
+    
+        /*
+         á    %C3%A1
+         é    %C3%A9
+         í    %C3%AD
+         ó    %C3%B3
+         ú    %C3%BA
+         Á    %C3%81
+         É    %C3%89
+         Í    %C3%8D
+         Ó    %C3%93
+         Ú    %C3%9A
+         Ñ    %C3%91
+         ñ    %C3%B1
+         ¿    %C2%BF
+         ?    %3F
+         ¡    %C2%A1
+         */
+        
+        var newString = characters
+        
+        newString = newString.replacingOccurrences(of: "á", with: "%C3%A1")
+        newString = newString.replacingOccurrences(of: "é", with: "%C3%A9")
+        newString = newString.replacingOccurrences(of: "í", with: "%C3%AD")
+        newString = newString.replacingOccurrences(of: "ó", with: "%C3%B3")
+        newString = newString.replacingOccurrences(of: "ú", with: "%C3%BA")
+        newString = newString.replacingOccurrences(of: "Á", with: "%C3%81")
+        newString = newString.replacingOccurrences(of: "É", with: "%C3%89")
+        newString = newString.replacingOccurrences(of: "Í", with: "%C3%8D")
+        newString = newString.replacingOccurrences(of: "Ó", with: "%C3%93")
+        newString = newString.replacingOccurrences(of: "Ú", with: "%C3%9A")
+        newString = newString.replacingOccurrences(of: "Ñ", with: "%C3%91")
+        newString = newString.replacingOccurrences(of: "ñ", with: "%C3%B1")
+        newString = newString.replacingOccurrences(of: "¿", with: "%C3%BF")
+        newString = newString.replacingOccurrences(of: "?", with: "%3F")
+        newString = newString.replacingOccurrences(of: "¡", with: "%C2%A1")
+        
+        
+        return newString
         
     }
     public func skuGenericosForSku(sku: String) {
@@ -969,6 +1639,37 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
+    public func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        var params: [String : Any] = [:]
+        var skus: [Any] = []
+        var sku: [String : Any] = [:]
+        
+        for product in products{
+        
+            sku["skuId"] = product.itemSKU
+            sku["quantity"] = product.quantity
+            
+            skus.append(sku)
+        }
+        
+        params["skuInventory"] = skus
+        params["operation"] = procedure
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+    }
+    
     /*
     func checkIfServiceDown(serviceError:NSError?)
     {
@@ -997,20 +1698,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     func parseWorklightResponse(_ response: DataResponse<Data>)->(WorklightResponse?, NSError?){
     
         if response.error != nil {
-        
             return (nil, response.error! as NSError)
         }else{
-        
             if let json = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String : Any]{
-                
                 if let wlResponse = WorklightResponse(JSON: json!){
                     return (wlResponse, nil)
                 }else{
                     return (nil, NSError(domain: "worklight.object", code: WorklightErrorCodes.WLResponseParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "No se pudo crear el objeto Worklight Response"]))
                 }
-                
             }else{
-            
                 return (nil, NSError(domain: "json.parser", code: WorklightErrorCodes.JSONParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "La respuesta no viene en el formato correcto"]))
             }
             
@@ -1041,5 +1737,142 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
+    public func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let parameters = ["subirArchivoFirmaRequest" : ["terminal" : terminal, "tienda" : store, "documento" : document, "vendedor" : userId, "voucherNumero" : voucherNumber, "voucherFecha" : voucherDate, "voucherHora" : voucherTime, "numAutorizacion" : authorization ] ]
+        
+        let url = self.getRequestUrlForAdapter(adapter: .CapturaClientesCredito, procedure: .subirFirma, parameters: parameters as AnyObject)
+        
+        /*
+        var serializedJSONParameters:String!
+        
+        do {
+            serializedJSONParameters = try NSString(data: NSJSONSerialization.dataWithJSONObject(["stringFile" : file], options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
+        }
+        catch {
+            completion(false, "", nil)
+            return
+        }*/
+        
+        var jsonParametersString: String!
+        
+        do {
+            
+            jsonParametersString = try String(data: JSONSerialization.data(withJSONObject: ["stringFile" : file], options: .init(rawValue: 0)), encoding: .utf8)
+        }
+        catch {
+            
+        }
+        
+        let stringDataParameters: [String : Any] = ["json": jsonParametersString]
+        
+        _ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: nil).responseWorklight { [weak self] (response) in
+            
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        /*_ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: self.defaultHeaders()).responseWorklight{ [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }*/
+        
+        
+        /*
+        self.manager.request(.POST, url, parameters: stringDataParameters, encoding: .URL).responseWorklight { response -> Void in
+            
+            self.checkIfServiceDown(response.result.error)
+            
+            if (response.result.error != nil) {
+                completion(false, response.result.error!.localizedDescription, response.result.error)
+            }
+            else {
+                let jsonValue = JSON(response.result.value!)
+                
+                if (jsonValue["isSuccessful"].bool == true) {
+                    if let outMessage = jsonValue["outMessage"].string {
+                        completion(true, outMessage, nil)
+                    }
+                    else {
+                        completion(true, "", nil)
+                    }
+                }
+                else {
+                    if let errors = jsonValue["errors"].array {
+                        completion(false, "", self.errorWithErrorsArray(errors))
+                    }
+                    else {
+                        completion(false, "", response.result.error)
+                    }
+                    
+                }
+            }
+        }*/
+    }
+    
+    
+    //MARK: - Card's Balance
+    
+    public func cardBalance(numeroCuenta: String, noValidaPin:String="1", completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let requestParameters = ["TSCCRE03":["numeroCuenta": numeroCuenta, "noValidaPin": noValidaPin]]
+        
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .CardBalance, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+   
+    
+    public func walletBalanceForAccount(accountNumber: String, completion:@escaping (WorklightResponse?, NSError?) -> Void) {
+        let requestParameters = ["TSCCTE09":["numeroCuenta": accountNumber]]
+        let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .MonederoBalance, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+    
+    
+    //MARK: - Estimated Delivery Date
+    
+    public func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let params = [
+            "obtenerTiendasCCPorEstadoRequest" : [
+                "idEstado" : "prueba"
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+    }
 }
 
