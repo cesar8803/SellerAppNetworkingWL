@@ -123,6 +123,9 @@ public protocol WorklightServiceProtocol
     func customerAddressByID(customerID: String, neighborhood: String, street: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     
+    func customerAddressByIDBroker(customerID: String, neighborhood: String, street: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func customerInfoByLadaBroker(lada: String, phone: String, name: String, userId: String, eventId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    
     //MARK: - Order follow-up
     func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token : String, userId : String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)

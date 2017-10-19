@@ -877,7 +877,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
         
-        
     }
     public func customerInfoByLada(lada: String, phone: String, name: String, isGiftRegistry: Bool, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
@@ -907,6 +906,89 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
+    
+    /*******************/
+    
+    public func customerAddressByIDBroker(customerID: String, neighborhood: String, street: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        /*
+         {
+         "BuscarDireccionClienteRequest": {
+         "IdUsuario":"pbamobi2",
+         "Calle": "",
+         "Colonia": "",
+         "Cp": "",
+         "Estado": "",
+         "IdCliente": "0001922528"
+         }
+         }
+         */
+        
+        let params = [
+            "BuscarDireccionClienteRequest" : [
+                "IdUsuario" : userId,
+                "Calle": street,
+                "Colonia": neighborhood,
+                "Cp": "",
+                "Estado": "",
+                "IdCliente": customerID
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .SearchAddressCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
+    }
+    public func customerInfoByLadaBroker(lada: String, phone: String, name: String, userId: String, eventId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        /*
+         "IdUsuario":"9669",
+         "Calle": "",
+         "Colonia": "",
+         "Cp": "",
+         "Estado": "",
+         "Lada": "55",
+         "Nombre": "",
+         "Telefono": "53259000",
+         "Evento": ""
+         */
+        
+        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        let params = [
+            "BusquedaClienteRequest": [
+                "IdUsuario" : userId,
+                "Calle": "",
+                "Colonia": "",
+                "Cp": "",
+                "Estado": "",
+                "Lada": paddedLada,
+                "Nombre": name,
+                "Telefono": phone,
+                "Evento": eventId
+            ]
+        ]
+        
+        let url = getRequestUrlForAdapter(adapter: .ConsultaPoolBroker, procedure: .SearchCustomer, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
+        
+    }
+    /******************/
     public func customersWithEvent(eventID: String, userId: String, token: String) {
         
     }
