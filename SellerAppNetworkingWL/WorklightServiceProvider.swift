@@ -525,7 +525,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "Bandera_APV": "T",
                         "inUser" : userId,
                         "inCadenaValidacion" : token,
-                        "Usuario": ""
+                        "Usuario": userId
                     ],
                     "setOrdenSterling": setOrdenSterlingDictionary
                 ],
@@ -789,7 +789,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     //enviado en T por solicitud de team BackEnd
                     "Bandera_APV": "T",
                     "inUser" : userId,
-                    "Usuario": ""
+                    "Usuario": userId
                 ],
                 "setOrdenSterling": [
                     "Order" : order,
