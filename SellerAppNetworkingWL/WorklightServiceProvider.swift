@@ -783,7 +783,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "IdDestinatatio": customerID,
                     "IdDireccionDestino": addressID,
                     "IdDireccionRemitente": senderID ?? "",
-                    "IdRemision": shipmentID,
+                    "IdRemision": orderID,
                     "IdRemitente": senderAddressID ?? "",
                     "TipoEvento": celebratedType ?? "",
                     //enviado en T por solicitud de team BackEnd
