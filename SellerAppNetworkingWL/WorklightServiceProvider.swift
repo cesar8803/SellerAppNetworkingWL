@@ -786,7 +786,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "IdRemision": shipmentID,
                     "IdRemitente": senderAddressID ?? "",
                     "TipoEvento": celebratedType ?? "",
-                    "Bandera_APV": currentStoreInventory ? "F" : "T",
+                    //enviado en T por solicitud de team BackEnd
+                    "Bandera_APV": "T",
                     "inUser" : userId,
                     "Usuario": userId
                 ],
