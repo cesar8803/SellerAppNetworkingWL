@@ -320,7 +320,20 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func addressesForCustomerWithLada(userId: String, token: String, lada: String, telefono: String, cteTelefono: String, selectRecord: String, trySingleAddress: Bool) {
         
     }
-    public func addShoppingSku(sku: String, storeNumber store: String, clientName: String, id: String, idTipoSku: String, createdAt: String) {
+    public func addShoppingSku(sku: String, storeNumber store: String, clientName: String, id: String, idTipoSku: String, createdAt: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = ["agregarSku" : ["tienda" : store, "fechaRegistro" : createdAt, "sku" : sku, "id" : id, "idTipoSku" : idTipoSku, "nombre_cliente" : clientName]]
+        
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .AddSku, parameters: params as AnyObject)
+
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func addSKUAndQuantityToSOMSOrder(userId: String, token: String, sku: String, quantity: String, orderNumber: String, noSpotSku: String?, noSpotQuantity: String?) {
@@ -1011,7 +1024,19 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         
     }
-    public func eraseShoppingClient(clientId: String, storeNumber: String) {
+    public func eraseShoppingClient(clientId: String, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = ["borrarCliente" : ["id" : clientId, "tienda" : storeNumber]]
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .EraseClient, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func getAllCategoryInfo(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
@@ -1314,7 +1339,20 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func registerTerminalForRemoteNotificationsWithStoreId(storeId: String, sectionId: String, deviceId: String, employeeName: String?, idEmployee: Int, isWarehouse: Bool) {
         
     }
-    public func removeShoppingSku(sku: String, id: String) {
+    public func removeShoppingSku(sku: String, id: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        let params = ["quitarSku" : ["sku" : sku, "id" : id]]
+        
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .RemoveSku, parameters: params as AnyObject)
+        
+        _ = manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                
+                completion(result, error)
+            }
+        }
         
     }
     public func requestSurveyImage(imageName: String, update: Bool) {

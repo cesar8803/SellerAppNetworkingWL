@@ -135,11 +135,11 @@ public protocol WorklightServiceProtocol
     //MARK: - Persistent Shopping List
 
     func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
-    func eraseShoppingClient(clientId: String, storeNumber: String)
+    func eraseShoppingClient(clientId: String, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func searchShoppingClient(clientId: String, storeNumber: String)
-    func addShoppingSku(sku: String, storeNumber store: String, clientName: String, id: String, idTipoSku: String, createdAt: String)
-    func removeShoppingSku(sku: String, id: String)
+    func addShoppingSku(sku: String, storeNumber store: String, clientName: String, id: String, idTipoSku: String, createdAt: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func removeShoppingSku(sku: String, id: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func resetWLStatus()
     
     
