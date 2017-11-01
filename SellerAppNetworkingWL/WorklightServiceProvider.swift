@@ -764,8 +764,10 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             let order = [
                 "OrderName" : storeNumber,
-                "OrderType" : "Personal",
-                "OrderNo" : orderID
+                "OrderType" : orderType,
+                "OrderNo" : orderID,
+                "DepartmentCode" : eventID,
+                "Division" : typeEvent
             ]
             
             let params: [String : Any] = [
