@@ -14,28 +14,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
 {
     var manager = SessionManager.default
     
-    public enum Environment: Int {
-        case Production, QA, Development, Deloitte, Custom, UAT
-    }
     
-    var environment: Environment = .Production
     var customHostname: String = ""
-    var hostname: String {
-        switch self.environment
-        {
-        case .Production:       return "http://172.16.204.118:9195"
-        case .QA:               return "http://172.16.204.251:9080"
-        case .Development:      return "http://172.16.204.118:9195"
-        case .Deloitte:         return "http://10.28.113.65:9080"
-        case .UAT:              return "https://172.16.204.118:9195/AppVendedor"
-        case .Custom:           return "\(self.customHostname)"
-        }
-    }
-    
-    private func isUAT(environment : Environment, customHostName : String) -> Bool {
-        return  (environment == .Custom && customHostname == "https://172.16.204.118:9195/AppVendedor")
-    }
-    
     private let worklightRuntimeEnvironment = "/invoke?"
     
     private enum Adapter: String {
@@ -218,15 +198,13 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     // MARK: - Initializers
     
-    public init(environment: Environment = .Production, customHostname: String = "", shouldIgnoreSSL : Bool = false)
+    public init(customHostname: String = "https://172.16.204.118:9195/AppVendedor", shouldIgnoreSSL : Bool = false)
     {
         SessionManager.default.session.configuration.timeoutIntervalForRequest = 500
         
-        self.environment = environment
-        
         self.customHostname = customHostname
         
-        if isUAT(environment: self.environment, customHostName: self.customHostname) && shouldIgnoreSSL == true {
+        if shouldIgnoreSSL {
             ignoreSSL()
         }
         
