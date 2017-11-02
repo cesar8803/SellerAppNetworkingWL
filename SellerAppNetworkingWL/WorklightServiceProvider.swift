@@ -772,6 +772,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             var params: [String : Any] = [:]
             
+            let zipCode : String = String(shippingAddress.zipCode.characters.suffix(5))
+            
             if orderType.lowercased().range(of: "gift") == nil {
                 print  ("contains nil gift")
                 params = [
@@ -801,7 +803,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
+                            "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ],
@@ -815,7 +817,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
+                            "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ],
@@ -829,7 +831,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
+                            "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ]
@@ -893,7 +895,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
+                            "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ]
