@@ -762,11 +762,13 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             ]
             }) {
             
+            let eventIDInt : Int = Int(eventID!)!
+            
             let order = [
                 "OrderName" : storeNumber,
                 "OrderType" : orderType,
                 "OrderNo" : orderID,
-                "DepartmentCode" : eventID,
+                "DepartmentCode" : "\(eventIDInt)" ?? "",
                 "Division" : typeEvent
             ]
             
@@ -774,11 +776,13 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             let zipCode : String = String(shippingAddress.zipCode.characters.suffix(5))
             
+            
+            
             if orderType.lowercased().range(of: "gift") == nil {
                 print  ("contains nil gift")
                 params = [
                     "CreaActualizaOVREMRequest": [
-                        "Evento": eventID ?? "",
+                        "Evento": "\(eventIDInt)" ?? "",
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
@@ -799,9 +803,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine1" : shippingAddress.street,
                             "addressLine2" : shippingAddress.number,
                             "addressLine3" : shippingAddress.interiorNumber,
-                            "addressLine4" : shippingAddress.settlement,
-                            "addressLine5" : shippingAddress.township,
-                            "city"         : shippingAddress.city,
+                            "addressLine4" : shippingAddress.city,
+                            "addressLine5" : shippingAddress.municipio,
+                            "city"         : shippingAddress.municipio,
                             "state"        : shippingAddress.state,
                             "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
@@ -814,8 +818,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine2" : shippingAddress.number,
                             "addressLine3" : shippingAddress.interiorNumber,
                             "addressLine4" : shippingAddress.settlement,
-                            "addressLine5" : shippingAddress.township,
-                            "city"         : shippingAddress.city,
+                            "addressLine5" : shippingAddress.municipio,
+                            "city"         : shippingAddress.municipio,
                             "state"        : shippingAddress.state,
                             "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
@@ -828,8 +832,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine2" : shippingAddress.number,
                             "addressLine3" : shippingAddress.interiorNumber,
                             "addressLine4" : shippingAddress.settlement,
-                            "addressLine5" : shippingAddress.township,
-                            "city"         : shippingAddress.city,
+                            "addressLine5" : shippingAddress.municipio,
+                            "city"         : shippingAddress.municipio,
                             "state"        : shippingAddress.state,
                             "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
@@ -842,7 +846,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 
                 params = [
                     "CreaActualizaOVREMRequest": [
-                        "Evento": eventID ?? "",
+                        "Evento": "\(eventIDInt)" ?? "",
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
@@ -864,8 +868,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine2" : shippingAddress.number,
                             "addressLine3" : shippingAddress.interiorNumber,
                             "addressLine4" : shippingAddress.settlement,
-                            "addressLine5" : shippingAddress.township,
-                            "city"         : shippingAddress.city,
+                            "addressLine5" : shippingAddress.municipio,
+                            "city"         : shippingAddress.municipio,
                             "state"        : shippingAddress.state,
                             "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
@@ -878,8 +882,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine2" : shippingAddress.number,
                             "addressLine3" : shippingAddress.interiorNumber,
                             "addressLine4" : shippingAddress.settlement,
-                            "addressLine5" : shippingAddress.township,
-                            "city"         : shippingAddress.city,
+                            "addressLine5" : shippingAddress.municipio,
+                            "city"         : shippingAddress.municipio,
                             "state"        : shippingAddress.state,
                             "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,
@@ -892,8 +896,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine2" : shippingAddress.number,
                             "addressLine3" : shippingAddress.interiorNumber,
                             "addressLine4" : shippingAddress.settlement,
-                            "addressLine5" : shippingAddress.township,
-                            "city"         : shippingAddress.city,
+                            "addressLine5" : shippingAddress.municipio,
+                            "city"         : shippingAddress.municipio,
                             "state"        : shippingAddress.state,
                             "zipCode"      : zipCode,
                             "dayPhone"     : shippingAddress.homePhone,

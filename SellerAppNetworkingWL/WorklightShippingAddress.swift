@@ -30,6 +30,7 @@ public class WorklightShippingAddress: NSObject {
     public var street1          : String = ""
     public var street2          : String = ""
     public var tipoAsentamiento : String = ""
+    public var municipio        : String = ""
     
     public override init() {
         
@@ -80,6 +81,9 @@ public class WorklightShippingAddress: NSObject {
         }
         if let tipoAsentamiento = worklightResponse["tipoAsentamiento"] as? String {
             self.tipoAsentamiento = tipoAsentamiento
+        }
+        if let municipio = worklightResponse["municipio"] as? String {
+            self.municipio = municipio
         }
     }
 }
