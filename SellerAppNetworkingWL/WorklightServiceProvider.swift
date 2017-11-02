@@ -770,67 +770,138 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 "Division" : typeEvent
             ]
             
-            let params: [String : Any] = [
-                "CreaActualizaOVREMRequest": [
-                    "Evento": eventID ?? "",
-                    "IdDestinatatio": customerID,
-                    "IdDireccionDestino": addressID,
-                    "IdDireccionRemitente": senderID ?? "",
-                    "IdRemision": orderID,
-                    "IdRemitente": senderAddressID ?? "",
-                    "TipoEvento": celebratedType ?? "",
-                    //enviado en T por solicitud de team BackEnd
-                    "Bandera_APV": "T",
-                    "inUser" : userId,
-                    "Usuario": userId
-                ],
-                "setOrdenSterling": [
-                    "Order" : order,
-                    "OrderLines" : orderLines,
-                    "PersonInfoBillTo" : [
-                        "firstName"    : customerFirstName,
-                        "lastName"     : customerLastName,
-                        "addressLine1" : shippingAddress.street,
-                        "addressLine2" : shippingAddress.number,
-                        "addressLine3" : shippingAddress.interiorNumber,
-                        "addressLine4" : shippingAddress.settlement,
-                        "addressLine5" : shippingAddress.township,
-                        "city"         : shippingAddress.city,
-                        "state"        : shippingAddress.state,
-                        "zipCode"      : shippingAddress.zipCode,
-                        "dayPhone"     : shippingAddress.homePhone,
-                        "mobilePhone"  : shippingAddress.mobilePhone
+            var params: [String : Any] = [:]
+            
+            if orderType.lowercased().range(of: "gift") == nil {
+                print  ("contains nil gift")
+                params = [
+                    "CreaActualizaOVREMRequest": [
+                        "Evento": eventID ?? "",
+                        "IdDestinatatio": customerID,
+                        "IdDireccionDestino": addressID,
+                        "IdDireccionRemitente": senderID ?? "",
+                        "IdRemision": orderID,
+                        "IdRemitente": senderAddressID ?? "",
+                        "TipoEvento": celebratedType ?? "",
+                        //enviado en T por solicitud de team BackEnd
+                        "Bandera_APV": "T",
+                        "inUser" : userId,
+                        "Usuario": userId
                     ],
-                    "PersonInfoContact": [
-                        "firstName"    : customerFirstName,
-                        "lastName"     : customerLastName,
-                        "addressLine1" : shippingAddress.street,
-                        "addressLine2" : shippingAddress.number,
-                        "addressLine3" : shippingAddress.interiorNumber,
-                        "addressLine4" : shippingAddress.settlement,
-                        "addressLine5" : shippingAddress.township,
-                        "city"         : shippingAddress.city,
-                        "state"        : shippingAddress.state,
-                        "zipCode"      : shippingAddress.zipCode,
-                        "dayPhone"     : shippingAddress.homePhone,
-                        "mobilePhone"  : shippingAddress.mobilePhone
-                    ],
-                    "PersonInfoShipTo": [
-                        "firstName"    : customerFirstName,
-                        "lastName"     : customerLastName,
-                        "addressLine1" : shippingAddress.street,
-                        "addressLine2" : shippingAddress.number,
-                        "addressLine3" : shippingAddress.interiorNumber,
-                        "addressLine4" : shippingAddress.settlement,
-                        "addressLine5" : shippingAddress.township,
-                        "city"         : shippingAddress.city,
-                        "state"        : shippingAddress.state,
-                        "zipCode"      : shippingAddress.zipCode,
-                        "dayPhone"     : shippingAddress.homePhone,
-                        "mobilePhone"  : shippingAddress.mobilePhone
+                    "setOrdenSterling": [
+                        "Order" : order,
+                        "OrderLines" : orderLines,
+                        "PersonInfoBillTo" : [
+                            "firstName"    : customerFirstName,
+                            "lastName"     : customerLastName,
+                            "addressLine1" : shippingAddress.street,
+                            "addressLine2" : shippingAddress.number,
+                            "addressLine3" : shippingAddress.interiorNumber,
+                            "addressLine4" : shippingAddress.settlement,
+                            "addressLine5" : shippingAddress.township,
+                            "city"         : shippingAddress.city,
+                            "state"        : shippingAddress.state,
+                            "zipCode"      : shippingAddress.zipCode,
+                            "dayPhone"     : shippingAddress.homePhone,
+                            "mobilePhone"  : shippingAddress.mobilePhone
+                        ],
+                        "PersonInfoContact": [
+                            "firstName"    : customerFirstName,
+                            "lastName"     : customerLastName,
+                            "addressLine1" : shippingAddress.street,
+                            "addressLine2" : shippingAddress.number,
+                            "addressLine3" : shippingAddress.interiorNumber,
+                            "addressLine4" : shippingAddress.settlement,
+                            "addressLine5" : shippingAddress.township,
+                            "city"         : shippingAddress.city,
+                            "state"        : shippingAddress.state,
+                            "zipCode"      : shippingAddress.zipCode,
+                            "dayPhone"     : shippingAddress.homePhone,
+                            "mobilePhone"  : shippingAddress.mobilePhone
+                        ],
+                        "PersonInfoShipTo": [
+                            "firstName"    : customerFirstName,
+                            "lastName"     : customerLastName,
+                            "addressLine1" : shippingAddress.street,
+                            "addressLine2" : shippingAddress.number,
+                            "addressLine3" : shippingAddress.interiorNumber,
+                            "addressLine4" : shippingAddress.settlement,
+                            "addressLine5" : shippingAddress.township,
+                            "city"         : shippingAddress.city,
+                            "state"        : shippingAddress.state,
+                            "zipCode"      : shippingAddress.zipCode,
+                            "dayPhone"     : shippingAddress.homePhone,
+                            "mobilePhone"  : shippingAddress.mobilePhone
+                        ]
                     ]
                 ]
-            ]
+            }else {
+                print("contains new gift")
+                
+                params = [
+                    "CreaActualizaOVREMRequest": [
+                        "Evento": eventID ?? "",
+                        "IdDestinatatio": customerID,
+                        "IdDireccionDestino": addressID,
+                        "IdDireccionRemitente": senderID ?? "",
+                        "IdRemision": orderID,
+                        "IdRemitente": senderAddressID ?? "",
+                        "TipoEvento": celebratedType ?? "",
+                        //enviado en T por solicitud de team BackEnd
+                        "Bandera_APV": "T",
+                        "inUser" : userId,
+                        "Usuario": userId
+                    ],
+                    "setOrdenSterling": [
+                        "Order" : order,
+                        "OrderLines" : orderLines,
+                        "PersonInfoBillTo" : [
+                            "firstName"    : "",
+                            "lastName"     : "",
+                            "addressLine1" : "",
+                            "addressLine2" : "",
+                            "addressLine3" : "",
+                            "addressLine4" : "",
+                            "addressLine5" : "",
+                            "city"         : "",
+                            "state"        : "",
+                            "zipCode"      : "",
+                            "dayPhone"     : "",
+                            "mobilePhone"  : ""
+                        ],
+                        "PersonInfoContact": [
+                            "firstName"    : "",
+                            "lastName"     : "",
+                            "addressLine1" : "",
+                            "addressLine2" : "",
+                            "addressLine3" : "",
+                            "addressLine4" : "",
+                            "addressLine5" : "",
+                            "city"         : "",
+                            "state"        : "",
+                            "zipCode"      : "",
+                            "dayPhone"     : "",
+                            "mobilePhone"  : ""
+                        ],
+                        "PersonInfoShipTo": [
+                            "firstName"    : customerFirstName,
+                            "lastName"     : customerLastName,
+                            "addressLine1" : shippingAddress.street,
+                            "addressLine2" : shippingAddress.number,
+                            "addressLine3" : shippingAddress.interiorNumber,
+                            "addressLine4" : shippingAddress.settlement,
+                            "addressLine5" : shippingAddress.township,
+                            "city"         : shippingAddress.city,
+                            "state"        : shippingAddress.state,
+                            "zipCode"      : shippingAddress.zipCode,
+                            "dayPhone"     : shippingAddress.homePhone,
+                            "mobilePhone"  : shippingAddress.mobilePhone
+                        ]
+                    ]
+                ]
+            }
+            
+            
             
             let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .CreateUpdateSOMSShipmentSterling, parameters: params as AnyObject)
             
