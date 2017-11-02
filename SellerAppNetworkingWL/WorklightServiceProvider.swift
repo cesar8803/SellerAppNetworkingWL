@@ -801,7 +801,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : shippingAddress.zipCode.substring(from:shippingAddress.zipCode.index(shippingAddress.zipCode.endIndex, offsetBy: -5)),
+                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ],
@@ -815,7 +815,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : shippingAddress.zipCode.substring(from:shippingAddress.zipCode.index(shippingAddress.zipCode.endIndex, offsetBy: -5)),
+                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ],
@@ -829,7 +829,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : shippingAddress.zipCode.substring(from:shippingAddress.zipCode.index(shippingAddress.zipCode.endIndex, offsetBy: -5)),
+                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ]
@@ -893,7 +893,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                             "addressLine5" : shippingAddress.township,
                             "city"         : shippingAddress.city,
                             "state"        : shippingAddress.state,
-                            "zipCode"      : shippingAddress.zipCode.substring(from:shippingAddress.zipCode.index(shippingAddress.zipCode.endIndex, offsetBy: -5)),
+                            "zipCode"      : String(shippingAddress.zipCode.characters.suffix(5)),
                             "dayPhone"     : shippingAddress.homePhone,
                             "mobilePhone"  : shippingAddress.mobilePhone
                         ]
