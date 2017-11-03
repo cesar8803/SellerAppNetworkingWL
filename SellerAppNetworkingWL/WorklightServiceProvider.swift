@@ -743,7 +743,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createUpdateSOMSShipmentOrder(shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, token: String, userId: String) {
         
     }
-    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAddress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, userId: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAddress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, userId: String, congratulation: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         //assert(products?.count > 0, "We MUST have at least one product!")
         
@@ -762,9 +762,12 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             ]
             }) {
             
-            var order : [String:String] = [:]
+            var order : [String:Any] = [:]
             
             var eventIDInt : Int = -1
+            
+            var Instruction : [String:String] = [:]
+            Instruction = ["InstructionText": congratulation]
             
             if(eventID != ""){
             
@@ -779,6 +782,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 ]
             }else{
                 order = [
+                    "Instructions": Instruction,
                     "OrderName" : storeNumber,
                     "OrderType" : orderType,
                     "OrderNo" : orderID,
