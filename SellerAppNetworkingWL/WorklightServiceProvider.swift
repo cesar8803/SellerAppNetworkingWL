@@ -766,15 +766,17 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             var eventIDInt : Int = -1
             
+            var Instructions : [String:Any] = [:]
             var Instruction : [String:String] = [:]
             Instruction = ["InstructionText": congratulation]
+            Instructions = ["Instruction": Instruction]
             
             if(eventID != ""){
             
                 eventIDInt = Int(eventID!)!
             
                 order = [
-                    "Instructions": Instruction,
+                    "Instructions": Instructions,
                     "OrderName" : storeNumber,
                     "OrderType" : orderType,
                     "OrderNo" : orderID,
