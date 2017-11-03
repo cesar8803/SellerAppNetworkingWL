@@ -783,7 +783,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "OrderType" : orderType,
                     "OrderNo" : orderID,
                     "DepartmentCode" : "",
-                    "Division" : typeEvent
+                    "Division" : ""
                 ]
             }
             
