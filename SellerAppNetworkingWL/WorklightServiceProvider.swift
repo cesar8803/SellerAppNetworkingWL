@@ -762,27 +762,40 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             ]
             }) {
             
-            let eventIDInt : Int = Int(eventID!)!
+            var order : [String:String] = [:]
             
-            let order = [
-                "OrderName" : storeNumber,
-                "OrderType" : orderType,
-                "OrderNo" : orderID,
-                "DepartmentCode" : "\(eventIDInt)" ?? "",
-                "Division" : typeEvent
-            ]
+            var eventIDInt : Int = -1
+            
+            if(eventID != ""){
+            
+                eventIDInt = Int(eventID!)!
+            
+                order = [
+                    "OrderName" : storeNumber,
+                    "OrderType" : orderType,
+                    "OrderNo" : orderID,
+                    "DepartmentCode" : "\(eventIDInt)",
+                    "Division" : typeEvent
+                ]
+            }else{
+                order = [
+                    "OrderName" : storeNumber,
+                    "OrderType" : orderType,
+                    "OrderNo" : orderID,
+                    "DepartmentCode" : "",
+                    "Division" : typeEvent
+                ]
+            }
             
             var params: [String : Any] = [:]
             
             let zipCode : String = String(shippingAddress.zipCode.characters.suffix(5))
             
-            
-            
             if orderType.lowercased().range(of: "gift") == nil {
                 print  ("contains nil gift")
                 params = [
                     "CreaActualizaOVREMRequest": [
-                        "Evento": "\(eventIDInt)" ?? "",
+                        "Evento": "\(eventIDInt)" ,
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
