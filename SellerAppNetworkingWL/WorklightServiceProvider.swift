@@ -774,6 +774,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 eventIDInt = Int(eventID!)!
             
                 order = [
+                    "Instructions": Instruction,
                     "OrderName" : storeNumber,
                     "OrderType" : orderType,
                     "OrderNo" : orderID,
@@ -782,7 +783,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 ]
             }else{
                 order = [
-                    "Instructions": Instruction,
                     "OrderName" : storeNumber,
                     "OrderType" : orderType,
                     "OrderNo" : orderID,
