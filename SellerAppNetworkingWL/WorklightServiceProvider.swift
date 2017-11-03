@@ -793,9 +793,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             if orderType.lowercased().range(of: "gift") == nil {
                 print  ("contains nil gift")
+                var eventNumR : String = ""
+                if(eventIDInt == -1){
+                    eventNumR = ""
+                }else{
+                    eventNumR = "\(eventIDInt)"
+                }
                 params = [
                     "CreaActualizaOVREMRequest": [
-                        "Evento": "\(eventIDInt)" ,
+                        "Evento": eventNumR,
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
@@ -856,10 +862,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 ]
             }else {
                 print("contains new gift")
-                
+                var eventNumR : String = ""
+                if(eventIDInt == -1){
+                    eventNumR = ""
+                }else{
+                    eventNumR = "\(eventIDInt)"
+                }
                 params = [
                     "CreaActualizaOVREMRequest": [
-                        "Evento": "\(eventIDInt)" ?? "",
+                        "Evento": eventNumR,
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
