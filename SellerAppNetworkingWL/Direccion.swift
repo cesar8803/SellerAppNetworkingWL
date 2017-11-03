@@ -36,7 +36,7 @@ public class Direccion: Mappable{
         YCalle <- map["YCalle"]
         Cp <- map["Cp"]
         Estado <- map["Estado"]
-        IdDireccioncliente <- map["IdDireccioncliente"]
+        IdDireccioncliente <- map["IdDireccion"]
         Municipio <- map["Municipio"]
         EntreCalle <- map["EntreCalle"]
         
