@@ -636,9 +636,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         let params: [String : Any] = ["cliente" : clientParams]
         
-        var url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .InsertClient, parameters: params as AnyObject)
-        
-        url = replaceSpecialCharacters2(url)
+        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .InsertClient, parameters: params as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
