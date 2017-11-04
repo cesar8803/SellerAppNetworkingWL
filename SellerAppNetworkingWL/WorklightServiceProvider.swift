@@ -636,7 +636,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         let params: [String : Any] = ["cliente" : clientParams]
         
-        let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .InsertClient, parameters: params as AnyObject)
+        var url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .InsertClient, parameters: params as AnyObject)
+        
+        url = replaceSpecialCharacters2(url)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
@@ -1712,6 +1714,30 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         newString = newString.replacingOccurrences(of: "¿", with: "%C3%BF")
         newString = newString.replacingOccurrences(of: "?", with: "%3F")
         newString = newString.replacingOccurrences(of: "¡", with: "%C2%A1")
+        
+        
+        return newString
+        
+    }
+    
+    private func replaceSpecialCharacters2(_ characters: String) -> String{
+        
+        /*
+         # = %23
+         $ = %24
+         % = %25
+         & = %26
+         " = \"
+         */
+        
+        var newString = characters
+        
+        newString = newString.replacingOccurrences(of: "#", with: "%C3%A1")
+        newString = newString.replacingOccurrences(of: "$", with: "%C3%A9")
+        newString = newString.replacingOccurrences(of: "%", with: "%C3%AD")
+        newString = newString.replacingOccurrences(of: "&", with: "%C3%B3")
+        newString = newString.replacingOccurrences(of: "\"", with: "\\\"")
+
         
         
         return newString
