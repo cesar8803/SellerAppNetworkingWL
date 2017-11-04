@@ -812,7 +812,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
                         "IdRemision": orderID,
-                        "IdRemitente": senderAddressID ?? "",
+                        "IdRemitente": "",
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
@@ -881,7 +881,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": senderID ?? "",
                         "IdRemision": orderID,
-                        "IdRemitente": senderAddressID ?? "",
+                        "IdRemitente": "",
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
