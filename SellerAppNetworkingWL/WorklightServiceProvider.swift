@@ -198,6 +198,10 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     // MARK: - Initializers
     
+    
+    // Usuario para Soms
+    var rootIdUser = "ADMAPPV"
+    
     public init(customHostname: String = "https://172.16.204.118:9195/AppVendedor", shouldIgnoreSSL : Bool = false)
     {
         SessionManager.default.session.configuration.timeoutIntervalForRequest = 500
@@ -514,9 +518,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "IdRemitente": "",
                         "TipoEvento": "",
                         "Bandera_APV": "T",
-                        "inUser" : userId,
+                        "inUser" : self.rootIdUser,
                         "inCadenaValidacion" : token,
-                        "Usuario": userId
+                        "Usuario": self.rootIdUser
                     ],
                     "setOrdenSterling": setOrdenSterlingDictionary
                 ],
@@ -816,8 +820,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
-                        "inUser" : userId,
-                        "Usuario": userId
+                        "inUser" : self.rootIdUser,
+                        "Usuario": self.rootIdUser
                     ],
                     "setOrdenSterling": [
                         "Order" : order,
@@ -885,8 +889,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
-                        "inUser" : userId,
-                        "Usuario": userId
+                        "inUser" : self.rootIdUser,
+                        "Usuario": self.rootIdUser
                     ],
                     "setOrdenSterling": [
                         "Order" : order,
