@@ -1721,6 +1721,30 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         return newString
         
     }
+    
+    private func replaceSpecialCharacters2(_ characters: String) -> String{
+        
+        /*
+         # = %23
+         $ = %24
+         % = %25
+         & = %26
+         " = \"
+         */
+        
+        var newString = characters
+        
+        newString = newString.replacingOccurrences(of: "#", with: "%C3%A1")
+        newString = newString.replacingOccurrences(of: "$", with: "%C3%A9")
+        newString = newString.replacingOccurrences(of: "%", with: "%C3%AD")
+        newString = newString.replacingOccurrences(of: "&", with: "%C3%B3")
+        newString = newString.replacingOccurrences(of: "\"", with: "\\\"")
+
+        
+        
+        return newString
+        
+    }
     public func skuGenericosForSku(sku: String) {
         
     }
