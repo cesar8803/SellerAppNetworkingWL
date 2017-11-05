@@ -200,7 +200,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     
     // Usuario para Soms
-    var rootIdUser = "ADMAPPV"
+    //var rootIdUser = "ADMAPPV"
     
     public init(customHostname: String = "https://172.16.204.118:9195/AppVendedor", shouldIgnoreSSL : Bool = false)
     {
@@ -518,9 +518,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "IdRemitente": "",
                         "TipoEvento": "",
                         "Bandera_APV": "T",
-                        "inUser" : self.rootIdUser,
+                        "inUser" : userId,
                         "inCadenaValidacion" : token,
-                        "Usuario": self.rootIdUser
+                        "Usuario": userId
                     ],
                     "setOrdenSterling": setOrdenSterlingDictionary
                 ],
@@ -820,8 +820,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
-                        "inUser" : self.rootIdUser,
-                        "Usuario": self.rootIdUser
+                        "inUser" : userId,
+                        "Usuario": userId
                     ],
                     "setOrdenSterling": [
                         "Order" : order,
@@ -889,8 +889,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
-                        "inUser" : self.rootIdUser,
-                        "Usuario": self.rootIdUser
+                        "inUser" : userId,
+                        "Usuario": userId
                     ],
                     "setOrdenSterling": [
                         "Order" : order,
