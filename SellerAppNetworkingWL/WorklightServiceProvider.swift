@@ -511,8 +511,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 [
                     "CreaActualizaOVREMRequest": [
                         "Evento": "",
-                        "IdDestinatatio": "",
-                        "IdDireccionDestino": (isNewCustomer ? "001" : ""),
+                        "IdDestinatatio": customerID,
+                        "IdDireccionDestino": addressID,
                         "IdDireccionRemitente": "",
                         "IdRemision": orderNumber,
                         "IdRemitente": "",
