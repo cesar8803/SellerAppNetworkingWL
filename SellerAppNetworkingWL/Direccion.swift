@@ -54,7 +54,7 @@ public class Direccion: Mappable{
         var cp: String = ""
         if let zip: String = Cp, !zip.isEmpty { cp = zip }
         
-        if (numeroExterior?.isEmpty)!{
+        if numeroExterior == nil || (numeroExterior?.isEmpty)!{
             numeroExterior = Numero
         }
         
