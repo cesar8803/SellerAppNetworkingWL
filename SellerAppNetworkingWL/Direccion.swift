@@ -23,6 +23,7 @@ public class Direccion: Mappable{
     public var Municipio: String?
     public var EntreCalle: String?
     public var direccionCompleta: String?
+    public var numeroExterior: String?
     
     public required init?(map: Map){
     }
@@ -39,6 +40,7 @@ public class Direccion: Mappable{
         IdDireccioncliente <- map["IdDireccioncliente"]
         Municipio <- map["Municipio"]
         EntreCalle <- map["EntreCalle"]
+        numeroExterior <- map["NumeroExt"]
         
         var colonia: String = ""
         if let col: String = Colonia, !col.isEmpty { colonia = col }
