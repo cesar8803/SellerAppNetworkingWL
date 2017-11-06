@@ -85,5 +85,8 @@ public class WorklightShippingAddress: NSObject {
         if let municipio = worklightResponse["municipio"] as? String {
             self.municipio = municipio
         }
+        if let intNumber = worklightResponse["interiorNumber"] as? String {
+            self.interiorNumber = intNumber
+        }
     }
 }
