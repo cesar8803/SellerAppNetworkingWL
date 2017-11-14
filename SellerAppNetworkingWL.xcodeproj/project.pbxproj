@@ -178,6 +178,7 @@
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
 		F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */; };
+		F82D90A41FBA6C0C00AFE280 /* WorklightSOMSEdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,6 +357,7 @@
 		A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaOrdenRecord.swift; path = SellerAppNetworkingWL/SetAltaOrdenRecord.swift; sourceTree = "<group>"; };
 		F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletBalanceResponseWL.swift; path = SellerAppNetworkingWL/WalletBalanceResponseWL.swift; sourceTree = "<group>"; };
 		F77B9C811F8733020077373D /* BalanceResponseWL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceResponseWL.swift; path = SellerAppNetworkingWL/BalanceResponseWL.swift; sourceTree = "<group>"; };
+		F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorklightSOMSEdd.swift; path = SellerAppNetworkingWL/WorklightSOMSEdd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -570,6 +572,7 @@
 				F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */,
 				7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */,
 				7564C33B1F8DCA9200D2304B /* EstimatedDeliveryDateResponse.swift */,
+				F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
 				716379881F1680D4001486F3 /* Catst420893.swift in Sources */,
 				7163794A1F1680D4001486F3 /* Cat4240006.swift in Sources */,
+				F82D90A41FBA6C0C00AFE280 /* WorklightSOMSEdd.swift in Sources */,
 				716379851F1680D4001486F3 /* Catst420869.swift in Sources */,
 				716379941F1680D4001486F3 /* ListaEventoResponse.swift in Sources */,
 				716379871F1680D4001486F3 /* Catst420884.swift in Sources */,

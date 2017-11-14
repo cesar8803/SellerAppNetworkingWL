@@ -169,5 +169,5 @@ public protocol WorklightServiceProtocol
     func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     //MARK: - Estimated Delivery Date
-    func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func calculateEDD(products: [WorklightSOMSEdd], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }

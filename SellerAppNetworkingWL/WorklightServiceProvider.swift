@@ -2006,15 +2006,24 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
-    
     //MARK: - Estimated Delivery Date
     
-    public func calculateEDD(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+    public func calculateEDD(products: [WorklightSOMSEdd], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        var productosArray: [Any] = []
+        
+        for product in products{
+            var producto: [String : Any] = [:]
+            producto["sku"] = product.itemSKU
+            producto["cantidad"] = product.quantity
+            producto["cp"] = product.cp
+            producto["tipoProducto"] = product.tipoProducto
+            
+            productosArray.append(producto)
+        }
         
         let params = [
-            "obtenerTiendasCCPorEstadoRequest" : [
-                "idEstado" : "prueba"
-            ]
+            "listaSkus" : productosArray
         ]
         
         let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
