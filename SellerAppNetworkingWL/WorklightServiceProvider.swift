@@ -2025,11 +2025,14 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let listaSkus = [
             "listaSkus" : productosArray
         ]
+        let consultarFechaEstimadaEntregaRequest = [
+            "consultarFechaEstimadaEntregaRequest" : listaSkus
+        ]
         
         var params : [Any] = []
-        params.append(listaSkus)
+        params.append(consultarFechaEstimadaEntregaRequest)
         
-        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: consultarFechaEstimadaEntregaRequest as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
