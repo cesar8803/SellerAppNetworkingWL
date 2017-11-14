@@ -2022,9 +2022,12 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             productosArray.append(producto)
         }
         
-        let params = [
+        let listaSkus = [
             "listaSkus" : productosArray
         ]
+        
+        var params : [Any] = []
+        params.append(listaSkus)
         
         let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .EstimatedDeliveryDate, parameters: params as AnyObject)
         
