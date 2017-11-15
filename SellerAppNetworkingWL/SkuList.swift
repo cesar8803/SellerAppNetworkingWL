@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class SkuList: Mappable{
     public var sku: String?
-    public var articulosDisponibles: String?
+    public var articulosDisponibles: Int?
     public var isAvailableToShip: Bool?
     public var display: Bool?
     
