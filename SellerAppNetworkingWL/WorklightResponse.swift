@@ -54,7 +54,7 @@ public class WorklightResponse: Mappable{
     public var cardBalance: BalanceResponseWL?
     public var walletBalance: WalletBalanceResponseWL?
     public var skuStatusChangeList: [SkuStatusChangeList]?
-    public var estimatedDeliveryDateResponse : EstimatedDeliveryDateResponse?
+    public var estimatedDeliveryDateResponse : ConsultarFechaEstimadaEntregaResponse?
 
     public required init?(map: Map){
     }
