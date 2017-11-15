@@ -17,7 +17,7 @@ public class EstimatedDeliveryDateResponse: Mappable {
     public required init?(map: Map){
     }
     public func mapping(map: Map){
-        consultarFechaEstimadaEntregaResponse <- map["consultarFechaEstimadaEntregaRequest"]
+        consultarFechaEstimadaEntregaResponse <- map["consultarFechaEstimadaEntregaResponse"]
         isSuccessful <- map["isSuccessful"]
     }
 }
