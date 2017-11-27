@@ -147,7 +147,7 @@ public protocol WorklightServiceProtocol
     func requestSurveyImage(imageName: String, update: Bool)
     
     
-    func salesReport(items: AnyObject)
+    func salesReport(items: AnyObject, completion: @escaping (WorklightResponse?, NSError?) -> Void)
   
     //MARK: - Extended Catalog 
     func isValidToSaleByExtendedCatalog(sku : [String])

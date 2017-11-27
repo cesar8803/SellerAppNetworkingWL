@@ -1518,8 +1518,22 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func retrieveRestrictedSKUsForShipping() {
         
     }
-    public func salesReport(items: AnyObject) {
+    public func salesReport(items: AnyObject, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
+        let params = [
+            "Registros" : items
+        ]
+        let url = getRequestUrlForAdapter(adapter: .ReporteVentas, procedure: .InsertarRegistro, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
     }
     public func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
