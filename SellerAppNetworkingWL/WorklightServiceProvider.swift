@@ -542,14 +542,14 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        //let paddedLada = String(format: "%03d", Int(lada) ?? 0)
         let requestParameters = [
             "AltaClienteDireccionRequest" : [
                 "setAltaClienteFilters" : [
                     "crearCalle" : createStreet ?? false,
                     "idUsuario" : userId,
                     "idCliente" : clientId,
-                    "inLada" : paddedLada,
+                    "inLada" : lada,
                     "inTelefono" : phone,
                     "inApMaterno" : secondLastName ?? "",
                     "inApPaterno" : lastName,
