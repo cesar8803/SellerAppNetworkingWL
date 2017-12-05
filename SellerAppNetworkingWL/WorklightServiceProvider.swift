@@ -1067,7 +1067,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
          "Evento": ""
          */
         
-        let paddedLada = String(format: "%03d", Int(lada) ?? 0)
+        //let paddedLada = String(format: "%03d", Int(lada) ?? 0)
         let params = [
             "BusquedaClienteRequest": [
                 "IdUsuario" : userId,
@@ -1075,7 +1075,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 "Colonia": "",
                 "Cp": "",
                 "Estado": "",
-                "Lada": paddedLada,
+                "Lada": lada,
                 "Nombre": name,
                 "Telefono": phone,
                 "Evento": eventId
