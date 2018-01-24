@@ -802,6 +802,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             let zipCode : String = String(shippingAddress.zipCode.characters.suffix(5))
             
+            var idRemitente : String = ""
+            var idDireccionRemitente : String = ""
+            
+            if eventID != nil && !(eventID?.isEmpty)!{
+                print("numeroEvento: ", eventID)
+                idRemitente = "9999999998"
+                idDireccionRemitente = "999"
+            }
+            
             if orderType.lowercased().range(of: "gift") == nil {
                 print  ("contains nil gift")
                 var eventNumR : String = ""
@@ -815,9 +824,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "Evento": eventNumR,
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
-                        "IdDireccionRemitente": senderID ?? "",
+                        "IdDireccionRemitente": idDireccionRemitente,
                         "IdRemision": orderID,
-                        "IdRemitente": "",
+                        "IdRemitente": idRemitente,
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
@@ -879,14 +888,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 }else{
                     eventNumR = "\(eventIDInt)"
                 }
+
                 params = [
                     "CreaActualizaOVREMRequest": [
                         "Evento": eventNumR,
                         "IdDestinatatio": customerID,
                         "IdDireccionDestino": addressID,
-                        "IdDireccionRemitente": senderID ?? "",
+                        "IdDireccionRemitente": idDireccionRemitente,
                         "IdRemision": orderID,
-                        "IdRemitente": "",
+                        "IdRemitente": idRemitente,
                         "TipoEvento": celebratedType ?? "",
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
