@@ -520,7 +520,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         "Bandera_APV": "T",
                         "inUser" : userId,
                         "inCadenaValidacion" : token,
-                        "email" : email,
+                        "email" : email ?? "",
                         "Usuario": userId
                     ],
                     "setOrdenSterling": setOrdenSterlingDictionary
