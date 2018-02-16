@@ -749,7 +749,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createUpdateSOMSShipmentOrder(shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, token: String, userId: String) {
         
     }
-    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAddress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, userId: String, congratulation: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func createUpdateSOMSShipmentOrderSterling(orderID: String, orderType: String, storeNumber: String, customerFirstName: String, customerLastName: String, senderCustomerFirstName: String, senderCustomerLastName: String, products: [WorklightShippingProduct]?, shippingAddress: WorklightShippingAddress, shipmentID: String, customerID: String, addressID: String, currentStoreInventory: Bool, eventID: String?, senderID: String?, senderAddressID: String?, celebratedType: String?, typeEvent: String, userId: String, congratulation: String, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         //assert(products?.count > 0, "We MUST have at least one product!")
         
@@ -832,6 +832,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
                         "inUser" : userId,
+                        "email" : email ?? "",
                         "Usuario": userId
                     ],
                     "setOrdenSterling": [
@@ -902,6 +903,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                         //enviado en T por solicitud de team BackEnd
                         "Bandera_APV": "T",
                         "inUser" : userId,
+                        "email" : email ?? "",
                         "Usuario": userId
                     ],
                     "setOrdenSterling": [
