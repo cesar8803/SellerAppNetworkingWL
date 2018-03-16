@@ -15,6 +15,7 @@ public class IsValidToSaleByExtendedCatalogResponse: Mappable{
     
     public required init?(map: Map){
     }
+    
     public func mapping(map: Map){
         skuList <- map["skuList"]
         isSuccessful <- map["isSuccessful"]
