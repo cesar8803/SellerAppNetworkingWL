@@ -11,9 +11,11 @@ import ObjectMapper
 
 public class IsValidToSaleByExtendedCatalogResponse: Mappable{
     public var skuList: [SkuList]?
+    public var isSuccessful:[isSuccessful]?
     
     public required init?(map: Map){
     }
+    
     public func mapping(map: Map){
         skuList <- map["skuList"]
         isSuccessful <- map["isSuccessful"]
