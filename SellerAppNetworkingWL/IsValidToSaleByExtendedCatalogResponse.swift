@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class IsValidToSaleByExtendedCatalogResponse: Mappable{
     public var skuList: [SkuList]?
-    public var isSuccessful:[isSuccessful]?
+    public var isSuccessful:Bool?
     
     public required init?(map: Map){
     }
