@@ -610,9 +610,12 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         ]*/
         let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaClienteDireccion, parameters: requestParameters as AnyObject)
         
+        manager.session.configuration.timeoutIntervalForRequest = 90
+        
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
+            weakSelf.manager.session.configuration.timeoutIntervalForRequest = 60
             DispatchQueue.main.async {
                 completion(result, error)
             }
