@@ -11,7 +11,7 @@ import ObjectMapper
 
 public class SkuList: Mappable{
     public var sku: String?
-    public var articulosDisponibles: Int?
+    public var articulosDisponibles: String?
     public var isAvailableToShip: Bool?
     public var display: Bool?
     
@@ -19,7 +19,14 @@ public class SkuList: Mappable{
     }
     public func mapping(map: Map){
         sku <- map["sku"]
-        articulosDisponibles <- map["articulosDisponibles"]
+        switch map["articulosDisponibles"].currentValue {
+        case (let v as String):
+            articulosDisponibles = v
+        case (let v as Int):
+            articulosDisponibles = String(v)
+        default:
+            debugPrint("You should add another kind of data")
+        }
         isAvailableToShip <- map["isAvailableToShip"]
         display <- map["display"]
     }
