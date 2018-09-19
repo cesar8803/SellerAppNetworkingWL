@@ -10,6 +10,10 @@
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
+		63C6C42F2152E26400DB280A /* ConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C42E2152E26400DB280A /* ConsultarFechaEntrega.swift */; };
+		63C6C4312152E28400DB280A /* ResponseConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C4302152E28400DB280A /* ResponseConsultarFechaEntrega.swift */; };
+		63C6C4332152E29C00DB280A /* Qry_inv_resp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C4322152E29C00DB280A /* Qry_inv_resp.swift */; };
+		63C6C4352152E2C200DB280A /* Array_obj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C4342152E2C200DB280A /* Array_obj.swift */; };
 		71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */; };
 		71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */; };
 		71047FC71F4E21140071D381 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC61F4E21140071D381 /* Estado.swift */; };
@@ -188,6 +192,10 @@
 		5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaOrdenVentaResponse.swift; path = SellerAppNetworkingWL/ConsultaOrdenVentaResponse.swift; sourceTree = "<group>"; };
 		5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineaRemisionSCOL.swift; path = SellerAppNetworkingWL/LineaRemisionSCOL.swift; sourceTree = "<group>"; };
 		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
+		63C6C42E2152E26400DB280A /* ConsultarFechaEntrega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultarFechaEntrega.swift; sourceTree = "<group>"; };
+		63C6C4302152E28400DB280A /* ResponseConsultarFechaEntrega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConsultarFechaEntrega.swift; sourceTree = "<group>"; };
+		63C6C4322152E29C00DB280A /* Qry_inv_resp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qry_inv_resp.swift; sourceTree = "<group>"; };
+		63C6C4342152E2C200DB280A /* Array_obj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_obj.swift; sourceTree = "<group>"; };
 		71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrearOrdenDevBTResponse.swift; path = SellerAppNetworkingWL/CrearOrdenDevBTResponse.swift; sourceTree = "<group>"; };
 		71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaEdoResponse.swift; path = SellerAppNetworkingWL/ConsultaEdoResponse.swift; sourceTree = "<group>"; };
 		71047FC61F4E21140071D381 /* Estado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Estado.swift; path = SellerAppNetworkingWL/Estado.swift; sourceTree = "<group>"; };
@@ -573,6 +581,10 @@
 				7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */,
 				7564C33B1F8DCA9200D2304B /* EstimatedDeliveryDateResponse.swift */,
 				F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */,
+				63C6C4302152E28400DB280A /* ResponseConsultarFechaEntrega.swift */,
+				63C6C42E2152E26400DB280A /* ConsultarFechaEntrega.swift */,
+				63C6C4322152E29C00DB280A /* Qry_inv_resp.swift */,
+				63C6C4342152E2C200DB280A /* Array_obj.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -634,7 +646,7 @@
 		43AECCB61EFB1B7A00D1B243 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Deloitte;
 				TargetAttributes = {
 					43AECCBE1EFB1B7A00D1B243 = {
@@ -754,7 +766,9 @@
 				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
 				71BEBAF71F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
+				63C6C4312152E28400DB280A /* ResponseConsultarFechaEntrega.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
+				63C6C42F2152E26400DB280A /* ConsultarFechaEntrega.swift in Sources */,
 				71BEBAF51F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
@@ -815,6 +829,7 @@
 				71B7F2691F5490BA00D9F947 /* Respuesta.swift in Sources */,
 				71B7F25D1F548DAB00D9F947 /* BusquedaClienteResponse.swift in Sources */,
 				716379751F1680D4001486F3 /* Catst413095.swift in Sources */,
+				63C6C4332152E29C00DB280A /* Qry_inv_resp.swift in Sources */,
 				716379861F1680D4001486F3 /* Catst420876.swift in Sources */,
 				7163797D1F1680D4001486F3 /* Catst420842.swift in Sources */,
 				7163795A1F1680D4001486F3 /* Cat4990218.swift in Sources */,
@@ -825,6 +840,7 @@
 				7163795F1F1680D4001486F3 /* Cat5020010.swift in Sources */,
 				7163792B1F1680D4001486F3 /* Cat480186.swift in Sources */,
 				716379801F1680D4001486F3 /* Catst420847.swift in Sources */,
+				63C6C4352152E2C200DB280A /* Array_obj.swift in Sources */,
 				716379421F1680D4001486F3 /* Cat2119911.swift in Sources */,
 				7163794F1F1680D4001486F3 /* Cat4450237.swift in Sources */,
 				716379811F1680D4001486F3 /* Catst420853.swift in Sources */,
@@ -898,7 +914,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -906,7 +924,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -951,7 +973,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -959,7 +983,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
