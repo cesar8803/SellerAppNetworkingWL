@@ -2072,7 +2072,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             DispatchQueue.main.async {
                 completion(result, error)
             }
-            
         }
     }
     
