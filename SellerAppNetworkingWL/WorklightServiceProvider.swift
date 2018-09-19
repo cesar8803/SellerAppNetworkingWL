@@ -187,6 +187,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         //Budget
         case SaveBudget = "Alta_Presupuesto"
         case EstimatedDeliveryDate = "consultarFechaEstimadaEntrega"
+        case ConsolidacionServiceBK = "ConsolidacionServiceBK"
     }
     
     //1 - WL up
@@ -804,7 +805,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
             var params: [String : Any] = [:]
             
-            let zipCode : String = String(shippingAddress.zipCode.characters.suffix(5))
+            let zipCode : String = String(shippingAddress.zipCode.suffix(5))
             
             var idRemitente : String = ""
             var idDireccionRemitente : String = ""
@@ -2072,6 +2073,44 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 completion(result, error)
             }
             
+        }
+    }
+    
+    public func calculateEDDs(products: [eddObj], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        var productosArray: [Any] = []
+        
+        var skuid: String
+        var producttype: String
+        var qty: String
+        var zipcode: String
+        
+        for product in products {
+            var producto: [String : Any] = [:]
+            producto["skuid"] = product.skuid
+            producto["producttype"] = product.producttype
+            producto["qty"] = product.qty
+            producto["zipcode"] = product.zipcode
+            
+            productosArray.append(producto)
+        }
+        
+        let qry_inv_resp = ["array_obj" : productosArray]
+        
+        let consultarFechaEstimadaEntregaRequest = ["qry_inv_req" : qry_inv_resp]
+        
+        var params : [Any] = []
+        params.append(consultarFechaEstimadaEntregaRequest)
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ConsolidacionServiceBK, parameters: consultarFechaEstimadaEntregaRequest as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
         }
     }
 }

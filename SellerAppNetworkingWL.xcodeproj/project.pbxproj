@@ -10,6 +10,10 @@
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
+		635F52D62152B4AD001EEC0F /* ConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D52152B4AD001EEC0F /* ConsultarFechaEntrega.swift */; };
+		635F52D82152B528001EEC0F /* Qry_inv_resp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D72152B528001EEC0F /* Qry_inv_resp.swift */; };
+		635F52DA2152B5C2001EEC0F /* Array_obj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D92152B5C1001EEC0F /* Array_obj.swift */; };
+		635F52DC2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52DB2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift */; };
 		71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */; };
 		71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */; };
 		71047FC71F4E21140071D381 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC61F4E21140071D381 /* Estado.swift */; };
@@ -188,6 +192,10 @@
 		5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaOrdenVentaResponse.swift; path = SellerAppNetworkingWL/ConsultaOrdenVentaResponse.swift; sourceTree = "<group>"; };
 		5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineaRemisionSCOL.swift; path = SellerAppNetworkingWL/LineaRemisionSCOL.swift; sourceTree = "<group>"; };
 		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
+		635F52D52152B4AD001EEC0F /* ConsultarFechaEntrega.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultarFechaEntrega.swift; sourceTree = "<group>"; };
+		635F52D72152B528001EEC0F /* Qry_inv_resp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qry_inv_resp.swift; sourceTree = "<group>"; };
+		635F52D92152B5C1001EEC0F /* Array_obj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array_obj.swift; sourceTree = "<group>"; };
+		635F52DB2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConsultarFechaEntrega.swift; sourceTree = "<group>"; };
 		71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrearOrdenDevBTResponse.swift; path = SellerAppNetworkingWL/CrearOrdenDevBTResponse.swift; sourceTree = "<group>"; };
 		71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaEdoResponse.swift; path = SellerAppNetworkingWL/ConsultaEdoResponse.swift; sourceTree = "<group>"; };
 		71047FC61F4E21140071D381 /* Estado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Estado.swift; path = SellerAppNetworkingWL/Estado.swift; sourceTree = "<group>"; };
@@ -573,6 +581,10 @@
 				7196133C1F8D7A7C0080B407 /* SkuStatusChangeList.swift */,
 				7564C33B1F8DCA9200D2304B /* EstimatedDeliveryDateResponse.swift */,
 				F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */,
+				635F52DB2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift */,
+				635F52D52152B4AD001EEC0F /* ConsultarFechaEntrega.swift */,
+				635F52D72152B528001EEC0F /* Qry_inv_resp.swift */,
+				635F52D92152B5C1001EEC0F /* Array_obj.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -753,8 +765,10 @@
 				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
 				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
 				71BEBAF71F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift in Sources */,
+				635F52DA2152B5C2001EEC0F /* Array_obj.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
+				635F52D62152B4AD001EEC0F /* ConsultarFechaEntrega.swift in Sources */,
 				71BEBAF51F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
@@ -800,6 +814,7 @@
 				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
 				71B7F2611F548E2900D9F947 /* DatosSoms.swift in Sources */,
 				716379441F1680D4001486F3 /* Cat4020016.swift in Sources */,
+				635F52DC2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift in Sources */,
 				716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */,
 				716379951F1680D4001486F3 /* ListaEventos.swift in Sources */,
 				7163793F1F1680D4001486F3 /* Cat1300743.swift in Sources */,
@@ -870,6 +885,7 @@
 				716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */,
 				716379491F1680D4001486F3 /* Cat4190005.swift in Sources */,
 				716379781F1680D4001486F3 /* Catst420837.swift in Sources */,
+				635F52D82152B528001EEC0F /* Qry_inv_resp.swift in Sources */,
 				A94317191F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift in Sources */,
 				7163793A1F1680D4001486F3 /* Cat1200649.swift in Sources */,
 				716379911F1680D4001486F3 /* L3CategoryInfo.swift in Sources */,

@@ -170,4 +170,5 @@ public protocol WorklightServiceProtocol
     
     //MARK: - Estimated Delivery Date
     func calculateEDD(products: [WorklightSOMSEdd], completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func calculateEDDs(products: [eddObj], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
