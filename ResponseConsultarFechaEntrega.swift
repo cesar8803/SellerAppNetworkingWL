@@ -24,11 +24,9 @@ public class ResponseConsultarFechaEntrega : Mappable {
 }
 
 public struct eddObj {
-    
-    var skuid: String
-    var producttype: String
-    var qty: String
-    var zipcode: String
-    
+    public var skuid: String
+    public var producttype: String
+    public var qty: String
+    public var zipcode: String
 }
 
