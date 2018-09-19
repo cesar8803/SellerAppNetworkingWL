@@ -2079,11 +2079,6 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         var productosArray: [Any] = []
         
-        var skuid: String
-        var producttype: String
-        var qty: String
-        var zipcode: String
-        
         for product in products {
             var producto: [String : Any] = [:]
             producto["skuid"] = product.skuid

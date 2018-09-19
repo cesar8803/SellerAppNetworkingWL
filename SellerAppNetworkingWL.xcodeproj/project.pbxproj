@@ -10,10 +10,10 @@
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
-		635F52D62152B4AD001EEC0F /* ConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D52152B4AD001EEC0F /* ConsultarFechaEntrega.swift */; };
-		635F52D82152B528001EEC0F /* Qry_inv_resp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D72152B528001EEC0F /* Qry_inv_resp.swift */; };
-		635F52DA2152B5C2001EEC0F /* Array_obj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D92152B5C1001EEC0F /* Array_obj.swift */; };
-		635F52DC2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52DB2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift */; };
+		6399D06F2152C69400668D14 /* Array_obj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D92152B5C1001EEC0F /* Array_obj.swift */; };
+		6399D0702152C69700668D14 /* Qry_inv_resp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D72152B528001EEC0F /* Qry_inv_resp.swift */; };
+		6399D0712152C69A00668D14 /* ConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52D52152B4AD001EEC0F /* ConsultarFechaEntrega.swift */; };
+		6399D0722152C69D00668D14 /* ResponseConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F52DB2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift */; };
 		71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC21F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift */; };
 		71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC41F4E20BB0071D381 /* ConsultaEdoResponse.swift */; };
 		71047FC71F4E21140071D381 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71047FC61F4E21140071D381 /* Estado.swift */; };
@@ -646,7 +646,7 @@
 		43AECCB61EFB1B7A00D1B243 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Deloitte;
 				TargetAttributes = {
 					43AECCBE1EFB1B7A00D1B243 = {
@@ -761,14 +761,13 @@
 				71047FD31F4E288C0071D381 /* Calle.swift in Sources */,
 				7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */,
 				71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */,
+				6399D0712152C69A00668D14 /* ConsultarFechaEntrega.swift in Sources */,
 				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
 				7163795B1F1680D4001486F3 /* Cat4990262.swift in Sources */,
 				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
 				71BEBAF71F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift in Sources */,
-				635F52DA2152B5C2001EEC0F /* Array_obj.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
-				635F52D62152B4AD001EEC0F /* ConsultarFechaEntrega.swift in Sources */,
 				71BEBAF51F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
 				716379821F1680D4001486F3 /* Catst420857.swift in Sources */,
@@ -814,8 +813,8 @@
 				716379301F1680D4001486F3 /* Cat850172.swift in Sources */,
 				71B7F2611F548E2900D9F947 /* DatosSoms.swift in Sources */,
 				716379441F1680D4001486F3 /* Cat4020016.swift in Sources */,
-				635F52DC2152B62F001EEC0F /* ResponseConsultarFechaEntrega.swift in Sources */,
 				716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */,
+				6399D0722152C69D00668D14 /* ResponseConsultarFechaEntrega.swift in Sources */,
 				716379951F1680D4001486F3 /* ListaEventos.swift in Sources */,
 				7163793F1F1680D4001486F3 /* Cat1300743.swift in Sources */,
 				716379551F1680D4001486F3 /* Cat4930074.swift in Sources */,
@@ -841,6 +840,7 @@
 				7163792B1F1680D4001486F3 /* Cat480186.swift in Sources */,
 				716379801F1680D4001486F3 /* Catst420847.swift in Sources */,
 				716379421F1680D4001486F3 /* Cat2119911.swift in Sources */,
+				6399D06F2152C69400668D14 /* Array_obj.swift in Sources */,
 				7163794F1F1680D4001486F3 /* Cat4450237.swift in Sources */,
 				716379811F1680D4001486F3 /* Catst420853.swift in Sources */,
 				7163793D1F1680D4001486F3 /* Cat1250612.swift in Sources */,
@@ -885,7 +885,7 @@
 				716379BE1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift in Sources */,
 				716379491F1680D4001486F3 /* Cat4190005.swift in Sources */,
 				716379781F1680D4001486F3 /* Catst420837.swift in Sources */,
-				635F52D82152B528001EEC0F /* Qry_inv_resp.swift in Sources */,
+				6399D0702152C69700668D14 /* Qry_inv_resp.swift in Sources */,
 				A94317191F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift in Sources */,
 				7163793A1F1680D4001486F3 /* Cat1200649.swift in Sources */,
 				716379911F1680D4001486F3 /* L3CategoryInfo.swift in Sources */,
@@ -914,7 +914,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -922,7 +924,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -967,7 +973,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -975,7 +983,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
