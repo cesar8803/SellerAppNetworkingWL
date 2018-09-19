@@ -22,11 +22,3 @@ public class ResponseConsultarFechaEntrega : Mappable {
         consultarFechaEntrega <- map["consultarFechaEntrega"]
     }
 }
-
-public struct eddObj {
-    public var skuid: String
-    public var producttype: String
-    public var qty: String
-    public var zipcode: String
-}
-
