@@ -456,7 +456,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createAddress(userId: String, token: String, isNewStreet: Bool, zip: String, calle: String, numeroExterior: String, selectRecordAsen: String, selectRecordCliente: String, tipoAsen: String, lada: String, telefono: String, betweenStreet: String?, andStreet: String?, interiorNumber: String?, edificio: String?) {
         
     }
-    public func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool,customerID: String, addressID: String ,isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func createCCOrder(lada: String, phone: String, name: String, userId: String, to token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool,customerID: String, addressID: String ,isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         let paddedLada = String(format: "%03d", Int(lada) ?? 0)
         let charset = NSCharacterSet(charactersIn: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted//NSCharacterSet(charactersInString: "/%&=?$#+-~@<>|\\*,.()[]{}^!").inverted
@@ -811,7 +811,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             var idDireccionRemitente : String = ""
             
             if eventID != nil && !(eventID?.isEmpty)!{
-                print("numeroEvento: ", eventID)
+                print("numeroEvento: ", eventID ?? "")
                 idRemitente = "9999999998"
                 idDireccionRemitente = "999"
             }
@@ -2075,7 +2075,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
-    public func calculateEDDs(products: [eddObj], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+    public func calculateEDDs(products: [WorklightEDDProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
         var productosArray: [Any] = []
         
@@ -2107,13 +2107,5 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
     }
-    
-    public struct eddObj {
-        public var skuid: String
-        public var producttype: String
-        public var qty: String
-        public var zipcode: String
-    }
-
 }
 

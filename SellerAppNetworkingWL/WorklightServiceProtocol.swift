@@ -159,7 +159,8 @@ public protocol WorklightServiceProtocol
     func searchCCStores(state:String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func getStoreDetail(store:String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
-    func createCCOrder(lada: String, phone: String, name: String, userId: String, token: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool,customerID: String, addressID: String ,isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) 
+    func createCCOrder(lada: String, phone: String, name: String, userId: String, to
+        ken: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool,customerID: String, addressID: String ,isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) 
     
     //MARK: - Signature
     
@@ -170,5 +171,5 @@ public protocol WorklightServiceProtocol
     
     //MARK: - Estimated Delivery Date
     func calculateEDD(products: [WorklightSOMSEdd], completion: @escaping (WorklightResponse?, NSError?) -> Void)
-    func calculateEDDs(products: [eddObj], completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    func calculateEDDs(products: [WorklightEDDProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }

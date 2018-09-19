@@ -10,6 +10,7 @@
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
+		631E87C22152ECA60088FB24 /* WorklightEDDProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631E87C12152ECA60088FB24 /* WorklightEDDProduct.swift */; };
 		63C6C42F2152E26400DB280A /* ConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C42E2152E26400DB280A /* ConsultarFechaEntrega.swift */; };
 		63C6C4312152E28400DB280A /* ResponseConsultarFechaEntrega.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C4302152E28400DB280A /* ResponseConsultarFechaEntrega.swift */; };
 		63C6C4332152E29C00DB280A /* Qry_inv_resp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C6C4322152E29C00DB280A /* Qry_inv_resp.swift */; };
@@ -192,6 +193,7 @@
 		5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsultaOrdenVentaResponse.swift; path = SellerAppNetworkingWL/ConsultaOrdenVentaResponse.swift; sourceTree = "<group>"; };
 		5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineaRemisionSCOL.swift; path = SellerAppNetworkingWL/LineaRemisionSCOL.swift; sourceTree = "<group>"; };
 		607640D484AAC94268290B59 /* Pods-SellerAppNetworkingWL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.debug.xcconfig"; sourceTree = "<group>"; };
+		631E87C12152ECA60088FB24 /* WorklightEDDProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorklightEDDProduct.swift; sourceTree = "<group>"; };
 		63C6C42E2152E26400DB280A /* ConsultarFechaEntrega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultarFechaEntrega.swift; sourceTree = "<group>"; };
 		63C6C4302152E28400DB280A /* ResponseConsultarFechaEntrega.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseConsultarFechaEntrega.swift; sourceTree = "<group>"; };
 		63C6C4322152E29C00DB280A /* Qry_inv_resp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qry_inv_resp.swift; sourceTree = "<group>"; };
@@ -533,6 +535,7 @@
 				716379251F1680D4001486F3 /* WorklightShippingAddress.swift */,
 				716379261F1680D4001486F3 /* WorklightShippingProduct.swift */,
 				716379271F1680D4001486F3 /* WorklightSOMSProduct.swift */,
+				631E87C12152ECA60088FB24 /* WorklightEDDProduct.swift */,
 				716379BD1F168A46001486F3 /* RemisionesConsultaOrdenResponse.swift */,
 				71C31D761F1927E7003E7449 /* ConsultaSkuInventarioResponse.swift */,
 				71C31D7A1F192858003E7449 /* SapInventario.swift */,
@@ -859,6 +862,7 @@
 				716379691F1680D4001486F3 /* Cat5510011.swift in Sources */,
 				716379971F1680D4001486F3 /* ListaTiposMesa.swift in Sources */,
 				71047FC31F4E1ABF0071D381 /* CrearOrdenDevBTResponse.swift in Sources */,
+				631E87C22152ECA60088FB24 /* WorklightEDDProduct.swift in Sources */,
 				716379931F1680D4001486F3 /* ListaDirecciones.swift in Sources */,
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
