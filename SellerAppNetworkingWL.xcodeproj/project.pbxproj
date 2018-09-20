@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1445FD37215418E400E698B6 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445FD36215418E300E698B6 /* Orders.swift */; };
 		149390BF2154170900DCEC94 /* PromotionsMkpMirakl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */; };
 		149390C02154170900DCEC94 /* Product_medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B62154170800DCEC94 /* Product_medias.swift */; };
 		149390C12154170900DCEC94 /* Shipping_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B72154170800DCEC94 /* Shipping_address.swift */; };
@@ -16,7 +17,6 @@
 		149390C52154170900DCEC94 /* OrderMiraklResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BB2154170800DCEC94 /* OrderMiraklResponse.swift */; };
 		149390C62154170900DCEC94 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BC2154170900DCEC94 /* Channel.swift */; };
 		149390C72154170900DCEC94 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BD2154170900DCEC94 /* Customer.swift */; };
-		149390C82154170900DCEC94 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BE2154170900DCEC94 /* Orders.swift */; };
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
@@ -197,6 +197,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1445FD36215418E300E698B6 /* Orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Orders.swift; path = SellerAppNetworkingWL/Orders.swift; sourceTree = "<group>"; };
 		149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionsMkpMirakl.swift; path = SellerAppNetworkingWL/PromotionsMkpMirakl.swift; sourceTree = "<group>"; };
 		149390B62154170800DCEC94 /* Product_medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product_medias.swift; path = SellerAppNetworkingWL/Product_medias.swift; sourceTree = "<group>"; };
 		149390B72154170800DCEC94 /* Shipping_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shipping_address.swift; path = SellerAppNetworkingWL/Shipping_address.swift; sourceTree = "<group>"; };
@@ -206,7 +207,6 @@
 		149390BB2154170800DCEC94 /* OrderMiraklResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMiraklResponse.swift; path = SellerAppNetworkingWL/OrderMiraklResponse.swift; sourceTree = "<group>"; };
 		149390BC2154170900DCEC94 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = SellerAppNetworkingWL/Channel.swift; sourceTree = "<group>"; };
 		149390BD2154170900DCEC94 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = SellerAppNetworkingWL/Customer.swift; sourceTree = "<group>"; };
-		149390BE2154170900DCEC94 /* Orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Orders.swift; path = SellerAppNetworkingWL/Orders.swift; sourceTree = "<group>"; };
 		43AECCBF1EFB1B7A00D1B243 /* SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingWL.h; sourceTree = "<group>"; };
 		43AECCC31EFB1B7A00D1B243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -405,13 +405,13 @@
 		149390A0215405E100DCEC94 /* OrderMirakl */ = {
 			isa = PBXGroup;
 			children = (
+				1445FD36215418E300E698B6 /* Orders.swift */,
 				149390B82154170800DCEC94 /* Billing_address.swift */,
 				149390BC2154170900DCEC94 /* Channel.swift */,
 				149390B92154170800DCEC94 /* Commission_taxes.swift */,
 				149390BD2154170900DCEC94 /* Customer.swift */,
 				149390BA2154170800DCEC94 /* Order_lines.swift */,
 				149390BB2154170800DCEC94 /* OrderMiraklResponse.swift */,
-				149390BE2154170900DCEC94 /* Orders.swift */,
 				149390B62154170800DCEC94 /* Product_medias.swift */,
 				149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */,
 				149390B72154170800DCEC94 /* Shipping_address.swift */,
@@ -769,7 +769,7 @@
 				F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */,
 				7196133D1F8D7A7C0080B407 /* SkuStatusChangeList.swift in Sources */,
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
-				149390C82154170900DCEC94 /* Orders.swift in Sources */,
+				1445FD37215418E400E698B6 /* Orders.swift in Sources */,
 				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
 				71BEBAF11F80265B000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift in Sources */,
