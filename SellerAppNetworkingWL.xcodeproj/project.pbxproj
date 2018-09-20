@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		149390A22154060000DCEC94 /* PromotionsMkpMirakl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390A12154060000DCEC94 /* PromotionsMkpMirakl.swift */; };
-		149390A42154061000DCEC94 /* Billing_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390A32154061000DCEC94 /* Billing_address.swift */; };
-		149390A62154061E00DCEC94 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390A52154061D00DCEC94 /* Channel.swift */; };
-		149390A8215406C100DCEC94 /* Commission_taxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390A7215406C100DCEC94 /* Commission_taxes.swift */; };
-		149390AA215406D100DCEC94 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390A9215406D100DCEC94 /* Customer.swift */; };
-		149390AC215406DF00DCEC94 /* OrderMiraklResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390AB215406DF00DCEC94 /* OrderMiraklResponse.swift */; };
-		149390AE2154070400DCEC94 /* Order_lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390AD2154070400DCEC94 /* Order_lines.swift */; };
-		149390B02154071D00DCEC94 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390AF2154071D00DCEC94 /* Orders.swift */; };
-		149390B22154072F00DCEC94 /* Product_medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B12154072F00DCEC94 /* Product_medias.swift */; };
-		149390B42154073D00DCEC94 /* Shipping_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B32154073D00DCEC94 /* Shipping_address.swift */; };
+		149390BF2154170900DCEC94 /* PromotionsMkpMirakl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */; };
+		149390C02154170900DCEC94 /* Product_medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B62154170800DCEC94 /* Product_medias.swift */; };
+		149390C12154170900DCEC94 /* Shipping_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B72154170800DCEC94 /* Shipping_address.swift */; };
+		149390C22154170900DCEC94 /* Billing_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B82154170800DCEC94 /* Billing_address.swift */; };
+		149390C32154170900DCEC94 /* Commission_taxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B92154170800DCEC94 /* Commission_taxes.swift */; };
+		149390C42154170900DCEC94 /* Order_lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BA2154170800DCEC94 /* Order_lines.swift */; };
+		149390C52154170900DCEC94 /* OrderMiraklResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BB2154170800DCEC94 /* OrderMiraklResponse.swift */; };
+		149390C62154170900DCEC94 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BC2154170900DCEC94 /* Channel.swift */; };
+		149390C72154170900DCEC94 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BD2154170900DCEC94 /* Customer.swift */; };
+		149390C82154170900DCEC94 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390BE2154170900DCEC94 /* Orders.swift */; };
 		43AECCC41EFB1B7A00D1B243 /* SellerAppNetworkingWL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5593FE191F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE181F2124BC0012E8B2 /* ConsultaOrdenVentaResponse.swift */; };
 		5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5593FE1A1F2125420012E8B2 /* LineaRemisionSCOL.swift */; };
@@ -197,16 +197,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		149390A12154060000DCEC94 /* PromotionsMkpMirakl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsMkpMirakl.swift; sourceTree = "<group>"; };
-		149390A32154061000DCEC94 /* Billing_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Billing_address.swift; sourceTree = "<group>"; };
-		149390A52154061D00DCEC94 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		149390A7215406C100DCEC94 /* Commission_taxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commission_taxes.swift; sourceTree = "<group>"; };
-		149390A9215406D100DCEC94 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		149390AB215406DF00DCEC94 /* OrderMiraklResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderMiraklResponse.swift; sourceTree = "<group>"; };
-		149390AD2154070400DCEC94 /* Order_lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order_lines.swift; sourceTree = "<group>"; };
-		149390AF2154071D00DCEC94 /* Orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
-		149390B12154072F00DCEC94 /* Product_medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product_medias.swift; sourceTree = "<group>"; };
-		149390B32154073D00DCEC94 /* Shipping_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shipping_address.swift; sourceTree = "<group>"; };
+		149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionsMkpMirakl.swift; path = SellerAppNetworkingWL/PromotionsMkpMirakl.swift; sourceTree = "<group>"; };
+		149390B62154170800DCEC94 /* Product_medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product_medias.swift; path = SellerAppNetworkingWL/Product_medias.swift; sourceTree = "<group>"; };
+		149390B72154170800DCEC94 /* Shipping_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shipping_address.swift; path = SellerAppNetworkingWL/Shipping_address.swift; sourceTree = "<group>"; };
+		149390B82154170800DCEC94 /* Billing_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Billing_address.swift; path = SellerAppNetworkingWL/Billing_address.swift; sourceTree = "<group>"; };
+		149390B92154170800DCEC94 /* Commission_taxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Commission_taxes.swift; path = SellerAppNetworkingWL/Commission_taxes.swift; sourceTree = "<group>"; };
+		149390BA2154170800DCEC94 /* Order_lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order_lines.swift; path = SellerAppNetworkingWL/Order_lines.swift; sourceTree = "<group>"; };
+		149390BB2154170800DCEC94 /* OrderMiraklResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMiraklResponse.swift; path = SellerAppNetworkingWL/OrderMiraklResponse.swift; sourceTree = "<group>"; };
+		149390BC2154170900DCEC94 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = SellerAppNetworkingWL/Channel.swift; sourceTree = "<group>"; };
+		149390BD2154170900DCEC94 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = SellerAppNetworkingWL/Customer.swift; sourceTree = "<group>"; };
+		149390BE2154170900DCEC94 /* Orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Orders.swift; path = SellerAppNetworkingWL/Orders.swift; sourceTree = "<group>"; };
 		43AECCBF1EFB1B7A00D1B243 /* SellerAppNetworkingWL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SellerAppNetworkingWL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43AECCC21EFB1B7A00D1B243 /* SellerAppNetworkingWL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppNetworkingWL.h; sourceTree = "<group>"; };
 		43AECCC31EFB1B7A00D1B243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -405,16 +405,16 @@
 		149390A0215405E100DCEC94 /* OrderMirakl */ = {
 			isa = PBXGroup;
 			children = (
-				149390B32154073D00DCEC94 /* Shipping_address.swift */,
-				149390B12154072F00DCEC94 /* Product_medias.swift */,
-				149390AF2154071D00DCEC94 /* Orders.swift */,
-				149390AD2154070400DCEC94 /* Order_lines.swift */,
-				149390AB215406DF00DCEC94 /* OrderMiraklResponse.swift */,
-				149390A9215406D100DCEC94 /* Customer.swift */,
-				149390A7215406C100DCEC94 /* Commission_taxes.swift */,
-				149390A12154060000DCEC94 /* PromotionsMkpMirakl.swift */,
-				149390A32154061000DCEC94 /* Billing_address.swift */,
-				149390A52154061D00DCEC94 /* Channel.swift */,
+				149390B82154170800DCEC94 /* Billing_address.swift */,
+				149390BC2154170900DCEC94 /* Channel.swift */,
+				149390B92154170800DCEC94 /* Commission_taxes.swift */,
+				149390BD2154170900DCEC94 /* Customer.swift */,
+				149390BA2154170800DCEC94 /* Order_lines.swift */,
+				149390BB2154170800DCEC94 /* OrderMiraklResponse.swift */,
+				149390BE2154170900DCEC94 /* Orders.swift */,
+				149390B62154170800DCEC94 /* Product_medias.swift */,
+				149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */,
+				149390B72154170800DCEC94 /* Shipping_address.swift */,
 			);
 			name = OrderMirakl;
 			sourceTree = "<group>";
@@ -760,6 +760,7 @@
 				7163792E1F1680D4001486F3 /* Cat610036.swift in Sources */,
 				716379771F1680D4001486F3 /* Catst420836.swift in Sources */,
 				716379881F1680D4001486F3 /* Catst420893.swift in Sources */,
+				149390C02154170900DCEC94 /* Product_medias.swift in Sources */,
 				7163794A1F1680D4001486F3 /* Cat4240006.swift in Sources */,
 				F82D90A41FBA6C0C00AFE280 /* WorklightSOMSEdd.swift in Sources */,
 				716379851F1680D4001486F3 /* Catst420869.swift in Sources */,
@@ -768,10 +769,10 @@
 				F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */,
 				7196133D1F8D7A7C0080B407 /* SkuStatusChangeList.swift in Sources */,
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
+				149390C82154170900DCEC94 /* Orders.swift in Sources */,
 				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
 				71BEBAF11F80265B000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift in Sources */,
-				149390AC215406DF00DCEC94 /* OrderMiraklResponse.swift in Sources */,
 				716379991F1680D4001486F3 /* PriceRange.swift in Sources */,
 				7163794C1F1680D4001486F3 /* Cat4330033.swift in Sources */,
 				7163799F1F1680D4001486F3 /* WorklightShippingProduct.swift in Sources */,
@@ -786,7 +787,6 @@
 				83F569DE1F8582520057A62A /* SkuList.swift in Sources */,
 				7163795C1F1680D4001486F3 /* Cat4990318.swift in Sources */,
 				71047FD31F4E288C0071D381 /* Calle.swift in Sources */,
-				149390A62154061E00DCEC94 /* Channel.swift in Sources */,
 				7163796A1F1680D4001486F3 /* Cat5510074.swift in Sources */,
 				71C31D9D1F211448003E7449 /* GetConsultaSkuPoolHeader.swift in Sources */,
 				716379641F1680D4001486F3 /* Cat5280345.swift in Sources */,
@@ -794,6 +794,7 @@
 				71047FC51F4E20BB0071D381 /* ConsultaEdoResponse.swift in Sources */,
 				71BEBAF71F80276B000AA1F8 /* CreaActualizaOVREMResponse.swift in Sources */,
 				716379451F1680D4001486F3 /* Cat4050000.swift in Sources */,
+				149390C52154170900DCEC94 /* OrderMiraklResponse.swift in Sources */,
 				716379981F1680D4001486F3 /* ObtenerTiposMesaResponse.swift in Sources */,
 				71BEBAF51F8026F4000AA1F8 /* ResponseCreaActualizaOVREM.swift in Sources */,
 				7163797B1F1680D4001486F3 /* Catst420840.swift in Sources */,
@@ -801,8 +802,8 @@
 				631E87D62152F2CB0088FB24 /* ResponseConsultarFechaEntrega.swift in Sources */,
 				71047FC91F4E228D0071D381 /* ConsultaMunResponse.swift in Sources */,
 				71047FCB1F4E22CB0071D381 /* Municipio.swift in Sources */,
+				149390C72154170900DCEC94 /* Customer.swift in Sources */,
 				71BEBADF1F7B10AD000AA1F8 /* ConsultaEMAResponse.swift in Sources */,
-				149390AA215406D100DCEC94 /* Customer.swift in Sources */,
 				716379891F1680D4001486F3 /* Catst420968.swift in Sources */,
 				71992E031F55F49F00EE35A2 /* SetAltaClienteRecord.swift in Sources */,
 				5593FE1B1F2125420012E8B2 /* LineaRemisionSCOL.swift in Sources */,
@@ -819,7 +820,6 @@
 				716379391F1680D4001486F3 /* Cat1100739.swift in Sources */,
 				716379581F1680D4001486F3 /* Cat4990185.swift in Sources */,
 				71BEBAF31F8026B1000AA1F8 /* ResponseCrearOrden.swift in Sources */,
-				149390A8215406C100DCEC94 /* Commission_taxes.swift in Sources */,
 				71047FC71F4E21140071D381 /* Estado.swift in Sources */,
 				716379601F1680D4001486F3 /* Cat5020014.swift in Sources */,
 				7163797E1F1680D4001486F3 /* Catst420845.swift in Sources */,
@@ -846,7 +846,6 @@
 				716379A01F1680D4001486F3 /* WorklightSOMSProduct.swift in Sources */,
 				716379951F1680D4001486F3 /* ListaEventos.swift in Sources */,
 				7163793F1F1680D4001486F3 /* Cat1300743.swift in Sources */,
-				149390B02154071D00DCEC94 /* Orders.swift in Sources */,
 				716379551F1680D4001486F3 /* Cat4930074.swift in Sources */,
 				716379311F1680D4001486F3 /* Cat860739.swift in Sources */,
 				71B66EAE1F5A030D00AAD3AD /* ListaTiendas.swift in Sources */,
@@ -859,10 +858,10 @@
 				71B7F2691F5490BA00D9F947 /* Respuesta.swift in Sources */,
 				71B7F25D1F548DAB00D9F947 /* BusquedaClienteResponse.swift in Sources */,
 				716379751F1680D4001486F3 /* Catst413095.swift in Sources */,
-				149390AE2154070400DCEC94 /* Order_lines.swift in Sources */,
 				716379861F1680D4001486F3 /* Catst420876.swift in Sources */,
 				7163797D1F1680D4001486F3 /* Catst420842.swift in Sources */,
 				7163795A1F1680D4001486F3 /* Cat4990218.swift in Sources */,
+				149390C42154170900DCEC94 /* Order_lines.swift in Sources */,
 				7163796F1F1680D4001486F3 /* Cat21010034.swift in Sources */,
 				716379411F1680D4001486F3 /* Cat1350731.swift in Sources */,
 				71B66EAC1F59F7DB00AAD3AD /* ListaEstados.swift in Sources */,
@@ -874,18 +873,20 @@
 				7163794F1F1680D4001486F3 /* Cat4450237.swift in Sources */,
 				716379811F1680D4001486F3 /* Catst420853.swift in Sources */,
 				7163793D1F1680D4001486F3 /* Cat1250612.swift in Sources */,
-				149390A22154060000DCEC94 /* PromotionsMkpMirakl.swift in Sources */,
+				149390BF2154170900DCEC94 /* PromotionsMkpMirakl.swift in Sources */,
+				149390C22154170900DCEC94 /* Billing_address.swift in Sources */,
 				716379701F1680D4001486F3 /* Cat21010189.swift in Sources */,
+				149390C32154170900DCEC94 /* Commission_taxes.swift in Sources */,
 				71BEBAE11F7B10D7000AA1F8 /* Ema.swift in Sources */,
 				716379681F1680D4001486F3 /* Cat5440000.swift in Sources */,
 				716379351F1680D4001486F3 /* Cat910740.swift in Sources */,
 				716379511F1680D4001486F3 /* Cat4470006.swift in Sources */,
-				149390B22154072F00DCEC94 /* Product_medias.swift in Sources */,
 				716379611F1680D4001486F3 /* Cat5040494.swift in Sources */,
 				716379461F1680D4001486F3 /* Cat4120003.swift in Sources */,
 				631E87D32152F2CB0088FB24 /* Array_obj.swift in Sources */,
 				7163797C1F1680D4001486F3 /* Catst420841.swift in Sources */,
 				716379541F1680D4001486F3 /* Cat4920000.swift in Sources */,
+				149390C12154170900DCEC94 /* Shipping_address.swift in Sources */,
 				7163796E1F1680D4001486F3 /* Cat5690007.swift in Sources */,
 				7163798C1F1680D4001486F3 /* Dictionary+Union.swift in Sources */,
 				716379691F1680D4001486F3 /* Cat5510011.swift in Sources */,
@@ -896,6 +897,7 @@
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
 				7163793B1F1680D4001486F3 /* Cat1200686.swift in Sources */,
+				149390C62154170900DCEC94 /* Channel.swift in Sources */,
 				7564C33C1F8DCA9300D2304B /* EstimatedDeliveryDateResponse.swift in Sources */,
 				716379621F1680D4001486F3 /* Cat5190016.swift in Sources */,
 				7163795E1F1680D4001486F3 /* Cat5020003.swift in Sources */,
@@ -910,9 +912,7 @@
 				716379401F1680D4001486F3 /* Cat1330604.swift in Sources */,
 				7163792D1F1680D4001486F3 /* Cat610025.swift in Sources */,
 				716379631F1680D4001486F3 /* Cat5190059.swift in Sources */,
-				149390B42154073D00DCEC94 /* Shipping_address.swift in Sources */,
 				71B7F2671F548F6300D9F947 /* Direccion.swift in Sources */,
-				149390A42154061000DCEC94 /* Billing_address.swift in Sources */,
 				7163793C1F1680D4001486F3 /* Cat1200751.swift in Sources */,
 				716379281F1680D4001486F3 /* AlamofireExtensions.swift in Sources */,
 				7163792C1F1680D4001486F3 /* Cat480332.swift in Sources */,
