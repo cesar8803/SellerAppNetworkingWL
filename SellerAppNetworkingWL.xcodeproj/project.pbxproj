@@ -192,6 +192,7 @@
 		A94317191F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94317181F8D4480003A77B7 /* ActualizarOBS_FechaEntregaBTResponse.swift */; };
 		A9E46E441F81D7C4007655EF /* AltaOrdenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */; };
 		A9E46E451F81D7C4007655EF /* SetAltaOrdenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */; };
+		B510E82C2154104E00A69537 /* DireccionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B510E82B2154104E00A69537 /* DireccionStore.swift */; };
 		F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */; };
 		F82D90A41FBA6C0C00AFE280 /* WorklightSOMSEdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */; };
 /* End PBXBuildFile section */
@@ -385,6 +386,7 @@
 		A9D9956A8D40BBC07505CD79 /* Pods-SellerAppNetworkingWL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SellerAppNetworkingWL.release.xcconfig"; path = "Pods/Target Support Files/Pods-SellerAppNetworkingWL/Pods-SellerAppNetworkingWL.release.xcconfig"; sourceTree = "<group>"; };
 		A9E46E421F81D7C4007655EF /* AltaOrdenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltaOrdenResponse.swift; path = SellerAppNetworkingWL/AltaOrdenResponse.swift; sourceTree = "<group>"; };
 		A9E46E431F81D7C4007655EF /* SetAltaOrdenRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetAltaOrdenRecord.swift; path = SellerAppNetworkingWL/SetAltaOrdenRecord.swift; sourceTree = "<group>"; };
+		B510E82B2154104E00A69537 /* DireccionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DireccionStore.swift; sourceTree = "<group>"; };
 		F774F8031F8C432300A00F40 /* WalletBalanceResponseWL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletBalanceResponseWL.swift; path = SellerAppNetworkingWL/WalletBalanceResponseWL.swift; sourceTree = "<group>"; };
 		F77B9C811F8733020077373D /* BalanceResponseWL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalanceResponseWL.swift; path = SellerAppNetworkingWL/BalanceResponseWL.swift; sourceTree = "<group>"; };
 		F82D90A31FBA6C0C00AFE280 /* WorklightSOMSEdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorklightSOMSEdd.swift; path = SellerAppNetworkingWL/WorklightSOMSEdd.swift; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 				631E87D12152F2CA0088FB24 /* ResponseConsultarFechaEntrega.swift */,
 				631E87CF2152F2CA0088FB24 /* WorklightEDDProduct.swift */,
 				631E87D72152F3770088FB24 /* ConsultarFechaEntrega.swift */,
+				B510E82B2154104E00A69537 /* DireccionStore.swift */,
 			);
 			name = ObjectMapper;
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 				631E87D22152F2CB0088FB24 /* Qry_inv_resp.swift in Sources */,
 				716379931F1680D4001486F3 /* ListaDirecciones.swift in Sources */,
 				716379431F1680D4001486F3 /* Cat3830001.swift in Sources */,
+				B510E82C2154104E00A69537 /* DireccionStore.swift in Sources */,
 				716379361F1680D4001486F3 /* Cat1060780.swift in Sources */,
 				7163793B1F1680D4001486F3 /* Cat1200686.swift in Sources */,
 				7564C33C1F8DCA9300D2304B /* EstimatedDeliveryDateResponse.swift in Sources */,
