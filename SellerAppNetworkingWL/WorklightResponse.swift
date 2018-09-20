@@ -56,6 +56,7 @@ public class WorklightResponse: Mappable{
     public var skuStatusChangeList: [SkuStatusChangeList]?
     public var estimatedDeliveryDateResponse : ConsultarFechaEstimadaEntregaResponse?
     public var responseConsultarFechaEntrega : ResponseConsultarFechaEntrega?
+    public var responseCreateOrderMirakl : OrderMiraklResponse?
 
     public required init?(map: Map){
     }
@@ -106,5 +107,6 @@ public class WorklightResponse: Mappable{
         skuStatusChangeList <- map["skuStatusChangeList"]
         estimatedDeliveryDateResponse <- map["consultarFechaEstimadaEntregaResponse"]
         responseConsultarFechaEntrega <- map["ResponseConsultarFechaEntrega"]
+        responseCreateOrderMirakl <- map ["OrderMiraklResponse"]
     }
 }
