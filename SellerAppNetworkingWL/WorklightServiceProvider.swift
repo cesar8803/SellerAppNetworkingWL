@@ -54,7 +54,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case BrokerSoms = "BrokerSOMSActualizacion"
         case APVServicios = "APVServiciosATG"
         case CreateOrderMirakl = "MirakleServiciosBK"
-
+        case ConsolidacionServiceBK = "ConsolidacionServiceBK"
     }
     
     private enum Procedure: String {
@@ -188,10 +188,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         //Budget
         case SaveBudget = "Alta_Presupuesto"
         case EstimatedDeliveryDate = "consultarFechaEstimadaEntrega"
-        case ConsolidacionServiceBK = "ConsolidacionServiceBK"
+        case ConsultarFechaEntrega = "consultarFechaEntrega"
         
         //Mirakl MKP
-        
         case createOrderMirakl = "crearOrdenMirakle"
     }
     
@@ -2101,8 +2100,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         var params : [Any] = []
         params.append(consultarFechaEstimadaEntregaRequest)
         
-        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ConsolidacionServiceBK, parameters: consultarFechaEstimadaEntregaRequest as AnyObject)
-        
+        let url = getRequestUrlForAdapter(adapter: .ConsolidacionServiceBK, procedure: .ConsultarFechaEntrega, parameters: consultarFechaEstimadaEntregaRequest as AnyObject)
+
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
@@ -2112,9 +2111,8 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
     }
+    
     //MKP Mirakl
-    
-    
     
     public func createOrderMkpMirakl(parameters: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
@@ -2131,7 +2129,25 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 completion(result, error)
             }
         }
+    }
+    
+    //Get Store Info for MKP
+    
+    public func getStoreInfo(parameters: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
+        let paramsRequest:Parameters = ["compressResponse" : true,
+                                        "parameters": parameters]
+        
+        let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .ObtenerDatosTienda, parameters: paramsRequest as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
     }
 }
 
