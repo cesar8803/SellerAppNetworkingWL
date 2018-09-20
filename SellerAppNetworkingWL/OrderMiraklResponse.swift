@@ -12,7 +12,7 @@ import ObjectMapper
 
 public class OrderMiraklResponse : Mappable {
 	public var offers_not_shippable : [String]?
-	public var orders : [Orders]?
+	public var orders : [OrderMkp]?
 
 	public required init?(map: Map) {
 

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1445FD37215418E400E698B6 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445FD36215418E300E698B6 /* Orders.swift */; };
+		1445FD3B21541A1D00E698B6 /* OrderMkp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445FD3A21541A1D00E698B6 /* OrderMkp.swift */; };
 		149390BF2154170900DCEC94 /* PromotionsMkpMirakl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */; };
 		149390C02154170900DCEC94 /* Product_medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B62154170800DCEC94 /* Product_medias.swift */; };
 		149390C12154170900DCEC94 /* Shipping_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149390B72154170800DCEC94 /* Shipping_address.swift */; };
@@ -197,7 +197,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1445FD36215418E300E698B6 /* Orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Orders.swift; path = SellerAppNetworkingWL/Orders.swift; sourceTree = "<group>"; };
+		1445FD3A21541A1D00E698B6 /* OrderMkp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMkp.swift; sourceTree = "<group>"; };
 		149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromotionsMkpMirakl.swift; path = SellerAppNetworkingWL/PromotionsMkpMirakl.swift; sourceTree = "<group>"; };
 		149390B62154170800DCEC94 /* Product_medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product_medias.swift; path = SellerAppNetworkingWL/Product_medias.swift; sourceTree = "<group>"; };
 		149390B72154170800DCEC94 /* Shipping_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shipping_address.swift; path = SellerAppNetworkingWL/Shipping_address.swift; sourceTree = "<group>"; };
@@ -405,7 +405,6 @@
 		149390A0215405E100DCEC94 /* OrderMirakl */ = {
 			isa = PBXGroup;
 			children = (
-				1445FD36215418E300E698B6 /* Orders.swift */,
 				149390B82154170800DCEC94 /* Billing_address.swift */,
 				149390BC2154170900DCEC94 /* Channel.swift */,
 				149390B92154170800DCEC94 /* Commission_taxes.swift */,
@@ -415,6 +414,7 @@
 				149390B62154170800DCEC94 /* Product_medias.swift */,
 				149390B52154170800DCEC94 /* PromotionsMkpMirakl.swift */,
 				149390B72154170800DCEC94 /* Shipping_address.swift */,
+				1445FD3A21541A1D00E698B6 /* OrderMkp.swift */,
 			);
 			name = OrderMirakl;
 			sourceTree = "<group>";
@@ -769,7 +769,6 @@
 				F774F8041F8C432300A00F40 /* WalletBalanceResponseWL.swift in Sources */,
 				7196133D1F8D7A7C0080B407 /* SkuStatusChangeList.swift in Sources */,
 				716379741F1680D4001486F3 /* Catst394074.swift in Sources */,
-				1445FD37215418E400E698B6 /* Orders.swift in Sources */,
 				71C31D9B1F211407003E7449 /* GetConsultaSkuPoolRecord.swift in Sources */,
 				7163798E1F1680D4001486F3 /* FirstChildProductImg.swift in Sources */,
 				71BEBAF11F80265B000AA1F8 /* ResponseCreaActualizaOVREMSterling.swift in Sources */,
@@ -875,6 +874,7 @@
 				7163793D1F1680D4001486F3 /* Cat1250612.swift in Sources */,
 				149390BF2154170900DCEC94 /* PromotionsMkpMirakl.swift in Sources */,
 				149390C22154170900DCEC94 /* Billing_address.swift in Sources */,
+				1445FD3B21541A1D00E698B6 /* OrderMkp.swift in Sources */,
 				716379701F1680D4001486F3 /* Cat21010189.swift in Sources */,
 				149390C32154170900DCEC94 /* Commission_taxes.swift in Sources */,
 				71BEBAE11F7B10D7000AA1F8 /* Ema.swift in Sources */,
