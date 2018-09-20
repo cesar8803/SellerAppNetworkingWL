@@ -53,6 +53,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case Presupuesto = "Presupuesto"
         case BrokerSoms = "BrokerSOMSActualizacion"
         case APVServicios = "APVServiciosATG"
+        case CreateOrderMirakl = "MirakleServiciosBK"
 
     }
     
@@ -188,6 +189,10 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case SaveBudget = "Alta_Presupuesto"
         case EstimatedDeliveryDate = "consultarFechaEstimadaEntrega"
         case ConsolidacionServiceBK = "ConsolidacionServiceBK"
+        
+        //Mirakl MKP
+        
+        case createOrderMirakl = "crearOrdenMirakle"
     }
     
     //1 - WL up
@@ -2106,6 +2111,27 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 completion(result, error)
             }
         }
+    }
+    //MKP Mirakl
+    
+    
+    
+    public func createOrderMkpMirakl(parameters: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let paramsRequest:Parameters = ["compressResponse" : true,
+                                        "parameters": parameters]
+        
+        let url = getRequestUrlForAdapter(adapter: .CreateOrderMirakl, procedure: .createOrderMirakl, parameters: paramsRequest as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+        
     }
 }
 
