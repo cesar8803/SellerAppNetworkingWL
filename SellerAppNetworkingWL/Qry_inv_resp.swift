@@ -10,11 +10,23 @@ import Foundation
 import ObjectMapper
 
 public class Qry_inv_resp : Mappable {
-    public var array_obj : [Array_obj]?
+    public var array_obj_Array : [Array_obj]?
+    public var array_obj_Dic : Array_obj?
     
     public required init?(map: Map){}
     
     public func mapping(map: Map) {
-        array_obj <- map["array_obj"]
+        //        array_obj <- map["array_obj"]
+        
+        switch map["array_obj"].currentValue {
+        case (let v as [Any]):
+            debugPrint("################### Prueba Array \(v)")
+            array_obj_Array <- map["array_obj"]
+        case  (let v as [String: Any]):
+            debugPrint("################### Prueba Dic \(v)")
+            array_obj_Array <- map["array_obj"]
+        default:
+            debugPrint("################### No sabemos que es?")
+        }
     }
 }
