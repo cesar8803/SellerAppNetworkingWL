@@ -109,6 +109,6 @@ public class WorklightResponse: Mappable{
         estimatedDeliveryDateResponse <- map["consultarFechaEstimadaEntregaResponse"]
         responseConsultarFechaEntrega <- map["ResponseConsultarFechaEntrega"]
         responseCreateOrderMirakl <- map ["OrderMiraklResponse"]
-        responseGetStoreInfo <- map ["DireccionStore"]
+        responseGetStoreInfo <- map ["direccion"]
     }
 }
