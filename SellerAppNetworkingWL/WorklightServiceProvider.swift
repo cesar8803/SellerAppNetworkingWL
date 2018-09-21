@@ -2116,10 +2116,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     public func createOrderMkpMirakl(parameters: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
         
-        let paramsRequest:Parameters = ["compressResponse" : true,
-                                        "parameters": parameters]
-        
-        let url = getRequestUrlForAdapter(adapter: .CreateOrderMirakl, procedure: .createOrderMirakl, parameters: paramsRequest as AnyObject)
+        let url = getRequestUrlForAdapter(adapter: .CreateOrderMirakl, procedure: .createOrderMirakl, parameters: parameters  as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
@@ -2130,6 +2127,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
     }
+    
     
     //Get Store Info for MKP
     
