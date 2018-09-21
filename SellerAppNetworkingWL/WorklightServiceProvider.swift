@@ -1860,6 +1860,38 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
+    public func updateInventoryMKP(forProcedure procedure: String, withProducts products: [WorklightShippingProductMKP], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+        
+        
+        var params: [String : Any] = [:]
+        var skus: [Any] = []
+        var sku: [String : Any] = [:]
+        
+        for product in products{
+            
+            sku["skuId"] = product.itemSKU
+            sku["quantity"] = product.quantity
+            sku["offerId"] = product.offerId
+            
+            skus.append(sku)
+        }
+        
+        params["skuInventory"] = skus
+        params["operation"] = procedure
+        
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+            
+        }
+    }
+    
     /*
     func checkIfServiceDown(serviceError:NSError?)
     {

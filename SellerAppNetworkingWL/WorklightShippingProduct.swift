@@ -22,3 +22,16 @@ public class WorklightShippingProduct: NSObject {
         self.itemDescription    = itemDescription
     }
 }
+public class WorklightShippingProductMKP: NSObject {
+    public var quantity         : Int = 0
+    public var itemSKU          : String = ""
+    public var offerId          : String = ""
+    
+    public init (quantity: Int, itemSKU: String, offerId: String)
+    {
+        self.quantity           = quantity
+        self.itemSKU            = itemSKU
+        self.offerId            = offerId
+    }
+}
+
