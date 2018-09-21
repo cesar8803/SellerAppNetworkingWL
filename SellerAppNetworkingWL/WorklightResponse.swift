@@ -107,7 +107,7 @@ public class WorklightResponse: Mappable{
         walletBalance <- map["SaldoMonedero"]
         skuStatusChangeList <- map["skuStatusChangeList"]
         estimatedDeliveryDateResponse <- map["consultarFechaEstimadaEntregaResponse"]
-        responseConsultarFechaEntrega <- map["ResponseConsultarFechaEntrega"]
+        responseConsultarFechaEntrega <- map["consultarFechaEntrega"]
         responseCreateOrderMirakl <- map ["OrderMiraklResponse"]
         responseGetStoreInfo <- map ["direccion"]
     }
