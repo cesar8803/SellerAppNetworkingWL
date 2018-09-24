@@ -55,7 +55,7 @@ public class WorklightResponse: Mappable{
     public var walletBalance: WalletBalanceResponseWL?
     public var skuStatusChangeList: [SkuStatusChangeList]?
     public var estimatedDeliveryDateResponse : ConsultarFechaEstimadaEntregaResponse?
-    public var responseConsultarFechaEntrega : ResponseConsultarFechaEntrega?
+    public var responseConsultarFechaEntrega : ConsultarFechaEntrega?
     public var responseCreateOrderMirakl : OrderMiraklResponse?
     public var responseGetStoreInfo : DireccionStore?
 

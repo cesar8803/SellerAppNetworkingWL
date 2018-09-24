@@ -20,13 +20,13 @@ public class Qry_inv_resp : Mappable {
         
         switch map["array_obj"].currentValue {
         case (let v as [Any]):
-            debugPrint("################### Prueba Array \(v)")
+            debugPrint("Se obtuvo Array \(v)")
             array_obj_Array <- map["array_obj"]
         case  (let v as [String: Any]):
-            debugPrint("################### Prueba Dic \(v)")
-            array_obj_Array <- map["array_obj"]
+            debugPrint("Se obtuvo Dicionario \(v)")
+            array_obj_Dic <- map["array_obj"]
         default:
-            debugPrint("################### No sabemos que es?")
+            debugPrint("Respueta furera de rango")
         }
     }
 }
