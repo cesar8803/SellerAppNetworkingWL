@@ -99,7 +99,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case AltaClienteDireccion       = "AltaClienteDireccion"
         case AltaOrdenR2                = "AltaOrden"
         case updateOrderDeliveryDate    = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
-
+        
         
         // Endeca
         case ProductDetails = "getProductDetail"
@@ -184,6 +184,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Check if product is "saleable"
         case ValidSaleExtendedCatalog = "isValidToSaleByExtendedCatalog"
+        case ValidSaleMKP = "isValidSaleMKP"
         
         //Budget
         case SaveBudget = "Alta_Presupuesto"
@@ -220,7 +221,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         self.manager.session.configuration.httpAdditionalHeaders = self.defaultHeaders()
         self.manager.session.configuration.timeoutIntervalForRequest = 60
     }
-
+    
     public func ignoreSSL() {
         
         self.manager.delegate.sessionDidReceiveChallenge = { session, challenge in
@@ -268,7 +269,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         var jsonString = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue)!
         jsonString = jsonString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! as NSString
-
+        
         // BEFORE
         //jsonString = jsonString.addingPercentEscapes(using: String.Encoding.utf8.rawValue)! as NSString
         
@@ -281,7 +282,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
         return jsonString as String
     }
-
+    
     // MARK: - Helpers
     
     private func defaultHeaders() -> Dictionary<String, AnyObject>{
@@ -302,7 +303,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         return headers as Dictionary<String, AnyObject>
         
     }
-
+    
     
     public func addressesForCustomerWithLada(userId: String, token: String, lada: String, telefono: String, cteTelefono: String, selectRecord: String, trySingleAddress: Bool) {
         
@@ -312,7 +313,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let params = ["agregarSku" : ["tienda" : store, "fechaRegistro" : createdAt, "sku" : sku, "id" : id, "idTipoSku" : idTipoSku, "nombre_cliente" : clientName]]
         
         let url = getRequestUrlForAdapter(adapter: .ShoppingList, procedure: .AddSku, parameters: params as AnyObject)
-
+        
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
@@ -389,6 +390,21 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
+    public func mkpAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+        
+        let requestParameters = ["isValidToDisplayRequest":["skuList": productsArray]]
+        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .ValidSaleMKP, parameters: requestParameters as AnyObject)
+        
+        _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
+            
+            guard let weakSelf = self else { return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+    
     public func streetsCP(zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         let requestParameters = ["ConsultaCalleCPRequest" : ["cp" : zip]]
@@ -417,7 +433,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 completion(result, error)
             }
         }
-
+        
         
     }
     public func cancelSurveyInProgress(surveyId: String, storeId: String, sectionId: String, employeeId: String, employeeName: String, ticketNumber: String, storeZone: String, storeAbbreviation: String) {
@@ -577,42 +593,42 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "inNumeroInt" : interiorNumber ?? "",
                     "inNumeroExt" : exteriorNumber
                 ]
-            
+                
             ]
-        
+            
         ]
         
         /*
-        let isNewStreetString = isNewStreet == true ? "True" : ""
-        let requestParameters = [
-            "setAltaCliente" : [
-                "ModelVariables" : [
-                    "inPassword" : "",
-                    "inUser" : userId,
-                    "inCadenaValidacion" : token,
-                    "isNewStreet" : isNewStreetString
-                ],
-                "setAltaClienteFilters" : [
-                    "inApMaterno" : materno!,
-                    "inApPaterno" : paterno,
-                    "inCP" : zip,
-                    "inEmail" : email!,
-                    "inNombre1" : firstName,
-                    "inNumeroExt" : exteriorNumber,
-                    "inRFC" : rfc!,
-                    "inSelectRecordAsentamiento" : selectRecordAsen,
-                    "inSelectRecordTipoAsentamiento" : tipoAsen,
-                    "inTelefono" : telefono,
-                    "inCalle" : calle,
-                    "inLada" : lada,
-                    "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
-                    "inYCalle" : andStreet!,
-                    "inEdif" : edificio!,
-                    "inNumeroInt" : interiorNumber!,
-                    "inComentario" : comment!
-                ]
-            ]
-        ]*/
+         let isNewStreetString = isNewStreet == true ? "True" : ""
+         let requestParameters = [
+         "setAltaCliente" : [
+         "ModelVariables" : [
+         "inPassword" : "",
+         "inUser" : userId,
+         "inCadenaValidacion" : token,
+         "isNewStreet" : isNewStreetString
+         ],
+         "setAltaClienteFilters" : [
+         "inApMaterno" : materno!,
+         "inApPaterno" : paterno,
+         "inCP" : zip,
+         "inEmail" : email!,
+         "inNombre1" : firstName,
+         "inNumeroExt" : exteriorNumber,
+         "inRFC" : rfc!,
+         "inSelectRecordAsentamiento" : selectRecordAsen,
+         "inSelectRecordTipoAsentamiento" : tipoAsen,
+         "inTelefono" : telefono,
+         "inCalle" : calle,
+         "inLada" : lada,
+         "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
+         "inYCalle" : andStreet!,
+         "inEdif" : edificio!,
+         "inNumeroInt" : interiorNumber!,
+         "inComentario" : comment!
+         ]
+         ]
+         ]*/
         let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaClienteDireccion, parameters: requestParameters as AnyObject)
         
         manager.session.configuration.timeoutIntervalForRequest = 90
@@ -665,49 +681,49 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     }
     
     public func createSOMSOrderR2(parameters: Any, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
-      /*
-        let parameters = [
-            
-            "AltaOrdenRequest" : [
-                
-                "setAltaOrdenFilters" : [
-                    "IdUsuario": "ADMSOMS1",
-                    "IdClienteRemitente": "",
-                    "IdDireccionRemitente": "",
-                    "idCliente": "0000052120",
-                    "idDireccion": "001",
-                    "idEventoTarjeta": "",
-                    "idTipoFestejado": "",
-                    "idLadaOrden": "",
-                    "idTelefonoOrden": "",
-                    "inObservaciones": ""
-                    
-                ],
-                
-                "setAgregaSKUFilters" : [
-                    
-                    "setAgregaSKURecord" : [
-                        [
-                            "inSelectRecordSKU": "0000056111",
-                            "inSelectRecordSKUCantidad": "1",
-                            "inSelectRecordSKUNoSpot": "",
-                            "inSelectRecordSKUNoSpotCantidad": ""
-                        ],
-                        [
-                            "inSelectRecordSKU": "0000056120",
-                            "inSelectRecordSKUCantidad": "1",
-                            "inSelectRecordSKUNoSpot": "",
-                            "inSelectRecordSKUNoSpotCantidad": ""
-                        ]
-                        
-                    ]
-                    
-                ]
-                
-            ]
-            
-        ]
-        */
+        /*
+         let parameters = [
+         
+         "AltaOrdenRequest" : [
+         
+         "setAltaOrdenFilters" : [
+         "IdUsuario": "ADMSOMS1",
+         "IdClienteRemitente": "",
+         "IdDireccionRemitente": "",
+         "idCliente": "0000052120",
+         "idDireccion": "001",
+         "idEventoTarjeta": "",
+         "idTipoFestejado": "",
+         "idLadaOrden": "",
+         "idTelefonoOrden": "",
+         "inObservaciones": ""
+         
+         ],
+         
+         "setAgregaSKUFilters" : [
+         
+         "setAgregaSKURecord" : [
+         [
+         "inSelectRecordSKU": "0000056111",
+         "inSelectRecordSKUCantidad": "1",
+         "inSelectRecordSKUNoSpot": "",
+         "inSelectRecordSKUNoSpotCantidad": ""
+         ],
+         [
+         "inSelectRecordSKU": "0000056120",
+         "inSelectRecordSKUCantidad": "1",
+         "inSelectRecordSKUNoSpot": "",
+         "inSelectRecordSKUNoSpotCantidad": ""
+         ]
+         
+         ]
+         
+         ]
+         
+         ]
+         
+         ]
+         */
         let url = getRequestUrlForAdapter(adapter: .BrokerSoms, procedure: .AltaOrdenR2, parameters: parameters as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
@@ -786,9 +802,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             Instructions = ["Instruction": Instruction]
             
             if(eventID != ""){
-            
+                
                 eventIDInt = Int(eventID!)!
-            
+                
                 order = [
                     "Instructions": Instructions,
                     "OrderName" : storeNumber,
@@ -898,7 +914,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 }else{
                     eventNumR = "\(eventIDInt)"
                 }
-
+                
                 params = [
                     "CreaActualizaOVREMRequest": [
                         "Evento": eventNumR,
@@ -1153,14 +1169,14 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
     }
     public func getAllCategoryInfo(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
-                
+        
         let url = self.getRequestUrlForAdapter(adapter: .Endeca, procedure: .AllCategoryInfo, parameters: Dictionary<String, Any>() as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
-
+                
                 completion(result, error)
             }
         }
@@ -1252,11 +1268,11 @@ public class WorklightServiceProvider : WorklightServiceProtocol
              "inPassword" : password,
              "inUsuario": usernameToken,
              "inCadenaValidacion" : validationString],
-                                            "ModelVariables" : ["vAmbiente" : environmentVariable]]]
+                                                            "ModelVariables" : ["vAmbiente" : environmentVariable]]]
         let url = self.getRequestUrlForAdapter(adapter: .CapturaClientesCredito, procedure: .Login, parameters: requestParameters as AnyObject)
         
         _ = self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseWorklight { [weak self] response in
-        
+            
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
@@ -1363,19 +1379,19 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func updateOrderDeliveryDate(order: String, sku: String, date: String, comments: String?, user_id: String, completion:  @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void) {
         
         /*
-        {
-            "ActualizarOBS_FechaEntregaBTRequest": {
-                "FechaPropuesta": "2016-06-06",
-                "inUser": "123",
-                "IndicadorTipo": "OV",
-                "IndicadorServicio": "FEC",
-                "Observaciones": "",
-                "SKU": "1018866800",
-                "OrdenEntrega": "9009227548",
-                "Usuario": "123"
-            }
-        }
-        */
+         {
+         "ActualizarOBS_FechaEntregaBTRequest": {
+         "FechaPropuesta": "2016-06-06",
+         "inUser": "123",
+         "IndicadorTipo": "OV",
+         "IndicadorServicio": "FEC",
+         "Observaciones": "",
+         "SKU": "1018866800",
+         "OrdenEntrega": "9009227548",
+         "Usuario": "123"
+         }
+         }
+         */
         
         let params = [
             "ActualizarOBS_FechaEntregaBTRequest" : [
@@ -1389,7 +1405,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 "Usuario": user_id
             ]
         ]
-    
+        
         let url = getRequestUrlForAdapter(adapter: .Shipment, procedure: .updateOrderDeliveryDate, parameters: params as AnyObject)
         
         _ = manager.request(url).responseWorklight { [weak self](response) in
@@ -1399,7 +1415,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                 completion(result, error)
             }
         }
-    
+        
     }
     
     public func productsForCategoryId(categoryId: String, page: String?, facets: [String]?, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
@@ -1443,7 +1459,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             guard let weakSelf = self else { return }
             let (result, error) = weakSelf.parseWorklightResponse(response)
             DispatchQueue.main.async {
-
+                
                 completion(result, error)
             }
         }
@@ -1496,7 +1512,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
     }
     public func retrieveGiftRegistryTypes(completion: @escaping (WorklightResponse?, NSError?) -> Void) {
-     
+        
         let params = ["obtenerTiposMesaRequest": []]
         
         let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .GiftRegistryTypes, parameters: params as AnyObject)
@@ -1510,7 +1526,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
             
         }
-
+        
         
     }
     
@@ -1569,7 +1585,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
             
         }
-
+        
         
     }
     public func searchCCStores(state: String, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
@@ -1663,7 +1679,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         ]
         
         for (key, value) in info{
-        
+            
             parameters[key] = value
         }
         
@@ -1689,7 +1705,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         var jsonParametersString: String!
         
         do {
-
+            
             
             jsonParametersString = try String(data: JSONSerialization.data(withJSONObject: parameters, options: .init(rawValue: 0)), encoding: .utf8)
         }
@@ -1701,22 +1717,22 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         let requestParameters: [String : Any]  = [
             "json": jsonParametersString,
-        ]
-
-
+            ]
+        
+        
         _ = self.manager.request(requestURL, method: .post, parameters: requestParameters, encoding: URLEncoding.default, headers: authHeader).responseWorklight{ [weak self](response) in
-                guard let weakSelf = self else{ return }
-                let (result, error) = weakSelf.parseWorklightResponse(response)
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
             
-                DispatchQueue.main.async {
-                    completion(result, error)
+            DispatchQueue.main.async {
+                completion(result, error)
             }
         }
         
     }
     
     private func replaceSpecialCharacters(_ characters: String) -> String{
-    
+        
         /*
          á    %C3%A1
          é    %C3%A9
@@ -1775,7 +1791,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         newString = newString.replacingOccurrences(of: "%", with: "%C3%AD")
         newString = newString.replacingOccurrences(of: "&", with: "%C3%B3")
         newString = newString.replacingOccurrences(of: "\"", with: "\\\"")
-
+        
         
         
         return newString
@@ -1837,7 +1853,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         var sku: [String : Any] = [:]
         
         for product in products{
-        
+            
             sku["skuId"] = product.itemSKU
             sku["quantity"] = product.quantity
             
@@ -1860,65 +1876,65 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }
     }
     
-    public func updateInventoryMKP(forProcedure procedure: String, withProducts products: [WorklightShippingProductMKP], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
-        
-        
-        var params: [String : Any] = [:]
-        var skus: [Any] = []
-        var sku: [String : Any] = [:]
-        
-        for product in products{
-            
-            sku["skuId"] = product.itemSKU
-            sku["quantity"] = product.quantity
-            sku["offerId"] = product.offerId
-            
-            skus.append(sku)
-        }
-        
-        params["skuInventory"] = skus
-        params["operation"] = procedure
-        
-        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
-        
-        _ = self.manager.request(url).responseWorklight { [weak self](response) in
-            guard let weakSelf = self else{ return }
-            let (result, error) = weakSelf.parseWorklightResponse(response)
-            
-            DispatchQueue.main.async {
-                completion(result, error)
-            }
-            
-        }
-    }
+    //    public func updateInventoryMKP(forProcedure procedure: String, withProducts products: [WorklightShippingProductMKP], completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    //
+    //
+    //        var params: [String : Any] = [:]
+    //        var skus: [Any] = []
+    //        var sku: [String : Any] = [:]
+    //
+    //        for product in products{
+    //
+    //            sku["skuId"] = product.itemSKU
+    //            sku["quantity"] = product.quantity
+    //            sku["offerId"] = product.offerId
+    //
+    //            skus.append(sku)
+    //        }
+    //
+    //        params["skuInventory"] = skus
+    //        params["operation"] = procedure
+    //
+    //        let url = getRequestUrlForAdapter(adapter: .APVServicios, procedure: .UpdateInventary, parameters: params as AnyObject)
+    //
+    //        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+    //            guard let weakSelf = self else{ return }
+    //            let (result, error) = weakSelf.parseWorklightResponse(response)
+    //
+    //            DispatchQueue.main.async {
+    //                completion(result, error)
+    //            }
+    //
+    //        }
+    //    }
     
     /*
-    func checkIfServiceDown(serviceError:NSError?)
-    {
-        if let err = serviceError
-        {
-            if ((err.code == 3840 && err.localizedDescription == "Servicio no disponible.") || (err.code == -1005) || (err.code == -1004)) && WorklightServiceProvider.currentWLStatus != "2"
-            {
-                WorklightServiceProvider.currentWLStatus = "2"
-                //Post notification here
-                NSNotificationCenter.defaultCenter().postNotificationName("WLStatusChanged", object: WorklightServiceProvider.currentWLStatus)
-            }
-        }
-        else if WorklightServiceProvider.currentWLStatus == "2"
-        {
-            WorklightServiceProvider.currentWLStatus = "1"
-            //Post notification here
-            NSNotificationCenter.defaultCenter().postNotificationName("WLStatusChanged", object: WorklightServiceProvider.currentWLStatus)
-        }
-    }
-    
-    public func resetWLStatus()
-    {
-        WorklightServiceProvider.currentWLStatus = "1"
-    }*/
+     func checkIfServiceDown(serviceError:NSError?)
+     {
+     if let err = serviceError
+     {
+     if ((err.code == 3840 && err.localizedDescription == "Servicio no disponible.") || (err.code == -1005) || (err.code == -1004)) && WorklightServiceProvider.currentWLStatus != "2"
+     {
+     WorklightServiceProvider.currentWLStatus = "2"
+     //Post notification here
+     NSNotificationCenter.defaultCenter().postNotificationName("WLStatusChanged", object: WorklightServiceProvider.currentWLStatus)
+     }
+     }
+     else if WorklightServiceProvider.currentWLStatus == "2"
+     {
+     WorklightServiceProvider.currentWLStatus = "1"
+     //Post notification here
+     NSNotificationCenter.defaultCenter().postNotificationName("WLStatusChanged", object: WorklightServiceProvider.currentWLStatus)
+     }
+     }
+     
+     public func resetWLStatus()
+     {
+     WorklightServiceProvider.currentWLStatus = "1"
+     }*/
     
     func parseWorklightResponse(_ response: DataResponse<Data>)->(WorklightResponse?, NSError?){
-    
+        
         if response.error != nil {
             return (nil, response.error! as NSError)
         }else{
@@ -1934,7 +1950,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             
         }
         
-
+        
     }
     
     // MARK: - Remote Configuration Parameters
@@ -1966,15 +1982,15 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let url = self.getRequestUrlForAdapter(adapter: .CapturaClientesCredito, procedure: .subirFirma, parameters: parameters as AnyObject)
         
         /*
-        var serializedJSONParameters:String!
-        
-        do {
-            serializedJSONParameters = try NSString(data: NSJSONSerialization.dataWithJSONObject(["stringFile" : file], options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
-        }
-        catch {
-            completion(false, "", nil)
-            return
-        }*/
+         var serializedJSONParameters:String!
+         
+         do {
+         serializedJSONParameters = try NSString(data: NSJSONSerialization.dataWithJSONObject(["stringFile" : file], options: NSJSONWritingOptions()), encoding: NSUTF8StringEncoding) as! String
+         }
+         catch {
+         completion(false, "", nil)
+         return
+         }*/
         
         var jsonParametersString: String!
         
@@ -1998,45 +2014,45 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
         /*_ = self.manager.request(url, method: .post, parameters: stringDataParameters, encoding: URLEncoding.default, headers: self.defaultHeaders()).responseWorklight{ [weak self](response) in
-            guard let weakSelf = self else{ return }
-            let (result, error) = weakSelf.parseWorklightResponse(response)
-            
-            DispatchQueue.main.async {
-                completion(result, error)
-            }
-        }*/
+         guard let weakSelf = self else{ return }
+         let (result, error) = weakSelf.parseWorklightResponse(response)
+         
+         DispatchQueue.main.async {
+         completion(result, error)
+         }
+         }*/
         
         
         /*
-        self.manager.request(.POST, url, parameters: stringDataParameters, encoding: .URL).responseWorklight { response -> Void in
-            
-            self.checkIfServiceDown(response.result.error)
-            
-            if (response.result.error != nil) {
-                completion(false, response.result.error!.localizedDescription, response.result.error)
-            }
-            else {
-                let jsonValue = JSON(response.result.value!)
-                
-                if (jsonValue["isSuccessful"].bool == true) {
-                    if let outMessage = jsonValue["outMessage"].string {
-                        completion(true, outMessage, nil)
-                    }
-                    else {
-                        completion(true, "", nil)
-                    }
-                }
-                else {
-                    if let errors = jsonValue["errors"].array {
-                        completion(false, "", self.errorWithErrorsArray(errors))
-                    }
-                    else {
-                        completion(false, "", response.result.error)
-                    }
-                    
-                }
-            }
-        }*/
+         self.manager.request(.POST, url, parameters: stringDataParameters, encoding: .URL).responseWorklight { response -> Void in
+         
+         self.checkIfServiceDown(response.result.error)
+         
+         if (response.result.error != nil) {
+         completion(false, response.result.error!.localizedDescription, response.result.error)
+         }
+         else {
+         let jsonValue = JSON(response.result.value!)
+         
+         if (jsonValue["isSuccessful"].bool == true) {
+         if let outMessage = jsonValue["outMessage"].string {
+         completion(true, outMessage, nil)
+         }
+         else {
+         completion(true, "", nil)
+         }
+         }
+         else {
+         if let errors = jsonValue["errors"].array {
+         completion(false, "", self.errorWithErrorsArray(errors))
+         }
+         else {
+         completion(false, "", response.result.error)
+         }
+         
+         }
+         }
+         }*/
     }
     
     
@@ -2057,7 +2073,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
             }
         }
     }
-   
+    
     
     public func walletBalanceForAccount(accountNumber: String, completion:@escaping (WorklightResponse?, NSError?) -> Void) {
         let requestParameters = ["TSCCTE09":["numeroCuenta": accountNumber]]
@@ -2133,7 +2149,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         params.append(consultarFechaEstimadaEntregaRequest)
         
         let url = getRequestUrlForAdapter(adapter: .ConsolidacionServiceBK, procedure: .ConsultarFechaEntrega, parameters: consultarFechaEstimadaEntregaRequest as AnyObject)
-
+        
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
             let (result, error) = weakSelf.parseWorklightResponse(response)

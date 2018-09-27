@@ -9,7 +9,7 @@
 import Foundation
 
 enum WorklightErrorCodes: Int{
-
+    
     case JSONParser = -101
     case WLResponseParser = -102
 }
@@ -65,8 +65,8 @@ public protocol WorklightServiceProtocol
     func bigTicketAvailableToShipWithSku(userId: String, productsArray: [[String:String]], zip: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func softLineAvailableToShipWithSku(productsArray: [[String:String]], completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func createSOMSRefundOrder(deliveryOrder: String, comments: String, products: [[String : String]], username: String, validationString: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
-  func updateCustomerAddressSOMS(orderNumber : String, lada: String, telephone : String, inFldTelephone : String, clientRecord : String, inEvent : String, inEventCard : String, inCard : String, selectRecordAsen : String, eventLada : String, inTelephoneEvent : String, isMoreDir : String , inPassword : String, inUser : String, token: String)
-  
+    func updateCustomerAddressSOMS(orderNumber : String, lada: String, telephone : String, inFldTelephone : String, clientRecord : String, inEvent : String, inEventCard : String, inCard : String, selectRecordAsen : String, eventLada : String, inTelephoneEvent : String, isMoreDir : String , inPassword : String, inUser : String, token: String)
+    
     func createSOMSOrderR2(parameters: Any, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     //Endeca
@@ -130,10 +130,10 @@ public protocol WorklightServiceProtocol
     func orderFollowUpGetOrderDetail(orderNumber: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     func orderFollowUpUpdateDeliveryDate(orderNumber: String, sku: String?, date: String?, comments: String?, token : String, userId : String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
     func orderFollowUpScool(orderNumber: String, idRegional: String, completion: @escaping (_ response: WorklightResponse?, _ error: NSError?) -> Void)
-
+    
     
     //MARK: - Persistent Shopping List
-
+    
     func createShoppingClient(name: String, email: String?, storeNumber store: String, idVendedor: String, fechaRegistro: String, skuList: [[String : String]], imageStringData: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func eraseShoppingClient(clientId: String, storeNumber: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func searchShoppingClients(clientName: String, storeNumber: String, idVendedor: String, fechaInicio: String, fechaFin: String, email: String, page: String?, elementsPerPage: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
@@ -148,8 +148,8 @@ public protocol WorklightServiceProtocol
     
     
     func salesReport(items: AnyObject, completion: @escaping (WorklightResponse?, NSError?) -> Void)
-  
-    //MARK: - Extended Catalog 
+    
+    //MARK: - Extended Catalog
     func isValidToSaleByExtendedCatalog(sku : [String])
     
     //MARK: - Budget
@@ -160,17 +160,18 @@ public protocol WorklightServiceProtocol
     func searchCCStates(completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func getStoreDetail(store:String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func createCCOrder(lada: String, phone: String, name: String, userId: String, to
-        ken: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool,customerID: String, addressID: String ,isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) 
+        ken: String, products: [WorklightShippingProduct]?, storeNumber: String, storeNumberToSend: String, orderNumber: String, isNewCustomer: Bool,customerID: String, addressID: String ,isBigTicketOrder: Bool, email: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     //MARK: - Signature
     
     func saveSignature(withFile file: String, andTerminal terminal: String, andStore store: String, documentNumber document: String, andUserId userId: String, withVoucherNumber voucherNumber: String, andVoucherDate voucherDate: String, andVoucherTime voucherTime: String, andAuthorization authorization: String, completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     //MARK: - Update
-    func updateInventoryMKP(forProcedure procedure: String, withProducts products: [WorklightShippingProductMKP], completion: @escaping (WorklightResponse?, NSError?) -> Void)
+    //    func updateInventoryMKP(forProcedure procedure: String, withProducts products: [WorklightShippingProductMKP], completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func updateInventory(forProcedure procedure: String, withProducts products: [WorklightShippingProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void)
     
     //MARK: - Estimated Delivery Date
     func calculateEDD(products: [WorklightSOMSEdd], completion: @escaping (WorklightResponse?, NSError?) -> Void)
     func calculateEDDs(products: [WorklightEDDProduct], completion: @escaping (WorklightResponse?, NSError?) -> Void)
 }
+
