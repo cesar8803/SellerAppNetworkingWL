@@ -55,6 +55,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case APVServicios = "APVServiciosATG"
         case CreateOrderMirakl = "MirakleServiciosBK"
         case ConsolidacionServiceBK = "ConsolidacionServiceBK"
+        case SOMSConsolidacion = "SOMSConsolidacion"
     }
     
     private enum Procedure: String {
@@ -193,6 +194,10 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         //Mirakl MKP
         case createOrderMirakl = "crearOrdenMirakle"
+        
+        //Consolidation
+        
+        case SolicitaConsolidacionSOMS = "SolicitaConsolidacionSOMS"
     }
     
     //1 - WL up
@@ -2184,6 +2189,21 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         let paramsRequest:Parameters = ["requestObtenerDatosTienda" : parameters]
         
         let url = getRequestUrlForAdapter(adapter: .NoSpot, procedure: .ObtenerDatosTienda, parameters: paramsRequest as AnyObject)
+        
+        _ = self.manager.request(url).responseWorklight { [weak self](response) in
+            guard let weakSelf = self else{ return }
+            let (result, error) = weakSelf.parseWorklightResponse(response)
+            
+            DispatchQueue.main.async {
+                completion(result, error)
+            }
+        }
+    }
+    
+    //Consolidación
+    public func setConsolidation(parameters: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
+    
+        let url = getRequestUrlForAdapter(adapter: .SOMSConsolidacion, procedure: .SolicitaConsolidacionSOMS, parameters: parameters as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
             guard let weakSelf = self else{ return }
