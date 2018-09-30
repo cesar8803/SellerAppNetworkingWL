@@ -11,7 +11,7 @@ import Foundation
 import ObjectMapper
 
 public class SMOCE01POperationResponse : Mappable {
-	var message_response : Message_response?
+	public var message_response : Message_response?
 
 	public required init?(map: Map) { }
 
