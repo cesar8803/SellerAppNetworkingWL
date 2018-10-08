@@ -29,6 +29,9 @@ public class WLSapSkuInventario: Mappable{
     public func mapping(map: Map){
         disp <- map["Disp"]
         sku <- map["Sku"]
+        if piso == "NaN"{
+            piso = "0"
+        }
         piso <- map["Piso"]
         intransfer <- map["Intransfer"]
         pdis <- map["Pdis"]
