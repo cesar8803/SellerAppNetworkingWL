@@ -1945,6 +1945,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         }else{
             if let json = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String : Any]{
                 if let wlResponse = WorklightResponse(JSON: json!){
+                    if !(wlResponse.warningITR ?? "").isEmpty{
+                        return (wlResponse, NSError(domain: wlResponse.warningITR!, code: WorklightErrorCodes.WLResponseParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "Por el momento no se puede actualizar el inventario"]))
+                    }
                     return (wlResponse, nil)
                 }else{
                     return (nil, NSError(domain: "worklight.object", code: WorklightErrorCodes.WLResponseParser.rawValue, userInfo: [NSLocalizedDescriptionKey : "No se pudo crear el objeto Worklight Response"]))
