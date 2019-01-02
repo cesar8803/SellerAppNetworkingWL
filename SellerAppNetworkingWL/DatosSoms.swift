@@ -16,6 +16,7 @@ public class DatosSoms: Mappable{
     public var Asentamiento: String?
     public var Estado: String?
     public var NumeroInt: String?
+    public var NumeroExt: String?
     public var Delegacion: String?
     public var IdDireccion: String?
     public var TipoFestejado: String?
@@ -70,6 +71,7 @@ public class DatosSoms: Mappable{
         comentario <- map["COMENTARIO-DIR"]
         rfc <- map["RFC"]
         edificio <- map ["EDIFICIO"]
+        NumeroExt <- map["NumeroExt"]
         
         var lsNombre: [String] = []
         if let lsNombre1Aux:String = Nombre1, !(Nombre1?.isEmpty)!{
@@ -115,3 +117,4 @@ public class DatosSoms: Mappable{
         
     }
 }
+
