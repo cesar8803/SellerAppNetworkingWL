@@ -28,7 +28,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         //*** This should be temporary until SOMSConsultaA Adapter is merged with SOMSConsultaNA. For more information see LSAA-1413 or ask Carazo.
         case ConsultaPool = "SOMSConsultaN"
         //***
-        case ConsultaPoolBroker = "BrokerSOMSConsulta"
+        case ConsultaPoolBroker = "BrokerSOMSConsultaCU"
         case SOMSRefund  = "SOMSDevoluciones"
         case ActualizacionPool = "SOMSActualizacionN"
         case BridgeCore = "LiverpoolWebService"
@@ -51,7 +51,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case ArchivosWS = "ArchivosWebService"
         case ReporteVentas = "ReporteVentas"
         case Presupuesto = "Presupuesto"
-        case BrokerSoms = "BrokerSOMSActualizacion"
+        case BrokerSoms = "BrokerSOMSActualizacionCU"
         case APVServicios = "APVServiciosATG"
         case CreateOrderMirakl = "MirakleServiciosBK"
         case ConsolidacionServiceBK = "ConsolidacionServiceBK"
@@ -97,7 +97,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         case AvailableToShip            = "productAvailableToShip"
         case CreateRefundOrder          = "NotificacionDevoluciones_CrearOrdenDevBT"
         case ModifyOrderAddress         = "SOMSActualizacionPoolService_setModificaOrdenDireccion"
-        case AltaClienteDireccion       = "AltaClienteDireccion"
+        case AltaClienteDireccion       = "AltaClienteDireccionV2"
         case AltaOrdenR2                = "AltaOrden"
         case updateOrderDeliveryDate    = "Remisiones_wbi_ActualizarOBS_FechaEntregaBT"
         
@@ -173,7 +173,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         // Shopping list
         case SearchAddressCustomer      = "DatosCliente_BuscarDireccionCliente"
-        case SearchCustomer             = "DatosCliente_BusquedaCliente"
+        case SearchCustomer             = "DatosCliente_BusquedaClienteV2"
         
         //CRM Integration
         case CRMGetClientInfo = "obtenerDatosCliente"
@@ -567,7 +567,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
     }
     
-    public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
+    public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, tsFechaNacimiento: String?, tsGenero: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         //let paddedLada = String(format: "%03d", Int(lada) ?? 0)
         let requestParameters = [
@@ -596,7 +596,9 @@ public class WorklightServiceProvider : WorklightServiceProtocol
                     "inYCalle" : andStreet!,
                     "inEdif" : building!,
                     "inNumeroInt" : interiorNumber ?? "",
-                    "inNumeroExt" : exteriorNumber
+                    "inNumeroExt" : exteriorNumber,
+                    "fechaNacimiento": tsFechaNacimiento ?? "",
+                    "genero": tsGenero ?? ""
                 ]
                 
             ]
@@ -2205,7 +2207,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     
     //Consolidación
     public func setConsolidation(parameters: [String : Any], completion: @escaping (WorklightResponse?, NSError?) -> Void){
-    
+        
         let url = getRequestUrlForAdapter(adapter: .SOMSConsolidacion, procedure: .SolicitaConsolidacionSOMS, parameters: parameters as AnyObject)
         
         _ = self.manager.request(url).responseWorklight { [weak self](response) in
