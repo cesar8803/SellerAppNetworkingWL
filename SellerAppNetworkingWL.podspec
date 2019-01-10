@@ -37,8 +37,8 @@ s.source = { :git => "https://github.com/cesar8803/SellerAppNetworkingWL.git", :
 # 7 Dependencies
 
 s.framework = "Foundation"
-s.dependency 'Alamofire', '~> 4.0'
-s.dependency 'AlamofireObjectMapper', '~> 4.0'
+s.dependency 'Alamofire'#, '~> 4.0'
+s.dependency 'AlamofireObjectMapper'#, '~> 4.0'
 
 
 # 8 Sources Files
