@@ -570,40 +570,39 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     public func createCustomer(userId: String, clientId: String, lada: String, phone: String, lastName: String, firstName: String, zip: String, exteriorNumber: String, street: String, neighborhood: String, district: String, state: String, idLada: String, idPhone:String,  secondLastName: String?, rfc: String?, comment: String?, email: String?, betweenStreet: String?, andStreet: String?, interiorNumber: String?, building: String?, createStreet: Bool?, tsFechaNacimiento: String?, tsGenero: String?, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
         //let paddedLada = String(format: "%03d", Int(lada) ?? 0)
-        let requestParameters = [
-            "AltaClienteDireccionRequest" : [
-                "setAltaClienteFilters" : [
-                    "crearCalle" : createStreet ?? false,
-                    "idUsuario" : userId,
-                    "idCliente" : clientId,
-                    "inLada" : lada,
-                    "inTelefono" : phone,
-                    "inApMaterno" : secondLastName ?? "",
-                    "inApPaterno" : lastName,
-                    "inEmail" : email!,
-                    "inNombre1" : firstName,
-                    "inNombre2" : "",
-                    "inRFC" : rfc!,
-                    "inCP" : zip,
-                    "inComentario" : comment ?? "",
-                    "inAsentamiento" : neighborhood,
-                    "inDelegacionMunicipio" : district,
-                    "inEstado" : state,
-                    "idLadaDireccion" : idLada,
-                    "idTelefonoDireccion" : idPhone,
-                    "inCalle" : street,
-                    "inEntreCalle" : betweenStreet!.replacingOccurrences(of: "&", with: "%26"),
-                    "inYCalle" : andStreet!,
-                    "inEdif" : building!,
-                    "inNumeroInt" : interiorNumber ?? "",
-                    "inNumeroExt" : exteriorNumber,
-                    "fechaNacimiento": tsFechaNacimiento ?? "",
-                    "genero": tsGenero ?? ""
-                ]
-                
-            ]
-            
-        ]
+        var requestParameters : [String : Any] = [:]
+        var AltaClienteDireccionRequest : [String : Any] = [:]
+        var setAltaClienteFilters : [String : Any] = [:]
+        
+        setAltaClienteFilters["crearCalle"] = createStreet ?? false
+        setAltaClienteFilters["idUsuario"] = userId
+        setAltaClienteFilters["idCliente"] = clientId
+        setAltaClienteFilters["inLada"] = lada
+        setAltaClienteFilters["inTelefono"] = phone
+        setAltaClienteFilters["inApMaterno"] = secondLastName ?? ""
+        setAltaClienteFilters["inApPaterno"] = lastName
+        setAltaClienteFilters["inEmail"] = email!
+        setAltaClienteFilters["inNombre1"] = firstName
+        setAltaClienteFilters["inNombre2"] = ""
+        setAltaClienteFilters["inRFC"] = rfc!
+        setAltaClienteFilters["inCP"] = zip
+        setAltaClienteFilters["inComentario"] = comment ?? ""
+        setAltaClienteFilters["inAsentamiento"] = neighborhood
+        setAltaClienteFilters["inDelegacionMunicipio"] = district
+        setAltaClienteFilters["inEstado"] = state
+        setAltaClienteFilters["idLadaDireccion"] = idLada
+        setAltaClienteFilters["idTelefonoDireccion"] = idPhone
+        setAltaClienteFilters["inCalle"] = street
+        setAltaClienteFilters["inEntreCalle"] = betweenStreet!.replacingOccurrences(of: "&", with: "%26")
+        setAltaClienteFilters["inYCalle"] = andStreet!
+        setAltaClienteFilters["inEdif"] = building!
+        setAltaClienteFilters["inNumeroInt"] = interiorNumber ?? ""
+        setAltaClienteFilters["inNumeroExt"] = exteriorNumber
+        setAltaClienteFilters["fechaNacimiento"] = tsFechaNacimiento ?? ""
+        setAltaClienteFilters["genero"] = tsGenero ?? ""
+        
+        AltaClienteDireccionRequest["setAltaClienteFilters"] = setAltaClienteFilters
+        requestParameters["AltaClienteDireccionRequest"] = AltaClienteDireccionRequest
         
         /*
          let isNewStreetString = isNewStreet == true ? "True" : ""
@@ -1618,16 +1617,27 @@ public class WorklightServiceProvider : WorklightServiceProtocol
     }
     public func searchGiftRegistry(name: String!, lastName: String!, secondLastName: String!, date: String!, type: NSNumber!, gender: String!, completion: @escaping (WorklightResponse?, NSError?) -> Void) {
         
-        let params = [
-            "TSCMES12": [
-                "nombre": name ?? "",
-                "paterno": lastName ?? "",
-                "materno": secondLastName ?? "",
-                "fechaDe": date ?? "",
-                "tipo": type ?? 0,
-                "sexo": gender ?? ""
-            ]
-        ]
+        var TSCMES12: [String:Any] = [:]
+        TSCMES12["nombre"] = name ?? ""
+        TSCMES12["paterno"] = lastName ?? ""
+        TSCMES12["materno"] = secondLastName ?? ""
+        TSCMES12["fechaDe"] =  date ?? ""
+        TSCMES12["tipo"] = type ?? 0
+        TSCMES12["sexo"] = gender ?? ""
+        
+        var params: [String:Any] = [:]
+        params["TSCMES12"] = TSCMES12
+        
+//        let params = [
+//            "TSCMES12": [
+//                "nombre": name ?? "",
+//                "paterno": lastName ?? "",
+//                "materno": secondLastName ?? "",
+//                "fechaDe": date ?? "",
+//                "tipo": type ?? 0,
+//                "sexo": gender ?? ""
+//            ]
+//        ]
         
         let url = getRequestUrlForAdapter(adapter: .CICS, procedure: .GiftRegistrySearch, parameters: params as AnyObject)
         
