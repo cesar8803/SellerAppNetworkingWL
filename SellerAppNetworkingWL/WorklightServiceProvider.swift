@@ -1722,7 +1722,7 @@ public class WorklightServiceProvider : WorklightServiceProtocol
         
         jsonParametersString = replaceSpecialCharacters(jsonParametersString)
         
-        let requestParameters: [String : Any]  = [
+        let requestParameters: [String : String]  = [
             "json": jsonParametersString,
             ]
         
