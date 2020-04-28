@@ -97,6 +97,14 @@ public class DatosSoms: Mappable{
             address.append(calle)
         }
         
+        if let numero: String = NumeroExt, !numero.isEmpty {
+            address.append("No. Ext. \(numero)")
+        }
+        
+        if let numeroInt: String = NumeroInt, !numeroInt.isEmpty {
+            address.append("No. Int. \(numeroInt)")
+        }
+        
         if let colonia: String = Colonia, !colonia.isEmpty {
             address.append("Colonia \(colonia)")
         }

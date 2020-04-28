@@ -54,14 +54,17 @@ public class Direccion: Mappable{
         var cp: String = ""
         if let zip: String = Cp, !zip.isEmpty { cp = zip }
         
-        if numeroExterior == nil || (numeroExterior?.isEmpty)!{
-            numeroExterior = Numero
-        }
+        var numeroExt: String = ""
+        if let numExt: String = numeroExterior, !numExt.isEmpty { numeroExt = numExt }
+        
+        var numeroInt: String = ""
+        if let numInt: String = numeroExterior, !numInt.isEmpty { numeroInt = numInt }
         
         let completa: [String] = [
             
             Calle ?? "",
-            Numero ?? "",
+            !numeroExt.isEmpty ? "No. Ext. \(numeroExt)" : "",
+            !numeroInt.isEmpty ? "No. Int. \(numeroInt)" : "",
             !colonia.isEmpty ? "Colonia \(colonia)" : "",
             !delegacion.isEmpty ? "Delegación \(delegacion)" : "",
             !estado.isEmpty ? "Estado \(estado)" : "",
